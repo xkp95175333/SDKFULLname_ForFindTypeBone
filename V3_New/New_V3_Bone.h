@@ -6,6 +6,11 @@
 #include <cstdint>
 #include <cmath>
 
+
+
+
+
+
 /* ============================================================================
     == SECTION 1: BASIC MATH TYPES (unencoded) ==
 ============================================================================ */
@@ -736,5 +741,211 @@ Vector2 screen = W2S(in, cameraInfo);
 
 บอกได้เลย เดี๋ยวทำต่อให้ครบระบบ!
 */
+
+
+
+//makeAllFunWork
+
+
+namespace UEX
+{
+    // ============================
+    //  FVector (0x0C)
+    // ============================
+    struct FVector
+    {
+        float X;
+        float Y;
+        float Z;
+
+        FVector Add(const FVector& O) const { return { X+O.X, Y+O.Y, Z+O.Z }; }
+        FVector Sub(const FVector& O) const { return { X-O.X, Y-O.Y, Z-O.Z }; }
+        FVector Mul(float S) const { return { X*S, Y*S, Z*S }; }
+        FVector Div(float S) const { return (S==0)?*this:FVector{X/S, Y/S, Z/S}; }
+
+        float Dot(const FVector& O) const { return X*O.X + Y*O.Y + Z*O.Z; }
+        float Magnitude()     const { return std::sqrt(X*X + Y*Y + Z*Z); }
+        FVector Normalize()   const { float m= Magnitude(); return (m==0? *this : FVector{X/m,Y/m,Z/m}); }
+    };
+
+    // ============================
+    //  FRotator
+    // ============================
+    struct FRotator
+    {
+        float Pitch;
+        float Yaw;
+        float Roll;
+
+        FRotator Add(const FRotator& O) const { return {Pitch+O.Pitch, Yaw+O.Yaw, Roll+O.Roll}; }
+        FRotator Sub(const FRotator& O) const { return {Pitch-O.Pitch, Yaw-O.Yaw, Roll-O.Roll}; }
+        FRotator Mul(float S) const { return {Pitch*S, Yaw*S, Roll*S}; }
+    };
+
+    // ============================
+    //  FQuat (0x10)
+    // ============================
+    struct FQuat
+    {
+        float X;
+        float Y;
+        float Z;
+        float W;
+    };
+
+    // ============================
+    //  FEncVector (float4 align)
+    // ============================
+    struct FEncVector
+    {
+        float X;
+        float Y;
+        float Z;
+        float Pad;  // 4 bytes
+    };
+	//log SDk
+	/*
+// ScriptStruct CoreUObject.Vector
+// 0x000C (0x000C - 0x0000)
+struct FVector
+{
+public:
+	using UnderlayingType = float;
+
+	float                                         X;                                                 // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Y;                                                 // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Z;                                                 // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	constexpr FVector(UnderlayingType X = 0, UnderlayingType Y = 0, UnderlayingType Z = 0)
+		: X(X), Y(Y), Z(Z)
+	{
+	}
+	constexpr FVector(const FVector& other)
+		: X(other.X), Y(other.Y), Z(other.Z)
+	{
+	}
+	FVector& Normalize()
+	{
+		*this /= Magnitude();
+	
+		return *this;
+	}
+	FVector& operator*=(UnderlayingType Scalar)
+	{
+		*this = *this * Scalar;
+	
+		return *this;
+	}
+	FVector& operator*=(const FVector& Other)
+	{
+		*this = *this * Other;
+	
+		return *this;
+	}
+	FVector& operator+=(const FVector& Other)
+	{
+		*this = *this + Other;
+	
+		return *this;
+	}
+	FVector& operator-=(const FVector& Other)
+	{
+		*this = *this - Other;
+	
+		return *this;
+	}
+	FVector& operator/=(UnderlayingType Scalar)
+	{
+		*this = *this / Scalar;
+	
+		return *this;
+	}
+	FVector& operator/=(const FVector& Other)
+	{
+		*this = *this / Other;
+	
+		return *this;
+	}
+	FVector& operator=(const FVector& other)
+	{
+		X = other.X;
+		Y = other.Y;
+		Z = other.Z;
+	
+		return *this;
+	}
+
+	UnderlayingType Dot(const FVector& Other) const
+	{
+		return (X * Other.X) + (Y * Other.Y) + (Z * Other.Z);
+	}
+	UnderlayingType GetDistanceTo(const FVector& Other) const
+	{
+		FVector DiffVector = Other - *this;
+	
+		return DiffVector.Magnitude();
+	}
+	UnderlayingType GetDistanceToInMeters(const FVector& Other) const
+	{
+		return GetDistanceTo(Other) * static_cast<UnderlayingType>(0.01);
+	}
+	FVector GetNormalized() const
+	{
+		return *this / Magnitude();
+	}
+	bool IsZero() const
+	{
+		return X == 0 && Y == 0 && Z == 0;
+	}
+	UnderlayingType Magnitude() const
+	{
+		return std::sqrt((X * X) + (Y * Y) + (Z * Z));
+	}
+	bool operator!=(const FVector& Other) const
+	{
+		return X != Other.X || Y != Other.Y || Z != Other.Z;
+	}
+	FVector operator*(UnderlayingType Scalar) const
+	{
+		return { X * Scalar, Y * Scalar, Z * Scalar };
+	}
+	FVector operator*(const FVector& Other) const
+	{
+		return { X * Other.X, Y * Other.Y, Z * Other.Z };
+	}
+	FVector operator+(const FVector& Other) const
+	{
+		return { X + Other.X, Y + Other.Y, Z + Other.Z };
+	}
+	FVector operator-(const FVector& Other) const
+	{
+		return { X - Other.X, Y - Other.Y, Z - Other.Z };
+	}
+	FVector operator/(UnderlayingType Scalar) const
+	{
+		if (Scalar == 0)
+			return *this;
+	
+		return { X / Scalar, Y / Scalar, Z / Scalar };
+	}
+	FVector operator/(const FVector& Other) const
+	{
+		if (Other.X == 0 || Other.Y == 0 || Other.Z == 0)
+			return *this;
+	
+		return { X / Other.X, Y / Other.Y, Z / Other.Z };
+	}
+	bool operator==(const FVector& Other) const
+	{
+		return X == Other.X && Y == Other.Y && Z == Other.Z;
+	}
+};
+
+*///*/  //Good in github && Vs2022 Color
+	
+	
+}
+ 
 
 ```
