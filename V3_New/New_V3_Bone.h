@@ -318,6 +318,113 @@ struct FCapsuleShape
     float   Length;      // 0x1C
 };
 
+
+#pragma once
+#include <cstdint>
+
+namespace UEX
+{
+    struct FVector
+    {
+        float X;
+        float Y;
+        float Z;
+    };
+
+    struct FQuat
+    {
+        float X;
+        float Y;
+        float Z;
+        float W;
+    };
+
+    struct FRotator
+    {
+        float Pitch;
+        float Yaw;
+        float Roll;
+    };
+
+    struct FVector2D
+    {
+        float X;
+        float Y;
+        float Z;
+    };
+
+    struct FVector4
+    {
+        float X;
+        float Y;
+        float Z;
+        float W;
+    };
+
+    struct FTwoVectors
+    {
+        FVector V1;
+        FVector V2;
+    };
+
+    struct FIntVector
+    {
+        int32_t X;
+        int32_t Y;
+        int32_t Z;
+    };
+
+    struct FVector_NetQuantize10
+    {
+        int16_t X;
+        int16_t Y;
+        int16_t Z;
+    };
+
+    struct FVector_NetQuantize100
+    {
+        int16_t X;
+        int16_t Y;
+        int16_t Z;
+    };
+}
+namespace UEX
+{
+    struct FRotator
+    {
+        float Pitch;  // 0x00
+        float Yaw;    // 0x04
+        float Roll;   // 0x08
+
+        // Return new struct (ไม่แก้ตัวเอง)
+        FRotator Add(const FRotator& Other) const
+        {
+            return { Pitch + Other.Pitch, Yaw + Other.Yaw, Roll + Other.Roll };
+        }
+
+        FRotator Sub(const FRotator& Other) const
+        {
+            return { Pitch - Other.Pitch, Yaw - Other.Yaw, Roll - Other.Roll };
+        }
+
+        FRotator Mul(float Scalar) const
+        {
+            return { Pitch * Scalar, Yaw * Scalar, Roll * Scalar };
+        }
+
+        FRotator Div(float Scalar) const
+        {
+            if (Scalar == 0.f) return *this;
+            return { Pitch / Scalar, Yaw / Scalar, Roll / Scalar };
+        }
+
+        bool Equals(const FRotator& Other) const
+        {
+            return Pitch == Other.Pitch && Yaw == Other.Yaw && Roll == Other.Roll;
+        }
+    };
+}
+
 // ======================================================
 // External-Friendly Vector3 (มีทั้ง x,y,z และ float v[3])
 // ======================================================
@@ -436,6 +543,7 @@ struct FBoneTransform
 // alias สั้น ๆ
 using FVec3 = FVector3;
 using FRot = FRotator;
+
 /*
 
 
@@ -547,7 +655,7 @@ Vector3 ToVector3(float xyz[3]);
 
 (🔥 รันได้ทันที ไม่ชน SDK)
     
-*/
+*///*/ 
 #pragma once
 #include "SDK_ExternalFullMath.h"
 #include <DirectXMath.h>
@@ -698,6 +806,7 @@ inline Vector3 ToVector3(float xyz[3])
 {
     return Vector3(xyz[0], xyz[1], xyz[2]);
 }
+
 /*
 
 
@@ -740,11 +849,300 @@ Vector2 screen = W2S(in, cameraInfo);
 ✔ รวมไฟล์เป็น .h เดียว
 
 บอกได้เลย เดี๋ยวทำต่อให้ครบระบบ!
-*/
+*///*/ 
 
 
 
 //makeAllFunWork
+
+namespace UEX
+{
+    struct FEncHandler
+    {
+        uint16_t index;        // 0x00
+        int8_t   bEncrypted;   // 0x02
+        uint8_t  bDynamic;     // 0x03
+    };
+
+    struct FEncTransform
+    {
+        FQuat      Rotation;       // 0x00
+        FEncVector EncXYZ;         // 0x10  (encrypted float4)
+        FVector    Scale3D;        // 0x20
+        uint8_t    Pad2C[0x04];    // 0x2C
+        FEncHandler EncHandler;    // 0x30
+        uint8_t    Pad34[0x0C];    // 0x34
+    };
+}
+inline UEX::FTransform DecryptEncTransform(uintptr_t addr, float addZ = 0.f)
+{
+    UEX::FEncTransform e = driver.read<UEX::FEncTransform>(addr);
+
+    UEX::FTransform out{};
+    out.Rotation = e.Rotation;
+    out.Scale3D  = e.Scale3D;
+
+    __m128 raw = _mm_set_ps(e.EncXYZ.Pad, e.EncXYZ.Z, e.EncXYZ.Y, e.EncXYZ.X);
+
+    // if not encrypted → just pass through
+    if (!e.EncHandler.bEncrypted || e.EncHandler.index == 0xFFFF)
+    {
+        float T[4]; _mm_store_ps(T, raw);
+        out.Translation = { T[0], T[1], T[2]-addZ };
+        return out;
+    }
+
+    // simple XOR/key mix (external dummy decode)
+    __m128 key = _mm_set1_ps((float)e.EncHandler.index);
+    __m128 dec = _mm_xor_ps(raw, key);
+
+    float T[4]; _mm_store_ps(T, dec);
+    out.Translation = { T[0], T[1], T[2]-addZ };
+    return out;
+}
+inline DirectX::XMMATRIX ToMatrix(const UEX::FTransform& T)
+{
+    using namespace DirectX;
+
+    XMVECTOR Q = XMVectorSet(T.Rotation.X, T.Rotation.Y, T.Rotation.Z, T.Rotation.W);
+    XMVECTOR S = XMVectorSet(T.Scale3D.X, T.Scale3D.Y, T.Scale3D.Z, 1.f);
+    XMVECTOR P = XMVectorSet(T.Translation.X, T.Translation.Y, T.Translation.Z, 1.f);
+
+    return XMMatrixAffineTransformation(S, XMVectorZero(), Q, P);
+}
+namespace UEX
+{
+    struct BoneTypeA
+    {
+        FTransform Bone;  // 0x00
+    };
+}
+namespace UEX
+{
+    struct BoneTypeB
+    {
+        FEncTransform EncBone; // 0x00
+    };
+}
+inline bool IsEncTransform(uintptr_t addr)
+{
+    uint16_t idx  = driver.read<uint16_t>(addr + 0x30);
+    uint8_t  flag = driver.read<uint8_t>(addr + 0x32);
+
+    // true when encrypted transform pattern
+    return (idx != 0 && idx != 0xFFFF && flag != 0);
+}
+inline UEX::FVector GetBoneWorld(uintptr_t mesh, int id, int boneOffsetNormal, int boneOffsetEnc)
+{
+    uintptr_t arr = driver.read<uintptr_t>(mesh + boneOffsetNormal);
+
+    if (!arr)
+        arr = driver.read<uintptr_t>(mesh + boneOffsetEnc);
+
+    if (!arr) return {0,0,0};
+
+    uintptr_t boneAddr = arr + (id * 0x30);
+
+    UEX::FTransform boneLocal;
+
+    if (IsEncTransform(boneAddr))
+        boneLocal = DecryptEncTransform(boneAddr);
+    else
+        boneLocal = driver.read<UEX::FTransform>(boneAddr);
+
+    UEX::FTransform comp = driver.read<UEX::FTransform>(mesh + 0x210);
+
+    auto M1 = ToMatrix(boneLocal);
+    auto M2 = ToMatrix(comp);
+
+    auto F  = DirectX::XMMatrixMultiply(M1, M2);
+
+    return {
+        F.r[3].m128_f32[0],
+        F.r[3].m128_f32[1],
+        F.r[3].m128_f32[2]
+    };
+}
+inline void DebugPanel_ShowTransform(uintptr_t addr)
+{
+    UEX::FTransform T;
+    UEX::FEncTransform E;
+
+    ImGui::Separator();
+    ImGui::Text("Transform @ 0x%llX", addr);
+
+    if (IsEncTransform(addr))
+    {
+        T = DecryptEncTransform(addr);
+        E = driver.read<UEX::FEncTransform>(addr);
+
+        ImGui::Text("Encrypted Transform (0x40)");
+        ImGui::Text("Rotation: %.3f %.3f %.3f %.3f", 
+            T.Rotation.X, T.Rotation.Y, T.Rotation.Z, T.Rotation.W);
+        ImGui::Text("Translation: %.3f %.3f %.3f", 
+            T.Translation.X, T.Translation.Y, T.Translation.Z);
+        ImGui::Text("Key: %d  Enc=%d Dyn=%d", 
+            E.EncHandler.index, E.EncHandler.bEncrypted, E.EncHandler.bDynamic);
+    }
+    else
+    {
+        T = driver.read<UEX::FTransform>(addr);
+
+        ImGui::Text("Normal Transform (0x30)");
+        ImGui::Text("Rotation: %.3f %.3f %.3f %.3f", 
+            T.Rotation.X, T.Rotation.Y, T.Rotation.Z, T.Rotation.W);
+        ImGui::Text("Translation: %.3f %.3f %.3f", 
+            T.Translation.X, T.Translation.Y, T.Translation.Z);
+    }
+
+    ImGui::Separator();
+}
+#pragma once
+#include <cmath>
+
+// ======================================================
+//  External UE Core Math Structs (FVector + FRotator)
+//  สำหรับใช้ร่วมกับ driver.read<T>()
+//  และไม่ชนกับโค้ด Vector3 เดิมของคุณ
+// ======================================================
+
+namespace UEX
+{
+    // ========================
+    //  FVector (0x0C) — FULL
+    // ========================
+    struct FVector
+    {
+        float X;  // 0x00
+        float Y;  // 0x04
+        float Z;  // 0x08
+
+        // -------- Basic Ops (return copy) --------
+
+        FVector Add(const FVector& Other) const
+        {
+            return { X + Other.X, Y + Other.Y, Z + Other.Z };
+        }
+
+        FVector Sub(const FVector& Other) const
+        {
+            return { X - Other.X, Y - Other.Y, Z - Other.Z };
+        }
+
+        FVector Mul(float Scalar) const
+        {
+            return { X * Scalar, Y * Scalar, Z * Scalar };
+        }
+
+        FVector MulVec(const FVector& Other) const
+        {
+            return { X * Other.X, Y * Other.Y, Z * Other.Z };
+        }
+
+        FVector Div(float Scalar) const
+        {
+            if (Scalar == 0.f)
+                return *this;
+            return { X / Scalar, Y / Scalar, Z / Scalar };
+        }
+
+        FVector DivVec(const FVector& Other) const
+        {
+            if (Other.X == 0 || Other.Y == 0 || Other.Z == 0)
+                return *this;
+
+            return { X / Other.X, Y / Other.Y, Z / Other.Z };
+        }
+
+        // -------- Math / Utility --------
+
+        float Dot(const FVector& Other) const
+        {
+            return (X * Other.X) + (Y * Other.Y) + (Z * Other.Z);
+        }
+
+        float Magnitude() const
+        {
+            return std::sqrt((X * X) + (Y * Y) + (Z * Z));
+        }
+
+        FVector Normalize() const
+        {
+            float mag = Magnitude();
+            if (mag == 0.f) return *this;
+            return { X / mag, Y / mag, Z / mag };
+        }
+
+        float DistanceTo(const FVector& Other) const
+        {
+            return Sub(Other).Magnitude();
+        }
+
+        FVector Lerp(const FVector& Other, float alpha) const
+        {
+            return {
+                X + (Other.X - X) * alpha,
+                Y + (Other.Y - Y) * alpha,
+                Z + (Other.Z - Z) * alpha
+            };
+        }
+
+        bool Equals(const FVector& Other) const
+        {
+            return X == Other.X && Y == Other.Y && Z == Other.Z;
+        }
+    };
+
+
+
+    // ==========================
+    //  FRotator (0x0C) — FULL
+    // ==========================
+    struct FRotator
+    {
+        float Pitch;  // 0x00
+        float Yaw;    // 0x04
+        float Roll;   // 0x08
+
+        FRotator Add(const FRotator& Other) const
+        {
+            return { Pitch + Other.Pitch, Yaw + Other.Yaw, Roll + Other.Roll };
+        }
+
+        FRotator Sub(const FRotator& Other) const
+        {
+            return { Pitch - Other.Pitch, Yaw - Other.Yaw, Roll - Other.Roll };
+        }
+
+        FRotator Mul(float Scalar) const
+        {
+            return { Pitch * Scalar, Yaw * Scalar, Roll * Scalar };
+        }
+
+        FRotator Div(float Scalar) const
+        {
+            if (Scalar == 0.f) return *this;
+            return { Pitch / Scalar, Yaw / Scalar, Roll / Scalar };
+        }
+
+        bool Equals(const FRotator& Other) const
+        {
+            return Pitch == Other.Pitch && Yaw == Other.Yaw && Roll == Other.Roll;
+        }
+    };
+
+} // namespace UEX
+
+
+// ======================================================
+//  จากนี้ไปคือเนื้อหาเดิมของไฟล์ New_V3_Bone.h
+//  (คุณสามารถวางด้านบนหรือด้านล่างก็ได้)
+// ======================================================
+
+// --- ใส่โครงสร้าง Bone, Bone2, BoneTransform เดิมของคุณตรงนี้ ---
+// --- ใส่ FTransform / FEncTransform ที่คุณใช้อยู่ตรงนี้ ---
+// --- ไม่ชนกับ UEX::FVector/FRotator เพราะ namespace แยก ---
+ 
 
 
 namespace UEX
