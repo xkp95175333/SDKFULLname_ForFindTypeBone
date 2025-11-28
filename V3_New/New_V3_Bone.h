@@ -242,6 +242,13 @@ struct FTransform
 };
 
 
+struct FBoneNode
+{
+	char Name;       // 0x00 (8 bytes)
+	int32_t ParentIndex;// 0x08
+}; // Size: 0x0C
+
+
 // ------------------------------------------------------------
 // FEncTransform (0x40) – encoded version
 // ------------------------------------------------------------
@@ -253,7 +260,8 @@ struct FEncTransform
     FVector     Scale3D;       // 0x20
     float       pad2;          // 0x2C
     FEncHandler EncHandler;    // 0x30
-    uint8_t     pad3[0xC];     // 0x34–0x3F
+    //uint8_t     pad3[0xC];     // 0x34–0x3F
+    FBoneNode    Testjmp;
 };
 
 
