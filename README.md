@@ -26,3 +26,66 @@ Engine_class เก็บ อ่านตาม offset
 
 
 ---
+```py
+
+files = glob.glob("SDK/**/*.hpp", recursive=True)
+names = set()
+
+for f in files:
+    text = open(f, encoding="utf8", errors="ignore").read()
+
+    # match struct/class/enum
+    for m in re.findall(r"(?:struct|class|enum)\s+([A-Za-z_][A-Za-z0-9_]*)", text):
+        names.add(m)
+
+print("\n".join(sorted(names)))
+python scripts/extract_names.py > README_StructNames.txt
+if (validName.find(_("Character_")) != std::string::npos
+Character_
+DFMCharacter_C
+PlayerStart
+DFMAICharacter
+# รายชื่อ class/struct ที่ค้นเจอจาก GName
+
+- Character_
+- DFMCharacter_C
+- PlayerStart
+- DFMAICharacter
+
+# รายชื่อโครงสร้างใน SDK
+
+## CoreUObject
+- UObject
+- UClass
+- UFunction
+- FName
+- FNameEntry
+- FText
+- FString
+- FArray
+- FRotator
+- FVector
+- FQuat
+- FTransform
+
+## Engine
+- AActor
+- APawn
+- ACharacter
+- USceneComponent
+- USkeletalMeshComponent
+- UPrimitiveComponent
+- FHitResult
+- FTimerHandle
+- FMinimalViewInfo
+- FCameraCacheEntry
+
+## Gameplay
+- APlayerController
+- AAIController
+- APlayerState
+- AGameState
+- APlayerStart
+- UAnimInstance
+- USkeletalBodySetup
+```
