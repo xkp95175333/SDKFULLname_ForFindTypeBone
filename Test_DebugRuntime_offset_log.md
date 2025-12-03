@@ -1,4 +1,7 @@
- 
+<img width="1422" height="1018" alt="image" src="https://github.com/user-attachments/assets/2033f16c-adaf-4747-bb29-89ef58e0af57" />
+ <img width="870" height="1102" alt="สกรีนช็อต 2025-12-04 063836" src="https://github.com/user-attachments/assets/d51fd58d-0900-44f9-8f17-9908307a9d2a" />
+<img width="1592" height="1101" alt="สกรีนช็อต 2025-12-04 063901" src="https://github.com/user-attachments/assets/f54d5bee-8710-4289-83ca-eff152e9a187" />
+
 ```c
 
 ---
