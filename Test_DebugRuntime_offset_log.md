@@ -78,7 +78,7 @@ Offset->0x21A0|Type_UE|||0x1C VaFname >0x26B174->FName[Comboard]|APtr: 0xEE721C8
 Offset->0x21B0|float:0.295595|||0x1C VaFname >0x149240->FName[DFMOutLineEffectComponent]|APtr: 0x23E975840 Adr 0x10D1621F0 |Count->-1125357824|2
 Offset->0x21B8|float:-0.028858|||0x1C VaFname >0x143002->FName[DFMAbilityPathTracingComponent]|APtr: 0x2BCEC6700 Adr 0x10D1621F8 |Count->1157384576|2
 Offset->0x21C0|float:2018.296875|||0x1C VaFname >0x124928->FName[GPKnockbackMoveComponent]|APtr: 0x244FC4980 Adr 0x10D162200 |Count->1772185344|1
-Offset->0x21C8|Type_UE|||0x1C VaFname >0x149274->FName[DFMPerkComponent]|APtr: 0x169A16700 Adr 0x10D162208 |Count->1740112640|1
+🎯3️⃣Offset->0x21C8|Type_UE|||0x1C VaFname >0x149274->FName[DFMPerkComponent]|APtr: 0x169A16700 Adr 0x10D162208 |Count->1740112640|1
 Offset->0x21D0|Type_UE|||0x1C VaFname >0x2E985F->FName[GPPassiveMove]|APtr: 0x167B80300 Adr 0x10D162210 |Count->0|0
 Offset->0x22B8|float:0.000196|||0x1C VaFname >0xB140F0->FName[FPP_EnableTick_WaterInteractor_C]|APtr: 0x1394DDD00 Adr 0x10D1622F8 |Count->-1468097920|2
 Offset->0x22C0|Type_UE|||0x1C VaFname >0xB14115->FName[GunMuzzle_EnableTick_WaterInteractor_C]|APtr: 0x2A87E9A80 Adr 0x10D162300 |Count->0|0
@@ -121,10 +121,10 @@ Offset->0x3220|Type_UE|||0x1C VaFname >0x2F5341->FName[GPAnimData]|APtr: 0x22786
 Offset->0x3238|float:-0.427292|||0x1C VaFname >0x2F5347->FName[GPVoice]|APtr: 0x2BEDAC600 Adr 0x10D163278 |Count->1911254464|0
 Offset->0x3240|Type_UE|||0x1C VaFname >0x2F534C->FName[GPAnimProxy]|APtr: 0x71EB6DC0 Adr 0x10D163280 |Count->1162214784|2
 Offset->0x3248|float:3167.843750|||0x1C VaFname >0x2F5353->FName[GPCameraMode]|APtr: 0x24545FD80 Adr 0x10D163288 |Count->-184800848|0
-Offset->0x3250|Type_UE|||0x1C VaFname >0x22847A->FName[WeaponManager]|APtr: 0xF4FC29B0 Adr 0x10D163290 |Count->817027968|2  🎯 2️⃣ 
+🎯2️⃣ Offset->0x3250|Type_UE|||0x1C VaFname >0x22847A->FName[WeaponManager]|APtr: 0xF4FC29B0 Adr 0x10D163290 |Count->817027968|2  
 Offset->0x3258|Type_UE|||0x1C VaFname >0x2E9842->FName[WeaponReplicate]|APtr: 0x230B2DB80 Adr 0x10D163298 |Count->1734561296|1
 Offset->0x3260|Type_UE|||0x1C VaFname >0x2F535A->FName[CharacterEquip]|APtr: 0x167634E10 Adr 0x10D1632A0 |Count->-184802880|0
-Offset->0x3270|float:0.000501|||0x1C VaFname >0x14FC19->FName[InventoryUseItemManager]|APtr: 0x13A0344F0 Adr 0x10D1632B0 |Count->1162152704|2🎯1️⃣  
+🎯1️⃣  Offset->0x3270|float:0.000501|||0x1C VaFname >0x14FC19->FName[InventoryUseItemManager]|APtr: 0x13A0344F0 Adr 0x10D1632B0 |Count->1162152704|2 
 Offset->0x3278|float:3152.687500|||0x1C VaFname >0x2F52C9->FName[PlayerCharacterSignificanceComponent]|APtr: 0x245450B00 Adr 0x10D1632B8 |Count->1022009440|2
 Offset->0x3280|float:0.028641|||0x1C VaFname >0x1465C1->FName[DFMFootprintComponent]|APtr: 0x23CEAA060 Adr 0x10D1632C0 |Count->1742392528|1
 Offset->0x3288|Type_UE|||0x1C VaFname >0x2F5381->FName[GPVaultAndClimb]|APtr: 0x167DACCD0 Adr 0x10D1632C8 |Count->860719360|2
@@ -205,7 +205,7 @@ Offset->0x7FF2|int:140816|||0x1C VaFname >0x10000->FName[INTLTranslatorResult]|A
  
  
 ---
-Offset->0x3270|float:0.000501|||0x1C VaFname >0x14FC19->FName[InventoryUseItemManager]|APtr: 0x13A0344F0 Adr 0x10D1632B0 |Count->1162152704|2
+🎯1️⃣Offset->0x3270|float:0.000501|||0x1C VaFname >0x14FC19->FName[InventoryUseItemManager]|APtr: 0x13A0344F0 Adr 0x10D1632B0 |Count->1162152704|2
 ---
 ```c
 
@@ -311,7 +311,7 @@ Offset->0x3FE8|Type_UE|||0x1C VaFname >0x16C72F->FName[WidgetAnimation]|APtr: 0x
 Offset->0x3FF0|Type_UE|||0x1C VaFname >0x48F777->FName[WBP_Battle_Deploy_RebornFlagPoint_C]|APtr: 0x29C1DDC90 Adr 0x13A0384E0 |Count->2621448|17181747
 ```
 ---
-Offset->0x3250|Type_UE|||0x1C VaFname >0x22847A->FName[WeaponManager]|APtr: 0xF4FC29B0 Adr 0x10D163290 |Count->817027968|2
+2️⃣ Offset->0x3250|Type_UE|||0x1C VaFname >0x22847A->FName[WeaponManager]|APtr: 0xF4FC29B0 Adr 0x10D163290 |Count->817027968|2
 ---
 ```c
 BOffset->0x0|Type_UE|||0x0 VaFname >0x4411F0B0->FName[WeaponManager]|APtr: 0x14FA84960 Adr 0xF4FC29B0 |Count->475483136|0
@@ -444,4 +444,98 @@ Offset->0x7F90|Type_UE|||0x1C VaFname >0x12A4DB->FName[WeaponDataComponentAdapte
 Offset->0x7FE8|Type_UE|||0x1C VaFname >0xACD98E->FName[BP_WeaponModular_3p_C]|APtr: 0x16B752AE0 Adr 0xF4FCA998 |Count->-1415411360|2
 Offset->0x7FF0|Type_UE|||0x1C VaFname >0x2D60FB->FName[Cracked_Breakthrough]|APtr: 0x2ABA28960 Adr 0xF4FCA9A0 |Count->1336228200|1
 
+```
+---
+
+3️⃣Offset->0x21C8|Type_UE|||0x1C VaFname >0x149274->FName[DFMPerkComponent]|APtr: 0x169A16700 Adr 0x10D162208 |Count->1740112640|1
+
+---
+
+```cpp
+Asm: 0x169a16700 (+6700) adc byte ptr [rcx], ch
+Asm: 0x169a16702 (+6702) fcom qword ptr [rax + 1]
+Asm: 0x169a16705 (+6705) add byte ptr [rax], al
+Asm: 0x169a16707 (+6707) add byte ptr [rax + 0x1c8394], al
+Asm: 0x169a1670d (+670d) add byte ptr [rax], al
+Asm: 0x169a1670f (+670f) add byte ptr [rax], al
+BOffset->0x0|Type_UE|||0x0 VaFname >0x47924D90->FName[DFMPerkComponent]|APtr: 0x150DC2910 Adr 0x169A16700 |Count->478385280|0
+Offset->0x8|Type_UE|||0x1C VaFname >0x149274->FName[DFMPerkComponent]|APtr: 0x1C839480 Adr 0x169A16708 |Count->219545664|1
+Offset->0x10|Type_UE|||0x1C VaFname >0xD5A963->FName[BP_DFM_Character_Breakthrough_C]|APtr: 0x10D160040 Adr 0x169A16710 |Count->262152|1348212
+Offset->0x50|Type_UE|||0x1C VaFname >0x149274->FName[DFMPerkComponent]|APtr: 0x1C839480 Adr 0x169A16750 |Count->0|0
+Offset->0x90|Type_UE|||0x1C VaFname >0x149274->FName[DFMPerkComponent]|APtr: 0x169A16700 Adr 0x169A16790 |Count->0|0
+Offset->0xE8|Type_UE|||0x1C VaFname >0xD5A963->FName[BP_DFM_Character_Breakthrough_C]|APtr: 0x10D160040 Adr 0x169A167E8 |Count->-1415411360|2
+Offset->0xF0|Type_UE|||0x1C VaFname >0x2D60FB->FName[Cracked_Breakthrough]|APtr: 0x2ABA28960 Adr 0x169A167F0 |Count->0|0
+Offset->0x220|float:0.001053|||0x1C VaFname >0x128F66->FName[PerkBitArray]|APtr: 0x13A8A0920 Adr 0x169A16920 |Count->0|0
+Offset->0x278|float:0.001053|||0x1C VaFname >0x128F66->FName[PerkBitArray]|APtr: 0x13A8A0A10 Adr 0x169A16978 |Count->0|0
+Offset->0x310|Type_UE|||0x1C VaFname >0x2E221D->FName[Default__GPAttributeSetHealth]|APtr: 0x29E34130 Adr 0x169A16A10 |Count->1334844816|1
+Offset->0x348|Type_UE|||0x1C VaFname >0x2E221D->FName[Default__GPAttributeSetHealth]|APtr: 0x29E34130 Adr 0x169A16A48 |Count->1334844816|1
+Offset->0x370|Type_UE|||0x1C VaFname >0x2E221D->FName[Default__GPAttributeSetHealth]|APtr: 0x29E34130 Adr 0x169A16A70 |Count->1334844816|1
+Offset->0x398|Type_UE|||0x1C VaFname >0x2E221D->FName[Default__GPAttributeSetHealth]|APtr: 0x29E34130 Adr 0x169A16A98 |Count->1334844816|1
+Offset->0x3E0|Type_UE|||0x1C VaFname >0x2E221D->FName[Default__GPAttributeSetHealth]|APtr: 0x29E34130 Adr 0x169A16AE0 |Count->1334844816|1
+Offset->0x600|float:20.682556|||0x1C VaFname >0x2C5B77->FName[NewReflectionComponent]|APtr: 0x241A575E0 Adr 0x169A16D00 |Count->31|0
+BOffset->0x8DD|Type_UE|||0x0 VaFname >0x2->FName[T_BS_Generic_Lighting_StarLights_06_b_NRM]|APtr: 0x1000000 Adr 0x169A16FDD |Count->-16777216|255
+Offset->0x900|float:-158.086914|||0x1C VaFname >0x2C5B77->FName[NewReflectionComponent]|APtr: 0xC31E1640 Adr 0x169A17000 |Count->30|0
+Offset->0x906|Type_UE|||0x24 VaFname >0x480000->FName[UMG.System.Event.BossKill.WBP.WBP_Activity_FilingProgress]|APtr: 0x1E0000 Adr 0x169A17006 |Count->1577058304|143961
+BOffset->0xC00|Type_UE|||0x0 VaFname >0x42EC6E90->FName[GPAttributeSetHealth]|APtr: 0x14F902BA8 Adr 0x169A17300 |Count->475165056|0
+Offset->0xC08|Type_UE|||0x1C VaFname >0x11F30E->FName[GPAttributeSetHealth]|APtr: 0x1C527180 Adr 0x169A17308 |Count->219545664|1
+Offset->0xC10|Type_UE|||0x1C VaFname >0xD5A963->FName[BP_DFM_Character_Breakthrough_C]|APtr: 0x10D160040 Adr 0x169A17310 |Count->64|1176334
+Offset->0xC1B|Type_UE|||0x24 VaFname >0x5AA9190->FName[l]|APtr: 0x11F30E00 Adr 0x169A1731B |Count->52065280|256
+Offset->0xC40|Type_UE|||0x1C VaFname >0x11F30E->FName[GPAttributeSetHealth]|APtr: 0x169A17300 Adr 0x169A17340 |Count->1334844816|1
+Offset->0xC78|Type_UE|||0x1C VaFname >0x11F30E->FName[GPAttributeSetHealth]|APtr: 0x169A17300 Adr 0x169A17378 |Count->1334844816|1
+Offset->0xCA0|Type_UE|||0x1C VaFname >0x11F30E->FName[GPAttributeSetHealth]|APtr: 0x169A17300 Adr 0x169A173A0 |Count->1334844816|1
+Offset->0xCC8|Type_UE|||0x1C VaFname >0x11F30E->FName[GPAttributeSetHealth]|APtr: 0x169A17300 Adr 0x169A173C8 |Count->1334844816|1
+Offset->0xD10|Type_UE|||0x1C VaFname >0x11F30E->FName[GPAttributeSetHealth]|APtr: 0x169A17300 Adr 0x169A17410 |Count->1334844816|1
+BOffset->0xEAA|int:262144|||0x1C VaFname >0x2D0073->FName[INTLTranslatorResult]|APtr: 0x40000 Adr 0x169A175AA |Count->0|-1191182336
+BOffset->0xF40|Type_UE|||0x24 VaFname >0x3F800000->FName[GPSequencePrepareCondition]|APtr: 0x2ADEFA5D0 Adr 0x169A17640 |Count->2082538496|0
+BOffset->0xF50|Type_UE|||0x24 VaFname >0x3F800000->FName[GPSequencePrepareCondition]|APtr: 0x2ADEFA600 Adr 0x169A17650 |Count->2082538272|0
+BOffset->0x1126|Type_UE|||0x0 VaFname >0x2C7FF0FF->FName[GPSequencePrepareCondition]|APtr: 0xFF00FFFF Adr 0x169A17826 |Count->-65536|-1
+BOffset->0x1200|Type_UE|||0x0 VaFname >0x4C7022E0->FName[JoystickMoveSilenceArea]|APtr: 0x1527858A8 Adr 0x169A17900 |Count->473886336|0
+Offset->0x1208|Type_UE|||0x1C VaFname >0x5DC91->FName[Image]|APtr: 0x1C3EEE80 Adr 0x169A17908 |Count->-165818560|0
+Offset->0x1210|Type_UE|||0x1C VaFname >0x16CB71->FName[WidgetTree]|APtr: 0xF61DCF40 Adr 0x169A17910 |Count->2621448|2652037
+Offset->0x1298|Type_UE|||0x1C VaFname >0x16C2B8->FName[CanvasPanelSlot]|APtr: 0x224D37390 Adr 0x169A17998 |Count->51318528|0
+BOffset->0x12E7|int:327936|||0x0 VaFname >0x177C->FName[UClientVehicleSettingHD]|APtr: 0x50100 Adr 0x169A179E7 |Count->0|0
+BOffset->0x12E7|int:327936|||0x314 VaFname >0x700079->FName[UClientVehicleSettingHD]|APtr: 0x50100 Adr 0x169A179E7 |Count->0|0
+Offset->0x13A8|Type_UE|||0x1C VaFname >0x105E740->FName[HUD_Controller_Btn]|APtr: 0x27C575800 Adr 0x169A17AA8 |Count->0|0
+BOffset->0x1500|Type_UE|||0x0 VaFname >0x4C7022E0->FName[Cannon]|APtr: 0x1527858A8 Adr 0x169A17C00 |Count->473886336|0
+Offset->0x1508|Type_UE|||0x1C VaFname >0x5DC91->FName[Image]|APtr: 0x1C3EEE80 Adr 0x169A17C08 |Count->1154120656|2
+Offset->0x1510|float:1619.869141|||0x1C VaFname >0x16CB71->FName[WidgetTree]|APtr: 0x244CA7BD0 Adr 0x169A17C10 |Count->2621448|11170114
+Offset->0x1598|Type_UE|||0x1C VaFname >0x16C2B8->FName[CanvasPanelSlot]|APtr: 0xE9982B60 Adr 0x169A17C98 |Count->51318528|0
+BOffset->0x15E7|int:327936|||0x0 VaFname >0x177C->FName[UClientVehicleSettingHD]|APtr: 0x50100 Adr 0x169A17CE7 |Count->0|0
+BOffset->0x15E7|int:327936|||0x314 VaFname >0x700079->FName[UClientVehicleSettingHD]|APtr: 0x50100 Adr 0x169A17CE7 |Count->0|0
+Offset->0x16A8|Type_UE|||0x1C VaFname >0x11B4684->FName[HUD_ArmedDriverView_Tank_Icon_0301]|APtr: 0x27C5728C0 Adr 0x169A17DA8 |Count->0|0
+BOffset->0x17EA|Type_UE|||0x1C VaFname >0x62006D->FName[SavedTime]|APtr: 0x190000 Adr 0x169A17EEA |Count->2949120|1966080
+Offset->0x17F6|Type_UE|||0x24 VaFname >0x480000->FName[UMG.System.Event.BossKill.WBP.WBP_Activity_FilingProgress]|APtr: 0x1E0000 Adr 0x169A17EF6 |Count->729808896|147877
+Offset->0x1800|float:20.646240|||0x1C VaFname >0x2C5B77->FName[NewReflectionComponent]|APtr: 0x241A52B80 Adr 0x169A17F00 |Count->36|0
+Offset->0x1800|float:20.646240|||0x24 VaFname >0x1F70C->FName[UGPWeaponDataComponentCore]|APtr: 0x241A52B80 Adr 0x169A17F00 |Count->36|0
+BOffset->0x198D|Type_UE|||0x1C VaFname >0x8A00FFFB->FName[Wpn_DBWMissile_Replace]|APtr: 0x13E83EA Adr 0x169A1808D |Count->-1874431312|1774598122
+Offset->0x1A80|float:422144.000000|||0x1C VaFname >0xD93B48->FName[LocalLightBakeVolume_Cracked_InDoorBake4_HD_HDReflection]|APtr: 0x248CE2000 Adr 0x169A18180 |Count->50|0
+Offset->0x1B00|float:-158.481201|||0x1C VaFname >0x2C5B77->FName[NewReflectionComponent]|APtr: 0xC31E7B30 Adr 0x169A18200 |Count->35|0
+Offset->0x1D80|Type_UE|||0x1C VaFname >0xD93C45->FName[LocalLightBakeVolume_Cracked_InDoorBake6_HD_HDReflection]|APtr: 0xFF984A00 Adr 0x169A18480 |Count->51|7
+BOffset->0x1E16|Type_UE|||0x24 VaFname >0x54A00->FName[PakSelectorTable]|APtr: 0x8F0E0000 Adr 0x169A18516 |Count->-100663296|146475
+BOffset->0x1E20|float:0.010497|||0x0 VaFname >0x52530B50->FName[PakSelectorTable]|APtr: 0x23C2BFA00 Adr 0x169A18520 |Count->1387162024|1
+BOffset->0x1E38|float:0.010496|||0x0 VaFname >0x52530B50->FName[PakSelectorTable]|APtr: 0x23C2BF800 Adr 0x169A18538 |Count->0|0
+BOffset->0x2400|Type_UE|||0x0 VaFname >0x412FB000->FName[MI_Military_Vehicle_OplotMTank_01_Damage_07_HD]|APtr: 0x14F257440 Adr 0x169A18B00 |Count->473741824|0
+BOffset->0x2400|Type_UE|||0x0 VaFname >0x412FB000->FName[UDamageValidateSystemImpl]|APtr: 0x14F257440 Adr 0x169A18B00 |Count->473741824|0
+Offset->0x2408|Type_UE|||0x1C VaFname >0x10DC76->FName[VirtualMaterialInstanceConstant]|APtr: 0x1C3CBA00 Adr 0x169A18B08 |Count->1778289600|1
+Offset->0x2466|int:196608|||0x4A VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x30000 Adr 0x169A18B66 |Count->0|0
+Offset->0x2490|Type_UE|||0x1C VaFname >0xBBC02F->FName[M_Scene_BasePBR_HD]|APtr: 0x25CC2DB80 Adr 0x169A18B90 |Count->0|0
+Offset->0x24C0|float:15.173355|||0x0 VaFname >0x18161D->FName[RefractionDepthBias]|APtr: 0x24172C610 Adr 0x169A18BC0 |Count->1|1
+Offset->0x24C0|float:15.173355|||0x0 VaFname >0x18161D->FName[RefractionDepthBias]|APtr: 0x24172C610 Adr 0x169A18BC0 |Count->1|1
+Offset->0x24E6|int:196608|||0x4A VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x30000 Adr 0x169A18BE6 |Count->0|0
+Offset->0x2B18|float:0.017153|||0xA56 VaFname >0x140000->FName[DistFromStepLocation]|APtr: 0x13C8C8400 Adr 0x169A19218 |Count->1327708432|1
+BOffset->0x2D00|Type_UE|||0x0 VaFname >0x4D09E220->FName[PhysicsConstraintTemplate]|APtr: 0x152AD1AB8 Adr 0x169A19400 |Count->495656064|0
+Offset->0x2D08|Type_UE|||0x1C VaFname >0x173C3B->FName[PhysicsConstraintTemplate]|APtr: 0x1D8B1C80 Adr 0x169A19408 |Count->-261340704|0
+Offset->0x2D10|Type_UE|||0x1C VaFname >0x1049B6E->FName[SM_TR_Datepalm_3m_cracked_v2_leaf_PhysicsAsset]|APtr: 0xF06C41E0 Adr 0x169A19410 |Count->2621448|1522747
+BOffset->0x3300|Type_UE|||0x0 VaFname >0x4D09E220->FName[PhysicsConstraintTemplate]|APtr: 0x152AD1AB8 Adr 0x169A19A00 |Count->495656064|0
+BOffset->0x3300|Type_UE|||0x0 VaFname >0x4D09E220->FName[GPAudioFuturePlayingID]|APtr: 0x152AD1AB8 Adr 0x169A19A00 |Count->495656064|0
+Offset->0x3308|Type_UE|||0x1C VaFname >0x173C3B->FName[PhysicsConstraintTemplate]|APtr: 0x1D8B1C80 Adr 0x169A19A08 |Count->-261340704|0
+Offset->0x3310|Type_UE|||0x1C VaFname >0x1049B6E->FName[SM_TR_Datepalm_3m_cracked_v2_leaf_PhysicsAsset]|APtr: 0xF06C41E0 Adr 0x169A19A10 |Count->2621448|1522747
+BOffset->0x3600|Type_UE|||0x0 VaFname >0x4D09E220->FName[PhysicsConstraintTemplate]|APtr: 0x152AD1AB8 Adr 0x169A19D00 |Count->495656064|0
+Offset->0x3608|Type_UE|||0x1C VaFname >0x173C3B->FName[PhysicsConstraintTemplate]|APtr: 0x1D8B1C80 Adr 0x169A19D08 |Count->-261340704|0
+Offset->0x3610|Type_UE|||0x1C VaFname >0x1049B6E->FName[SM_TR_Datepalm_3m_cracked_v2_leaf_PhysicsAsset]|APtr: 0xF06C41E0 Adr 0x169A19D10 |Count->2621448|1522747
+BOffset->0x361C|Type_UE|||0x1C VaFname >0x58000300->FName[PhysicsConstraintTemplate]|APtr: 0x173C3B Adr 0x169A19D1C |Count->106149|0
+BOffset->0x361C|Type_UE|||0x24 VaFname >0x19000000->FName[joint15]|APtr: 0x173C3B Adr 0x169A19D1C |Count->106149|0
+Offset->0x3C00|float:20.635864|||0x1C VaFname >0x2C5B77->FName[NewReflectionComponent]|APtr: 0x241A51640 Adr 0x169A1A300 |Count->34|0
+Offset->0x3E80|Type_UE|||0x1C VaFname >0xD93C45->FName[LocalLightBakeVolume_Cracked_InDoorBake6_HD_HDReflection]|APtr: 0xFF984A00 Adr 0x169A1A580 |Count->51|6
+Offset->0x3F00|float:-158.522705|||0x1C VaFname >0x2C5B77->FName[NewReflectionComponent]|APtr: 0xC31E85D0 Adr 0x169A1A600 |Count->33|0
 ```
