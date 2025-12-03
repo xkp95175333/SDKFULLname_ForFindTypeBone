@@ -121,10 +121,10 @@ Offset->0x3220|Type_UE|||0x1C VaFname >0x2F5341->FName[GPAnimData]|APtr: 0x22786
 Offset->0x3238|float:-0.427292|||0x1C VaFname >0x2F5347->FName[GPVoice]|APtr: 0x2BEDAC600 Adr 0x10D163278 |Count->1911254464|0
 Offset->0x3240|Type_UE|||0x1C VaFname >0x2F534C->FName[GPAnimProxy]|APtr: 0x71EB6DC0 Adr 0x10D163280 |Count->1162214784|2
 Offset->0x3248|float:3167.843750|||0x1C VaFname >0x2F5353->FName[GPCameraMode]|APtr: 0x24545FD80 Adr 0x10D163288 |Count->-184800848|0
-Offset->0x3250|Type_UE|||0x1C VaFname >0x22847A->FName[WeaponManager]|APtr: 0xF4FC29B0 Adr 0x10D163290 |Count->817027968|2
+Offset->0x3250|Type_UE|||0x1C VaFname >0x22847A->FName[WeaponManager]|APtr: 0xF4FC29B0 Adr 0x10D163290 |Count->817027968|2  🎯 2️⃣ 
 Offset->0x3258|Type_UE|||0x1C VaFname >0x2E9842->FName[WeaponReplicate]|APtr: 0x230B2DB80 Adr 0x10D163298 |Count->1734561296|1
 Offset->0x3260|Type_UE|||0x1C VaFname >0x2F535A->FName[CharacterEquip]|APtr: 0x167634E10 Adr 0x10D1632A0 |Count->-184802880|0
-Offset->0x3270|float:0.000501|||0x1C VaFname >0x14FC19->FName[InventoryUseItemManager]|APtr: 0x13A0344F0 Adr 0x10D1632B0 |Count->1162152704|2
+Offset->0x3270|float:0.000501|||0x1C VaFname >0x14FC19->FName[InventoryUseItemManager]|APtr: 0x13A0344F0 Adr 0x10D1632B0 |Count->1162152704|2🎯1️⃣  
 Offset->0x3278|float:3152.687500|||0x1C VaFname >0x2F52C9->FName[PlayerCharacterSignificanceComponent]|APtr: 0x245450B00 Adr 0x10D1632B8 |Count->1022009440|2
 Offset->0x3280|float:0.028641|||0x1C VaFname >0x1465C1->FName[DFMFootprintComponent]|APtr: 0x23CEAA060 Adr 0x10D1632C0 |Count->1742392528|1
 Offset->0x3288|Type_UE|||0x1C VaFname >0x2F5381->FName[GPVaultAndClimb]|APtr: 0x167DACCD0 Adr 0x10D1632C8 |Count->860719360|2
@@ -289,7 +289,7 @@ BOffset->0x2910|Type_UE|||0x0 VaFname >0x4CEC42A0->FName[M_Scene_TwoLayerDiffuse
 Offset->0x2941|Type_UE|||0x1C VaFname >0x2B201->FName[AGPDeformableActor]|APtr: 0x152A70 Adr 0x13A036E31 |Count->0|0
 Offset->0x2976|int:196608|||0x4A VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x30000 Adr 0x13A036E66 |Count->0|0
 Offset->0x2C80|Type_UE|||0x2 VaFname >0x14F25->FName[UGPAbilityInner]|APtr: 0x22F99A6A0 Adr 0x13A037170 |Count->0|0
-Offset->0x2D01|Type_UE|||0x1C VaFname >0xE65FA733->FName[!�����������������l���d�����������~���y���u���p�������0������~���������������`���"�������������������������������Z�����������#��� ���\���Y���Z�����������Z���K���P�������Z��������x����������!�����������ą����������u�����"�����������������������������N������o����������o�����������������������,���R���������������������ض�������������������l���d����������ܸ��׸��=���8������0������ܸ��������������`���"�������������������������������Z�������y���#��� ���\���Y���Z�����������Z���K���P�������Z��������x����������������������ą������{���u�����!�����������������������������N������o���h������o���������������������������R���]|APtr: 0x38000000 Adr 0x13A0371F1 |Count->0|0
+Offset->0x2D01|Type_UE|||0x1C VaFname >0xE65FA733->FName[! l d ~ y u p 0  ~ ` " Z # \ Y Z Z K P Z x ! ą u "�����������������������������N������o����������o�����������������������,���R���������������������ض�������������������l���d����������ܸ��׸��=���8������0������ܸ��������������`���"�������������������������������Z�������y���#��� ���\���Y���Z�����������Z���K���P�������Z��������x����������������������ą������{���u�����!�����������������������������N������o���h������o���������������������������R���]|APtr: 0x38000000 Adr 0x13A0371F1 |Count->0|0
 BOffset->0x2DA0|Type_UE|||0x0 VaFname >0x4C702890->FName[AnimationIn_INST]|APtr: 0x152784EF8 Adr 0x13A037290 |Count->494937088|0
 Offset->0x2DA8|Type_UE|||0x1C VaFname >0x16C72F->FName[WidgetAnimation]|APtr: 0x1D802400 Adr 0x13A037298 |Count->-1675763584|2
 Offset->0x2DB0|Type_UE|||0x1C VaFname >0x4A0FC9->FName[WBP_TipsPro_Sector_v3_C]|APtr: 0x29C1DE080 Adr 0x13A0372A0 |Count->2621448|17187989
@@ -309,4 +309,139 @@ BOffset->0x3B17|Type_UE|||0x1C VaFname >0x43E0448->FName[VerticalGamepadSensitiv
 BOffset->0x3FE0|Type_UE|||0x0 VaFname >0x4C702890->FName[ProgressBar_Flash_INST]|APtr: 0x152784EF8 Adr 0x13A0384D0 |Count->494937088|0
 Offset->0x3FE8|Type_UE|||0x1C VaFname >0x16C72F->FName[WidgetAnimation]|APtr: 0x1D802400 Adr 0x13A0384D8 |Count->-1675764592|2
 Offset->0x3FF0|Type_UE|||0x1C VaFname >0x48F777->FName[WBP_Battle_Deploy_RebornFlagPoint_C]|APtr: 0x29C1DDC90 Adr 0x13A0384E0 |Count->2621448|17181747
+```
+---
+Offset->0x3250|Type_UE|||0x1C VaFname >0x22847A->FName[WeaponManager]|APtr: 0xF4FC29B0 Adr 0x10D163290 |Count->817027968|2
+---
+```c
+BOffset->0x0|Type_UE|||0x0 VaFname >0x4411F0B0->FName[WeaponManager]|APtr: 0x14FA84960 Adr 0xF4FC29B0 |Count->475483136|0
+BOffset->0x1|Type_UE|||0x1C VaFname >0x6FFF9FF->FName[UAIBPLib]|APtr: 0x14FA849 Adr 0xF4FC29B1 |Count->1857356|1073741824
+Offset->0x8|Type_UE|||0x1C VaFname >0x128B90->FName[MultiWeaponManagerComponent]|APtr: 0x1C574C00 Adr 0xF4FC29B8 |Count->219545664|1
+Offset->0x10|Type_UE|||0x1C VaFname >0xD5A963->FName[BP_DFM_Character_Breakthrough_C]|APtr: 0x10D160040 Adr 0xF4FC29C0 |Count->262152|2262138
+Offset->0x50|Type_UE|||0x1C VaFname >0x128B90->FName[MultiWeaponManagerComponent]|APtr: 0x1C574C00 Adr 0xF4FC2A00 |Count->988064096|1
+Offset->0x90|Type_UE|||0x1C VaFname >0x22847A->FName[WeaponManager]|APtr: 0xF4FC29B0 Adr 0xF4FC2A40 |Count->0|0
+Offset->0xE8|Type_UE|||0x1C VaFname >0xD5A963->FName[BP_DFM_Character_Breakthrough_C]|APtr: 0x10D160040 Adr 0xF4FC2A98 |Count->-1415411360|2
+Offset->0xF0|Type_UE|||0x1C VaFname >0x2D60FB->FName[Cracked_Breakthrough]|APtr: 0x2ABA28960 Adr 0xF4FC2AA0 |Count->1336430344|1
+Offset->0x128|Type_UE|||0x1C VaFname >0x22847A->FName[WeaponManager]|APtr: 0xF4FC29B0 Adr 0xF4FC2AD8 |Count->-184800576|0
+Offset->0x148|Type_UE|||0x1C VaFname >0xD5A963->FName[BP_DFM_Character_Breakthrough_C]|APtr: 0x10D160040 Adr 0xF4FC2AF8 |Count->0|0
+Offset->0x180|Type_UE|||0x1C VaFname >0xB11529->FName[BP_EmptyHand_C]|APtr: 0x260624A00 Adr 0xF4FC2B30 |Count->0|0
+BOffset->0x1C2|Type_UE|||0x1C VaFname >0x43E0448->FName[VerticalGamepadSensitivity]|APtr: 0x180000 Adr 0xF4FC2B72 |Count->0|0
+BOffset->0x1C2|Type_UE|||0x24 VaFname >0x4480006->FName[VerticalGamepadSensitivity]|APtr: 0x180000 Adr 0xF4FC2B72 |Count->0|0
+BOffset->0x3A2|Type_UE|||0x1C VaFname >0x43E0448->FName[VerticalGamepadSensitivity]|APtr: 0x180000 Adr 0xF4FC2D52 |Count->0|1310720
+BOffset->0x3A2|Type_UE|||0x24 VaFname >0x4480006->FName[VerticalGamepadSensitivity]|APtr: 0x180000 Adr 0xF4FC2D52 |Count->0|1310720
+BOffset->0x3AE|Type_UE|||0x0 VaFname >0x80C3->FName[DistFromStepLocation]|APtr: 0x140000 Adr 0xF4FC2D5E |Count->0|0
+BOffset->0x3AE|Type_UE|||0x8 VaFname >0x14BD9->FName[DistFromStepLocation]|APtr: 0x140000 Adr 0xF4FC2D5E |Count->0|0
+BOffset->0x51A|Type_UE|||0x1C VaFname >0x43E0448->FName[VerticalGamepadSensitivity]|APtr: 0x180000 Adr 0xF4FC2ECA |Count->0|1310720
+BOffset->0x51A|Type_UE|||0x24 VaFname >0x4480006->FName[VerticalGamepadSensitivity]|APtr: 0x180000 Adr 0xF4FC2ECA |Count->0|1310720
+BOffset->0x526|Type_UE|||0x0 VaFname >0x80C3->FName[DistFromStepLocation]|APtr: 0x140000 Adr 0xF4FC2ED6 |Count->1440743424|11
+BOffset->0x526|Type_UE|||0x8 VaFname >0x14BD9->FName[DistFromStepLocation]|APtr: 0x140000 Adr 0xF4FC2ED6 |Count->1440743424|11
+Offset->0x658|Type_UE|||0x1C VaFname >0x128B9F->FName[WeaponManagerComponent]|APtr: 0x1C574980 Adr 0xF4FC3008 |Count->0|0
+Offset->0x659|Type_UE|||0x24 VaFname >0x7300->FName[wp_empty_clip]|APtr: 0x1C5749 Adr 0xF4FC3009 |Count->0|0
+BOffset->0x7F0|Type_UE|||0x0 VaFname >0x47517430->FName[DFMCharacterAppearanceTPP]|APtr: 0x150D56570 Adr 0xF4FC31A0 |Count->477943808|0
+Offset->0x7F8|Type_UE|||0x24 VaFname >0x1560->FName[TODSubLevelSequenceRow]|APtr: 0x1C7CD800 Adr 0xF4FC31A8 |Count->219545664|1
+Offset->0x800|Type_UE|||0x1C VaFname >0xD5A963->FName[BP_DFM_Character_Breakthrough_C]|APtr: 0x10D160040 Adr 0xF4FC31B0 |Count->262152|2610561
+Offset->0x840|Type_UE|||0x1C VaFname >0x144F10->FName[DFMBattleCharacterAppearanceProxyComponent]|APtr: 0x1C7CD800 Adr 0xF4FC31F0 |Count->0|0
+Offset->0x840|Type_UE|||0x24 VaFname >0x1560->FName[TODSubLevelSequenceRow]|APtr: 0x1C7CD800 Adr 0xF4FC31F0 |Count->0|0
+Offset->0x880|Type_UE|||0x1C VaFname >0x27D581->FName[DFMCharacterAppearanceTPP]|APtr: 0xF4FC31A0 Adr 0xF4FC3230 |Count->0|0
+Offset->0x8D8|Type_UE|||0x1C VaFname >0xD5A963->FName[BP_DFM_Character_Breakthrough_C]|APtr: 0x10D160040 Adr 0xF4FC3288 |Count->-1415411360|2
+Offset->0x8E0|Type_UE|||0x1C VaFname >0x2D60FB->FName[Cracked_Breakthrough]|APtr: 0x2ABA28960 Adr 0xF4FC3290 |Count->4|0
+Offset->0x940|Type_UE|||0x0 VaFname >0xCEFC00->FName[30000020004ExtraPart-0]|APtr: 0x16F22A780 Adr 0xF4FC32F0 |Count->1|4
+BOffset->0x94A|int:262144|||0x1C VaFname >0x2D0073->FName[INTLTranslatorResult]|APtr: 0x40000 Adr 0xF4FC32FA |Count->0|0
+Offset->0x996|int:196608|||0x4A VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x30000 Adr 0xF4FC3346 |Count->262144|0
+Offset->0xA60|Type_UE|||0x0 VaFname >0xE5B192->FName[30000020004_20_Upper]|APtr: 0x1360189C0 Adr 0xF4FC3410 |Count->3|4
+Offset->0xA60|Type_UE|||0x0 VaFname >0xE5B192->FName[30000020004_20_Upper]|APtr: 0x1360189C0 Adr 0xF4FC3410 |Count->3|4
+Offset->0xA66|int:196608|||0x4A VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x30000 Adr 0xF4FC3416 |Count->0|0
+Offset->0xAC0|float:25.015320|||0x0 VaFname >0xE5B192->FName[30000020004_20_Upper]|APtr: 0x241C81F60 Adr 0xF4FC3470 |Count->0|4
+Offset->0xAC0|float:25.015320|||0x0 VaFname >0xE5B192->FName[30000020004_20_Upper]|APtr: 0x241C81F60 Adr 0xF4FC3470 |Count->0|4
+Offset->0xBB0|Type_UE|||0x0 VaFname >0xE5B192->FName[30000020004_20_Upper]|APtr: 0x138B7E980 Adr 0xF4FC3560 |Count->0|4
+Offset->0xBB0|Type_UE|||0x0 VaFname >0xE5B192->FName[30000020004_20_Upper]|APtr: 0x138B7E980 Adr 0xF4FC3560 |Count->0|4
+Offset->0xC00|float:25.013489|||0x0 VaFname >0xE5B192->FName[30000020004_20_Upper]|APtr: 0x241C81BA0 Adr 0xF4FC35B0 |Count->3|4
+Offset->0xC26|int:196608|||0x4A VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x30000 Adr 0xF4FC35D6 |Count->-65536|65535
+Offset->0xC76|int:196608|||0x4A VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x30000 Adr 0xF4FC3626 |Count->131072|196608
+Offset->0xDC0|Type_UE|||0x0 VaFname >0xE5B184->FName[30000020004_20_MasterMesh]|APtr: 0x2369C52C0 Adr 0xF4FC3770 |Count->9|24
+Offset->0xDC0|Type_UE|||0x0 VaFname >0xE5B184->FName[30000020004_20_MasterMesh]|APtr: 0x2369C52C0 Adr 0xF4FC3770 |Count->9|24
+Offset->0xE28|float:-32007808.000000|||0x1C VaFname >0x145783->FName[SkillMeshLoader]|APtr: 0xCBF43340 Adr 0xF4FC37D8 |Count->1|0
+Offset->0xF08|Type_UE|||0x1C VaFname >0x172FD8->FName[MaterialInstanceDynamic]|APtr: 0x228C6AF80 Adr 0xF4FC38B8 |Count->638604672|2
+Offset->0xF10|Type_UE|||0x1C VaFname >0xE370F->FName[CharacterMesh0]|APtr: 0x226105580 Adr 0xF4FC38C0 |Count->5|0
+Offset->0xF12|int:140816|||0x1C VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x22610 Adr 0xF4FC38C2 |Count->0|601882624
+Offset->0xF12|int:140816|||0x24 VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x22610 Adr 0xF4FC38C2 |Count->0|601882624
+BOffset->0xF44|float:1.000000|||0x24 VaFname >0x38609E41->FName[EmissionColor]|APtr: 0x3F800000 Adr 0xF4FC38F4 |Count->1128792064|1065353216
+Offset->0x10B8|float:19.948530|||0x19 VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x419F9697 Adr 0xF4FC3A68 |Count->1065353216|1065353216
+Offset->0x1179|int:268512|||0x0 VaFname >0x750070->FName[10050001715_2]|APtr: 0x418E0 Adr 0xF4FC3B29 |Count->4161536|4161536
+Offset->0x1179|int:268512|||0x0 VaFname >0x750070->FName[10050001715_2]|APtr: 0x418E0 Adr 0xF4FC3B29 |Count->4161536|4161536
+Offset->0x18A8|float:19.948530|||0x19 VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x419F9697 Adr 0xF4FC4258 |Count->1065353216|1065353216
+Offset->0x1969|int:268512|||0x0 VaFname >0x750070->FName[10050001715_2]|APtr: 0x418E0 Adr 0xF4FC4319 |Count->4161536|4161536
+Offset->0x1969|int:268512|||0x0 VaFname >0x750070->FName[10050001715_2]|APtr: 0x418E0 Adr 0xF4FC4319 |Count->4161536|4161536
+BOffset->0x1FF1|Type_UE|||0x1C VaFname >0xA000007F->FName[BittenTPPAnim]|APtr: 0x240D31 Adr 0xF4FC49A1 |Count->0|-1933606912
+Offset->0x2159|int:268512|||0x0 VaFname >0x750070->FName[10050001715_2]|APtr: 0x418E0 Adr 0xF4FC4B09 |Count->4161536|4161536
+Offset->0x2159|int:268512|||0x0 VaFname >0x750070->FName[10050001715_2]|APtr: 0x418E0 Adr 0xF4FC4B09 |Count->4161536|4161536
+Offset->0x2888|float:19.948530|||0x19 VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x419F9697 Adr 0xF4FC5238 |Count->1065353216|1065353216
+Offset->0x2949|int:268512|||0x0 VaFname >0x750070->FName[10050001715_2]|APtr: 0x418E0 Adr 0xF4FC52F9 |Count->4161536|4161536
+Offset->0x2949|int:268512|||0x0 VaFname >0x750070->FName[10050001715_2]|APtr: 0x418E0 Adr 0xF4FC52F9 |Count->4161536|4161536
+BOffset->0x2FD1|Type_UE|||0x1C VaFname >0xA000007F->FName[BittenTPPAnim]|APtr: 0x240D31 Adr 0xF4FC5981 |Count->0|-1933606912
+Offset->0x3139|int:268512|||0x0 VaFname >0x750070->FName[10050001715_2]|APtr: 0x418E0 Adr 0xF4FC5AE9 |Count->4161536|4161536
+Offset->0x3139|int:268512|||0x0 VaFname >0x750070->FName[10050001715_2]|APtr: 0x418E0 Adr 0xF4FC5AE9 |Count->4161536|4161536
+Offset->0x3868|float:19.948530|||0x19 VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x419F9697 Adr 0xF4FC6218 |Count->1065353216|1065353216
+Offset->0x3929|int:268512|||0x0 VaFname >0x750070->FName[10050001715_2]|APtr: 0x418E0 Adr 0xF4FC62D9 |Count->4161536|4161536
+Offset->0x3929|int:268512|||0x0 VaFname >0x750070->FName[10050001715_2]|APtr: 0x418E0 Adr 0xF4FC62D9 |Count->4161536|4161536
+BOffset->0x3FB1|Type_UE|||0x1C VaFname >0xA000007F->FName[BittenTPPAnim]|APtr: 0x240D31 Adr 0xF4FC6961 |Count->0|-1933606912
+Offset->0x4119|int:268512|||0x0 VaFname >0x750070->FName[10050001715_2]|APtr: 0x418E0 Adr 0xF4FC6AC9 |Count->4161536|4161536
+Offset->0x4119|int:268512|||0x0 VaFname >0x750070->FName[10050001715_2]|APtr: 0x418E0 Adr 0xF4FC6AC9 |Count->4161536|4161536
+BOffset->0x47A1|Type_UE|||0x1C VaFname >0xA000007F->FName[BittenTPPAnim]|APtr: 0x240D31 Adr 0xF4FC7151 |Count->0|-1933606912
+Offset->0x4909|int:268512|||0x0 VaFname >0x750070->FName[10050001715_2]|APtr: 0x418E0 Adr 0xF4FC72B9 |Count->4161536|4161536
+Offset->0x4909|int:268512|||0x0 VaFname >0x750070->FName[10050001715_2]|APtr: 0x418E0 Adr 0xF4FC72B9 |Count->4161536|4161536
+Offset->0x51B7|Type_UE|||0x24 VaFname >0x180000->FName[VerticalGamepadSensitivity]|APtr: 0x689DDA00 Adr 0xF4FC7B67 |Count->0|0
+❓Offset->0x6176|float:-0.648438|||0x6 VaFname >0x41570001->FName[k217N_s[;7{gW--g]|APtr: 0x2BF260000 Adr 0xF4FC8B26 |Count->-469762048|25904
+        {{Asm: 0x2bf260000 (+0) push rdx
+         Asm: 0x2bf260001 (+1) push 0x57000153
+         Asm: 0x2bf260009 (+9) push r14
+         Asm: 0x2bf26000b (+b) insw word ptr [rdi], dx
+         Asm: 0x2bf26000e (+e) je 0x2bf260030
+         Asm: 0x2bf260010 (+10) sbb byte ptr [rax], al
+         Asm: 0x2bf260012 (+12) add byte ptr [rax], al}}
+Offset->0x61D5|Type_UE|||0x2 VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x13DCCCC Adr 0xF4FC8B85 |Count->0|4161536
+BOffset->0x6206|int:327680|||0x0 VaFname >0x78746341->FName[EQADamageType::All_Types]|APtr: 0x50000 Adr 0xF4FC8BB6 |Count->2031616|530579456
+BOffset->0x625E|int:327680|||0x0 VaFname >0x78746341->FName[EQADamageType::All_Types]|APtr: 0x50000 Adr 0xF4FC8C0E |Count->2031616|8323072
+Offset->0x6897|Type_UE|||0x24 VaFname >0x180000->FName[VerticalGamepadSensitivity]|APtr: 0x689DDA00 Adr 0xF4FC9247 |Count->0|0
+Offset->0x6987|Type_UE|||0x1C VaFname >0x180000->FName[VerticalGamepadSensitivity]|APtr: 0x6BC56900 Adr 0xF4FC9337 |Count->0|0
+Offset->0x7147|Type_UE|||0x24 VaFname >0x180000->FName[VerticalGamepadSensitivity]|APtr: 0x689DDA00 Adr 0xF4FC9AF7 |Count->0|0
+Offset->0x748F|Type_UE|||0x24 VaFname >0x40311->FName[UAbilityClientThrowSimulateParam]|APtr: 0x67D7DC00 Adr 0xF4FC9E3F |Count->0|0
+BOffset->0x7710|Type_UE|||0x0 VaFname >0x4420D7A0->FName[WeaponProxy]|APtr: 0x14FA94768 Adr 0xF4FCA0C0 |Count->475584512|0
+Offset->0x7718|Type_UE|||0x1C VaFname >0x12AB44->FName[WeaponDataComponentProxy]|APtr: 0x1C58D800 Adr 0xF4FCA0C8 |Count->1802840800|1
+Offset->0x7720|Type_UE|||0x1C VaFname >0xACD98E->FName[BP_WeaponModular_3p_C]|APtr: 0x16B752AE0 Adr 0xF4FCA0D0 |Count->262152|2264546
+BOffset->0x772C|Type_UE|||0x24 VaFname >0x59F00000->FName[WeaponProxy]|APtr: 0x228DE2 Adr 0xF4FCA0DC |Count->201843|1336495272
+Offset->0x7760|Type_UE|||0x1C VaFname >0x12AB44->FName[WeaponDataComponentProxy]|APtr: 0x1C58D800 Adr 0xF4FCA110 |Count->0|0
+Offset->0x77A0|Type_UE|||0x1C VaFname >0x228DE2->FName[WeaponProxy]|APtr: 0xF4FCA0C0 Adr 0xF4FCA150 |Count->0|0
+Offset->0x77F8|Type_UE|||0x1C VaFname >0xACD98E->FName[BP_WeaponModular_3p_C]|APtr: 0x16B752AE0 Adr 0xF4FCA1A8 |Count->-1415411360|2
+Offset->0x7800|Type_UE|||0x1C VaFname >0x2D60FB->FName[Cracked_Breakthrough]|APtr: 0x2ABA28960 Adr 0xF4FCA1B0 |Count->1336495320|1
+Offset->0x7850|Type_UE|||0x1C VaFname >0xD5A963->FName[BP_DFM_Character_Breakthrough_C]|APtr: 0x169EE8020 Adr 0xF4FCA200 |Count->1802840800|1
+Offset->0x7858|Type_UE|||0x1C VaFname >0xACD98E->FName[BP_WeaponModular_3p_C]|APtr: 0x16B752AE0 Adr 0xF4FCA208 |Count->1802841704|1
+Offset->0x7868|Type_UE|||0x1C VaFname >0xACD98E->FName[BP_WeaponModular_3p_C]|APtr: 0x16B752AE0 Adr 0xF4FCA218 |Count->1802842600|1
+Offset->0x7878|float:-17328.125000|||0x0 VaFname >0x25FC5F->FName[Rep_CurrentStateStep]|APtr: 0xC6876040 Adr 0xF4FCA228 |Count->22|24
+Offset->0x7878|float:-17328.125000|||0x0 VaFname >0x25FC5F->FName[Rep_CurrentStateStep]|APtr: 0xC6876040 Adr 0xF4FCA228 |Count->22|24
+BOffset->0x7882|Type_UE|||0x1C VaFname >0x43E0448->FName[VerticalGamepadSensitivity]|APtr: 0x180000 Adr 0xF4FCA232 |Count->0|0
+BOffset->0x7882|Type_UE|||0x24 VaFname >0x4480006->FName[VerticalGamepadSensitivity]|APtr: 0x180000 Adr 0xF4FCA232 |Count->0|0
+BOffset->0x7928|Type_UE|||0x24 VaFname >0x21DC->FName[WeaponDataComponentProxy]|APtr: 0x12AB44 Adr 0xF4FCA2D8 |Count->766848637|0
+BOffset->0x7B70|Type_UE|||0x0 VaFname >0x4FA0AEA0->FName[UGPWeaponAimAssistorBase]|APtr: 0xF5A9A820 Adr 0xF4FCA520 |Count->201829|125723
+Offset->0x7B98|Type_UE|||0x1C VaFname >0xACD98E->FName[BP_WeaponModular_3p_C]|APtr: 0x16B752AE0 Adr 0xF4FCA548 |Count->1802842856|1
+Offset->0x7BA8|float:0.000114|||0x1C VaFname >0x12AF4F->FName[WeaponBlackboard]|APtr: 0x138EE9280 Adr 0xF4FCA558 |Count->-1|769
+Offset->0x7D78|Type_UE|||0x1C VaFname >0x228DE2->FName[WeaponProxy]|APtr: 0xF4FCA0C0 Adr 0xF4FCA728 |Count->-184769336|0
+BOffset->0x7D90|Type_UE|||0x0 VaFname >0x51052A60->FName[UGPWeaponAimAssistorBase]|APtr: 0x16B752E68 Adr 0xF4FCA740 |Count->1802840800|1
+Offset->0x7D98|Type_UE|||0x1C VaFname >0xACD98E->FName[BP_WeaponModular_3p_C]|APtr: 0x16B752AE0 Adr 0xF4FCA748 |Count->1802841704|1
+Offset->0x7DB8|Type_UE|||0x1C VaFname >0x12A8C5->FName[WeaponDataComponentCore]|APtr: 0xA1F0010 Adr 0xF4FCA768 |Count->169805152|0
+Offset->0x7DB9|int:663296|||0x1C VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0xA1F00 Adr 0xF4FCA769 |Count->663301|-16777216
+Offset->0x7DB9|int:663296|||0x24 VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0xA1F00 Adr 0xF4FCA769 |Count->663301|-16777216
+Offset->0x7DF8|Type_UE|||0x1C VaFname >0x12A4DB->FName[WeaponDataComponentAdapter]|APtr: 0xF4FCA8B0 Adr 0xF4FCA7A8 |Count->-184767304|0
+Offset->0x7E38|Type_UE|||0x1C VaFname >0x221552->FName[Config]|APtr: 0xF5601A80 Adr 0xF4FCA7E8 |Count->-178250104|0
+Offset->0x7E50|float:5181504.000000|||0x1C VaFname >0x2EB41->FName[GPWeaponAttributeSetWeaponAmmo]|APtr: 0x24A9E2080 Adr 0xF4FCA800 |Count->1|1049582633
+BOffset->0x7EF8|Type_UE|||0x24 VaFname >0x48BCA->FName[WeaponDataComponentAdapter]|APtr: 0x2B5AFD0C0 Adr 0xF4FCA8A8 |Count->1336226928|1
+BOffset->0x7F00|Type_UE|||0x0 VaFname >0x43EB0530->FName[WeaponDataComponentAdapter]|APtr: 0x14FA53470 Adr 0xF4FCA8B0 |Count->475553152|0
+Offset->0x7F08|Type_UE|||0x1C VaFname >0x12A4DB->FName[WeaponDataComponentAdapter]|APtr: 0x1C585D80 Adr 0xF4FCA8B8 |Count->1802840800|1
+Offset->0x7F10|Type_UE|||0x1C VaFname >0xACD98E->FName[BP_WeaponModular_3p_C]|APtr: 0x16B752AE0 Adr 0xF4FCA8C0 |Count->2097152|1221851
+BOffset->0x7F1C|Type_UE|||0x24 VaFname >0x21DC00->FName[WeaponDataComponentAdapter]|APtr: 0x12A4DB Adr 0xF4FCA8CC |Count->201839|1336228152
+Offset->0x7F50|Type_UE|||0x1C VaFname >0x12A4DB->FName[WeaponDataComponentAdapter]|APtr: 0x1C585D80 Adr 0xF4FCA900 |Count->0|0
+Offset->0x7F90|Type_UE|||0x1C VaFname >0x12A4DB->FName[WeaponDataComponentAdapter]|APtr: 0xF4FCA8B0 Adr 0xF4FCA940 |Count->0|0
+Offset->0x7FE8|Type_UE|||0x1C VaFname >0xACD98E->FName[BP_WeaponModular_3p_C]|APtr: 0x16B752AE0 Adr 0xF4FCA998 |Count->-1415411360|2
+Offset->0x7FF0|Type_UE|||0x1C VaFname >0x2D60FB->FName[Cracked_Breakthrough]|APtr: 0x2ABA28960 Adr 0xF4FCA9A0 |Count->1336228200|1
+
 ```
