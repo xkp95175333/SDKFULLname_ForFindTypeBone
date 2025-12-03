@@ -1,9 +1,9 @@
-```md
+ 
+```c
 
 ---
- AcknowledgedPawn 
+  AcknowledgedPawn Get
 ---
-```text
 BOffset->0x0|Type_UE|||0x0 VaFname >0x4A620A70->FName[BP_DFM_Character_Breakthrough_C]|APtr: 0x151F8FB10 Adr 0x10D160040 |Count->1601895552|2
 Offset->0x8|Type_UE|||0x1C VaFname >0xD5A963->FName[BP_DFM_Character_Breakthrough_C]|APtr: 0x25F7AFC80 Adr 0x10D160048 |Count->988064096|1
 Offset->0x48|Type_UE|||0x1C VaFname >0x160BC8->FName[BreakthroughCharacter]|APtr: 0x1D74A600 Adr 0x10D160088 |Count->988064096|1
@@ -201,6 +201,112 @@ BOffset->0x7FE0|Type_UE|||0x0 VaFname >0x443CE530->FName[WeaponViewComponentImpa
 Offset->0x7FE8|Type_UE|||0x1C VaFname >0x12C475->FName[WeaponViewComponentImpact]|APtr: 0x1C5BBC80 Adr 0x10D168028 |Count->638631952|2
 Offset->0x7FF0|Type_UE|||0x1C VaFname >0xE7C1BA->FName[BP_WeldingGun_C]|APtr: 0x22610C010 Adr 0x10D168030 |Count->0|1229941
 Offset->0x7FF2|int:140816|||0x1C VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x22610 Adr 0x10D168032 |Count->-998965248|-1180827630
-```
+ ```
+ 
+ 
+---
+Offset->0x3270|float:0.000501|||0x1C VaFname >0x14FC19->FName[InventoryUseItemManager]|APtr: 0x13A0344F0 Adr 0x10D1632B0 |Count->1162152704|2
+---
+```c
 
+BOffset->0x0|Type_UE|||0x0 VaFname >0x486A0F80->FName[InventoryUseItemManager]|APtr: 0x150F75248 Adr 0x13A0344F0 |Count->491749504|0
+Offset->0x8|Type_UE|||0x1C VaFname >0x14FC19->FName[InventoryUseItemManager]|APtr: 0x1D4F8080 Adr 0x13A0344F8 |Count->219545664|1
+Offset->0x10|Type_UE|||0x1C VaFname >0xD5A963->FName[BP_DFM_Character_Breakthrough_C]|APtr: 0x10D160040 Adr 0x13A034500 |Count->262152|1375257
+Offset->0x50|Type_UE|||0x1C VaFname >0x14FC19->FName[InventoryUseItemManager]|APtr: 0x1D4F8080 Adr 0x13A034540 |Count->988064096|1
+Offset->0x90|float:0.000501|||0x1C VaFname >0x14FC19->FName[InventoryUseItemManager]|APtr: 0x13A0344F0 Adr 0x13A034580 |Count->0|0
+Offset->0xE8|Type_UE|||0x1C VaFname >0xD5A963->FName[BP_DFM_Character_Breakthrough_C]|APtr: 0x10D160040 Adr 0x13A0345D8 |Count->-1415411360|2
+Offset->0xF0|Type_UE|||0x1C VaFname >0x2D60FB->FName[Cracked_Breakthrough]|APtr: 0x2ABA28960 Adr 0x13A0345E0 |Count->219545664|1
+Offset->0xF8|Type_UE|||0x1C VaFname >0xD5A963->FName[BP_DFM_Character_Breakthrough_C]|APtr: 0x10D160040 Adr 0x13A0345E8 |Count->0|0
+Offset->0x480|Type_UE|||0x1C VaFname >0x200072->FName[EQA_TimerMode::EQA_MAX]|APtr: 0x2720000 Adr 0x13A034970 |Count->131072|0
+Offset->0x520|Type_UE|||0x1C VaFname >0xACFCD9->FName[T_RainDrips_N]|APtr: 0xEBC92000 Adr 0x13A034A10 |Count->-961010944|1161961056
+Offset->0x6A0|Type_UE|||0x1C VaFname >0xC99A89->FName[M_Roy_016_BP_C]|APtr: 0x1378C5B80 Adr 0x13A034B90 |Count->-961010944|1161960960
+Offset->0x746|int:196608|||0x4A VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x30000 Adr 0x13A034C36 |Count->17172|-150929408
+Offset->0x7E0|Type_UE|||0x1C VaFname >0xB687B7->FName[HUD_ScreenMarke_de_01]|APtr: 0x2A3009640 Adr 0x13A034CD0 |Count->0|0
+Offset->0x820|float:0.000400|||0x1C VaFname >0xDEE3DB->FName[M_Roy_016_Body_Hair_C]|APtr: 0x139D18200 Adr 0x13A034D10 |Count->1065353216|1065353216
+Offset->0x866|int:213680|||0x42 VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x342B0 Adr 0x13A034D56 |Count->17172|0
+Offset->0x880|Type_UE|||0x1C VaFname >0xACFCD9->FName[T_RainDrips_N]|APtr: 0xEBC92000 Adr 0x13A034D70 |Count->-961010944|1161961056
+Offset->0x8B0|Type_UE|||0x1C VaFname >0xACFC06->FName[rainflow_mask]|APtr: 0x135B536C0 Adr 0x13A034DA0 |Count->-961010944|1161961056
+Offset->0x8E0|Type_UE|||0x1C VaFname >0xDEE49B->FName[M_Roy_016_Upper_N_lod0]|APtr: 0x233B77240 Adr 0x13A034DD0 |Count->-961010944|1161961056
+BOffset->0x16C3|Type_UE|||0x1C VaFname >0x3C2C1830->FName[INTLTranslatorResult]|APtr: 0x76000000 Adr 0x13A035BB3 |Count->134217728|233538304
+BOffset->0x16C3|Type_UE|||0x24 VaFname >0x7714E6F8->FName[INTLTranslatorResult]|APtr: 0x76000000 Adr 0x13A035BB3 |Count->134217728|233538304
+BOffset->0x16FB|int:65792|||0x0 VaFname >0x1F->FName[INTLTranslatorResult]|APtr: 0x10100 Adr 0x13A035BEB |Count->65536|484824064
+BOffset->0x176B|int:65792|||0x0 VaFname >0x1F->FName[INTLTranslatorResult]|APtr: 0x10100 Adr 0x13A035C5B |Count->65536|179672320
+BOffset->0x17DB|int:65792|||0x0 VaFname >0x1F->FName[INTLTranslatorResult]|APtr: 0x10100 Adr 0x13A035CCB |Count->65536|-1941898240
+BOffset->0x1867|int:65792|||0x0 VaFname >0x1F->FName[INTLTranslatorResult]|APtr: 0x10100 Adr 0x13A035D57 |Count->65536|425675520
+BOffset->0x18F3|int:65792|||0x0 VaFname >0x1F->FName[INTLTranslatorResult]|APtr: 0x10100 Adr 0x13A035DE3 |Count->65536|425675520
+BOffset->0x195F|Type_UE|||0x1C VaFname >0x2F5B900->FName[GenerateFilenameForCurrentFrame]|APtr: 0x16D7FF Adr 0x13A035E4F |Count->2560|65536
+BOffset->0x197F|int:65792|||0x0 VaFname >0x1F->FName[INTLTranslatorResult]|APtr: 0x10100 Adr 0x13A035E6F |Count->65536|425675520
+BOffset->0x1A0B|int:65792|||0x0 VaFname >0x1F->FName[INTLTranslatorResult]|APtr: 0x10100 Adr 0x13A035EFB |Count->65536|425675520
+Offset->0x1A77|Type_UE|||0x1C VaFname >0x272F00->FName[PassiveMoveDistanceLastPos]|APtr: 0x16DFFF Adr 0x13A035F67 |Count->2560|65536
+BOffset->0x1A97|int:65792|||0x0 VaFname >0x1F->FName[INTLTranslatorResult]|APtr: 0x10100 Adr 0x13A035F87 |Count->65536|425675520
+Offset->0x1B60|Type_UE|||0x1C VaFname >0xEE1F94->FName[MI_M_Cracked_Layer_Ground_06A_HD]|APtr: 0x24EAFBE00 Adr 0x13A036050 |Count->15605652|0
+Offset->0x1B90|Type_UE|||0x1C VaFname >0xEE1FA5->FName[MI_M_Cracked_Layer_Ground_06B_HD]|APtr: 0x24EAFBB00 Adr 0x13A036080 |Count->15605669|0
+Offset->0x1BC0|Type_UE|||0x1C VaFname >0xEE20B0->FName[MI_M_Cracked_Layer_Ground_06C_HD]|APtr: 0x24EAFB200 Adr 0x13A0360B0 |Count->15605936|0
+Offset->0x1BF0|Type_UE|||0x1C VaFname >0xEE1FB6->FName[MI_M_Cracked_Layer_Ground_06D_HD]|APtr: 0x24EAFB800 Adr 0x13A0360E0 |Count->15605686|0
+Offset->0x1C20|Type_UE|||0x1C VaFname >0xEDD180->FName[MI_M_Cracked_Ground_18_HD]|APtr: 0x13698D900 Adr 0x13A036110 |Count->15585664|0
+Offset->0x1C50|Type_UE|||0x1C VaFname >0xEDD122->FName[MI_M_Cracked_Decal_02_HD]|APtr: 0x13698D300 Adr 0x13A036140 |Count->15585570|0
+Offset->0x1C80|Type_UE|||0x1C VaFname >0xEE1FC7->FName[MI_M_Cracked_Layer_Ground_06F_HD]|APtr: 0x24EAFB500 Adr 0x13A036170 |Count->15605703|0
+Offset->0x1CB0|Type_UE|||0x1C VaFname >0xEDE256->FName[MI_M_Cracked_Ground_06_HD]|APtr: 0x136984F00 Adr 0x13A0361A0 |Count->15589974|0
+Offset->0x1CE0|Type_UE|||0x1C VaFname >0xEDD104->FName[MI_H_lceLand_Building_Decal_D_HD]|APtr: 0x13698E800 Adr 0x13A0361D0 |Count->15585540|0
+BOffset->0x1CE1|Type_UE|||0x1C VaFname >0x823CBC2D->FName[x2]|APtr: 0x13698E8 Adr 0x13A0361D1 |Count->60881|0
+Offset->0x1D10|Type_UE|||0x1C VaFname >0xEDD115->FName[MI_M_Cracked_Decal_01_HD]|APtr: 0x13698F100 Adr 0x13A036200 |Count->15585557|0
+Offset->0x1D40|Type_UE|||0x1C VaFname >0xEDD156->FName[MI_M_Cracked_Ground_10_HD]|APtr: 0x13698FA00 Adr 0x13A036230 |Count->15585622|0
+Offset->0x1D70|Type_UE|||0x1C VaFname >0xEDD164->FName[MI_M_Cracked_Ground_12_HD]|APtr: 0x13698D600 Adr 0x13A036260 |Count->15585636|0
+Offset->0x1DA0|Type_UE|||0x1C VaFname >0xEDE270->FName[MI_M_Cracked_Ground_07_HD]|APtr: 0x13698DC00 Adr 0x13A036290 |Count->15590000|0
+Offset->0x1DD0|Type_UE|||0x1C VaFname >0xEDD1A1->FName[MI_M_Cracked_Layer_Ground_01]|APtr: 0x136985800 Adr 0x13A0362C0 |Count->15585697|0
+Offset->0x1E00|Type_UE|||0x1C VaFname >0xEE2297->FName[MI_M_Cracked_Ground_StoneTrim_01]|APtr: 0xEE78F400 Adr 0x13A0362F0 |Count->15606423|0
+Offset->0x1E30|Type_UE|||0x1C VaFname >0xEDD225->FName[MI_M_Cracked_Layer_Ground_03]|APtr: 0x136985200 Adr 0x13A036320 |Count->15585829|0
+Offset->0x1E60|Type_UE|||0x1C VaFname >0xEE20A4->FName[MI_M_Cracked_Ground_09]|APtr: 0xEE784F00 Adr 0x13A036350 |Count->15605924|0
+Offset->0x1E90|Type_UE|||0x1C VaFname >0xEE2098->FName[MI_M_Cracked_Ground_02]|APtr: 0xEE78C700 Adr 0x13A036380 |Count->15605912|0
+Offset->0x1EC0|Type_UE|||0x1C VaFname >0xEDD260->FName[MI_M_RoadFacility_Road_FlowerBed_05]|APtr: 0x136983700 Adr 0x13A0363B0 |Count->15585888|0
+Offset->0x1EF0|Type_UE|||0x1C VaFname >0xED8F3D->FName[MI_M_Cracked_Ground]|APtr: 0x136981000 Adr 0x13A0363E0 |Count->15568701|19
+Offset->0x1F20|Type_UE|||0x1C VaFname >0xED8F3D->FName[MI_M_Cracked_Ground]|APtr: 0x13698AF00 Adr 0x13A036410 |Count->15568701|13
+Offset->0x1F50|Type_UE|||0x1C VaFname >0xEDE264->FName[MI_M_Cracked_Ground_07]|APtr: 0x13698B200 Adr 0x13A036440 |Count->15589988|0
+Offset->0x1F80|Type_UE|||0x1C VaFname >0xEDD14A->FName[MI_M_Cracked_Ground_03]|APtr: 0x138A09D00 Adr 0x13A036470 |Count->15585610|0
+Offset->0x1FF1|Type_UE|||0x1C VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x3012000 Adr 0x13A0364E1 |Count->0|0
+Offset->0x21A0|Type_UE|||0x1C VaFname >0x2F0E46->FName[Default__BreakableFoliage]|APtr: 0x2A26F540 Adr 0x13A036690 |Count->0|0
+Offset->0x22C0|Type_UE|||0x1C VaFname >0x2F0E46->FName[Default__BreakableFoliage]|APtr: 0x2A26F540 Adr 0x13A0367B0 |Count->-1|-1
+Offset->0x249A|int:140500|||0x0 VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x224D4 Adr 0x13A03698A |Count->0|0
+Offset->0x249A|int:140500|||0x0 VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x224D4 Adr 0x13A03698A |Count->0|0
+Offset->0x2572|int:140500|||0x0 VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x224D4 Adr 0x13A036A62 |Count->0|0
+Offset->0x2572|int:140500|||0x0 VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x224D4 Adr 0x13A036A62 |Count->0|0
+BOffset->0x2600|Type_UE|||0x0 VaFname >0x4F233A78->FName[OnTargetingAnActor]|APtr: 0x170D80100 Adr 0x13A036AF0 |Count->-1894478528|0
+BOffset->0x2626|int:524287|||0x1C VaFname >0x73006500->FName[LuaSMarket]|APtr: 0x7FFFF Adr 0x13A036B16 |Count->0|0
+Offset->0x264A|int:140500|||0x0 VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x224D4 Adr 0x13A036B3A |Count->0|0
+Offset->0x264A|int:140500|||0x0 VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x224D4 Adr 0x13A036B3A |Count->0|0
+BOffset->0x26A4|float:1.000000|||0x1C VaFname >0x8C9CFA38->FName[INTLTranslatorResult]|APtr: 0x3F800000 Adr 0x13A036B94 |Count->0|0
+BOffset->0x26D8|Type_UE|||0x0 VaFname >0x4F233A78->FName[OnTargetingAnActor]|APtr: 0x170D80100 Adr 0x13A036BC8 |Count->-512748672|0
+BOffset->0x2718|Type_UE|||0x24 VaFname >0x406467BC->FName[LuaSMarket]|APtr: 0x38000000 Adr 0x13A036C08 |Count->617936968|2
+Offset->0x2722|int:140500|||0x0 VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x224D4 Adr 0x13A036C12 |Count->0|0
+Offset->0x2722|int:140500|||0x0 VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x224D4 Adr 0x13A036C12 |Count->0|0
+BOffset->0x27B0|Type_UE|||0x0 VaFname >0x4F233A78->FName[OnTargetingAnActor]|APtr: 0x170D8A060 Adr 0x13A036CA0 |Count->-1894478528|0
+BOffset->0x27D6|int:524287|||0x1C VaFname >0x73006500->FName[LuaSMarket]|APtr: 0x7FFFF Adr 0x13A036CC6 |Count->0|0
+BOffset->0x27F0|Type_UE|||0x24 VaFname >0x406467BC->FName[LuaSMarket]|APtr: 0x38000000 Adr 0x13A036CE0 |Count->617936904|2
+Offset->0x27FA|int:140500|||0x0 VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x224D4 Adr 0x13A036CEA |Count->0|0
+Offset->0x27FA|int:140500|||0x0 VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x224D4 Adr 0x13A036CEA |Count->0|0
+BOffset->0x2888|Type_UE|||0x0 VaFname >0x4F233A78->FName[OnTargetingAnActor]|APtr: 0x170D8A060 Adr 0x13A036D78 |Count->-512748672|0
+BOffset->0x2910|Type_UE|||0x0 VaFname >0x4CEC42A0->FName[M_Scene_TwoLayerDiffuse_HD]|APtr: 0x152A6FC70 Adr 0x13A036E00 |Count->368579200|0
+Offset->0x2941|Type_UE|||0x1C VaFname >0x2B201->FName[AGPDeformableActor]|APtr: 0x152A70 Adr 0x13A036E31 |Count->0|0
+Offset->0x2976|int:196608|||0x4A VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0x30000 Adr 0x13A036E66 |Count->0|0
+Offset->0x2C80|Type_UE|||0x2 VaFname >0x14F25->FName[UGPAbilityInner]|APtr: 0x22F99A6A0 Adr 0x13A037170 |Count->0|0
+Offset->0x2D01|Type_UE|||0x1C VaFname >0xE65FA733->FName[!�����������������l���d�����������~���y���u���p�������0������~���������������`���"�������������������������������Z�����������#��� ���\���Y���Z�����������Z���K���P�������Z��������x����������!�����������ą����������u�����"�����������������������������N������o����������o�����������������������,���R���������������������ض�������������������l���d����������ܸ��׸��=���8������0������ܸ��������������`���"�������������������������������Z�������y���#��� ���\���Y���Z�����������Z���K���P�������Z��������x����������������������ą������{���u�����!�����������������������������N������o���h������o���������������������������R���]|APtr: 0x38000000 Adr 0x13A0371F1 |Count->0|0
+BOffset->0x2DA0|Type_UE|||0x0 VaFname >0x4C702890->FName[AnimationIn_INST]|APtr: 0x152784EF8 Adr 0x13A037290 |Count->494937088|0
+Offset->0x2DA8|Type_UE|||0x1C VaFname >0x16C72F->FName[WidgetAnimation]|APtr: 0x1D802400 Adr 0x13A037298 |Count->-1675763584|2
+Offset->0x2DB0|Type_UE|||0x1C VaFname >0x4A0FC9->FName[WBP_TipsPro_Sector_v3_C]|APtr: 0x29C1DE080 Adr 0x13A0372A0 |Count->2621448|17187989
+BOffset->0x2DBC|Type_UE|||0x0 VaFname >0x90000000->FName[AnimationIn_INST]|APtr: 0x1064495 Adr 0x13A0372AC |Count->231604|482849838
+BOffset->0x2DBC|Type_UE|||0x24 VaFname >0x247A1->FName[AnimationIn_INST]|APtr: 0x1064495 Adr 0x13A0372AC |Count->231604|482849838
+BOffset->0x2F3A|int:262144|||0x1C VaFname >0x2D0073->FName[INTLTranslatorResult]|APtr: 0x40000 Adr 0x13A03742A |Count->0|0
+Offset->0x3160|Type_UE|||0x1C VaFname >0x28C1E6->FName[AnimationIn]|APtr: 0xF044F100 Adr 0x13A037650 |Count->0|0
+Offset->0x3170|Type_UE|||0x24 VaFname >0x2B3176->FName[ActiveSectorAnchorPoints]|APtr: 0x2B208D600 Adr 0x13A037660 |Count->11|12
+Offset->0x3662|Type_UE|||0x0 VaFname >0xB6->FName[StrProperty]|APtr: 0x100FFFFFF Adr 0x13A037B52 |Count->1|0
+Offset->0x3662|Type_UE|||0x0 VaFname >0xB6->FName[StrProperty]|APtr: 0x100FFFFFF Adr 0x13A037B52 |Count->1|0
+Offset->0x3750|Type_UE|||0x1C VaFname >0x1470EB->FName[DFMFSM_ImpendingDeathLaydownProcessAction]|APtr: 0x1C805D80 Adr 0x13A037C40 |Count->0|0
+Offset->0x3860|Type_UE|||0x1C VaFname >0x1470EB->FName[DFMFSM_ImpendingDeathLaydownProcessAction]|APtr: 0x1C805D80 Adr 0x13A037D50 |Count->0|0
+Offset->0x38B8|float:-449711.218750|||0x14F VaFname >0x10000->FName[INTLTranslatorResult]|APtr: 0xC8DB95E7 Adr 0x13A037DA8 |Count->0|0
+Offset->0x3970|Type_UE|||0x1C VaFname >0x1470EB->FName[DFMFSM_ImpendingDeathLaydownProcessAction]|APtr: 0x1C805D80 Adr 0x13A037E60 |Count->0|0
+Offset->0x3A80|Type_UE|||0x1C VaFname >0x1470EB->FName[DFMFSM_ImpendingDeathLaydownProcessAction]|APtr: 0x1C805D80 Adr 0x13A037F70 |Count->0|0
+BOffset->0x3B17|Type_UE|||0x1C VaFname >0x43E0448->FName[VerticalGamepadSensitivity]|APtr: 0x180000 Adr 0x13A038007 |Count->20185088|0
+BOffset->0x3FE0|Type_UE|||0x0 VaFname >0x4C702890->FName[ProgressBar_Flash_INST]|APtr: 0x152784EF8 Adr 0x13A0384D0 |Count->494937088|0
+Offset->0x3FE8|Type_UE|||0x1C VaFname >0x16C72F->FName[WidgetAnimation]|APtr: 0x1D802400 Adr 0x13A0384D8 |Count->-1675764592|2
+Offset->0x3FF0|Type_UE|||0x1C VaFname >0x48F777->FName[WBP_Battle_Deploy_RebornFlagPoint_C]|APtr: 0x29C1DDC90 Adr 0x13A0384E0 |Count->2621448|17181747
 ```
