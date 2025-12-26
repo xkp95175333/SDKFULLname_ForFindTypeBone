@@ -1,4 +1,13 @@
 ```c
+>> Offset_BoneIndex:0x728 C2W 0x210|0x220
+>> Offset_BoneIndex:0x868 C2W 0x280 
+>> Offset_BoneIndex:0x9D8  
+
+
+
+
+
+
 
 base > 0x140000000
 Infop Target Width:1920, Height:1200 retryCount:1 ScreenCenter->[0|0]
