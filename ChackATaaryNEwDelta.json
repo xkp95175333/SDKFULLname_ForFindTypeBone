@@ -4,6 +4,17 @@ Uworld 0x1CAA4060
 PersistentLevel 0x1A6CC56B0
 tLevel 0x1A6CC56B0 PlayerArray 0x28BEC0040 Count 1541 Max 2046
 [ActorArray] 000000028BEC0040 Loop_Count 0xC  || xxarrEntity 0000000000000098 count -1947467712
+
+struct DFEncVector
+{
+	 	FEncVector RelativeLocation;//xyz /0x168
+ 	FRotator RelativeRotation;
+ 	Vector3 RelativeScale3D;
+ Vector3 ComponentVelocity;
+
+};
+
+
 Auto_DFEncDecode Root 0x120647680  RelativeLocation[ x:-98738.000000 y:151551.000000 z:-14092.000000] RelativeRotation[ x:0.000000 y:0.000000 z:0.000000] RelativeScale3D[ x:1.000000 y:1.000000 z:1.000000] ComponentVelocity[ x:0.000000 y:0.000000 z:0.000000]
 Auto_DFEncDecode Root 0x120647900  RelativeLocation[ x:-98738.000000 y:151551.000000 z:-14092.000000] RelativeRotation[ x:0.000000 y:0.000000 z:0.000000] RelativeScale3D[ x:1.000000 y:1.000000 z:1.000000] ComponentVelocity[ x:0.000000 y:0.000000 z:0.000000]
 Auto_DFEncDecode Root 0x28CA73A80  RelativeLocation[ x:-98738.000000 y:151551.000000 z:-14092.000000] RelativeRotation[ x:0.000000 y:0.000000 z:0.000000] RelativeScale3D[ x:1.000000 y:1.000000 z:1.000000] ComponentVelocity[ x:0.000000 y:0.000000 z:0.000000]
@@ -6839,3 +6850,147 @@ Offset->0x1DB8|Type_UE|||0x1C VaFname >0xE371E->->GFName[CollisionCylinder]|APtr
 Offset->0x1F20|Type_UE|||0x1C VaFname >0x73640->->GFName[/Script/DFMGameplay/VehicleLimitConfig]|APtr: 0x1010103 Adr 0x1AAF09F40 |Opject*->256|0
 Offset->0x1F23|Type_UE|||0x18 VaFname >0x100000->->GFName[/Game/WwiseAudio/GPEvents/UI/UI_Lobby/Ul_Mandel_Collection/Ul_Unboxing_Mandel_Collection_Legend.Ul_Unboxing_Mandel_Collection_Legend]|APtr: 0x1000001 Adr 0x1AAF09F43 |Count->0|0
 Offset->0x1FF0|Type_UE|||0x1C VaFname >0x73640->->GFName[/Script/DFMGameplay/VehicleLimitConfig]|APtr: 0x1010103 Adr 0x1AAF0A010 |Count->0|0
+
+
+
+
+
+
+
+
+
+
+class Vector3ExE
+{
+public:
+	Vector3ExE() : x(0.f), y(0.f), z(0.f), Enc()
+	{
+
+	}
+
+	Vector3ExE(float _x, float _y, float _z , FEncHandler _Enc) : x(_x), y(_y), z(_z), Enc(_Enc)
+	{
+
+	}
+	~Vector3ExE()
+	{
+
+	}
+
+	float x;
+	float y;
+	float z;
+	 FEncHandler  Enc;
+	 
+	inline float Dot(Vector3ExE v)
+	{
+		return x * v.x + y * v.y + z * v.z;
+	}
+
+	inline float Distance(Vector3ExE v)
+	{
+		return float(sqrtf(powf(v.x - x, 2.0) + powf(v.y - y, 2.0) + powf(v.z - z, 2.0)));
+	}
+	inline bool ChackLogic()
+	{
+	 
+		float x_value_def = 1000.0, y_value_def = x_value_def*8 , z_value_def = x_value_def/8;
+		if (x > x_value_def && y < -y_value_def && (z > z_value_def && z < x || z < -z_value_def)) return true; else return false;
+		if (x< -x_value_def && y > y_value_def && (z < -z_value_def && -z< -x || z >z_value_def)) return true; else return false;
+
+		if (x < -00.1 && y>00.1) return false; 
+	}
+	Vector3ExE operator+(Vector3ExE v)
+	{
+		return Vector3ExE(x + v.x, y + v.y, z + v.z, {});
+	}
+
+	Vector3ExE operator-(Vector3ExE v)
+	{
+		return Vector3ExE(x - v.x, y - v.y, z - v.z, {});
+	}
+	inline float Length()
+	{
+		return sqrtf((x * x) + (y * y) + (z * z));
+	}
+
+
+
+};
+ 
+
+ class Vector3
+{
+public:
+    float x, y, z;
+
+    Vector3() : x(0.f), y(0.f), z(0.f) {}
+    Vector3(float _x, float _y, float _z) : x(_x), y(_y), z(_z) {}
+
+    // ---------------- Basic ----------------
+    inline bool IsZero() const {
+        return (fabs(x) < 1e-6f && fabs(y) < 1e-6f && fabs(z) < 1e-6f);
+    }
+
+    inline float Magnitude() const {
+        return sqrtf(x * x + y * y + z * z);
+    }
+
+    inline float Length() const { return Magnitude(); }
+
+    inline Vector3 GetNormalized() const {
+        float len = Magnitude();
+        if (len < 1e-6f) return Vector3(0,0,0);
+        return Vector3(x / len, y / len, z / len);
+    }
+
+    // ---------------- Math ----------------
+    inline float Dot(const Vector3& v) const {
+        return x * v.x + y * v.y + z * v.z;
+    }
+
+    inline Vector3 Cross(const Vector3& v) const {
+        return Vector3(
+            y * v.z - z * v.y,
+            z * v.x - x * v.z,
+            x * v.y - y * v.x
+        );
+    }
+
+    inline float Distance(const Vector3& v) const {
+        return sqrtf((v.x - x) * (v.x - x) + (v.y - y) * (v.y - y) + (v.z - z) * (v.z - z));
+    }
+
+    inline float GetDistanceTo(const Vector3& v) const { 
+        return (v - *this).Magnitude(); 
+    }
+
+    inline float GetDistanceToInMeters(const Vector3& v) const {
+        return GetDistanceTo(v) * 0.01f;
+    }
+
+    // ---------------- Operators ----------------
+    inline Vector3 operator+(const Vector3& v) const { return Vector3(x + v.x, y + v.y, z + v.z); }
+    inline Vector3 operator-(const Vector3& v) const { return Vector3(x - v.x, y - v.y, z - v.z); }
+    inline Vector3 operator*(float s) const { return Vector3(x * s, y * s, z * s); }
+    inline Vector3 operator/(float s) const { return (s == 0) ? *this : Vector3(x / s, y / s, z / s); }
+
+    inline Vector3& operator+=(const Vector3& v) { x += v.x; y += v.y; z += v.z; return *this; }
+    inline Vector3& operator-=(const Vector3& v) { x -= v.x; y -= v.y; z -= v.z; return *this; }
+    inline Vector3& operator*=(float s) { x *= s; y *= s; z *= s; return *this; }
+    inline Vector3& operator/=(float s) { if (s != 0) { x /= s; y /= s; z /= s; } return *this; }
+
+    inline bool operator==(const Vector3& v) const { return x == v.x && y == v.y && z == v.z; }
+    inline bool operator!=(const Vector3& v) const { return !(*this == v); }
+
+    // ---------------- Extra (ควรมีมากๆ) ----------------
+    inline float Length2D() const {
+        return sqrtf(x * x + y * y);
+    }
+
+    inline float Distance2D(const Vector3& v) const {
+        float dx = v.x - x;
+        float dy = v.y - y;
+        return sqrtf(dx * dx + dy * dy);
+    }
+};
