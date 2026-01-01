@@ -1,3 +1,11 @@
+---
+fun GetLoopname จาก pointerAddress  หา ชื่ออะไร 
+<img width="1601" height="847" alt="image" src="https://github.com/user-attachments/assets/c6f588ea-53c1-484c-be87-218a70bf11a9" />
+
+ 
+---
+```asm
+
 AcknowledgedPawn Class
 
 [
@@ -982,3 +990,4 @@ BOffset->0x3AFD|Type_UE|||0x18 VaFname >0x84E328B1->->GFName[kRockPendant_6t/UZI
 BOffset->0x3FF0|Type_UE|||0x0 VaFname >0x48B00720->->GFName[Default__BP_WeaponBaseLeftThrow_C201Smoke_C]|APtr: 0x150E1F140 Adr 0x24AD5C010 |Opject*->1744066560|2
 Offset->0x3FF8|Type_UE|||0x1C VaFname >0xACC69C->->GFName[BP_WeaponBaseLeftThrow_C201Smoke_C]|APtr: 0x267F45800 Adr 0x24AD5C018 |Count->-1493540704|1
 ]
+```
