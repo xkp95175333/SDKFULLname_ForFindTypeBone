@@ -1,3 +1,4 @@
+```cpp
 
 // Class Engine.ParticleModuleSizeScale
 // 0x0060 (0x0090 - 0x0030)
@@ -3834,3 +3835,4 @@ public:
 
 }
 
+```
