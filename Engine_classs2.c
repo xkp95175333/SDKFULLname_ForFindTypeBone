@@ -1,3 +1,4 @@
+```cpp
 
 // Class Engine.ParticleModuleTypeDataBase
 // 0x0000 (0x0030 - 0x0030)
@@ -9191,3 +9192,4 @@ public:
 		return GetDefaultObjImpl<UKismetRenderingLibrary>();
 	}
 };
+```
