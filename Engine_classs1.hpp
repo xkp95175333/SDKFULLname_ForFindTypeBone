@@ -1,3 +1,5 @@
+```c
+
 #pragma once
 
 /*
@@ -9689,3 +9691,6 @@ public:
 		return GetDefaultObjImpl<UMaterial>();
 	}
 };
+
+```
+
