@@ -209,4 +209,223 @@ Attach / Transform logic ตรวจจาก enum ได้จริง
 
 บอกมาได้เลย อันนี้ต่อยอดตรงสายที่คุณกำลังไล่พอดี 🔥
 
+
+
+
+โอเค แบบนี้ชัดมาก 👍
+คุณต้องการ “คู่มืออ่านทีเดียวจบ” สำหรับ USceneComponent ใช่ไหม
+ไม่ใช่แค่ struct สวย ๆ แต่เป็นแบบ:
+
+📦 อ่าน memory ก้อนเดียว ต้องอ่านกี่ไบต์
+
+🧭 ภายในก้อนนั้น
+
+offset ไหนคืออะไร
+
+ต้องอ่านกี่ไบต์
+
+ตรงไหนเป็น bitfield / enum
+
+
+🔀 มี กี่กรณีที่เป็นไปได้ (ต้องบวก / ไม่ต้องบวก / attach)
+
+👉 ฟังก์ชันควรรับ pointer class ยังไง ถึงจะใช้งานง่าย
+
+
+ผมสรุปให้เป็น ไล่จากบนลงล่างแบบ reverse-friendly เลย ไม่มั่วแน่นอน
+
+
+---
+
+1️⃣ ถ้า “อ่านทีเดียว” ต้องอ่านกี่ไบต์?
+
+จาก offset ล่าสุดที่คุณให้มา
+field สุดท้ายอยู่ที่:
+
+DetailMode // 0x1A0 (0x1)
+
+ดังนั้น ขนาดขั้นต่ำที่อ่านได้ครบจริง คือ:
+
+// ขนาดที่จะใช้งาน (อ่านทีเดียว)
+constexpr size_t USceneComponent_ReadSize = 0x1A1;
+
+🔒 เพื่อความปลอดภัย (alignment / engine build ต่างกัน):
+
+constexpr size_t USceneComponent_ReadSafeSize = 0x1B0;
+
+> ✅ แนะนำ: อ่าน 0x1B0 ไบต์ ทีเดียวจบ
+
+
+
+
+---
+
+2️⃣ ผัง offset + ขนาด (ไล่ Get ได้ทีละจุด)
+
+// ================= USceneComponent memory layout =================
+//
+// Base = USceneComponent* (this pointer)
+//
+// 0x118 (0x10)  TArray<USceneComponent*> AttachChildren
+// 0x128 (0x10)  TArray<USceneComponent*> ClientAttachedChildren
+//
+// 0x138 (0x30)  Unknown / internal
+//
+// 0x168 (0x10)  FEncVector RelativeLocation
+// 0x178 (0x0C)  FRotator  RelativeRotation
+// 0x184 (0x0C)  FVector  RelativeScale3D
+// 0x190 (0x0C)  FVector  ComponentVelocity
+//
+// 0x19C (0x01)  SceneFlags   (bitfield)
+// 0x19D (0x01)  AttachFlags  (bitfield)
+// 0x19E (0x01)  Padding
+// 0x19F (0x01)  Mobility     (EComponentMobility)
+// 0x1A0 (0x01)  DetailMode   (EDetailMode)
+//
+// ================================================================
+
+
+---
+
+3️⃣ bitfield ตรงนี้ “มีกี่แบบที่เป็นไปได้”
+
+🔹 SceneFlags @ 0x19C (1 byte → 8 แบบพร้อมกันได้)
+
+enum SceneFlagsBits : uint8_t
+{
+	SF_ComponentToWorldUpdated = 1 << 0,
+	SF_AbsoluteLocation        = 1 << 1,
+	SF_AbsoluteRotation        = 1 << 2,
+	SF_AbsoluteScale           = 1 << 3,
+	SF_Visible                 = 1 << 4,
+	SF_HiddenInGame            = 1 << 5,
+	SF_SkipUpdateWhenHidden    = 1 << 6,
+};
+
+➡️ ผลกับ transform
+
+❌ AbsoluteLocation = 0 → ต้อง ParentWorld + Relative
+
+✅ AbsoluteLocation = 1 → ใช้ Relative เป็น World ได้เลย
+
+
+
+---
+
+🔹 AttachFlags @ 0x19D
+
+enum AttachFlagsBits : uint8_t
+{
+	AF_ShouldBeAttached         = 1 << 0,
+	AF_SnapLocation             = 1 << 1,
+	AF_SnapRotation             = 1 << 2,
+	AF_UpdatePhysicsVolume      = 1 << 3,
+	AF_BoundsAffectStreaming    = 1 << 4,
+	AF_UseAttachParentBound     = 1 << 5,
+};
+
+➡️ ผล
+
+ShouldBeAttached = 0 → component นี้ standalone
+
+= 1 → ต้องดู AttachParent / AttachChildren ต่อ
+
+
+
+---
+
+4️⃣ โครงสร้างสำหรับ “อ่านทีเดียว”
+
+#pragma pack(push, 1)
+struct USceneComponent_Mem
+{
+	uint8 pad0[0x118];
+
+	TArray<uintptr_t> AttachChildren;        // 0x118
+	TArray<uintptr_t> ClientAttachedChildren;// 0x128
+
+	uint8 pad1[0x30];                        // 0x138
+
+	FEncVector RelativeLocation;             // 0x168
+	FRotator   RelativeRotation;             // 0x178
+	FVector    RelativeScale3D;               // 0x184
+	FVector    ComponentVelocity;             // 0x190
+
+	uint8 SceneFlags;                        // 0x19C
+	uint8 AttachFlags;                       // 0x19D
+	uint8 pad2;                              // 0x19E
+	uint8 Mobility;                          // 0x19F
+	uint8 DetailMode;                        // 0x1A0
+};
+#pragma pack(pop)
+
+
+---
+
+5️⃣ ฟังก์ชันควร “รับพารา” ยังไงดีที่สุด?
+
+✅ แบบที่แนะนำ (pointer class ตรง ๆ)
+
+bool ReadSceneComponent(
+	uintptr_t sceneComponentPtr,
+	USceneComponent_Mem& out
+)
+{
+	if (!sceneComponentPtr)
+		return false;
+
+	return driver.readmemory(
+		(PVOID)sceneComponentPtr,
+		&out,
+		sizeof(USceneComponent_Mem)
+	);
+}
+
+เรียกใช้:
+
+USceneComponent_Mem comp{};
+if (ReadSceneComponent(SceneCompPtr, comp))
+{
+	bool absLoc = comp.SceneFlags & SF_AbsoluteLocation;
+}
+
+
+---
+
+❌ แบบไม่แนะนำ
+
+ส่ง offset แยก ๆ
+
+อ่านทีละ field
+
+อ่าน bool ทีละตัวที่ offset ซ้ำ
+
+
+
+---
+
+6️⃣ TL;DR แบบสาย reverse
+
+📦 อ่านทีเดียว = 0x1B0 bytes
+
+🎯 ใช้ USceneComponent* เป็น base pointer
+
+🔀 0x19C / 0x19D = bitfield ไม่ใช่ bool
+
+🧠 behavior ตัดสินด้วย enum ไม่ใช่ค่า bool เดี่ยว
+
+🧪 ไล่ Get ได้จาก struct เดียว ไม่ต้อง read ซ้ำ
+
+
+ถ้าคุณอยากให้ผมทำต่อ:
+
+🔎 ฟังก์ชันคำนวณ WorldTransform จาก SceneComponent
+
+🌲 ไล่ AttachChildren เป็น tree
+
+🎯 W2S ที่ respect Absolute / Attach / Scale
+
+
+บอกมาได้เลย อันนี้ต่อได้ยาวแบบไม่หลงแน่นอน 🔥
+
 ```
