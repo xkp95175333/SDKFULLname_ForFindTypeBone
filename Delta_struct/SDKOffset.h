@@ -4,6 +4,268 @@ namespace NewSDKOffset
 
 {
 
+//Script/Engine.OnlineSession
+// Size: 0x28
+class UOnlineSession final : public UObject {
+public:
+    // No properties
+};
+
+//Script/OnlineSubsystemUtils.OnlineSessionClient
+// Size: 0x1e0
+class UOnlineSessionClient final : public UOnlineSession {
+public:
+    uint8_t UnknownData_723[0x1b0]; // 0x28 (0x1b0)
+    bool bIsFromInvite; // 0x1d8 (0x1)
+    bool bHandlingDisconnect; // 0x1d9 (0x1)
+    uint8_t UnknownData_724[0x6]; // 0x1da (0x6)
+};
+//Script/Engine.GameInstance
+// Size: 0x1a0
+class UGameInstance final : public UObject {
+public:
+    uint8_t UnknownData_8[0x10]; // 0x28 (0x10)
+    TArray<class ULocalPlayer*> LocalPlayers; // 0x38 (0x10)
+    class UOnlineSession* OnlineSession; // 0x48 (0x8)
+    TArray<class UObject*> ReferencedObjects; // 0x50 (0x10)
+    uint8_t UnknownData_9[0x140]; // 0x60 (0x140)
+
+    // Functions
+    void UGameInstance::DebugCreatePlayer(int32_t& ControllerId); // 0xed5bb80
+    void UGameInstance::DebugRemovePlayer(int32_t& ControllerId); // 0xaf18410
+    void UGameInstance::HandleNetworkError(uint8_t& FailureType, bool& bIsServer); // 0xcc51c80
+    void UGameInstance::HandleTravelError(uint8_t& FailureType); // 0xcc51c80
+    void UGameInstance::ReceiveInit(); // 0xcc51c80
+    void UGameInstance::ReceiveShutdown(); // 0xcc51c80
+};
+
+//Script/Engine.Actor
+// Size: 0x370
+class AActor final : public UObject {
+public:
+    struct FActorTickFunction PrimaryActorTick; // 0x28 (0x68)
+    bool bHidden; // 0x90 (0x1)
+    bool bEnableNetActive; // 0x90 (0x1)
+    bool bNetActive; // 0x90 (0x1)
+    bool bNetTemporary; // 0x90 (0x1)
+    bool bNetStartup; // 0x90 (0x1)
+    bool bOnlyRelevantToOwner; // 0x90 (0x1)
+    bool bAlwaysRelevant; // 0x90 (0x1)
+    bool bReplicateMovement; // 0x90 (0x1)
+    bool bShouldCallPreReplication; // 0x91 (0x1)
+    bool bTearOff; // 0x91 (0x1)
+    bool bExchangedRoles; // 0x91 (0x1)
+    bool bNetLoadOnClient; // 0x91 (0x1)
+    bool bNetUseOwnerRelevancy; // 0x91 (0x1)
+    bool bRelevantForNetworkReplays; // 0x91 (0x1)
+    bool bRelevantForLevelBounds; // 0x91 (0x1)
+    bool bReplayRewindable; // 0x92 (0x1)
+    bool bAllowTickBeforeBeginPlay; // 0x92 (0x1)
+    bool bAllowBluePrintTick; // 0x92 (0x1)
+    bool bAutoDestroyWhenFinished; // 0x92 (0x1)
+    bool bBlockInput; // 0x92 (0x1)
+    bool bCanBeDamaged; // 0x92 (0x1)
+    bool bCollideWhenPlacing; // 0x92 (0x1)
+    bool bFindCameraComponentWhenViewTarget; // 0x92 (0x1)
+    bool bGenerateOverlapEventsDuringLevelStreaming; // 0x93 (0x1)
+    bool bIgnoresOriginShifting; // 0x93 (0x1)
+    bool bEnableAutoLODGeneration; // 0x93 (0x1)
+    bool bIsEditorOnlyActor; // 0x93 (0x1)
+    bool bActorSeamlessTraveled; // 0x93 (0x1)
+    bool bReplicates; // 0x93 (0x1)
+    bool bCanBeInCluster; // 0x93 (0x1)
+    bool bAllowReceiveTickEventOnDedicatedServer; // 0x93 (0x1)
+    uint8_t UnknownData_1c[0x1]; // 0x94 (0x1)
+    bool bActorEnableCollision; // 0x95 (0x1)
+    bool bActorIsBeingDestroyed; // 0x95 (0x1)
+    EEActorUpdateOverlapsMethod UpdateOverlapsMethodDuringLevelStreaming; // 0x96 (0x1)
+    EEActorUpdateOverlapsMethod DefaultUpdateOverlapsMethodDuringLevelStreaming; // 0x97 (0x1)
+    uint8_t RemoteRole; // 0x98 (0x1)
+    uint8_t UnknownData_1d[0x3]; // 0x99 (0x3)
+    struct FRepMovement ReplicatedMovement; // 0x9c (0x38)
+    float InitialLifeSpan; // 0xd4 (0x4)
+    float CustomTimeDilation; // 0xd8 (0x4)
+    uint8_t UnknownData_1e[0x4]; // 0xdc (0x4)
+    struct FRepAttachment AttachmentReplication; // 0xe0 (0x40)
+    class AActor* Owner; // 0x120 (0x8)
+    FName NetDriverName; // 0x128 (0x8)
+    uint8_t Role; // 0x130 (0x1)
+    uint8_t NetDormancy; // 0x131 (0x1)
+    EESpawnActorCollisionHandlingMethod SpawnCollisionHandlingMethod; // 0x132 (0x1)
+    uint8_t AutoReceiveInput; // 0x133 (0x1)
+    int32_t InputPriority; // 0x134 (0x4)
+    class UInputComponent* InputComponent; // 0x138 (0x8)
+    float NetCullDistanceSquared; // 0x140 (0x4)
+    float NetCullDistanceSquared_HD; // 0x144 (0x4)
+    float NetCullDistanceSquared_M; // 0x148 (0x4)
+    int32_t NetTag; // 0x14c (0x4)
+    float NetUpdateFrequency; // 0x150 (0x4)
+    float MinNetUpdateFrequency; // 0x154 (0x4)
+    float NetPriority; // 0x158 (0x4)
+    uint8_t UnknownData_1f[0xc]; // 0x15c (0xc)
+    class APawn* Instigator; // 0x168 (0x8)
+    TArray<class AActor*> Children; // 0x170 (0x10)
+    EncryptedObjectProperty RootComponent; // 0x180 (0x8)
+    TArray<class AMatineeActor*> ControllingMatineeActors; // 0x188 (0x10)
+    uint8_t UnknownData_20[0x8]; // 0x198 (0x8)
+    TArray<FName> Layers; // 0x1a0 (0x10)
+    TWeakObjectPtr<class UChildActorComponent> ParentComponent; // 0x1b0 (0x8)
+    TArray<FName> Tags; // 0x1b8 (0x10)
+    FDelegate OnTakeAnyDamage; // 0x1c8 (0x1)
+    FDelegate OnTakePointDamage; // 0x1c9 (0x1)
+    FDelegate OnTakeRadialDamage; // 0x1ca (0x1)
+    FDelegate OnActorBeginOverlap; // 0x1cb (0x1)
+    FDelegate OnActorEndOverlap; // 0x1cc (0x1)
+    FDelegate OnBeginCursorOver; // 0x1cd (0x1)
+    FDelegate OnEndCursorOver; // 0x1ce (0x1)
+    FDelegate OnClicked; // 0x1cf (0x1)
+    FDelegate OnReleased; // 0x1d0 (0x1)
+    FDelegate OnInputTouchBegin; // 0x1d1 (0x1)
+    FDelegate OnInputTouchEnd; // 0x1d2 (0x1)
+    FDelegate OnInputTouchEnter; // 0x1d3 (0x1)
+    FDelegate OnInputTouchLeave; // 0x1d4 (0x1)
+    FDelegate OnActorHit; // 0x1d5 (0x1)
+    uint8_t UnknownData_21[0x22]; // 0x1d6 (0x22)
+    FDelegate OnDestroyed; // 0x1f8 (0x1)
+    FDelegate OnEndPlay; // 0x1f9 (0x1)
+    uint8_t UnknownData_22[0x76]; // 0x1fa (0x76)
+    TArray<class UActorComponent*> InstanceComponents; // 0x270 (0x10)
+    TArray<class UActorComponent*> BlueprintCreatedComponents; // 0x280 (0x10)
+    uint8_t UnknownData_23[0xe0]; // 0x290 (0xe0)
+
+    // Functions
+    bool AActor::ActorHasTag(FName& Tag); // 0xecfa810
+    class UActorComponent* AActor::AddComponent(FName& TemplateName, bool& bManualAttachment, const struct FTransform& RelativeTransform, const class UObject* ComponentTemplateContext); // 0xecfa8a0
+    void AActor::AddTickPrerequisiteActor(class AActor* PrerequisiteActor); // 0xecfaa60
+    void AActor::AddTickPrerequisiteComponent(class UActorComponent* PrerequisiteComponent); // 0xecfaaf0
+    void AActor::DetachRootComponentFromParent(bool& bMaintainWorldPosition); // 0xecfab80
+    void AActor::DisableInput(class APlayerController* PlayerController); // 0xfe9b70
+    void AActor::EnableInput(class APlayerController* PlayerController); // 0xa568a50
+    void AActor::FlushNetDormancy(); // 0xecfac10
+    void AActor::ForceNetUpdate(); // 0xecfac30
+    void AActor::GetActorBounds(bool& bOnlyCollidingComponents, struct FVector& Origin, struct FVector& BoxExtent); // 0xecfac50
+    bool AActor::GetActorEnableCollision(); // 0xecfad80
+    void AActor::GetActorEyesViewPoint(struct FVector& OutLocation, struct FRotator& OutRotation); // 0xecfadb0
+    struct FVector AActor::GetActorForwardVector(); // 0xecfaea0
+    struct FVector AActor::GetActorRelativeScale3D(); // 0xecfafe0
+    struct FVector AActor::GetActorRightVector(); // 0xecfb020
+    struct FVector AActor::GetActorScale3D(); // 0xecfb160
+    float AActor::GetActorTickInterval(); // 0xecfb1a0
+    float AActor::GetActorTimeDilation(); // 0xecfb1d0
+    struct FVector AActor::GetActorUpVector(); // 0xecfb200
+    void AActor::GetAllChildActors(TArray<class AActor*> ChildActors, bool& bIncludeDescendants); // 0xecfb340
+    void AActor::GetAttachedActors(TArray<class AActor*> OutActors, bool& bResetArray); // 0xecfb4d0
+    class AActor* AActor::GetAttachParentActor(); // 0xecfb460
+    FName AActor::GetAttachParentSocketName(); // 0xecfb490
+    class UActorComponent* AActor::GetComponentByClass(TSubclassOf<class UClass>& ComponentClass); // 0xecfb5f0
+    TArray<class UActorComponent*> AActor::GetComponentsByInterface(TSubclassOf<class UClass>& Interface); // 0xecfb680
+    TArray<class UActorComponent*> AActor::GetComponentsByTag(TSubclassOf<class UClass>& ComponentClass, FName& Tag); // 0xecfb760
+    float AActor::GetDistanceTo(const class AActor* OtherActor); // 0xecfb870
+    float AActor::GetDotProductTo(const class AActor* OtherActor); // 0xecfb910
+    float AActor::GetGameTimeSinceCreation(); // 0xecfb9b0
+    float AActor::GetHorizontalDistanceTo(const class AActor* OtherActor); // 0xecfb9e0
+    float AActor::GetHorizontalDotProductTo(const class AActor* OtherActor); // 0xecfba80
+    float AActor::GetInputAxisKeyValue(const struct FKey& InputAxisKey); // 0xecfbb20
+    float AActor::GetInputAxisValue(const FName& InputAxisName); // 0xecfbc10
+    struct FVector AActor::GetInputVectorAxisValue(const struct FKey& InputAxisKey); // 0xecfbcb0
+    class APawn* AActor::GetInstigator(); // 0xecfbdb0
+    class AController* AActor::GetInstigatorController(); // 0xecfbde0
+    float AActor::GetLifeSpan(); // 0xa5a6700
+    uint8_t AActor::GetLocalRole(); // 0xecfbe10
+    void AActor::GetOverlappingActors(TArray<class AActor*> OverlappingActors, TSubclassOf<class UClass>& ClassFilter); // 0xecfbe30
+    void AActor::GetOverlappingComponents(TArray<class UPrimitiveComponent*> OverlappingComponents); // 0xecfbf50
+    class AActor* AActor::GetOwner(); // 0xa6cede0
+    class AActor* AActor::GetParentActor(); // 0xecfc020
+    class UChildActorComponent* AActor::GetParentComponent(); // 0xecfc050
+    uint8_t AActor::GetRemoteRole(); // 0xecfc080
+    float AActor::GetSquaredDistanceTo(const class AActor* OtherActor); // 0xecfc0a0
+    bool AActor::GetTickableWhenPaused(); // 0xecfc140
+    struct FTransform AActor::GetTransform(); // 0xecfc170
+    struct FVector AActor::GetVelocity(); // 0xecfc1c0
+    float AActor::GetVerticalDistanceTo(const class AActor* OtherActor); // 0xecfc200
+    bool AActor::HasAuthority(); // 0xecfc2a0
+    bool AActor::IsActorBeingDestroyed(); // 0xecfc2d0
+    bool AActor::IsActorTickEnabled(); // 0xecfc300
+    bool AActor::IsChildActor(); // 0xecfc330
+    bool AActor::IsOverlappingActor(const class AActor* Other); // 0xecfc360
+    void AActor::K2_AddActorLocalOffset(struct FVector& DeltaLocation, bool& bSweep, struct FHitResult& SweepHitResult, bool& bTeleport); // 0xecfc3f0
+    void AActor::K2_AddActorLocalRotation(struct FRotator& DeltaRotation, bool& bSweep, struct FHitResult& SweepHitResult, bool& bTeleport); // 0xecfc590
+    void AActor::K2_AddActorLocalTransform(const struct FTransform& NewTransform, bool& bSweep, struct FHitResult& SweepHitResult, bool& bTeleport); // 0xecfc730
+    void AActor::K2_AddActorWorldOffset(struct FVector& DeltaLocation, bool& bSweep, struct FHitResult& SweepHitResult, bool& bTeleport); // 0xecfc930
+    void AActor::K2_AddActorWorldRotation(struct FRotator& DeltaRotation, bool& bSweep, struct FHitResult& SweepHitResult, bool& bTeleport); // 0xecfcad0
+    void AActor::K2_AddActorWorldTransform(const struct FTransform& DeltaTransform, bool& bSweep, struct FHitResult& SweepHitResult, bool& bTeleport); // 0xecfcc70
+    void AActor::K2_AttachRootComponentTo(class USceneComponent* InParent, FName& InSocketName, uint8_t& AttachLocationType, bool& bWeldSimulatedBodies); // 0xecfce70
+    void AActor::K2_AttachRootComponentToActor(class AActor* InParentActor, FName& InSocketName, uint8_t& AttachLocationType, bool& bWeldSimulatedBodies); // 0xecfcfc0
+    void AActor::K2_AttachToActor(class AActor* ParentActor, FName& SocketName, EEAttachmentRule& LocationRule, EEAttachmentRule& RotationRule, EEAttachmentRule& ScaleRule, bool& bWeldSimulatedBodies); // 0xecfd110
+    void AActor::K2_AttachToComponent(class USceneComponent* Parent, FName& SocketName, EEAttachmentRule& LocationRule, EEAttachmentRule& RotationRule, EEAttachmentRule& ScaleRule, bool& bWeldSimulatedBodies); // 0xecfd2d0
+    void AActor::K2_DestroyActor(); // 0x7726190
+    void AActor::K2_DestroyComponent(class UActorComponent* Component); // 0xecfd490
+    void AActor::K2_DetachFromActor(EEDetachmentRule& LocationRule, EEDetachmentRule& RotationRule, EEDetachmentRule& ScaleRule); // 0xecfd510
+    struct FVector AActor::K2_GetActorLocation(); // 0xecfd610
+    struct FRotator AActor::K2_GetActorRotation(); // 0xecfd790
+    TArray<class UActorComponent*> AActor::K2_GetComponentsByClass(TSubclassOf<class UClass>& ComponentClass); // 0xecfd910
+    class USceneComponent* AActor::K2_GetRootComponent(); // 0xecfd9f0
+    void AActor::K2_OnBecomeViewTarget(class APlayerController* PC); // 0xcc51c80
+    void AActor::K2_OnEndViewTarget(class APlayerController* PC); // 0xcc51c80
+    void AActor::K2_OnReset(); // 0xcc51c80
+    bool AActor::K2_SetActorLocation(struct FVector& NewLocation, bool& bSweep, struct FHitResult& SweepHitResult, bool& bTeleport); // 0xecfdaf0
+    bool AActor::K2_SetActorLocationAndRotation(struct FVector& NewLocation, struct FRotator& NewRotation, bool& bSweep, struct FHitResult& SweepHitResult, bool& bTeleport); // 0xecfdca0
+    void AActor::K2_SetActorRelativeLocation(struct FVector& NewRelativeLocation, bool& bSweep, struct FHitResult& SweepHitResult, bool& bTeleport); // 0xecfdea0
+    void AActor::K2_SetActorRelativeRotation(struct FRotator& NewRelativeRotation, bool& bSweep, struct FHitResult& SweepHitResult, bool& bTeleport); // 0xecfe040
+    void AActor::K2_SetActorRelativeTransform(const struct FTransform& NewRelativeTransform, bool& bSweep, struct FHitResult& SweepHitResult, bool& bTeleport); // 0xecfe1e0
+    bool AActor::K2_SetActorRotation(struct FRotator& NewRotation, bool& bTeleportPhysics); // 0xecfe3e0
+    bool AActor::K2_SetActorTransform(const struct FTransform& NewTransform, bool& bSweep, struct FHitResult& SweepHitResult, bool& bTeleport); // 0xecfe4c0
+    bool AActor::K2_TeleportTo(struct FVector& DestLocation, struct FRotator& DestRotation); // 0xecfe6c0
+    class UMaterialInstanceDynamic* AActor::MakeMIDForMaterial(class UMaterialInterface* Parent); // 0xecfe7b0
+    void AActor::MakeNoise(float& Loudness, class APawn* NoiseInstigator, struct FVector& NoiseLocation, float& MaxRange, FName& Tag); // 0xecfe840
+    void AActor::OnRep_AttachmentReplication(); // 0xb82bc0
+    void AActor::OnRep_Instigator(); // 0x7655870
+    void AActor::OnRep_NetActive(); // 0xb82d20
+    void AActor::OnRep_Owner(); // 0xdd5570
+    void AActor::OnRep_ReplicatedMovement(); // 0x2854b00
+    void AActor::OnRep_ReplicateMovement(); // 0xb823c0
+    void AActor::PrestreamTextures(float& Seconds, bool& bEnableStreaming, int32_t& CinematicTextureGroups); // 0xecfe9d0
+    void AActor::ReceiveActorBeginCursorOver(); // 0xcc51c80
+    void AActor::ReceiveActorBeginOverlap(class AActor* OtherActor); // 0xcc51c80
+    void AActor::ReceiveActorEndCursorOver(); // 0xcc51c80
+    void AActor::ReceiveActorEndOverlap(class AActor* OtherActor); // 0xcc51c80
+    void AActor::ReceiveActorOnClicked(struct FKey& ButtonPressed); // 0xcc51c80
+    void AActor::ReceiveActorOnInputTouchBegin(const uint8_t& FingerIndex); // 0xcc51c80
+    void AActor::ReceiveActorOnInputTouchEnd(const uint8_t& FingerIndex); // 0xcc51c80
+    void AActor::ReceiveActorOnInputTouchEnter(const uint8_t& FingerIndex); // 0xcc51c80
+    void AActor::ReceiveActorOnInputTouchLeave(const uint8_t& FingerIndex); // 0xcc51c80
+    void AActor::ReceiveActorOnReleased(struct FKey& ButtonReleased); // 0xcc51c80
+    void AActor::ReceiveAnyDamage(float& Damage, const class UDamageType* DamageType, class AController* InstigatedBy, class AActor* DamageCauser); // 0xcc51c80
+    void AActor::ReceiveBeginPlay(); // 0xcc51c80
+    void AActor::ReceiveDestroyed(); // 0xcc51c80
+    void AActor::ReceiveEndPlay(uint8_t& EndPlayReason); // 0xcc51c80
+    void AActor::ReceiveHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool& bSelfMoved, struct FVector& HitLocation, struct FVector& HitNormal, struct FVector& NormalImpulse, const struct FHitResult& Hit); // 0xcc51c80
+    void AActor::ReceivePointDamage(float& Damage, const class UDamageType* DamageType, struct FVector& HitLocation, struct FVector& HitNormal, class UPrimitiveComponent* HitComponent, FName& BoneName, struct FVector& ShotFromDirection, class AController* InstigatedBy, class AActor* DamageCauser, const struct FHitResult& HitInfo); // 0xcc51c80
+    void AActor::ReceiveRadialDamage(float& DamageReceived, const class UDamageType* DamageType, struct FVector& Origin, const struct FHitResult& HitInfo, class AController* InstigatedBy, class AActor* DamageCauser); // 0xcc51c80
+    void AActor::ReceiveTick(float& DeltaSeconds); // 0xcc51c80
+    void AActor::RemoveTickPrerequisiteActor(class AActor* PrerequisiteActor); // 0xecfeae0
+    void AActor::RemoveTickPrerequisiteComponent(class UActorComponent* PrerequisiteComponent); // 0xecfeb70
+    void AActor::SetActorEnableCollision(bool& bNewActorEnableCollision); // 0xecfec00
+    void AActor::SetActorHiddenInGame(bool& bNewHidden); // 0xecfec90
+    void AActor::SetActorRelativeScale3D(struct FVector& NewRelativeScale); // 0xecfed20
+    void AActor::SetActorScale3D(struct FVector& NewScale3D); // 0xecfedb0
+    void AActor::SetActorTickEnabled(bool& bEnabled); // 0xecfee40
+    void AActor::SetActorTickInterval(float& TickInterval); // 0xecfeed0
+    void AActor::SetLifeSpan(float& InLifespan); // 0xecfef50
+    void AActor::SetNetDormancy(uint8_t& NewDormancy); // 0xecfefd0
+    void AActor::SetOwner(class AActor* NewOwner); // 0x4f28930
+    void AActor::SetReplicateMovement(bool& bInReplicateMovement); // 0xecff050
+    void AActor::SetReplicates(bool& bInReplicates); // 0xecff0e0
+    void AActor::SetTickableWhenPaused(bool& bTickableWhenPaused); // 0xecff1f0
+    void AActor::SetTickGroup(uint8_t& NewTickGroup); // 0xecff170
+    void AActor::SnapRootComponentTo(class AActor* InParentActor, FName& InSocketName); // 0xecff280
+    void AActor::TearOff(); // 0xb83010
+    void AActor::UserConstructionScript(); // 0xcc51c80
+    bool AActor::WasRecentlyContinuousRendered(class UWorld* World, float& Tolerance); // 0xecff340
+    bool AActor::WasRecentlyRendered(float& Tolerance); // 0xecff400
+    bool AActor::WasRecentlyRenderedWithShadow(class UWorld* World, float& Tolerance); // 0xecff490
+};
+
 //Script/Engine.PostProcessSettings
 // Size: 0x950
 struct FPostProcessSettings {
