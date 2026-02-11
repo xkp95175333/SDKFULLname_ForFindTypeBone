@@ -1,0 +1,195 @@
+
+ 
+Found GameInstance: Offset -> 0x190, FName: BP_DFMGameInstance_C, Ptr: 0x178542990||->offsetAdrGameInstance 0x190||->offsetPersistentLevel 0x0
+Found OnlineSession: Offset -> 0x48, FName: GPOnlineSession, Ptr: 0x10C4A2500||->Offset OnlineSession 0x38 ||->LocalPlayer 0x7A686CE0
+Found LocalPlayer: Offset -> 0x0, FName: GPLocalPlayer, Ptr: 0x13505380||->offsetAdrPLocalPlayer 0x0
+Found PlayerController: Offset -> 0x30, FName: PlayerController, Ptr: 0x18032E040||->offsetAdrPlayerController 0x30
+Found PlayerInput: Offset -> 0x498, FName: PlayerInput, Ptr: 0x10755F430||->PlayerInput 0x498 ->
+Found CameraManager: Offset -> 0x408, FName: PlayerCameraManager, Ptr: 0x119960000||->CameraManager 0x408 ->
+   Get CameraManager  
+			BOffset->0x0|Type_UE|||0x0 VaFname >0x4A7D5160-> ->GFName[PlayerCameraManager]|APtr: 0x154C07DB0 Adr 0x119960000 |TypePoint*->493689344 |On::0
+			BOffset->0x0|Type_UE|||0x0 VaFname >0x4A7D5160-> ->GFName[/Script/OpenWorldInstancedStaticMeshProxy/InstancedStaticMeshProxy]|APtr: 0x154C07DB0 Adr 0x119960000 |TypePoint*->493689344 |On::0
+			Offset->0x8|Type_UE|||0x1C VaFname >0x1300B2-> ->GFName[PlayerCameraManager]|APtr: 0x1D6D1A00 Adr 0x119960008 |TypePoint*->123033264 |On::1
+			Offset->0x120|Type_UE|||0x1C VaFname >0x11EBB2-> ->GFName[PlayerController]|APtr: 0x18032E040 Adr 0x119960120 |TypePoint*->741 |On::0
+			Offset->0x148|float:225000000.000000|||0x0 VaFname >0x35BC-> ->GFName[LuaSWorldEntrance]|APtr: 0x4D5693A4 Adr 0x119960148 |TypePoint*->1120403456 |On::1073741824
+			Offset->0x148|float:225000000.000000|||0x0 VaFname >0x35BC-> ->GFName[LuaSWorldEntrance]|APtr: 0x4D5693A4 Adr 0x119960148 |TypePoint*->1120403456 |On::1073741824
+			Offset->0x148|float:225000000.000000|||0x0 VaFname >0x35BC-> ->GFName[LuaSWorldEntrance]|APtr: 0x4D5693A4 Adr 0x119960148 |TypePoint*->1120403456 |On::1073741824
+			Offset->0x148|float:225000000.000000|||0x0 VaFname >0x35BC-> ->GFName[LuaSWorldEntrance]|APtr: 0x4D5693A4 Adr 0x119960148 |TypePoint*->1120403456 |On::1073741824
+			BOffset->0x22E|int:196608|||0x20 VaFname >0x5A34-> ->GFName[/Script/DFMQuest/DFMQuestAudioSubsystem]|APtr: 0x30000 Adr 0x11996022E |Count->0|0
+					Get  +8 name PlayerCameraManager  0x1D6D1A00
+								BOffset->0x0|Type_UE|||0x0 VaFname >0x4CA8C500-> ->GFName[PlayerCameraManager]|APtr: 0x1545BEF60 Adr 0x1D6D1A00 |TypePoint*->492162560 |On::0
+								Offset->0x10|Type_UE|||0x1C VaFname >0xF85B5-> ->GFName[/Script/Engine]|APtr: 0x22970090 Adr 0x1D6D1A10 |Count->67|1245362
+								BOffset->0x1C|Type_UE|||0x0 VaFname >0x23390000-> ->GFName[PlayerCameraManager]|APtr: 0x1300B2 Adr 0x1D6D1A1C |TypePoint*->1920 |On::0
+								BOffset->0x1C|Type_UE|||0x0 VaFname >0x23390000-> ->GFName[PlayerCameraManager]|APtr: 0x1300B2 Adr 0x1D6D1A1C |TypePoint*->1920 |On::0
+								BOffset->0x1C|Type_UE|||0x0 VaFname >0x23390000-> ->GFName[PlayerCameraManager]|APtr: 0x1300B2 Adr 0x1D6D1A1C |TypePoint*->1920 |On::0
+								BOffset->0x1C|Type_UE|||0x0 VaFname >0x23390000-> ->GFName[PlayerCameraManager]|APtr: 0x1300B2 Adr 0x1D6D1A1C |TypePoint*->1920 |On::0
+								BOffset->0x36|int:131072|||0x0 VaFname >0x9F10001-> ->GFName[UCharacterLODFeatureLevel]|APtr: 0x20000 Adr 0x1D6D1A36 |Count->-824180736|5
+								BOffset->0x36|int:131072|||0x0 VaFname >0x9F10001-> ->GFName[UCharacterLODFeatureLevel]|APtr: 0x20000 Adr 0x1D6D1A36 |Count->-824180736|5
+								BOffset->0x36|int:131072|||0x0 VaFname >0x9F10001-> ->GFName[UCharacterLODFeatureLevel]|APtr: 0x20000 Adr 0x1D6D1A36 |Count->-824180736|5
+								BOffset->0x36|int:131072|||0x0 VaFname >0x9F10001-> ->GFName[UCharacterLODFeatureLevel]|APtr: 0x20000 Adr 0x1D6D1A36 |Count->-824180736|5
+								Offset->0x58|Type_UE|||0x1C VaFname >0x130198-> ->GFName[StopCameraShake]|APtr: 0x22E11E70 Adr 0x1D6D1A58 |Count->0|0
+								Offset->0x70|Type_UE|||0x28 VaFname >0x28F5C1-> ->GFName[PCOwner]|APtr: 0x1060B22C0 Adr 0x1D6D1A70 |TypePoint*->101393088 |On::1
+								Offset->0x78|Type_UE|||0x28 VaFname >0x28F5C1-> ->GFName[PCOwner]|APtr: 0x1060B22C0 Adr 0x1D6D1A78 |TypePoint*->101393088 |On::1
+								Offset->0x80|Type_UE|||0x28 VaFname >0x28F5C1-> ->GFName[PCOwner]|APtr: 0x1060B22C0 Adr 0x1D6D1A80 |Count->0|0
+								Offset->0x90|Type_UE|||0x28 VaFname >0x196614-> ->GFName[ServerUpdateCameraTimeout]|APtr: 0x1060B11E0 Adr 0x1D6D1A90 |Count->0|0
+								Offset->0x140|Type_UE|||0x1C VaFname >0x2FA656-> ->GFName[Default__PlayerCameraManager]|APtr: 0x23714BB0 Adr 0x1D6D1B40 |Count->0|0
+								Offset->0x158|Type_UE|||0x0 VaFname >0x1300BD-> ->GFName[AddCameraLensEffect]|APtr: 0x106E410F0 Adr 0x1D6D1B58 |Count->28|56
+								Offset->0x158|Type_UE|||0x0 VaFname >0x1300BD-> ->GFName[AddCameraLensEffect]|APtr: 0x106E410F0 Adr 0x1D6D1B58 |Count->28|56
+								Offset->0x158|Type_UE|||0x0 VaFname >0x1300BD-> ->GFName[AddCameraLensEffect]|APtr: 0x106E410F0 Adr 0x1D6D1B58 |Count->28|56
+								Offset->0x158|Type_UE|||0x0 VaFname >0x1300BD-> ->GFName[AddCameraLensEffect]|APtr: 0x106E410F0 Adr 0x1D6D1B58 |Count->28|56
+								Offset->0x158|Type_UE|||0x18 VaFname >0x1300C8-> ->GFName[AddNewCameraModifier]|APtr: 0x106E410F0 Adr 0x1D6D1B58 |Count->28|56
+								BOffset->0x18E|int:131072|||0x0 VaFname >0x9F10001-> ->GFName[UCharacterLODFeatureLevel]|APtr: 0x20000 Adr 0x1D6D1B8E |Count->-1820327936|11775
+								BOffset->0x18E|int:131072|||0x0 VaFname >0x9F10001-> ->GFName[/Script/Engine/ExponentialHeightFogData]|APtr: 0x20000 Adr 0x1D6D1B8E |Count->-1820327936|11775
+								BOffset->0x18E|int:131072|||0x0 VaFname >0x9F10001-> ->GFName[/Script/DFMQuest/DFMQuestAudioSubsystem]|APtr: 0x20000 Adr 0x1D6D1B8E |Count->-1820327936|11775
+								BOffset->0x18E|int:131072|||0x0 VaFname >0x9F10001-> ->GFName[UCharacterLODFeatureLevel]|APtr: 0x20000 Adr 0x1D6D1B8E |Count->-1820327936|11775
+								Offset->0x198|Type_UE|||0x12 VaFname >0xF0000-> ->GFName[/Game/WwiseAudio/GPEvents/Voice/Character/Voice_103/InGame/Mark/Voice_103_Mark_Enemy_Transport_3_High]|APtr: 0x2DFF9380 Adr 0x1D6D1B98 |TypePoint*->32 |On::0
+								Offset->0x198|Type_UE|||0x6 VaFname >0x190000-> ->GFName[/Game/Commerical/WeaponAppear/Ma1/GreenLight_da/PSG-1/Model/Other_quickdraw76251_086_GreenLight_da/Other_quickdraw76251_086_GreenLight_da_3P.Other_quickdraw76251_086_GreenLight_da_3P]|APtr: 0x2DFF9380 Adr 0x1D6D1B98 |TypePoint*->32 |On::0
+								Offset->0x19E|Type_UE|||0x20 VaFname >0x1E00-> ->GFName[��������������������9��������������������������������������������������������������������������I�UEditableMessageTagQ]|APtr: 0x200000 Adr 0x1D6D1B9E |Count->-824180736|9463
+								Offset->0x1A8|Type_UE|||0x0 VaFname >0xF9FD8-> ->GFName[UserConstructionScript]|APtr: 0x24F7CEE0 Adr 0x1D6D1BA8 |Count->2|4
+								Offset->0x1A8|Type_UE|||0x0 VaFname >0xF9FD8-> ->GFName[UserConstructionScript]|APtr: 0x24F7CEE0 Adr 0x1D6D1BA8 |Count->2|4
+								Offset->0x1A8|Type_UE|||0x0 VaFname >0xF9FD8-> ->GFName[UserConstructionScript]|APtr: 0x24F7CEE0 Adr 0x1D6D1BA8 |Count->2|4
+								Offset->0x1A8|Type_UE|||0x0 VaFname >0xF9FD8-> ->GFName[UserConstructionScript]|APtr: 0x24F7CEE0 Adr 0x1D6D1BA8 |Count->2|4
+								Offset->0x1A8|Type_UE|||0x0 VaFname >0xF9FD8-> ->GFName[UserConstructionScript]|APtr: 0x24F7CEE0 Adr 0x1D6D1BA8 |Count->2|4
+								BOffset->0x1B6|int:196608|||0x20 VaFname >0x5A34-> ->GFName[/Script/DFMQuest/DFMQuestAudioSubsystem]|APtr: 0x30000 Adr 0x1D6D1BB6 |Count->0|0
+								Offset->0x1B6|int:196608|||0x4A VaFname >0x10000-> ->GFName[/Script/GPGameplay/Default__GPPathWayPointInterface]|APtr: 0x30000 Adr 0x1D6D1BB6 |Count->0|0
+								Offset->0x1B6|int:196608|||0x46 VaFname >0x10000-> ->GFName[/Script/GPGameplay/Default__GPPathWayPointInterface]|APtr: 0x30000 Adr 0x1D6D1BB6 |Count->0|0
+								Offset->0x1B6|int:196608|||0x2C VaFname >0x5A80-> ->GFName[����������������������������������������������������������������GeneBatchRuntimeMergingMeshInputMergeDrawSection�/Script/GeneBatch/GeneBatchMaterial���GeneBatchMaterial�'�/Sc]|APtr: 0x30000 Adr 0x1D6D1BB6 |Count->0|0
+								Offset->0x1DE|int:65536|||0x20 VaFname >0x10120-> ->GFName[����������������FriendInfoInSteam�����������������������/�/Script/DFOnlineService/DFSteamServiceAgent���]|APtr: 0x10000 Adr 0x1D6D1BDE |Count->0|0
+								Offset->0x1DE|int:65536|||0x28 VaFname >0x10000-> ->GFName[/Script/GPGameplay/Default__GPPathWayPointInterface]|APtr: 0x10000 Adr 0x1D6D1BDE |Count->0|0
+								Offset->0x1EE|int:65536|||0x20 VaFname >0x10120-> ->GFName[����������������FriendInfoInSteam�����������������������/�/Script/DFOnlineService/DFSteamServiceAgent���]|APtr: 0x10000 Adr 0x1D6D1BEE |Count->0|0
+								Offset->0x1EE|int:65536|||0x28 VaFname >0x10000-> ->GFName[/Script/GPGameplay/Default__GPPathWayPointInterface]|APtr: 0x10000 Adr 0x1D6D1BEE |Count->0|0
+								Offset->0x210|Type_UE|||0x24 VaFname >0x2E0400-> ->GFName[ExtraTipsDataRow]|APtr: 0x10CDB3CC0 Adr 0x1D6D1C10 |Count->165|176
+								Offset->0x248|Type_UE|||0x1C VaFname >0x1A8B07-> ->GFName[AggregateClass]|APtr: 0xFA476140 Adr 0x1D6D1C48 |Count->165|169
+								Offset->0x248|Type_UE|||0x28 VaFname >0x1A8AC8-> ->GFName[OwnerLevel]|APtr: 0xFA476140 Adr 0x1D6D1C48 |Count->165|169
+								Offset->0x258|Type_UE|||0x0 VaFname >0x1300BD-> ->GFName[AddCameraLensEffect]|APtr: 0x1D6B6600 Adr 0x1D6D1C58 |Count->27|56
+								Offset->0x258|Type_UE|||0x20 VaFname >0x1300D3-> ->GFName[ClearCameraLensEffects]|APtr: 0x1D6B6600 Adr 0x1D6D1C58 |Count->27|56
+								Offset->0x258|Type_UE|||0x0 VaFname >0x1300BD-> ->GFName[AddCameraLensEffect]|APtr: 0x1D6B6600 Adr 0x1D6D1C58 |Count->27|56
+								Offset->0x258|Type_UE|||0x0 VaFname >0x1300BD-> ->GFName[AddCameraLensEffect]|APtr: 0x1D6B6600 Adr 0x1D6D1C58 |Count->27|56
+								Offset->0x258|Type_UE|||0x0 VaFname >0x1300BD-> ->GFName[AddCameraLensEffect]|APtr: 0x1D6B6600 Adr 0x1D6D1C58 |Count->27|56
+								BOffset->0x280|Type_UE|||0x0 VaFname >0x4CA8C500-> ->GFName[GPCameraManager]|APtr: 0x1545BEF60 Adr 0x1D6D1C80 |TypePoint*->492162560 |On::0
+								Offset->0x290|Type_UE|||0x1C VaFname >0x2C204-> ->GFName[/Script/GPCamera]|APtr: 0x22977D10 Adr 0x1D6D1C90 |Count->67|1245353
+								BOffset->0x29C|Type_UE|||0x0 VaFname >0x3D00002F-> ->GFName[GPCameraManager]|APtr: 0x1300A9 Adr 0x1D6D1C9C |TypePoint*->1922 |On::0
+								BOffset->0x29C|Type_UE|||0x0 VaFname >0x3D00002F-> ->GFName[GPCameraManager]|APtr: 0x1300A9 Adr 0x1D6D1C9C |TypePoint*->1922 |On::0
+								BOffset->0x29C|Type_UE|||0x0 VaFname >0x3D00002F-> ->GFName[GPCameraManager]|APtr: 0x1300A9 Adr 0x1D6D1C9C |TypePoint*->1922 |On::0
+								BOffset->0x29C|Type_UE|||0x0 VaFname >0x3D00002F-> ->GFName[GPCameraManager]|APtr: 0x1300A9 Adr 0x1D6D1C9C |TypePoint*->1922 |On::0
+								BOffset->0x2B6|int:196608|||0x20 VaFname >0x5A34-> ->GFName[/Script/DFMQuest/DFMQuestAudioSubsystem]|APtr: 0x30000 Adr 0x1D6D1CB6 |Count->-824180736|5
+								Offset->0x2B6|int:196608|||0x4A VaFname >0x10000-> ->GFName[/Script/GPGameplay/Default__GPPathWayPointInterface]|APtr: 0x30000 Adr 0x1D6D1CB6 |Count->-824180736|5
+								Offset->0x2B6|int:196608|||0x46 VaFname >0x10000-> ->GFName[/Script/GPGameplay/Default__GPPathWayPointInterface]|APtr: 0x30000 Adr 0x1D6D1CB6 |Count->-824180736|5
+								Offset->0x2B6|int:196608|||0x2C VaFname >0x5A80-> ->GFName[����������������������������������������������������������������GeneBatchRuntimeMergingMeshInputMergeDrawSection�/Script/GeneBatch/GeneBatchMaterial���GeneBatchMaterial�'�/Sc]|APtr: 0x30000 Adr 0x1D6D1CB6 |Count->-824180736|5
+								Offset->0x2C8|Type_UE|||0x1C VaFname >0x1300B2-> ->GFName[PlayerCameraManager]|APtr: 0x1D6D1A00 Adr 0x1D6D1CC8 |TypePoint*->16 |On::0
+								Offset->0x2F8|Type_UE|||0x28 VaFname >0x28F5C1-> ->GFName[PCOwner]|APtr: 0x1060B22C0 Adr 0x1D6D1CF8 |TypePoint*->101393088 |On::1
+								Offset->0x300|Type_UE|||0x28 VaFname >0x28F5C1-> ->GFName[PCOwner]|APtr: 0x1060B22C0 Adr 0x1D6D1D00 |Count->0|0
+								Offset->0x310|Type_UE|||0x28 VaFname >0x196614-> ->GFName[ServerUpdateCameraTimeout]|APtr: 0x1060B11E0 Adr 0x1D6D1D10 |Count->0|0
+								Offset->0x3C0|Type_UE|||0x1C VaFname >0x310886-> ->GFName[Default__GPCameraManager]|APtr: 0x2391A230 Adr 0x1D6D1DC0 |Count->0|0
+								Offset->0x490|Type_UE|||0x24 VaFname >0x2E0400-> ->GFName[ExtraTipsDataRow]|APtr: 0x10CDB3A00 Adr 0x1D6D1E90 |Count->165|176
+								Offset->0x4C8|Type_UE|||0x1C VaFname >0x1A8B07-> ->GFName[AggregateClass]|APtr: 0x108DA0DC0 Adr 0x1D6D1EC8 |Count->165|272
+								Offset->0x4C8|Type_UE|||0x28 VaFname >0x1A8AC8-> ->GFName[OwnerLevel]|APtr: 0x108DA0DC0 Adr 0x1D6D1EC8 |Count->165|272
+								BOffset->0x500|Type_UE|||0x0 VaFname >0x4CA8C500-> ->GFName[ParseProtocolForReplayClientSDK]|APtr: 0x1545BEF60 Adr 0x1D6D1F00 |TypePoint*->492162560 |On::0
+								Offset->0x510|Type_UE|||0x1C VaFname >0x2BF05-> ->GFName[/Script/DSNetwork]|APtr: 0x22975520 Adr 0x1D6D1F10 |Count->67|1245336
+								BOffset->0x51C|Type_UE|||0x1C VaFname >0x2339-> ->GFName[ParseProtocolForReplayClientSDK]|APtr: 0x130098 Adr 0x1D6D1F1C |TypePoint*->1919 |On::0
+								BOffset->0x51C|Type_UE|||0x0 VaFname >0x46-> ->GFName[ParseProtocolForReplayClientSDK]|APtr: 0x130098 Adr 0x1D6D1F1C |TypePoint*->1919 |On::0
+								BOffset->0x51C|Type_UE|||0x0 VaFname >0x46-> ->GFName[ParseProtocolForReplayClientSDK]|APtr: 0x130098 Adr 0x1D6D1F1C |TypePoint*->1919 |On::0
+								Offset->0x536|int:65536|||0x20 VaFname >0x10120-> ->GFName[����������������FriendInfoInSteam�����������������������/�/Script/DFOnlineService/DFSteamServiceAgent���]|APtr: 0x10000 Adr 0x1D6D1F36 |TypePoint*->2621440 |On::0
+								Offset->0x536|int:65536|||0x28 VaFname >0x10000-> ->GFName[/Script/GPGameplay/Default__GPPathWayPointInterface]|APtr: 0x10000 Adr 0x1D6D1F36 |TypePoint*->2621440 |On::0
+								Offset->0x53E|Type_UE|||0x20 VaFname >0x1E00-> ->GFName[��������������������9��������������������������������������������������������������������������I�UEditableMessageTagQ]|APtr: 0x280000 Adr 0x1D6D1F3E |TypePoint*->16777216 |On::3581
+								BOffset->0x54E|int:524288|||0x1C VaFname >0x730065-> ->GFName[ESOLWeatherType::ESOLWeatherType_MAX]|APtr: 0x80000 Adr 0x1D6D1F4E |Count->0|0
+								BOffset->0x54E|int:524288|||0x20 VaFname >0x280020-> ->GFName[ESOLWeatherType::ESOLWeatherType_MAX]|APtr: 0x80000 Adr 0x1D6D1F4E |Count->0|0
+								BOffset->0x54E|int:524288|||0x24 VaFname >0x380078-> ->GFName[ESOLWeatherType::ESOLWeatherType_MAX]|APtr: 0x80000 Adr 0x1D6D1F4E |Count->0|0
+								Offset->0x54E|int:524288|||0x28 VaFname >0x290036-> ->GFName[����������������������SmoothDivideCount���������������g�StaticMeshLocalF]|APtr: 0x80000 Adr 0x1D6D1F4E |Count->0|0
+								Offset->0x54E|int:524288|||0x2C VaFname >0x53005C-> ->GFName[/UIAtlas/System/HeroBadge/BakedSprite/Badge_MAI_03.Badge_MAI_03p������ɯ���������������������������������������������߰�)l/Game/UI/UIAtlas/System/HeroBadge/BakedSprite/Badge_Mandel_01.Badge_Mandel_01p�����]|APtr: 0x80000 Adr 0x1D6D1F4E |Count->0|0
+								Offset->0x640|Type_UE|||0x1C VaFname >0x310871-> ->GFName[Default__ParseProtocolForReplayClientSDK]|APtr: 0x2391A200 Adr 0x1D6D2040 |Count->0|0
+								Offset->0x710|Type_UE|||0x28 VaFname >0x1000-> ->GFName[/Script/GameCore/Default__EngineSingletonHelper]|APtr: 0x105D9C2A0 Adr 0x1D6D2110 |Count->3|4
+								BOffset->0x752|int:262144|||0x1C VaFname >0x2D0073-> ->GFName[/Script/Engine/ExponentialHeightFogData]|APtr: 0x40000 Adr 0x1D6D2152 |Count->0|0
+								���&�)�)�52|int:262144|||0x20 VaFname >0x6E0069-> ->GFName[�&�&�A�I��        ��&�O�&�       �
+								�&�&�A�I��     ]|APtr: 0x40000 Adr 0x1D6D2152 |Count->0|0
+								Offset->0x752|int:262144|||0x24 VaFname >0x650074-> ->GFName[�O�!������!�7� �9��Q������)���?���Q��Q������Q�5�Q���Q��!�!�O�!������Q��!�!�O�!������!�.�3]|APtr: 0x40000 Adr 0x1D6D2152 |Count->0|0
+								Offset->0x752|int:262144|||0x28 VaFname >0x6E0072-> ->GFName[2_Spotlight_1P.PisG_C_M870Adapter_062_Spotlight_1Pc]/Game/Models/Weapons/Parts/PisG/PisG_C_M870Adapter_062_Spotlight/PisG_C_M870Adapter_062_Spotlight_3P.PisG_C_M870Adapter_062_Spotlight_3P[]/Game/Models/Weapons/Parts/PisG/PisG_C_M870Adapter_062_Spotlight/PisG_C_M870Adapter_062_Spotlight_UI.PisG_C_M870Adapter_062_Spotlight_UI�k/Game/Models/Weapons/Parts/PisG/PisG_C_mp7_059/PisG_C_mp7_059_1P.PisG_C_mp7_059_1P�k/Game/Models/Weapons/Parts/PisG/PisG_C_mp7_059/PisG_C_mp7_059_3P.PisG_C_mp7_059_3P�k/Game/Models/Weapons/Parts/PisG/PisG_C_mp7_059/PisG_C_mp7_059_UI.PisG_C_mp7_059_UIYc/Game/]|APtr: 0x40000 Adr 0x1D6D2152 |Count->0|0
+								BOffset->0x752|int:262144|||0x2C VaFname >0x6C0061-> ->GFName[/Script/Engine/ExponentialHeightFogData]|APtr: 0x40000 Adr 0x1D6D2152 |Count->0|0
+								BOffset->0x780|Type_UE|||0x0 VaFname >0x4CA8C500-> ->GFName[ParseNetProtocolForNStateCommandlet]|APtr: 0x1545BEF60 Adr 0x1D6D2180 |TypePoint*->492162560 |On::0
+								Offset->0x790|Type_UE|||0x1C VaFname >0x2BF05-> ->GFName[/Script/DSNetwork]|APtr: 0x22975520 Adr 0x1D6D2190 |Count->67|1245317
+								BOffset->0x79C|Type_UE|||0x0 VaFname >0x45-> ->GFName[ParseNetProtocolForNStateCommandlet]|APtr: 0x130085 Adr 0x1D6D219C |TypePoint*->1918 |On::0
+								BOffset->0x79C|Type_UE|||0x0 VaFname >0x45-> ->GFName[ParseNetProtocolForNStateCommandlet]|APtr: 0x130085 Adr 0x1D6D219C |TypePoint*->1918 |On::0
+								BOffset->0x79C|Type_UE|||0x0 VaFname >0x45-> ->GFName[ParseNetProtocolForNStateCommandlet]|APtr: 0x130085 Adr 0x1D6D219C |TypePoint*->1918 |On::0
+								BOffset->0x79C|Type_UE|||0x0 VaFname >0x45-> ->GFName[ParseNetProtocolForNStateCommandlet]|APtr: 0x130085 Adr 0x1D6D219C |TypePoint*->1918 |On::0
+								BOffset->0x79C|Type_UE|||0x0 VaFname >0x45-> ->GFName[ParseNetProtocolForNStateCommandlet]|APtr: 0x130085 Adr 0x1D6D219C |TypePoint*->1918 |On::0
+								BOffset->0x7B6|int:131072|||0x0 VaFname >0x9F10001-> ->GFName[UCharacterLODFeatureLevel]|APtr: 0x20000 Adr 0x1D6D21B6 |TypePoint*->8912896 |On::0
+								BOffset->0x7B6|int:131072|||0x0 VaFname >0x9F10001-> ->GFName[UCharacterLODFeatureLevel]|APtr: 0x20000 Adr 0x1D6D21B6 |TypePoint*->8912896 |On::0
+								BOffset->0x7B6|int:131072|||0x0 VaFname >0x9F10001-> ->GFName[UCharacterLODFeatureLevel]|APtr: 0x20000 Adr 0x1D6D21B6 |TypePoint*->8912896 |On::0
+								BOffset->0x7B6|int:131072|||0x0 VaFname >0x9F10001-> ->GFName[UCharacterLODFeatureLevel]|APtr: 0x20000 Adr 0x1D6D21B6 |TypePoint*->8912896 |On::0
+								BOffset->0x7B6|int:131072|||0x0 VaFname >0x9F10001-> ->GFName[UCharacterLODFeatureLevel]|APtr: 0x20000 Adr 0x1D6D21B6 |TypePoint*->8912896 |On::0
+								Offset->0x7C8|Type_UE|||0x1C VaFname >0x12C02A-> ->GFName[Commandlet]|APtr: 0x1D672E00 Adr 0x1D6D21C8 |TypePoint*->8 |On::0
+								BOffset->0x7CE|int:524288|||0x1C VaFname >0x730065-> ->GFName[ESOLWeatherType::ESOLWeatherType_MAX]|APtr: 0x80000 Adr 0x1D6D21CE |Count->0|0
+								BOffset->0x7CE|int:524288|||0x20 VaFname >0x280020-> ->GFName[ESOLWeatherType::ESOLWeatherType_MAX]|APtr: 0x80000 Adr 0x1D6D21CE |Count->0|0
+								BOffset->0x7CE|int:524288|||0x24 VaFname >0x380078-> ->GFName[ESOLWeatherType::ESOLWeatherType_MAX]|APtr: 0x80000 Adr 0x1D6D21CE |Count->0|0
+								Offset->0x7CE|int:524288|||0x28 VaFname >0x290036-> ->GFName[����������������������SmoothDivideCount���������������g�StaticMeshLocalF]|APtr: 0x80000 Adr 0x1D6D21CE |Count->0|0
+								Offset->0x7F8|Type_UE|||0x28 VaFname >0x28B9A1-> ->GFName[HelpDescription]|APtr: 0x10765AEC0 Adr 0x1D6D21F8 |Count->0|0
+								Offset->0x8C0|Type_UE|||0x1C VaFname >0x31085A-> ->GFName[Default__ParseNetProtocolForNStateCommandlet]|APtr: 0x2391A170 Adr 0x1D6D22C0 |Count->0|0
+								Offset->0x990|Type_UE|||0x28 VaFname >0x1000-> ->GFName[/Script/GameCore/Default__EngineSingletonHelper]|APtr: 0x105D9C2B0 Adr 0x1D6D2390 |Count->3|4
+								BOffset->0x9D2|int:262144|||0x1C VaFname >0x2D0073-> ->GFName[/Script/Engine/ExponentialHeightFogData]|APtr: 0x40000 Adr 0x1D6D23D2 |Count->0|0
+								���&�)�)�D2|int:262144|||0x20 VaFname >0x6E0069-> ->GFName[�&�&�A�I��        ��&�O�&�       �
+								�&�&�A�I��     ]|APtr: 0x40000 Adr 0x1D6D23D2 |Count->0|0
+								Offset->0x9D2|int:262144|||0x24 VaFname >0x650074-> ->GFName[�O�!������!�7� �9��Q������)���?���Q��Q������Q�5�Q���Q��!�!�O�!������Q��!�!�O�!������!�.�3]|APtr: 0x40000 Adr 0x1D6D23D2 |Count->0|0
+								Offset->0x9D2|int:262144|||0x28 VaFname >0x6E0072-> ->GFName[2_Spotlight_1P.PisG_C_M870Adapter_062_Spotlight_1Pc]/Game/Models/Weapons/Parts/PisG/PisG_C_M870Adapter_062_Spotlight/PisG_C_M870Adapter_062_Spotlight_3P.PisG_C_M870Adapter_062_Spotlight_3P[]/Game/Models/Weapons/Parts/PisG/PisG_C_M870Adapter_062_Spotlight/PisG_C_M870Adapter_062_Spotlight_UI.PisG_C_M870Adapter_062_Spotlight_UI�k/Game/Models/Weapons/Parts/PisG/PisG_C_mp7_059/PisG_C_mp7_059_1P.PisG_C_mp7_059_1P�k/Game/Models/Weapons/Parts/PisG/PisG_C_mp7_059/PisG_C_mp7_059_3P.PisG_C_mp7_059_3P�k/Game/Models/Weapons/Parts/PisG/PisG_C_mp7_059/PisG_C_mp7_059_UI.PisG_C_mp7_059_UIYc/Game/]|APtr: 0x40000 Adr 0x1D6D23D2 |Count->0|0
+								BOffset->0x9D2|int:262144|||0x2C VaFname >0x6C0061-> ->GFName[/Script/Engine/ExponentialHeightFogData]|APtr: 0x40000 Adr 0x1D6D23D2 |Count->0|0
+								BOffset->0xA00|Type_UE|||0x0 VaFname >0x4CA8C500-> ->GFName[ProtocolJsonExporter_ForNState]|APtr: 0x1545BEF60 Adr 0x1D6D2400 |TypePoint*->492162560 |On::0
+								Offset->0xA10|Type_UE|||0x1C VaFname >0x2BF05-> ->GFName[/Script/DSNetwork]|APtr: 0x22975520 Adr 0x1D6D2410 |Count->67|1245301
+								Offset->0xA1C|Type_UE|||0x0 VaFname >0xFD00001E-> ->GFName[�3�:!>)��u���b��7�j��cx��'7��gp���E�����~&�!����ٸ��'7�j�Tbxn��?)��;��n�z[7�Gn�R[f7�� ρ��ճ��������g{~&�!����ٿcL�7�56��~n�3�^:!>)���������?u7��v7���."7�3_�E���;)�b[7�j3�cxn��on�헷���bp�;[n�3��:!7������;)�b[7�j��cxn��A���bp�;Sn�3Ũ:!7���-���;)�b[7�j��cxn���]|APtr: 0x130075 Adr 0x1D6D241C |TypePoint*->1917 |On::0
+								Offset->0xA1C|Type_UE|||0x0 VaFname >0xFD00001E-> ->GFName[�3�:!>)��u���b��7�j��cx��'7��gp���E�����~&�!����ٸ��'7�j�Tbxn��?)��;��n�z[7�Gn�R[f7�� ρ��ճ��������g{~&�!����ٿcL�7�56��~n�3�^:!>)���������?u7��v7���."7�3_�E���;)�b[7�j3�cxn��on�헷���bp�;[n�3��:!7������;)�b[7�j��cxn��A���bp�;Sn�3Ũ:!7���-���;)�b[7�j��cxn���]|APtr: 0x130075 Adr 0x1D6D241C |TypePoint*->1917 |On::0
+								Offset->0xA1C|Type_UE|||0x0 VaFname >0xFD00001E-> ->GFName[�3�:!>)��u���b��7�j��cx��'7��gp���E�����~&�!����ٸ��'7�j�Tbxn��?)��;��n�z[7�Gn�R[f7�� ρ��ճ��������g{~&�!����ٿcL�7�56��~n�3�^:!>)���������?u7��v7���."7�3_�E���;)�b[7�j3�cxn��on�헷���bp�;[n�3��:!7������;)�b[7�j��cxn��A���bp�;Sn�3Ũ:!7���-���;)�b[7�j��cxn���]|APtr: 0x130075 Adr 0x1D6D241C |TypePoint*->1917 |On::0
+								Offset->0xA1C|Type_UE|||0x0 VaFname >0xFD00001E-> ->GFName[�3�:!>)��u���b��7�j��cx��'7��gp���E�����~&�!����ٸ��'7�j�Tbxn��?)��;��n�z[7�Gn�R[f7�� ρ��ճ��������g{~&�!����ٿcL�7�56��~n�3�^:!>)���������?u7��v7���."7�3_�E���;)�b[7�j3�cxn��on�헷���bp�;[n�3��:!7������;)�b[7�j��cxn��A���bp�;Sn�3Ũ:!7���-���;)�b[7�j��cxn���]|APtr: 0x130075 Adr 0x1D6D241C |TypePoint*->1917 |On::0
+								Offset->0xA1C|Type_UE|||0x0 VaFname >0xFD00001E-> ->GFName[�3�:!>)��u���b��7�j��cx��'7��gp���E�����~&�!����ٸ��'7�j�Tbxn��?)��;��n�z[7�Gn�R[f7�� ρ��ճ��������g{~&�!����ٿcL�7�56��~n�3�^:!>)���������?u7��v7���."7�3_�E���;)�b[7�j3�cxn��on�헷���bp�;[n�3��:!7������;)�b[7�j��cxn��A���bp�;Sn�3Ũ:!7���-���;)�b[7�j��cxn���]|APtr: 0x130075 Adr 0x1D6D241C |TypePoint*->1917 |On::0
+								Offset->0xA36|int:65536|||0x20 VaFname >0x10120-> ->GFName[����������������FriendInfoInSteam�����������������������/�/Script/DFOnlineService/DFSteamServiceAgent���]|APtr: 0x10000 Adr 0x1D6D2436 |TypePoint*->6291456 |On::0
+								Offset->0xA36|int:65536|||0x28 VaFname >0x10000-> ->GFName[/Script/GPGameplay/Default__GPPathWayPointInterface]|APtr: 0x10000 Adr 0x1D6D2436 |TypePoint*->6291456 |On::0
+								BOffset->0xA4E|int:524288|||0x1C VaFname >0x730065-> ->GFName[ESOLWeatherType::ESOLWeatherType_MAX]|APtr: 0x80000 Adr 0x1D6D244E |Count->0|0
+								BOffset->0xA4E|int:524288|||0x20 VaFname >0x280020-> ->GFName[ESOLWeatherType::ESOLWeatherType_MAX]|APtr: 0x80000 Adr 0x1D6D244E |Count->0|0
+								BOffset->0xA4E|int:524288|||0x24 VaFname >0x380078-> ->GFName[ESOLWeatherType::ESOLWeatherType_MAX]|APtr: 0x80000 Adr 0x1D6D244E |Count->0|0
+								Offset->0xA4E|int:524288|||0x28 VaFname >0x290036-> ->GFName[����������������������SmoothDivideCount���������������g�StaticMeshLocalF]|APtr: 0x80000 Adr 0x1D6D244E |Count->0|0
+								Offset->0xA4E|int:524288|||0x2C VaFname >0x53005C-> ->GFName[/UIAtlas/System/HeroBadge/BakedSprite/Badge_MAI_03.Badge_MAI_03p������ɯ���������������������������������������������߰�)l/Game/UI/UIAtlas/System/HeroBadge/BakedSprite/Badge_Mandel_01.Badge_Mandel_01p�����]|APtr: 0x80000 Adr 0x1D6D244E |Count->0|0
+								Offset->0xB40|Type_UE|||0x1C VaFname >0x310845-> ->GFName[Default__ProtocolJsonExporter_ForNState]|APtr: 0x2391A110 Adr 0x1D6D2540 |Count->0|0
+								Offset->0xC10|Type_UE|||0x28 VaFname >0x1000-> ->GFName[/Script/GameCore/Default__EngineSingletonHelper]|APtr: 0x105D9C2C0 Adr 0x1D6D2610 |Count->3|4
+								BOffset->0xC52|int:262144|||0x1C VaFname >0x2D0073-> ->GFName[/Script/Engine/ExponentialHeightFogData]|APtr: 0x40000 Adr 0x1D6D2652 |Count->0|0
+								���&�)�)�52|int:262144|||0x20 VaFname >0x6E0069-> ->GFName[�&�&�A�I��        ��&�O�&�       �
+								�&�&�A�I��     ]|APtr: 0x40000 Adr 0x1D6D2652 |Count->0|0
+								Offset->0xC52|int:262144|||0x24 VaFname >0x650074-> ->GFName[�O�!������!�7� �9��Q������)���?���Q��Q������Q�5�Q���Q��!�!�O�!������Q��!�!�O�!������!�.�3]|APtr: 0x40000 Adr 0x1D6D2652 |Count->0|0
+								Offset->0xC52|int:262144|||0x28 VaFname >0x6E0072-> ->GFName[2_Spotlight_1P.PisG_C_M870Adapter_062_Spotlight_1Pc]/Game/Models/Weapons/Parts/PisG/PisG_C_M870Adapter_062_Spotlight/PisG_C_M870Adapter_062_Spotlight_3P.PisG_C_M870Adapter_062_Spotlight_3P[]/Game/Models/Weapons/Parts/PisG/PisG_C_M870Adapter_062_Spotlight/PisG_C_M870Adapter_062_Spotlight_UI.PisG_C_M870Adapter_062_Spotlight_UI�k/Game/Models/Weapons/Parts/PisG/PisG_C_mp7_059/PisG_C_mp7_059_1P.PisG_C_mp7_059_1P�k/Game/Models/Weapons/Parts/PisG/PisG_C_mp7_059/PisG_C_mp7_059_3P.PisG_C_mp7_059_3P�k/Game/Models/Weapons/Parts/PisG/PisG_C_mp7_059/PisG_C_mp7_059_UI.PisG_C_mp7_059_UIYc/Game/]|APtr: 0x40000 Adr 0x1D6D2652 |Count->0|0
+								BOffset->0xC52|int:262144|||0x2C VaFname >0x6C0061-> ->GFName[/Script/Engine/ExponentialHeightFogData]|APtr: 0x40000 Adr 0x1D6D2652 |Count->0|0
+								BOffset->0xC80|Type_UE|||0x0 VaFname >0x4CA8C500-> ->GFName[ParseNetProtocolCommandlet]|APtr: 0x1545BEF60 Adr 0x1D6D2680 |TypePoint*->492162560 |On::0
+								Offset->0xC90|Type_UE|||0x1C VaFname >0x2BF05-> ->GFName[/Script/DSNetwork]|APtr: 0x22975520 Adr 0x1D6D2690 |Count->67|1245287
+								Offset->0xC9C|Type_UE|||0x1C VaFname >0x45E400-> ->GFName[����������G�������������������������������߰��������������������������������������������i�/Game/WwiseAudio/GPEvents/Raid/Raid_01/MiniGame_Signal/UI_MiniGame_Signal_State_]|APtr: 0x130067 Adr 0x1D6D269C |TypePoint*->1916 |On::0
+								Offset->0xC9C|Type_UE|||0x20 VaFname >0x1F0000-> ->GFName[/Game/Models/Weapons/Parts/Rec/AR/Rec_AR_AK12_030/Anims/AR_M_AK12_3P_ChangeClipW]|APtr: 0x130067 Adr 0x1D6D269C |TypePoint*->1916 |On::0
+								BOffset->0xC9C|Type_UE|||0x24 VaFname >0x1EFD00-> ->GFName[ParseNetProtocolCommandlet]|APtr: 0x130067 Adr 0x1D6D269C |TypePoint*->1916 |On::0
+								BOffset->0xC9C|Type_UE|||0x0 VaFname >0x5E000200-> ->GFName[ParseNetProtocolCommandlet]|APtr: 0x130067 Adr 0x1D6D269C |TypePoint*->1916 |On::0
+								Offset->0xC9C|Type_UE|||0x2C VaFname >0x1F0900-> ->GFName[����������;�EResourceFXType�E�EResourceFXTyp]|APtr: 0x130067 Adr 0x1D6D269C |TypePoint*->1916 |On::0
+								BOffset->0xCB6|int:131072|||0x0 VaFname >0x9F10001-> ->GFName[UCharacterLODFeatureLevel]|APtr: 0x20000 Adr 0x1D6D26B6 |TypePoint*->8912896 |On::0
+								BOffset->0xCB6|int:131072|||0x0 VaFname >0x9F10001-> ->GFName[UCharacterLODFeatureLevel]|APtr: 0x20000 Adr 0x1D6D26B6 |TypePoint*->8912896 |On::0
+								BOffset->0xCB6|int:131072|||0x0 VaFname >0x9F10001-> ->GFName[UCharacterLODFeatureLevel]|APtr: 0x20000 Adr 0x1D6D26B6 |TypePoint*->8912896 |On::0
+								BOffset->0xCB6|int:131072|||0x0 VaFname >0x9F10001-> ->GFName[UCharacterLODFeatureLevel]|APtr: 0x20000 Adr 0x1D6D26B6 |TypePoint*->8912896 |On::0
+								BOffset->0xCB6|int:131072|||0x0 VaFname >0x9F10001-> ->GFName[UCharacterLODFeatureLevel]|APtr: 0x20000 Adr 0x1D6D26B6 |TypePoint*->8912896 |On::0
+								Offset->0xCC8|Type_UE|||0x1C VaFname >0x12C02A-> ->GFName[Commandlet]|APtr: 0x1D672E00 Adr 0x1D6D26C8 |TypePoint*->8 |On::0
+								BOffset->0xCCE|int:524288|||0x1C VaFname >0x730065-> ->GFName[ESOLWeatherType::ESOLWeatherType_MAX]|APtr: 0x80000 Adr 0x1D6D26CE |Count->0|0
+								BOffset->0xCCE|int:524288|||0x20 VaFname >0x280020-> ->GFName[ESOLWeatherType::ESOLWeatherType_MAX]|APtr: 0x80000 Adr 0x1D6D26CE |Count->0|0
+								BOffset->0xCCE|int:524288|||0x24 VaFname >0x380078-> ->GFName[ESOLWeatherType::ESOLWeatherType_MAX]|APtr: 0x80000 Adr 0x1D6D26CE |Count->0|0
+								Offset->0xCCE|int:524288|||0x28 VaFname >0x290036-> ->GFName[����������������������SmoothDivideCount���������������g�StaticMeshLocalF]|APtr: 0x80000 Adr 0x1D6D26CE |Count->0|0
+								Offset->0xCF8|Type_UE|||0x28 VaFname >0x28B9A1-> ->GFName[HelpDescription]|APtr: 0x10765AEC0 Adr 0x1D6D26F8 |Count->0|0
+								Offset->0xDC0|Type_UE|||0x1C VaFname >0x310832-> ->GFName[Default__ParseNetProtocolCommandlet]|APtr: 0x2391A080 Adr 0x1D6D27C0 |Count->0|0
+								Offset->0xE90|Type_UE|||0x28 VaFname >0x1000-> ->GFName[/Script/GameCore/Default__EngineSingletonHelper]|APtr: 0x105D9C2D0 Adr 0x1D6D2890 |Count->3|4
+								BOffset->0xED2|int:262144|||0x1C VaFname >0x2D0073-> ->GFName[/Script/Engine/ExponentialHeightFogData]|APtr: 0x40000 Adr 0x1D6D28D2 |Count->0|0
+								���&�)�)�D2|int:262144|||0x20 VaFname >0x6E0069-> ->GFName[�&�&�A�I��        ��&�O�&�       �
+								�&�&�A�I��     ]|APtr: 0x40000 Adr 0x1D6D28D2 |Count->0|0
+								Offset->0xED2|int:262144|||0x24 VaFname >0x650074-> ->GFName[�O�!������!�7� �9��Q������)���?���Q��Q������Q�5�Q���Q��!�!�O�!������Q��!�!�O�!������!�.�3]|APtr: 0x40000 Adr 0x1D6D28D2 |Count->0|0
+								Offset->0xED2|int:262144|||0x28 VaFname >0x6E0072-> ->GFName[2_Spotlight_1P.PisG_C_M870Adapter_062_Spotlight_1Pc]/Game/Models/Weapons/Parts/PisG/PisG_C_M870Adapter_062_Spotlight/PisG_C_M870Adapter_062_Spotlight_3P.PisG_C_M870Adapter_062_Spotlight_3P[]/Game/Models/Weapons/Parts/PisG/PisG_C_M870Adapter_062_Spotlight/PisG_C_M870Adapter_062_Spotlight_UI.PisG_C_M870Adapter_062_Spotlight_UI�k/Game/Models/Weapons/Parts/PisG/PisG_C_mp7_059/PisG_C_mp7_059_1P.PisG_C_mp7_059_1P�k/Game/Models/Weapons/Parts/PisG/PisG_C_mp7_059/PisG_C_mp7_059_3P.PisG_C_mp7_059_3P�k/Game/Models/Weapons/Parts/PisG/PisG_C_mp7_059/PisG_C_mp7_059_UI.PisG_C_mp7_059_UIYc/Game/]|APtr: 0x40000 Adr 0x1D6D28D2 |Count->0|0
+								BOffset->0xED2|int:262144|||0x2C VaFname >0x6C0061-> ->GFName[/Script/Engine/ExponentialHeightFogData]|APtr: 0x40000 Adr 0x1D6D28D2 |Count->0|0
+								BOffset->0xF00|Type_UE|||0x0 VaFname >0x4CA8C500-> ->GFName[ProtocolJsonExporter]|APtr: 0x1545BEF60 Adr 0x1D6D2900 |TypePoint*->492162560 |On::0
+								Offset->0xF10|Type_UE|||0x1C VaFname >0x2BF05-> ->GFName[/Script/DSNetwork]|APtr: 0x22975520 Adr 0x1D6D2910 |Count->67|1245276
+								BOffset->0xF1C|Type_UE|||0x1C VaFname >0x1EFD-> ->GFName[ProtocolJsonExporter]|APtr: 0x13005C Adr 0x1D6D291C |TypePoint*->1915 |On::0
+								BOffset->0xF1C|Type_UE|||0x20 VaFname >0x1F00-> ->GFName[ProtocolJsonExporter]|APtr: 0x13005C Adr 0x1D6D291C |TypePoint*->1915 |On::0
+								BOffset->0xF1C|Type_UE|||0x24 VaFname >0x1EFD-> ->GFName[ProtocolJsonExporter]|APtr: 0x13005C Adr 0x1D6D291C |TypePoint*->1915 |On::0
+								BOffset->0xF1C|Type_UE|||0x28 VaFname >0x45E4-> ->GFName[ProtocolJsonExporter]|APtr: 0x13005C Adr 0x1D6D291C |TypePoint*->1915 |On::0
+								BOffset->0xF1C|Type_UE|||0x2C VaFname >0x1F00-> ->GFName[ProtocolJsonExporter]|APtr: 0x13005C Adr 0x1D6D291C |TypePoint*->1915 |On::0
+								Offset->0xF36|int:65536|||0x20 VaFname >0x10120-> ->GFName[����������������FriendInfoInSteam�����������������������/�/Script/DFOnlineService/DFSteamServiceAgent���]|APtr: 0x10000 Adr 0x1D6D2936 |TypePoint*->6291456 |On::0
+								Offset->0xF36|int:65536|||0x28 VaFname >0x10000-> ->GFName[/Script/GPGameplay/Default__GPPathWayPointInterface]|APtr: 0x10000 Adr 0x1D6D2936 |TypePoint*->6291456 |On::0
+								BOffset->0xF4E|int:524288|||0x1C VaFname >0x730065-> ->GFName[ESOLWeatherType::ESOLWeatherType_MAX]|APtr: 0x80000 Adr 0x1D6D294E |Count->0|0
+								BOffset->0xF4E|int:524288|||0x20 VaFname >0x280020-> ->GFName[ESOLWeatherType::ESOLWeatherType_MAX]|APtr: 0x80000 Adr 0x1D6D294E |Count->0|0
+								BOffset->0xF4E|int:524288|||0x24 VaFname >0x380078-> ->GFName[ESOLWeatherType::ESOLWeatherType_MAX]|APtr: 0x80000 Adr 0x1D6D294E |Count->0|0
+								Offset->0xF4E|int:524288|||0x28 VaFname >0x290036-> ->GFName[����������������������SmoothDivideCount���������������g�StaticMeshLocalF]|APtr: 0x80000 Adr 0x1D6D294E |Count->0|0
+								Offset->0xF4E|int:524288|||0x2C VaFname >0x53005C-> ->GFName[/UIAtlas/System/HeroBadge/BakedSprite/Badge_MAI_03.Badge_MAI_03p������ɯ���������������������������������������������߰�)l/Game/UI/UIAtlas/System/HeroBadge/BakedSprite/Badge_Mandel_01.Badge_Mandel_01p�����]|APtr: 0x80000 Adr 0x1D6D294E |Count->0|0
