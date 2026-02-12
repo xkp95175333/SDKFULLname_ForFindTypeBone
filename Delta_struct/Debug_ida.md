@@ -417,236 +417,366 @@ LABEL_22:
 
 
 ```
+
+
+
 ---
-GetGname
+GetGname Def Fun
 ---
 
 ```c
 
-__int64 __fastcall sub_1452CD550(__int64 a1, __int64 a2, _QWORD *a3)
+__int64 __fastcall sub_14C8DD210(unsigned int a1, unsigned int a2)
 {
-  __int64 v3; // r13
-  __int64 v6; // rsi
-  __int64 v7; // rdx
-  __int64 v8; // rcx
-  __int64 v9; // r8
-  __int64 v10; // rax
-  __int64 v11; // rax
-  __int64 v12; // rbp
-  const _QWORD *v13; // r12
-  unsigned __int64 v14; // rdi
-  __int64 v15; // rax
-  unsigned __int64 v16; // rbx
-  __int64 v17; // rcx
-  __int64 v18; // rax
-  __int64 v19; // r8
-  _QWORD *v20; // rax
-  __int64 v21; // rax
-  __int64 v22; // rax
-  __int64 v23; // rax
-  __int64 v24; // rbx
-  int v26; // ebx
-  int v27; // eax
-  __int64 v28; // rax
-  __int64 v29; // rax
-  __int64 v30; // rcx
-  __int64 v31; // rdx
-  __int64 v32; // r8
-  __int64 v33; // rax
-  unsigned __int64 v34; // rax
-  __int64 v35; // rcx
-  __int64 v36; // rax
-  __int64 v37; // r8
-  __int64 v38; // rax
-  __int64 v39; // rcx
-  __int64 v40; // rdx
-  __int64 v41; // r8
-  __int64 v42; // rax
-  __int64 v43; // rax
-  __int64 v44; // rdx
-  __int64 v45; // r8
-  __int64 v46; // rax
-  __int64 v47; // [rsp+40h] [rbp-48h] BYREF
-  char v48[64]; // [rsp+48h] [rbp-40h] BYREF
-  __int64 v50; // [rsp+98h] [rbp+10h] BYREF
-  __int64 v51; // [rsp+A8h] [rbp+20h]
+  _QWORD *v4; // rsi
+  _BYTE *v5; // rbx
+  _BYTE *v6; // rdx
+  unsigned __int64 v7; // r8
+  int v8; // r14d
+  __int8 v9; // bl
+  __m128i v10; // xmm6
+  _BYTE *v11; // rdi
+  _BYTE *v12; // rdx
+  unsigned __int64 v13; // r8
+  int v14; // esi
+  unsigned __int32 v15; // xmm1_4
+  char *v16; // r8
+  unsigned __int64 v17; // rcx
+  char *v18; // rdx
+  char *v19; // r8
+  __int16 v20; // ax
+  __int8 *v21; // rax
+  __int32 v22; // eax
+  __int32 v23; // ebx
+  __int64 result; // rax
+  __m128i v25; // [rsp+20h] [rbp-E0h] BYREF
+  __m128i v26; // [rsp+30h] [rbp-D0h] BYREF
+  char v27[2048]; // [rsp+40h] [rbp-C0h] BYREF
+  char v28[2048]; // [rsp+840h] [rbp+740h] BYREF
 
-  v3 = *(_QWORD *)(a2 + 0x20);
-  if ( !v3 )
-    return 0LL;
-  v6 = a3[0x1E];
-  if ( !v6 && (v6 = sub_14E20B010(a3)) == 0
-    || (v10 = sub_14EE69560(),
-        v7 = *(_QWORD *)(v6 + 8),
-        v9 = v10 + 0x30,
-        v11 = *(int *)(v10 + 0x38),
-        (int)v11 > *(_DWORD *)(v7 + 0x38))
-    || (v8 = v11, *(_QWORD *)(*(_QWORD *)(v7 + 0x30) + 8 * v11) != v9) )
+  if ( byte_1573DC12C )
   {
-    if ( (unsigned __int8)qword_156A1DE80(v8, v7, v9) )
-    {
-      v50 = unk_156A20E88;
-      LOBYTE(v50) = byte_156A20E8F ^ 0x36;
-      HIBYTE(v50) = unk_156A20E88 ^ 0x36;
-      v6 = v50;
-    }
-    else
-    {
-      v6 = qword_156A1EE88;
-    }
+    v4 = &unk_1573DC400;
   }
-  v12 = a3[0x54];
-  if ( !v12 )
-    return 0LL;
-  if ( *(_DWORD *)(a2 + 0x18) )
-    v13 = (const _QWORD *)qword_15684B640(a2 + 0x10);
   else
-    v13 = &word_1506C9058;
-  v51 = *(_QWORD *)(v3 + 8);
-  v14 = 0LL;
-  v15 = *(_QWORD *)(v6 + 0xF8);
-  if ( !v15 )
   {
-    v16 = 0LL;
-    goto LABEL_25;
+    v4 = (_QWORD *)sub_14C8D51E0(&unk_1573DC400);
+    byte_1573DC12C = 1;
   }
-  v16 = v15 & 0xFFFFFFFFFFFFLL;
-  v17 = HIWORD(v15) & 0x3FFF;
-  v50 = v15 & 0xFFFFFFFFFFFFLL;
-  if ( v15 < 0 )
+  v25.m128i_i32[1] = a1 & 0x3FFFF;
+  v25.m128i_i32[0] = a1 >> 0x12;
+  v5 = (_BYTE *)(v4[(a1 >> 0x12) + 1] + 2 * (a1 & 0x3FFFF));
+  v6 = v5 + 2;
+  v7 = (unsigned __int64)*(unsigned __int16 *)v5 >> 6;
+  v8 = *(unsigned __int16 *)v5 >> 6;
+  if ( (*v5 & 1) != 0 )
   {
-    switch ( dword_15684B664 )
+    sub_15026635D(v28, v6, 2 * v7);
+    sub_14C8DFFD0(v28, *(unsigned __int16 *)v5 >> 6);
+    v9 = 1;
+  }
+  else
+  {
+    sub_15026635D(v28, v6, v7);
+    sub_14C8DFDC0(v28, *(unsigned __int16 *)v5 >> 6);
+    v9 = 0;
+  }
+  v25.m128i_i8[0xC] = v9;
+  v25.m128i_i64[0] = (__int64)v28;
+  *(__int16 *)((char *)&v25.m128i_i16[6] + 1) = *(__int16 *)((char *)&v26.m128i_i16[6] + 1);
+  v25.m128i_i8[0xF] = v26.m128i_i8[0xF];
+  v25.m128i_i32[2] = v8;
+  v10 = v25;
+  v25.m128i_i32[1] = a2 & 0x3FFFF;
+  v25.m128i_i32[0] = a2 >> 0x12;
+  v26 = v10;
+  v11 = (_BYTE *)(v4[(a2 >> 0x12) + 1] + 2 * (a2 & 0x3FFFF));
+  v12 = v11 + 2;
+  v13 = (unsigned __int64)*(unsigned __int16 *)v11 >> 6;
+  v14 = *(unsigned __int16 *)v11 >> 6;
+  if ( (*v11 & 1) != 0 )
+  {
+    sub_15026635D(v27, v12, 2 * v13);
+    sub_14C8DFFD0(v27, *(unsigned __int16 *)v11 >> 6);
+    v25.m128i_i8[0xC] = 1;
+  }
+  else
+  {
+    sub_15026635D(v27, v12, v13);
+    sub_14C8DFDC0(v27, *(unsigned __int16 *)v11 >> 6);
+    v25.m128i_i8[0xC] = 0;
+  }
+  v25.m128i_i32[2] = v14;
+  v25.m128i_i64[0] = (__int64)v27;
+  *(__int16 *)((char *)&v25.m128i_i16[6] + 1) = *(__int16 *)((char *)&v26.m128i_i16[6] + 1);
+  v25.m128i_i8[0xF] = v26.m128i_i8[0xF];
+  if ( v9 != (unsigned __int8)BYTE4(_mm_srli_si128(v25, 8).m128i_u64[0]) )
+  {
+    v15 = _mm_srli_si128(v25, 8).m128i_u32[0];
+    v16 = v27;
+    v17 = _mm_srli_si128(v10, 8).m128i_u64[0];
+    if ( v9 )
+      v17 = v15;
+    else
+      v16 = v28;
+    if ( (_DWORD)v17 )
     {
-      case 1:
-        sub_140A8D550(qword_1573D8CC0, &v50, 4LL, HIWORD(v15) & 0x3FFF);
-        goto LABEL_23;
-      case 2:
-        v18 = qword_1573D8CC8;
-        v19 = (unsigned int)v17;
-        break;
-      case 3:
-        v18 = qword_1573D8CD0[v17];
-        v19 = (unsigned int)v17;
-        break;
-      default:
-        goto LABEL_23;
-    }
-    (*(void (__fastcall **)(__int64 *, __int64, __int64, _QWORD))(v18 + 0x40))(&v50, 4LL, v19, *(_QWORD *)(v18 + 8));
-LABEL_23:
-    v16 = v50 & 0xFFFFFFFFFFFFLL;
-    if ( (v50 & 0x800000000000LL) != 0 )
-      v16 = v50 & 0xFFFFFFFFFFFFLL | 0xFFFF000000000000uLL;
-  }
-LABEL_25:
-  v20 = (_QWORD *)sub_14C8D5980(v48, v13, 1LL);
-  sub_14CC43870(&v47, v16, v51, *v20);
-  if ( !*(_BYTE *)(a1 + 8) )
-  {
-    v26 = v47;
-    v27 = v12;
-    if ( v12 == 0xFFFFFFFFFFFFFFFFuLL )
-      v27 = sub_14CBE0B40();
-    v28 = sub_14CC4EDC0(v3, v27, v26, 0xFFFFFFF, 0LL, 0, 0x7F800000);
-    v24 = v28;
-    if ( v28 )
-    {
-      sub_14E2118D0(v28, v6);
-      goto LABEL_36;
-    }
-    return 0LL;
-  }
-  v21 = sub_1452D3330(v6);
-  if ( !v21 )
-  {
-    if ( (unsigned __int8)byte_1570634F0 >= 2u )
-      sub_14C828D30(
-        (unsigned int)L"ordAsyncEndOfFrame is also enabled.",
-        0x1CD,
-        (unsigned int)&unk_1570634F4,
-        2,
-        (__int64)&unk_151F6F060);
-    return 0LL;
-  }
-  v22 = sub_1452D3390(v21 + 0x88, a3[0x52], v6);
-  v23 = sub_1452D4620(v22, a2);
-  v24 = v23;
-  if ( !v23 )
-    return 0LL;
-  sub_14E0613E0(v12, v23);
-LABEL_36:
-  v29 = sub_14EE33580();
-  v31 = *(_QWORD *)(v24 + 8);
-  v32 = v29 + 0x30;
-  v33 = *(int *)(v29 + 0x38);
-  if ( (int)v33 > *(_DWORD *)(v31 + 0x38) )
-    goto LABEL_51;
-  v30 = v33;
-  if ( *(_QWORD *)(*(_QWORD *)(v31 + 0x30) + 8 * v33) != v32 || !v24 )
-    goto LABEL_51;
-  sub_14E2DEC30(v24, (unsigned int)&xmmword_1573A97F0, 0, 0, 0);
-  v34 = *(_QWORD *)(v12 + 0x180);
-  v51 = 0LL;
-  if ( v34 )
-  {
-    v14 = v34 & 0xFFFFFFFFFFFFLL;
-    v35 = HIWORD(v34) & 0x3FFF;
-    v50 = v34 & 0xFFFFFFFFFFFFLL;
-    if ( (v34 & 0x8000000000000000uLL) != 0LL )
-    {
-      switch ( dword_15684B664 )
+      v18 = &v16[v17];
+      v19 = &v16[2 * v17];
+      do
       {
-        case 1:
-          sub_140A8D550(qword_1573D8CC0, &v50, 4LL, HIWORD(v34) & 0x3FFF);
-          goto LABEL_48;
-        case 2:
-          v36 = qword_1573D8CC8;
-          v37 = (unsigned int)v35;
-          break;
-        case 3:
-          v37 = HIWORD(v34) & 0x3FFF;
-          v36 = qword_1573D8CD0[v35];
-          break;
-        default:
-          goto LABEL_48;
+        v20 = *--v18;
+        *((_WORD *)v19 + 0xFFFFFFFF) = v20;
+        v19 += 0xFFFFFFFE;
+        LODWORD(v17) = v17 - 1;
       }
-      (*(void (__fastcall **)(__int64 *, __int64, __int64, _QWORD))(v36 + 0x40))(&v50, 4LL, v37, *(_QWORD *)(v36 + 8));
-LABEL_48:
-      v14 = v50 & 0xFFFFFFFFFFFFLL;
-      if ( (v50 & 0x800000000000LL) != 0 )
-        v14 = v50 & 0xFFFFFFFFFFFFLL | 0xFFFF000000000000uLL;
+      while ( (_DWORD)v17 );
     }
+    v21 = &v25.m128i_i8[0xC];
+    if ( !v9 )
+      v21 = &v26.m128i_i8[0xC];
+    *v21 = 1;
   }
-  sub_14E2BC270(v24, v14, &dword_157533678, v51);
-LABEL_51:
-  v38 = sub_14EE004F0(v30, v31, v32);
-  v40 = *(_QWORD *)(v24 + 8);
-  v41 = v38 + 0x30;
-  v42 = *(int *)(v38 + 0x38);
-  if ( (int)v42 <= *(_DWORD *)(v40 + 0x38) )
-  {
-    v39 = v42;
-    if ( *(_QWORD *)(*(_QWORD *)(v40 + 0x30) + 8 * v42) == v41 )
-    {
-      if ( v24 )
-        *(_BYTE *)(v24 + 0xCB) &= ~0x10u;
-    }
-  }
-  v43 = sub_14EE3B3C0(v39, v40, v41);
-  v44 = *(_QWORD *)(v24 + 8);
-  v45 = v43 + 0x30;
-  v46 = *(int *)(v43 + 0x38);
-  if ( (int)v46 <= *(_DWORD *)(v44 + 0x38) && *(_QWORD *)(*(_QWORD *)(v44 + 0x30) + 8 * v46) == v45 )
-  {
-    if ( v24 )
-    {
-      sub_14E2DCC80(v24, 2LL);
-      sub_14E2DCA50(v24, 0LL);
-    }
-  }
-  return v24;
+  v22 = v25.m128i_i32[2];
+  v23 = v26.m128i_i32[2];
+  if ( v26.m128i_i32[2] <= (unsigned __int32)v25.m128i_i32[2] )
+    v22 = v26.m128i_i32[2];
+  if ( v26.m128i_i8[0xC] )
+    result = sub_14C78E420(v26.m128i_i64[0], v25.m128i_i64[0], v22);
+  else
+    result = sub_14C78E320(v26.m128i_i64[0], v25.m128i_i64[0], v22);
+  if ( !(_DWORD)result )
+    return (unsigned int)(v23 - v25.m128i_i32[2]);
+  return result;
 }
 
+.std:000000014C8DD20F CC                                                              db 0CCh
+.std:000000014C8DD210
+.std:000000014C8DD210                                                 ; =============== S U B R O U T I N E =======================================
+.std:000000014C8DD210
+.std:000000014C8DD210                                                 ; Attributes: bp-based frame fpd=0F60h
+.std:000000014C8DD210
+.std:000000014C8DD210                                                 ; __int64 __fastcall sub_14C8DD210(unsigned int, unsigned int)
+.std:000000014C8DD210                                                 sub_14C8DD210   proc near               ; CODE XREF: sub_14C8DD1F0+11↑j
+.std:000000014C8DD210
+.std:000000014C8DD210                                                 var_1040        = xmmword ptr -1040h
+.std:000000014C8DD210                                                 var_1030        = xmmword ptr -1030h
+.std:000000014C8DD210                                                 var_1020        = byte ptr -1020h
+.std:000000014C8DD210                                                 var_820         = byte ptr -820h
+.std:000000014C8DD210                                                 var_20          = qword ptr -20h
+.std:000000014C8DD210                                                 var_10          = xmmword ptr -10h
+.std:000000014C8DD210                                                 var_s0          = byte ptr  0
+.std:000000014C8DD210                                                 arg_0           = qword ptr  10h
+.std:000000014C8DD210                                                 arg_8           = qword ptr  18h
+.std:000000014C8DD210                                                 arg_10          = qword ptr  20h
+.std:000000014C8DD210                                                 arg_18          = qword ptr  28h
+.std:000000014C8DD210
+.std:000000014C8DD210                                                 ; __unwind { // sub_15025F80C
+.std:000000014C8DD210 48 89 5C 24 08                                                  mov     [rsp+8], rbx
+.std:000000014C8DD215 48 89 74 24 10                                                  mov     [rsp+10h], rsi
+.std:000000014C8DD21A 48 89 7C 24 18                                                  mov     [rsp+18h], rdi
+.std:000000014C8DD21F 4C 89 74 24 20                                                  mov     [rsp+20h], r14
+.std:000000014C8DD224 55                                                              push    rbp
+.std:000000014C8DD225 48 8D AC 24 A0 F0 FF FF                                         lea     rbp, [rsp-0F60h]
+.std:000000014C8DD22D B8 60 10 00 00                                                  mov     eax, 1060h
+.std:000000014C8DD232 E8 E9 26 98 03                                                  call    __alloca_probe
+.std:000000014C8DD237 48 2B E0                                                        sub     rsp, rax
+.std:000000014C8DD23A 0F 29 B4 24 50 10 00 00                                         movaps  xmmword ptr [rsp+1050h], xmm6
+.std:000000014C8DD242 48 8B 05 B7 85 4E 0A                                            mov     rax, cs:__security_cookie
+.std:000000014C8DD249 48 33 C4                                                        xor     rax, rsp
+.std:000000014C8DD24C 48 89 85 40 0F 00 00                                            mov     [rbp+0F40h], rax
+.std:000000014C8DD253 80 3D D2 EE AF 0A 00                                            cmp     cs:byte_1573DC12C, 0
+.std:000000014C8DD25A 8B FA                                                           mov     edi, edx
+.std:000000014C8DD25C 8B D9                                                           mov     ebx, ecx
+.std:000000014C8DD25E 74 09                                                           jz      short loc_14C8DD269
+.std:000000014C8DD260 48 8D 35 99 F1 AF 0A                                            lea     rsi, unk_1573DC400
+.std:000000014C8DD267 EB 16                                                           jmp     short loc_14C8DD27F
+.std:000000014C8DD269                                                 ; ---------------------------------------------------------------------------
+.std:000000014C8DD269
+.std:000000014C8DD269                                                 loc_14C8DD269:                          ; CODE XREF: sub_14C8DD210+4E↑j
+.std:000000014C8DD269 48 8D 0D 90 F1 AF 0A                                            lea     rcx, unk_1573DC400
+.std:000000014C8DD270 E8 6B 7F FF FF                                                  call    sub_14C8D51E0
+.std:000000014C8DD275 48 8B F0                                                        mov     rsi, rax
+.std:000000014C8DD278 C6 05 AD EE AF 0A 01                                            mov     cs:byte_1573DC12C, 1
+.std:000000014C8DD27F
+.std:000000014C8DD27F                                                 loc_14C8DD27F:                          ; CODE XREF: sub_14C8DD210+57↑j
+.std:000000014C8DD27F 8B CB                                                           mov     ecx, ebx
+.std:000000014C8DD281 81 E3 FF FF 03 00                                               and     ebx, 3FFFFh
+.std:000000014C8DD287 C1 E9 12                                                        shr     ecx, 12h
+.std:000000014C8DD28A 89 5C 24 24                                                     mov     [rsp+24h], ebx
+.std:000000014C8DD28E 89 4C 24 20                                                     mov     [rsp+20h], ecx
+.std:000000014C8DD292 48 8B 44 24 20                                                  mov     rax, [rsp+20h]
+.std:000000014C8DD297 48 C1 E8 20                                                     shr     rax, 20h
+.std:000000014C8DD29B 8D 1C 00                                                        lea     ebx, [rax+rax]
+.std:000000014C8DD29E 48 03 5C CE 08                                                  add     rbx, [rsi+rcx*8+8]
+.std:000000014C8DD2A3 48 8D 8D 40 07 00 00                                            lea     rcx, [rbp+740h]
+.std:000000014C8DD2AA 0F B7 03                                                        movzx   eax, word ptr [rbx]
+.std:000000014C8DD2AD 48 8D 53 02                                                     lea     rdx, [rbx+2]
+.std:000000014C8DD2B1 44 8B C0                                                        mov     r8d, eax
+.std:000000014C8DD2B4 44 8B F0                                                        mov     r14d, eax
+.std:000000014C8DD2B7 49 C1 E8 06                                                     shr     r8, 6
+.std:000000014C8DD2BB 41 C1 EE 06                                                     shr     r14d, 6
+.std:000000014C8DD2BF F6 03 01                                                        test    byte ptr [rbx], 1
+.std:000000014C8DD2C2 74 1E                                                           jz      short loc_14C8DD2E2
+.std:000000014C8DD2C4 4D 03 C0                                                        add     r8, r8
+.std:000000014C8DD2C7 E8 91 90 98 03                                                  call    sub_15026635D
+.std:000000014C8DD2CC 0F B7 13                                                        movzx   edx, word ptr [rbx]
+.std:000000014C8DD2CF 48 8D 8D 40 07 00 00                                            lea     rcx, [rbp+740h]
+.std:000000014C8DD2D6 C1 EA 06                                                        shr     edx, 6
+.std:000000014C8DD2D9 E8 F2 2C 00 00                                                  call    sub_14C8DFFD0
+.std:000000014C8DD2DE B3 01                                                           mov     bl, 1
+.std:000000014C8DD2E0 EB 19                                                           jmp     short loc_14C8DD2FB
+.std:000000014C8DD2E2                                                 ; ---------------------------------------------------------------------------
+.std:000000014C8DD2E2
+.std:000000014C8DD2E2                                                 loc_14C8DD2E2:                          ; CODE XREF: sub_14C8DD210+B2↑j
+.std:000000014C8DD2E2 E8 76 90 98 03                                                  call    sub_15026635D
+.std:000000014C8DD2E7 0F B7 13                                                        movzx   edx, word ptr [rbx]
+.std:000000014C8DD2EA 48 8D 8D 40 07 00 00                                            lea     rcx, [rbp+740h]
+.std:000000014C8DD2F1 C1 EA 06                                                        shr     edx, 6
+.std:000000014C8DD2F4 E8 C7 2A 00 00                                                  call    sub_14C8DFDC0
+.std:000000014C8DD2F9 32 DB                                                           xor     bl, bl
+.std:000000014C8DD2FB
+.std:000000014C8DD2FB                                                 loc_14C8DD2FB:                          ; CODE XREF: sub_14C8DD210+D0↑j
+.std:000000014C8DD2FB 8B CF                                                           mov     ecx, edi
+.std:000000014C8DD2FD 88 5C 24 2C                                                     mov     [rsp+2Ch], bl
+.std:000000014C8DD301 C1 E9 12                                                        shr     ecx, 12h
+.std:000000014C8DD304 48 8D 85 40 07 00 00                                            lea     rax, [rbp+740h]
+.std:000000014C8DD30B 48 89 44 24 20                                                  mov     [rsp+20h], rax
+.std:000000014C8DD310 81 E7 FF FF 03 00                                               and     edi, 3FFFFh
+.std:000000014C8DD316 0F B7 44 24 3D                                                  movzx   eax, word ptr [rsp+3Dh]
+.std:000000014C8DD31B 66 89 44 24 2D                                                  mov     [rsp+2Dh], ax
+.std:000000014C8DD320 0F B6 44 24 3F                                                  movzx   eax, byte ptr [rsp+3Fh]
+.std:000000014C8DD325 88 44 24 2F                                                     mov     [rsp+2Fh], al
+.std:000000014C8DD329 44 89 74 24 28                                                  mov     [rsp+28h], r14d
+.std:000000014C8DD32E 0F 28 74 24 20                                                  movaps  xmm6, xmmword ptr [rsp+20h]
+.std:000000014C8DD333 89 7C 24 24                                                     mov     [rsp+24h], edi
+.std:000000014C8DD337 89 4C 24 20                                                     mov     [rsp+20h], ecx
+.std:000000014C8DD33B 48 8B 44 24 20                                                  mov     rax, [rsp+20h]
+.std:000000014C8DD340 48 C1 E8 20                                                     shr     rax, 20h ; ' '
+.std:000000014C8DD344 0F 29 74 24 30                                                  movaps  xmmword ptr [rsp+30h], xmm6
+.std:000000014C8DD349 8D 3C 00                                                        lea     edi, [rax+rax]
+.std:000000014C8DD34C 48 03 7C CE 08                                                  add     rdi, [rsi+rcx*8+8]
+.std:000000014C8DD351 48 8D 4C 24 40                                                  lea     rcx, [rsp+40h]
+.std:000000014C8DD356 0F B7 07                                                        movzx   eax, word ptr [rdi]
+.std:000000014C8DD359 48 8D 57 02                                                     lea     rdx, [rdi+2]
+.std:000000014C8DD35D 44 8B C0                                                        mov     r8d, eax
+.std:000000014C8DD360 8B F0                                                           mov     esi, eax
+.std:000000014C8DD362 49 C1 E8 06                                                     shr     r8, 6
+.std:000000014C8DD366 C1 EE 06                                                        shr     esi, 6
+.std:000000014C8DD369 F6 07 01                                                        test    byte ptr [rdi], 1
+.std:000000014C8DD36C 74 1F                                                           jz      short loc_14C8DD38D
+.std:000000014C8DD36E 4D 03 C0                                                        add     r8, r8
+.std:000000014C8DD371 E8 E7 8F 98 03                                                  call    sub_15026635D
+.std:000000014C8DD376 0F B7 17                                                        movzx   edx, word ptr [rdi]
+.std:000000014C8DD379 48 8D 4C 24 40                                                  lea     rcx, [rsp+40h]
+.std:000000014C8DD37E C1 EA 06                                                        shr     edx, 6
+.std:000000014C8DD381 E8 4A 2C 00 00                                                  call    sub_14C8DFFD0
+.std:000000014C8DD386 C6 44 24 2C 01                                                  mov     byte ptr [rsp+2Ch], 1
+.std:000000014C8DD38B EB 1A                                                           jmp     short loc_14C8DD3A7
+.std:000000014C8DD38D                                                 ; ---------------------------------------------------------------------------
+.std:000000014C8DD38D
+.std:000000014C8DD38D                                                 loc_14C8DD38D:                          ; CODE XREF: sub_14C8DD210+15C↑j
+.std:000000014C8DD38D E8 CB 8F 98 03                                                  call    sub_15026635D
+.std:000000014C8DD392 0F B7 17                                                        movzx   edx, word ptr [rdi]
+.std:000000014C8DD395 48 8D 4C 24 40                                                  lea     rcx, [rsp+40h]
+.std:000000014C8DD39A C1 EA 06                                                        shr     edx, 6
+.std:000000014C8DD39D E8 1E 2A 00 00                                                  call    sub_14C8DFDC0
+.std:000000014C8DD3A2 C6 44 24 2C 00                                                  mov     byte ptr [rsp+2Ch], 0
+.std:000000014C8DD3A7
+.std:000000014C8DD3A7                                                 loc_14C8DD3A7:                          ; CODE XREF: sub_14C8DD210+17B↑j
+.std:000000014C8DD3A7 48 8D 44 24 40                                                  lea     rax, [rsp+40h]
+.std:000000014C8DD3AC 89 74 24 28                                                     mov     [rsp+28h], esi
+.std:000000014C8DD3B0 48 89 44 24 20                                                  mov     [rsp+20h], rax
+.std:000000014C8DD3B5 0F B7 44 24 3D                                                  movzx   eax, word ptr [rsp+3Dh]
+.std:000000014C8DD3BA 66 89 44 24 2D                                                  mov     [rsp+2Dh], ax
+.std:000000014C8DD3BF 0F B6 44 24 3F                                                  movzx   eax, byte ptr [rsp+3Fh]
+.std:000000014C8DD3C4 88 44 24 2F                                                     mov     [rsp+2Fh], al
+.std:000000014C8DD3C8 0F 28 4C 24 20                                                  movaps  xmm1, xmmword ptr [rsp+20h]
+.std:000000014C8DD3CD 66 0F 6F C1                                                     movdqa  xmm0, xmm1
+.std:000000014C8DD3D1 0F 29 4C 24 20                                                  movaps  xmmword ptr [rsp+20h], xmm1
+.std:000000014C8DD3D6 66 0F 73 D8 08                                                  psrldq  xmm0, 8
+.std:000000014C8DD3DB 66 48 0F 7E C0                                                  movq    rax, xmm0
+.std:000000014C8DD3E0 48 C1 E8 20                                                     shr     rax, 20h
+.std:000000014C8DD3E4 3A D8                                                           cmp     bl, al
+.std:000000014C8DD3E6 74 61                                                           jz      short loc_14C8DD449
+.std:000000014C8DD3E8 84 DB                                                           test    bl, bl
+.std:000000014C8DD3EA 66 0F 73 DE 08                                                  psrldq  xmm6, 8
+.std:000000014C8DD3EF 48 8D 85 40 07 00 00                                            lea     rax, [rbp+740h]
+.std:000000014C8DD3F6 66 0F 73 D9 08                                                  psrldq  xmm1, 8
+.std:000000014C8DD3FB 4C 8D 44 24 40                                                  lea     r8, [rsp+40h]
+.std:000000014C8DD400 66 48 0F 7E F1                                                  movq    rcx, xmm6
+.std:000000014C8DD405 4C 0F 44 C0                                                     cmovz   r8, rax
+.std:000000014C8DD409 66 48 0F 7E C8                                                  movq    rax, xmm1
+.std:000000014C8DD40E 0F 45 C8                                                        cmovnz  ecx, eax
+.std:000000014C8DD411 85 C9                                                           test    ecx, ecx
+.std:000000014C8DD413 74 21                                                           jz      short loc_14C8DD436
+.std:000000014C8DD415 4A 8D 14 01                                                     lea     rdx, [rcx+r8]
+.std:000000014C8DD419 4D 8D 04 48                                                     lea     r8, [r8+rcx*2]
+.std:000000014C8DD41D 0F 1F 00                                                        nop     dword ptr [rax]
+.std:000000014C8DD420
+.std:000000014C8DD420                                                 loc_14C8DD420:                          ; CODE XREF: sub_14C8DD210+224↓j
+.std:000000014C8DD420 0F BE 42 FF                                                     movsx   eax, byte ptr [rdx-1]
+.std:000000014C8DD424 48 8D 52 FF                                                     lea     rdx, [rdx-1]
+.std:000000014C8DD428 66 41 89 40 FE                                                  mov     [r8-2], ax
+.std:000000014C8DD42D 4D 8D 40 FE                                                     lea     r8, [r8-2]
+.std:000000014C8DD431 83 C1 FF                                                        add     ecx, 0FFFFFFFFh
+.std:000000014C8DD434 75 EA                                                           jnz     short loc_14C8DD420
+.std:000000014C8DD436
+.std:000000014C8DD436                                                 loc_14C8DD436:                          ; CODE XREF: sub_14C8DD210+203↑j
+.std:000000014C8DD436 84 DB                                                           test    bl, bl
+.std:000000014C8DD438 48 8D 44 24 2C                                                  lea     rax, [rsp+2Ch]
+.std:000000014C8DD43D 48 8D 4C 24 3C                                                  lea     rcx, [rsp+3Ch]
+.std:000000014C8DD442 48 0F 44 C1                                                     cmovz   rax, rcx
+.std:000000014C8DD446 C6 00 01                                                        mov     byte ptr [rax], 1
+.std:000000014C8DD449
+.std:000000014C8DD449                                                 loc_14C8DD449:                          ; CODE XREF: sub_14C8DD210+1D6↑j
+.std:000000014C8DD449 48 8B 7C 24 28                                                  mov     rdi, [rsp+28h]
+.std:000000014C8DD44E 48 8B 5C 24 38                                                  mov     rbx, [rsp+38h]
+.std:000000014C8DD453 8B C7                                                           mov     eax, edi
+.std:000000014C8DD455 48 8B 54 24 20                                                  mov     rdx, [rsp+20h]
+.std:000000014C8DD45A 3B DF                                                           cmp     ebx, edi
+.std:000000014C8DD45C 48 8B 4C 24 30                                                  mov     rcx, [rsp+30h]
+.std:000000014C8DD461 0F 46 C3                                                        cmovbe  eax, ebx
+.std:000000014C8DD464 80 7C 24 3C 00                                                  cmp     byte ptr [rsp+3Ch], 0
+.std:000000014C8DD469 4C 63 C0                                                        movsxd  r8, eax
+.std:000000014C8DD46C 74 07                                                           jz      short loc_14C8DD475
+.std:000000014C8DD46E E8 AD 0F EB FF                                                  call    sub_14C78E420
+.std:000000014C8DD473 EB 05                                                           jmp     short loc_14C8DD47A
+.std:000000014C8DD475                                                 ; ---------------------------------------------------------------------------
+.std:000000014C8DD475
+.std:000000014C8DD475                                                 loc_14C8DD475:                          ; CODE XREF: sub_14C8DD210+25C↑j
+.std:000000014C8DD475 E8 A6 0E EB FF                                                  call    sub_14C78E320
+.std:000000014C8DD47A
+.std:000000014C8DD47A                                                 loc_14C8DD47A:                          ; CODE XREF: sub_14C8DD210+263↑j
+.std:000000014C8DD47A 85 C0                                                           test    eax, eax
+.std:000000014C8DD47C 75 04                                                           jnz     short loc_14C8DD482
+.std:000000014C8DD47E 2B DF                                                           sub     ebx, edi
+.std:000000014C8DD480 8B C3                                                           mov     eax, ebx
+.std:000000014C8DD482
+.std:000000014C8DD482                                                 loc_14C8DD482:                          ; CODE XREF: sub_14C8DD210+26C↑j
+.std:000000014C8DD482 48 8B 8D 40 0F 00 00                                            mov     rcx, [rbp+0F40h]
+.std:000000014C8DD489 48 33 CC                                                        xor     rcx, rsp
+.std:000000014C8DD48C E8 EF 24 98 03                                                  call    sub_15025F980
+.std:000000014C8DD491 4C 8D 9C 24 60 10 00 00                                         lea     r11, [rsp+1060h]
+.std:000000014C8DD499 49 8B 5B 10                                                     mov     rbx, [r11+10h]
+.std:000000014C8DD49D 49 8B 73 18                                                     mov     rsi, [r11+18h]
+.std:000000014C8DD4A1 49 8B 7B 20                                                     mov     rdi, [r11+20h]
+.std:000000014C8DD4A5 4D 8B 73 28                                                     mov     r14, [r11+28h]
+.std:000000014C8DD4A9 41 0F 28 73 F0                                                  movaps  xmm6, xmmword ptr [r11-10h]
+.std:000000014C8DD4AE 49 8B E3                                                        mov     rsp, r11
+.std:000000014C8DD4B1 5D                                                              pop     rbp
+.std:000000014C8DD4B2 C3                                                              retn
+.std:000000014C8DD4B2                                                 ; } // starts at 14C8DD210
+.std:000000014C8DD4B2                                                 sub_14C8DD210   endp
+.std:000000014C8DD4B2
+.std:000000014C8DD4B2                                                 ; ---------------------------------------------------------------------------
+.std:000000014C8DD4B3 CC CC CC CC CC CC CC CC CC CC CC CC CC                          align 20h
+
 ```
+
+
+
+
 ---
 
 Fun Bone 
@@ -654,6 +784,52 @@ Fun Bone
 
 
 ```c
+
+
+.std:000000014D903410
+.std:000000014D903410                                                 ; =============== S U B R O U T I N E =======================================
+.std:000000014D903410
+.std:000000014D903410
+.std:000000014D903410                                                 sub_14D903410   proc near
+.std:000000014D903410                                                 ; __unwind { // sub_15025F80C
+.std:000000014D903410 40 53                                                           push    rbx
+.std:000000014D903412 48 83 EC 60                                                     sub     rsp, 60h
+.std:000000014D903416 48 8B 05 E3 23 4C 09                                            mov     rax, cs:__security_cookie
+.std:000000014D90341D 48 33 C4                                                        xor     rax, rsp
+.std:000000014D903420 48 89 44 24 50                                                  mov     [rsp+50h], rax
+.std:000000014D903425 48 8B D9                                                        mov     rbx, rcx
+.std:000000014D903428 E8 53 5E 98 00                                                  call    sub_14E289280
+.std:000000014D90342D 48 8D 54 24 20                                                  lea     rdx, [rsp+20h]
+.std:000000014D903432 48 8B CB                                                        mov     rcx, rbx
+.std:000000014D903435 E8 F6 7B 9C 00                                                  call    sub_14E2CB030
+.std:000000014D90343A 48 8B CB                                                        mov     rcx, rbx
+.std:000000014D90343D 0F 10 00                                                        movups  xmm0, xmmword ptr [rax]
+.std:000000014D903440 0F 11 83 D0 05 00 00                                            movups  xmmword ptr [rbx+5D0h], xmm0
+.std:000000014D903447 0F 10 48 10                                                     movups  xmm1, xmmword ptr [rax+10h]
+.std:000000014D90344B 0F 11 8B E0 05 00 00                                            movups  xmmword ptr [rbx+5E0h], xmm1
+.std:000000014D903452 0F 10 40 20                                                     movups  xmm0, xmmword ptr [rax+20h]
+.std:000000014D903456 0F 11 83 F0 05 00 00                                            movups  xmmword ptr [rbx+5F0h], xmm0
+.std:000000014D90345D E8 3E 7C 20 F3                                                  call    sub_140B0B0A0
+.std:000000014D903462 0F 10 40 20                                                     movups  xmm0, xmmword ptr [rax+20h]
+.std:000000014D903466 0F 28 C8                                                        movaps  xmm1, xmm0
+.std:000000014D903469 0F 28 D0                                                        movaps  xmm2, xmm0
+.std:000000014D90346C 0F C6 D0 AA                                                     shufps  xmm2, xmm0, 0AAh
+.std:000000014D903470 0F C6 C8 55                                                     shufps  xmm1, xmm0, 55h ; 'U'
+.std:000000014D903474 0F 14 C1                                                        unpcklps xmm0, xmm1
+.std:000000014D903477 F2 0F 11 83 00 06 00 00                                         movsd   qword ptr [rbx+600h], xmm0
+.std:000000014D90347F F3 0F 11 93 08 06 00 00                                         movss   dword ptr [rbx+608h], xmm2
+.std:000000014D903487 48 8B 4C 24 50                                                  mov     rcx, [rsp+50h]
+.std:000000014D90348C 48 33 CC                                                        xor     rcx, rsp
+.std:000000014D90348F E8 EC C4 95 02                                                  call    sub_15025F980
+.std:000000014D903494 48 83 C4 60                                                     add     rsp, 60h
+.std:000000014D903498 5B                                                              pop     rbx
+.std:000000014D903499 C3                                                              retn
+.std:000000014D903499                                                 ; } // starts at 14D903410
+.std:000000014D903499                                                 sub_14D903410   endp
+.std:000000014D903499
+.std:000000014D903499                                                 ; ---------------------------------------------------------------------------
+.std:000000014D90349A CC CC CC CC CC CC                                               align 20h
+
 
 __int64 __fastcall sub_14E2CBA30(__int64 a1, __int64 a2)
 {
