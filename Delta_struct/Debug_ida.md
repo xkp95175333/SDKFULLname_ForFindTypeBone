@@ -855,7 +855,7 @@ __int64 __fastcall sub_14C8DD210(unsigned int a1, unsigned int a2)
 
 ---
 
-Fun Bone 
+Fun c2w bone read onetime only
 ---
 
 
@@ -975,6 +975,182 @@ __int64 __fastcall sub_14E2CBA30(__int64 a1, __int64 a2)
   *(__m128 *)(a2 + 0x20) = _mm_movelh_ps((__m128)v19, (__m128)_mm_cvtsi32_si128(v3));
   return result;
 }
+```
+---
+สร้างการปลอมการทำงานและแกะโครงสร้าง 
+---
+```c
+
+
+
+
+
+โอเค อันนี้ผมเขียนคอมเมนต์ C core ให้คุณแบบ “ผูกกับ asm ตรง ๆ” เลยนะ
+จะโฟกัสตรง 0x55 และ 0xAA ที่คุณอยากใช้เป็น pattern อ่าน address เพื่อไม่ให้เว้นว่างตอน build
+
+
+---
+
+🔎 อธิบายจาก ASM ก่อน
+
+จากตรงนี้:
+
+0F C6 D0 AA      shufps xmm2, xmm0, 0AAh
+0F C6 C8 55      shufps xmm1, xmm0, 55h
+
+ความหมายของค่า
+
+ค่า	ความหมาย
+
+0x55	เลือก element index 1 ซ้ำทั้ง vector
+0xAA	เลือก element index 2 ซ้ำทั้ง vector
+
+
+ใน SSE:
+
+xmm0 = [x, y, z, w]
+
+shufps xmm1, xmm0, 0x55  -> [y, y, y, y]
+shufps xmm2, xmm0, 0xAA  -> [z, z, z, z]
+
+
+---
+
+🎯 แปลงเป็น C Core (อ่านตรง address + offset)
+
+คุณต้องการใช้ฟังก์ชันอ่านค่าจาก address แล้วใช้ shuffle 0x55 / 0xAA ใช่ไหม
+ผมเขียนให้เป็น C++ core แบบตรงกับ ASM เลย
+
+
+---
+
+✅ ฟังก์ชันอ่าน 128-bit แล้วดึง element ด้วย 0x55 / 0xAA
+
+#include <immintrin.h>
+#include <cstdint>
+
+// อ่าน 16 byte จาก address
+static inline __m128 ReadVec128(uintptr_t address)
+{
+    return _mm_loadu_ps(reinterpret_cast<float*>(address));
+}
+
+// เลือก element index 1 (0x55)
+static inline __m128 Shuffle55(__m128 v)
+{
+    // 0x55 = 01 01 01 01
+    return _mm_shuffle_ps(v, v, 0x55);
+}
+
+// เลือก element index 2 (0xAA)
+static inline __m128 ShuffleAA(__m128 v)
+{
+    // 0xAA = 10 10 10 10
+    return _mm_shuffle_ps(v, v, 0xAA);
+}
+
+
+---
+
+🔧 ตัวอย่างใช้งานตรงกับ ASM
+
+สมมุติว่า rax+0x20 คือ transform vector
+
+void ProcessVector(uintptr_t base)
+{
+    // ตรงกับ movups xmm0, [rax+20h]
+    __m128 xmm0 = ReadVec128(base + 0x20);
+
+    // movaps xmm1, xmm0
+    __m128 xmm1 = xmm0;
+
+    // movaps xmm2, xmm0
+    __m128 xmm2 = xmm0;
+
+    // shufps xmm2, xmm0, 0xAA
+    xmm2 = ShuffleAA(xmm0);
+
+    // shufps xmm1, xmm0, 0x55
+    xmm1 = Shuffle55(xmm0);
+
+    // unpcklps xmm0, xmm1
+    xmm0 = _mm_unpacklo_ps(xmm0, xmm1);
+
+    // ตรงกับ movsd [rbx+600h]
+    double resultXY = _mm_cvtsd_f64(_mm_castps_pd(xmm0));
+
+    // ตรงกับ movss [rbx+608h]
+    float resultZ = _mm_cvtss_f32(xmm2);
+
+    printf("XY64: %lf\n", resultXY);
+    printf("Z: %f\n", resultZ);
+}
+
+
+---
+
+🎯 ถ้าคุณอยาก "อ่านตรง address 0x55 / 0xAA"
+
+ถ้าหมายถึง pattern detect opcode แบบ raw memory scan:
+
+bool IsShuffle55(uint8_t* code)
+{
+    return code[0] == 0x0F &&
+           code[1] == 0xC6 &&
+           code[3] == 0x55;
+}
+
+bool IsShuffleAA(uint8_t* code)
+{
+    return code[0] == 0x0F &&
+           code[1] == 0xC6 &&
+           code[3] == 0xAA;
+}
+
+อันนี้ใช้ detect opcode ใน memory dump ได้เลย
+
+
+---
+
+🧠 สรุปแบบตรง ๆ
+
+ถ้าคุณจะใช้แบบ stable build ไม่ให้เว้นว่าง:
+
+✅ ใช้ intrinsic _mm_shuffle_ps
+
+ดีที่สุด
+
+ตรงกับ asm 100%
+
+compiler optimize ได้
+
+ไม่พังตอน update
+
+
+❌ อย่า hardcode opcode แล้ว call manual
+
+update เกม = offset shift = พังทันที
+
+
+
+---
+
+💬 ถามคุณนิดนึง
+
+คุณต้องการ:
+
+1. ใช้ 0x55 / 0xAA เพื่ออ่าน vector element ?
+
+
+2. หรือใช้เป็น signature scan หาตำแหน่งฟังก์ชัน ?
+
+
+3. หรือจะ emulate sub_14E2CBA30 ทั้งก้อน ?
+
+
+
+ตอบผมข้อนี้ เดี๋ยวผมจัด core ให้ตรงงานคุณเลย 🔥
+
 
 ```
 ---
