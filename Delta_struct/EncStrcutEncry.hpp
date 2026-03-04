@@ -14,6 +14,33 @@ class alignas(0x01) FMulticastSparseDelegateProperty_
 	unsigned __int8 Pad[0x1];
 };
 
+// Enum Engine.EFormatArgumentType
+// NumValues: 0x0007
+enum class EFormatArgumentType : uint8
+{
+	Int                                      = 0,
+	UInt                                     = 1,
+	Float                                    = 2,
+	Double                                   = 3,
+	Text                                     = 4,
+	Gender                                   = 5,
+	EFormatArgumentType_MAX                  = 6,
+};
+ 
+// Enum Engine.EPlatformInterfaceDataType
+// NumValues: 0x0007
+enum class EPlatformInterfaceDataType : uint8
+{
+	PIDT_None                                = 0,
+	PIDT_Int                                 = 1,
+	PIDT_Float                               = 2,
+	PIDT_String                              = 3,
+	PIDT_Object                              = 4,
+	PIDT_Custom                              = 5,
+	PIDT_MAX                                 = 6,
+};
+
+
 // Enum AnimationCore.ETransformConstraintType
 // NumValues: 0x0005
 enum class ETransformConstraintType : uint8
@@ -218,6 +245,193 @@ struct FNodeHierarchyWithUserData
 public:
 	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FNodeHierarchyData                     Hierarchy;                                         // 0x0008(0x0070)(Protected, NativeAccessSpecifierProtected)
+};
+
+
+// Enum Engine.EEndPlayReason
+// NumValues: 0x0006
+enum class EEndPlayReason : uint8
+{
+	Destroyed                                = 0,
+	LevelTransition                          = 1,
+	EndPlayInEditor                          = 2,
+	RemovedFromWorld                         = 3,
+	Quit                                     = 4,
+	EEndPlayReason_MAX                       = 5,
+};
+
+// Enum Engine.ETickingGroup
+// NumValues: 0x0009
+enum class ETickingGroup : uint8
+{
+	TG_PrePhysics                            = 0,
+	TG_StartPhysics                          = 1,
+	TG_DuringPhysics                         = 2,
+	TG_EndPhysics                            = 3,
+	TG_PostPhysics                           = 4,
+	TG_PostUpdateWork                        = 5,
+	TG_LastDemotable                         = 6,
+	TG_NewlySpawned                          = 7,
+	TG_MAX                                   = 8,
+};
+
+// Enum Engine.EComponentCreationMethod
+// NumValues: 0x0005
+enum class EComponentCreationMethod : uint8
+{
+	Native                                   = 0,
+	SimpleConstructionScript                 = 1,
+	UserConstructionScript                   = 2,
+	Instance                                 = 3,
+	EComponentCreationMethod_MAX             = 4,
+};
+
+// Enum Engine.EComponentReplicationFlags
+// NumValues: 0x0008
+enum class EComponentReplicationFlags : uint8
+{
+	Rep_Always                               = 0,
+	Rep_OwnerOnly                            = 1,
+	Rep_SimulateOnly                         = 4,
+	Rep_ToBeObservedOnly                     = 8,
+	Rep_OwnerAndSimulate                     = 16,
+	Rep_OwnerAndOB                           = 32,
+	Rep_SimulteAndOB                         = 64,
+	Rep_MAX                                  = 65,
+};
+
+// Enum Engine.ETemperatureSeverityType
+// NumValues: 0x0007
+enum class ETemperatureSeverityType : uint8
+{
+	Unknown                                  = 0,
+	Good                                     = 1,
+	Bad                                      = 2,
+	Serious                                  = 3,
+	Critical                                 = 4,
+	NumSeverities                            = 5,
+	ETemperatureSeverityType_MAX             = 6,
+};
+
+// Enum Engine.EPlaneConstraintAxisSetting
+// NumValues: 0x0006
+enum class EPlaneConstraintAxisSetting : uint8
+{
+	Custom                                   = 0,
+	X                                        = 1,
+	Y                                        = 2,
+	Z                                        = 3,
+	UseGlobalPhysicsSetting                  = 4,
+	EPlaneConstraintAxisSetting_MAX          = 5,
+};
+
+// Enum Engine.EInterpToBehaviourType
+// NumValues: 0x0005
+enum class EInterpToBehaviourType : uint8
+{
+	OneShot                                  = 0,
+	OneShot_Reverse                          = 1,
+	Loop_Reset                               = 2,
+	PingPong                                 = 3,
+	EInterpToBehaviourType_MAX               = 4,
+};
+
+// Enum Engine.ETeleportType
+// NumValues: 0x0005
+enum class ETeleportType : uint8
+{
+	None                                     = 0,
+	TeleportPhysics                          = 1,
+	ResetPhysics                             = 2,
+	SkipSkeletalMeshUpdateChildComponents    = 4,
+	ETeleportType_MAX                        = 5,
+};
+
+// Enum Engine.EScreenOrientation
+// NumValues: 0x0008
+enum class EScreenOrientation : uint8
+{
+	Unknown                                  = 0,
+	Portrait                                 = 1,
+	PortraitUpsideDown                       = 2,
+	LandscapeLeft                            = 3,
+	LandscapeRight                           = 4,
+	FaceUp                                   = 5,
+	FaceDown                                 = 6,
+	EScreenOrientation_MAX                   = 7,
+};
+
+// Enum Engine.EApplicationState
+// NumValues: 0x0005
+enum class EApplicationState : uint8
+{
+	Unknown                                  = 0,
+	Inactive                                 = 1,
+	Background                               = 2,
+	Active                                   = 3,
+	EApplicationState_MAX                    = 4,
+};
+
+// Enum Engine.EAutoReceiveInput
+// NumValues: 0x000A
+enum class EAutoReceiveInput : uint8
+{
+	Disabled                                 = 0,
+	Player0                                  = 1,
+	Player1                                  = 2,
+	Player2                                  = 3,
+	Player3                                  = 4,
+	Player4                                  = 5,
+	Player5                                  = 6,
+	Player6                                  = 7,
+	Player7                                  = 8,
+	EAutoReceiveInput_MAX                    = 9,
+};
+
+
+// Enum Engine.ERotatorQuantization
+// NumValues: 0x0003
+enum class ERotatorQuantization : uint8
+{
+	ByteComponents                           = 0,
+	ShortComponents                          = 1,
+	ERotatorQuantization_MAX                 = 2,
+};
+
+// Class Engine.ActorComponent
+// 0x00D0 (0x00F8 - 0x0028)
+class UActorComponent : public UObject
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FActorComponentTickFunction            PrimaryComponentTick;                              // 0x0030(0x0068)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TArray<class FName>                           ComponentTags;                                     // 0x0098(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         bAllowBluePrintTick : 1;                           // 0x00A8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UAssetUserData*>                 AssetUserData;                                     // 0x00B0(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, AdvancedDisplay, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_C0[0x8];                                       // 0x00C0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         BitPad_C8_0 : 3;                                   // 0x00C8(0x0001)(Fixing Bit-Field Size Between Bits [ Dumper-7 ])
+	uint8                                         bReplicates : 1;                                   // 0x00C8(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, Net, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         bShouldCallPreReplication : 1;                     // 0x00C8(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         bNetAddressable : 1;                               // 0x00C8(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         bRegisterAsData : 1;                               // 0x00C8(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         Pad_C9[0x1];                                       // 0x00C9(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	EComponentReplicationFlags                    ReplicationFlag;                                   // 0x00CA(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         BitPad_CB_0 : 4;                                   // 0x00CB(0x0001)(Fixing Bit-Field Size Between Bits [ Dumper-7 ])
+	uint8                                         bAutoActivate : 1;                                 // 0x00CB(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bIsActive : 1;                                     // 0x00CB(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Net, Transient, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bEditableWhenInherited : 1;                        // 0x00CB(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         BitPad_CB_7 : 1;                                   // 0x00CB(0x0001)(Fixing Bit-Field Size For New Byte [ Dumper-7 ])
+	uint8                                         bCanEverAffectNavigation : 1;                      // 0x00CC(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, Config, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         BitPad_CC_1 : 1;                                   // 0x00CC(0x0001)(Fixing Bit-Field Size Between Bits [ Dumper-7 ])
+	uint8                                         bIsEditorOnly : 1;                                 // 0x00CC(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_CD[0x1];                                       // 0x00CD(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	EComponentCreationMethod                      CreationMethod;                                    // 0x00CE(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	FMulticastSparseDelegateProperty_             OnComponentActivated;                              // 0x00CF(0x0001)(InstancedReference, BlueprintAssignable, NoDestructor, NativeAccessSpecifierPublic)
+	FMulticastSparseDelegateProperty_             OnComponentDeactivated;                            // 0x00D0(0x0001)(InstancedReference, BlueprintAssignable, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D1[0x7];                                       // 0x00D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSimpleMemberReference>         UCSModifiedProperties;                             // 0x00D8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_E8[0x10];                                      // 0x00E8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 
