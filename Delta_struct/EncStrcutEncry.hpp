@@ -713,6 +713,23 @@ enum class ERBFFunctionType : uint8
 	ERBFFunctionType_MAX                     = 6,
 };
 
+// Enum Engine.EComponentType
+// NumValues: 0x000C
+enum class EComponentType : uint8
+{
+	None                                     = 0,
+	TranslationX                             = 1,
+	TranslationY                             = 2,
+	TranslationZ                             = 3,
+	RotationX                                = 4,
+	RotationY                                = 5,
+	RotationZ                                = 6,
+	Scale                                    = 7,
+	ScaleX                                   = 8,
+	ScaleY                                   = 9,
+	ScaleZ                                   = 10,
+	EComponentType_MAX                       = 11,
+};
 // ScriptStruct AnimGraphRuntime.SocketReference
 // 0x0040 (0x0040 - 0x0000)
 struct alignas(0x10) FSocketReference
