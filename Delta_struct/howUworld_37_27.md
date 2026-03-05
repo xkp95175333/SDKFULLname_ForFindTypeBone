@@ -1839,6 +1839,44 @@
 
 
 ---
+Sig FunMap
+---
+
+```asm
+.std:000000014C8EF300                                                 sub_14C8EF300   proc near               ; CODE XREF: sub_14CC42E70+DC↓p
+.std:000000014C8EF300 81 F9 5C 02 00 00                                               cmp     ecx, 25Ch       ; switch 605 cases
+.std:000000014C8EF306 0F 87 FE 05 00 00                                               ja      def_14C8EF328   ; jumptable 000000014C8EF328 default case, cases 27,74-99,108-199,228,229,260-279,294-299,304-310,313-319,321,323,324,326-349,357-399,411-449,452-499,501-599
+.std:000000014C8EF30C 48 63 C1                                                        movsxd  rax, ecx        ; Move with Sign-Extend Doubleword
+.std:000000014C8EF30F 48 8D 15 EA 0C 71 F3                                            lea     rdx, __ImageBase ; Load Effective Address
+.std:000000014C8EF316 0F B6 84 02 08 FC 8E 0C                                         movzx   eax, (byte_14C8EFC08 - 140000000h)[rdx+rax] ; Move with Zero-Extend
+.std:000000014C8EF31E 8B 8C 82 14 F9 8E 0C                                            mov     ecx, (jpt_14C8EF328 - 140000000h)[rdx+rax*4]
+.std:000000014C8EF325 48 03 CA                                                        add     rcx, rdx        ; Add
+.std:000000014C8EF328 FF E1                                                           jmp     rcx             ; switch jump
+.std:000000014C8EF32A                                                 ; ---------------------------------------------------------------------------
+.std:000000014C8EF32A
+.std:000000014C8EF32A                                                 loc_14C8EF32A:                          ; CODE XREF: sub_14C8EF300+28↑j
+.std:000000014C8EF32A                                                                                         ; DATA XREF: .std:jpt_14C8EF328↓o
+.std:000000014C8EF32A 48 8D 05 67 99 DD 03                                            lea     rax, aNone      ; jumptable 000000014C8EF328 case 0
+.std:000000014C8EF331 C3                                                              retn                    ; Return Near from Procedure
+.std:000000014C8EF332                                                 ; ---------------------------------------------------------------------------
+.std:000000014C8EF332
+.std:000000014C8EF332                                                 loc_14C8EF332:                          ; CODE XREF: sub_14C8EF300+28↑j
+.std:000000014C8EF332                                                                                         ; DATA XREF: .std:jpt_14C8EF328↓o
+.std:000000014C8EF332 48 8D 05 37 BC CA 07                                            lea     rax, aN0ne_0    ; jumptable 000000014C8EF328 case 72
+.std:000000014C8EF339 C3                                                              retn                    ; Return Near from Procedure
+.std:000000014C8EF33A                                                 ; ---------------------------------------------------------------------------
+.std:000000014C8EF33A
+.std:000000014C8EF33A                                                 loc_14C8EF33A:                          ; CODE XREF: sub_14C8EF300+28↑j
+.std:000000014C8EF33A                                                                                         ; DATA XREF: .std:jpt_14C8EF328↓o
+.std:000000014C8EF33A 48 8D 05 5F 76 50 06                                            lea     rax, aNome      ; jumptable 000000014C8EF328 case 73
+.std:000000014C8EF341 C3                                                              retn                    ; Return Near from Procedure
+
+
+
+```
+
+
+---
 opcore Uworld
 ---
 
