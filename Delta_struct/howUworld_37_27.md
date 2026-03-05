@@ -1748,6 +1748,93 @@
 .std:0000000156A222A0 28 64 6E 50 01 00 00 00                                         dq offset aFstring_0    ; "FString"
 .std:0000000156A222A8 F0 9B C7 54 01 00 00 00                         off_156A222A8   dq offset aHobject_1    ; DATA XREF: .std:0000000154C776C0↑o
 .std:0000000156A222A8                                                                                         ; "HObject *"
+
+
+.std:0000000156A216D0 00 62 3E 26 00 00 00 00                         qword_156A216D0 dq 263E6200h            ; DATA XREF: sub_14EB40CA0+DC↑r
+.std:0000000156A216D0                                                                                         ; sub_150570800+25↑o
+.std:0000000156A216D8 C0 69 BE 81 F8 7F 00 00                         qword_156A216D8 dq 7FF881BE69C0h        ; DATA XREF: sub_1409FAB70+7↑w
+.std:0000000156A216E0 90 0C ED 4D 01 00 00 00                                         dq offset sub_14DED0C90
+.std:0000000156A216E8 C0 4A BE 81 F8 7F 00 00                         qword_156A216E8 dq 7FF881BE4AC0h        ; DATA XREF: sub_1409FAB70+15↑w
+.std:0000000156A216F0 40 99 C3 81 F8 7F 00 00                         qword_156A216F0 dq 7FF881C39940h        ; DATA XREF: sub_1409FAB70+23↑w
+.std:0000000156A216F8 C0 69 BE 81 F8 7F 00 00                         qword_156A216F8 dq 7FF881BE69C0h        ; DATA XREF: sub_1409FABA0+7↑w
+.std:0000000156A21700 90 0C ED 4D 01 00 00 00                                         dq offset sub_14DED0C90
+.std:0000000156A21708 00 00 00 00 00 00 00 00                                         align 10h
+.std:0000000156A21710 40 99 C3 81 F8 7F 00 00                         qword_156A21710 dq 7FF881C39940h        ; DATA XREF: sub_1409FABA0+15↑w
+.std:0000000156A21718 75 3F 4E 80 49 4B 88 70 06 8C D6 A4 DC B6 7E 3C xmmword_156A21718 xmmword 3C7EB6DCA4D68C0670884B49804E3F75h
+.std:0000000156A21718                                                                                         ; DATA XREF: sub_1409FA700+4↑r
+.std:0000000156A21718                                                                                         ; sub_14EB47850+3E↑o ...
+.std:0000000156A21728 00 00 00 FF                                     byte_156A21728  db 3 dup(0), 0FFh       ; DATA XREF: sub_14EB299F0:loc_14EB29C5F↑o
+.std:0000000156A2172C FF FF FF FF                                     dword_156A2172C dd 0FFFFFFFFh           ; DATA XREF: sub_14EB299F0:loc_14EB29D8E↑o
+.std:0000000156A21730 7F 7F FF FF                                     byte_156A21730  db 2 dup(7Fh), 2 dup(0FFh)
+.std:0000000156A21730                                                                                         ; DATA XREF: sub_14EB299F0:loc_14EB29D9A↑o
+.std:0000000156A21734 FF 00 FF FF                                     dword_156A21734 dd 0FFFF00FFh           ; DATA XREF: sub_14EB299F0+8C6↑o
+.std:0000000156A21738 C8 1F 7E 8B 4A 35 77 7C BC 88 38 9C CB A1 6C EE xmmword_156A21738 xmmword 0EE6CA1CB9C3888BC7C77354A8B7E1FC8h
+.std:0000000156A21738                                                                                         ; DATA XREF: sub_1409FAE00+10↑r
+.std:0000000156A21738                                                                                         ; sub_14EB5CFF0+18↑o ...
+.std:0000000156A21748 40 C8 2F 51 01 00 00 00                         off_156A21748   dq offset aAcontroller_3
+.std:0000000156A21748                                                                                         ; DATA XREF: .std:0000000154E12210↑o
+.std:0000000156A21748                                                                                         ; "AController *"
+.std:0000000156A21750 30 95 13 51 01 00 00 00                                         dq offset aApawn_3      ; "APawn *"
+.std:0000000156A21758 18 2B C7 54 01 00 00 00                         off_156A21758   dq offset aUmaterialexpre_456
+.std:0000000156A21758                                                                                         ; DATA XREF: .std:0000000154E16D50↑o
+.std:0000000156A21758                                                                                         ; "UMaterialExpressionVectorParameter *"
+.std:0000000156A21760 18 AF 83 54 01 00 00 00                                         dq offset aTarrayFmateria_10 ; "TArray<FMaterialParameterInfo> *"
+.std:0000000156A21768 90 72 F4 50 01 00 00 00                                         dq offset aTarrayFguid_0 ; "TArray<FGuid> *"
+.std:0000000156A21770 20 D5 83 54 01 00 00 00                                         dq offset aFmaterialparam_2 ; "FMaterialParameterInfo *"
+.std:0000000156A21778 40 C8 2F 51 01 00 00 00                         off_156A21778   dq offset aAcontroller_3
+.std:0000000156A21778                                                                                         ; DATA XREF: .std:0000000154E12240↑o
+.std:0000000156A21778                                                                                         ; "AController *"
+.std:0000000156A21780 30 95 13 51 01 00 00 00                                         dq offset aApawn_3      ; "APawn *"
+.std:0000000156A21788 40 C8 2F 51 01 00 00 00                         off_156A21788   dq offset aAcontroller_3
+.std:0000000156A21788                                                                                         ; DATA XREF: .std:0000000154E12270↑o
+.std:0000000156A21788                                                                                         ; "AController *"
+.std:0000000156A21790 28 72 28 51 01 00 00 00                         off_156A21790   dq offset aFtimermanager_0
+.std:0000000156A21790                                                                                         ; DATA XREF: .std:0000000154E17160↑o
+.std:0000000156A21790                                                                                         ; "FTimerManager *"
+.std:0000000156A21798 E4 B5 6E 50 01 00 00 00                                         dq offset aFloat_2      ; "float"
+.std:0000000156A217A0 08 38 2D 53 01 00 00 00                         off_156A217A0   dq offset aUnavmovementco_1
+.std:0000000156A217A0                                                                                         ; DATA XREF: .std:0000000154E176A0↑o
+.std:0000000156A217A0                                                                                         ; "UNavMovementComponent *"
+.std:0000000156A217A8 68 2F C7 54 01 00 00 00                         off_156A217A8   dq offset aFanimgroupinst_0
+.std:0000000156A217A8                                                                                         ; DATA XREF: .std:0000000154E17E60↑o
+.std:0000000156A217A8                                                                                         ; "FAnimGroupInstance *"
+.std:0000000156A217B0 40 C8 2F 51 01 00 00 00                         off_156A217B0   dq offset aAcontroller_3
+.std:0000000156A217B0                                                                                         ; DATA XREF: .std:0000000154E122A0↑o
+.std:0000000156A217B0                                                                                         ; "AController *"
+.std:0000000156A217B8 E8 02 D6 54 01 00 00 00                         off_156A217B8   dq offset aUstreamableren_2
+.std:0000000156A217B8                                                                                         ; DATA XREF: .std:0000000154E17F50↑o
+.std:0000000156A217B8                                                                                         ; "UStreamableRenderAsset *"
+.std:0000000156A217C0 28 72 28 51 01 00 00 00                         off_156A217C0   dq offset aFtimermanager_0
+.std:0000000156A217C0                                                                                         ; DATA XREF: .std:0000000154E17190↑o
+.std:0000000156A217C0                                                                                         ; "FTimerManager *"
+.std:0000000156A217C8 08 38 2D 53 01 00 00 00                         off_156A217C8   dq offset aUnavmovementco_1
+.std:0000000156A217C8                                                                                         ; DATA XREF: .std:0000000154E176D0↑o
+.std:0000000156A217C8                                                                                         ; "UNavMovementComponent *"
+.std:0000000156A217D0 68 2F C7 54 01 00 00 00                         off_156A217D0   dq offset aFanimgroupinst_0
+.std:0000000156A217D0                                                                                         ; DATA XREF: .std:0000000154E17E90↑o
+.std:0000000156A217D0                                                                                         ; "FAnimGroupInstance *"
+.std:0000000156A217D8 C0 A8 6E 50 01 00 00 00                                         dq offset aLongLong     ; "long long"
+.std:0000000156A217E0 40 C8 2F 51 01 00 00 00                         off_156A217E0   dq offset aAcontroller_3
+.std:0000000156A217E0                                                                                         ; DATA XREF: .std:0000000154E122D0↑o
+.std:0000000156A217E0                                                                                         ; "AController *"
+.std:0000000156A217E8 E8 02 D6 54 01 00 00 00                         off_156A217E8   dq offset aUstreamableren_2
+.std:0000000156A217E8                                                                                         ; DATA XREF: .std:0000000154E17F80↑o
+.std:0000000156A217E8                                                                                         ; "UStreamableRenderAsset *"
+.std:0000000156A217F0 28 72 28 51 01 00 00 00                         off_156A217F0   dq offset aFtimermanager_0
+.std:0000000156A217F0                                                                                         ; DATA XREF: .std:0000000154E171C0↑o
+.std:0000000156A217F0                                                                                         ; "FTimerManager *"
+.std:0000000156A217F8 08 38 2D 53 01 00 00 00                         off_156A217F8   dq offset aUnavmovementco_1
+.std:0000000156A217F8                                                                                         ; DATA XREF: .std:0000000154E17700↑o
+.std:0000000156A217F8                                                                                         ; "UNavMovementComponent *"
+.std:0000000156A21800 68 2F C7 54 01 00 00 00                         off_156A21800   dq offset aFanimgroupinst_0
+.std:0000000156A21800                                                                                         ; DATA XREF: .std:0000000154E17EC0↑o
+.std:0000000156A21800                                                                                         ; "FAnimGroupInstance *"
+.std:0000000156A21808 40 C8 2F 51 01 00 00 00                         off_156A21808   dq offset aAcontroller_3
+.std:0000000156A21808                                                                                         ; DATA XREF: .std:0000000154E12300↑o
+.std:0000000156A21808                                                                                         ; "AController *"
+.std:0000000156A21810 E8 02 D6 54 01 00 00 00                         off_156A21810   dq offset aUstreamableren_2
+.std:0000000156A21810                                                                                         ; DATA XREF: .std:0000000154E17FB0↑o
+.std:0000000156A21810                                                                                         ; "UStreamableRenderAsset *"
 ```
 
 
