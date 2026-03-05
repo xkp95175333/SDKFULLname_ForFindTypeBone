@@ -1,3 +1,5 @@
+
+
 ```asm
 .std:0000000156A22688 20 1A 7F 50 01 00 00 00                                         dq offset aUnsignedInt  ; "unsigned int"
 .std:0000000156A22690 58 6A D1 50 01 00 00 00                         off_156A22690   dq offset aUsplinecompone_1
@@ -807,3 +809,39 @@
 
 
 ```
+
+
+---
+opcore Uworld
+---
+
+```asm
+
+
+48 8B 0D ?? ?? ?? ??   mov rcx, [rip+rel]   -> qword_xxxxx (pointer)
+0F B6 05 ?? ?? ?? ??   movzx eax, byte ptr [rip+rel+7]
+34 36                  xor al, 36
+80 F1 36               xor cl, 36
+
+```
+```cpp
+
+uintptr_t read_encrypted_ptr(uintptr_t addr)
+{
+    uintptr_t value = driver.read<uintptr_t>(addr);
+
+    uint8_t* b = reinterpret_cast<uint8_t*>(&value);
+
+    uint8_t low  = b[0];
+    uint8_t high = b[7];
+
+    b[0] = high ^ 0x36;
+    b[7] = low  ^ 0x36;
+
+    return value;
+}
+
+
+
+```
+
