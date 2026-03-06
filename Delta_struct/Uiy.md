@@ -6453,3 +6453,64 @@ BaseModuleBase.dll
 
 ```
 
+
+
+---
+
+Struct ClassP
+---
+
+```hex
+00000000 /// RTTI std::type_info class (#classinformer)
+00000000 struct type_info // sizeof=0x10;variable_size
+00000000 {                                       // XREF: .std:CSingletonCriticalSection `RTTI Type Descriptor'/r
+00000000                                         // .std:boost::wrapexcept<boost::uuids::entropy_error> `RTTI Type Descriptor'/r ...
+00000000     void *vfptr __off;
+00000008     int _M_data[2];                     // XREF: sub_14FFE3B20+B/o
+00000008                                         // sub_14FFE3B60+14/o ...
+00000010     char _M_d_name[] __strlit(C,"UTF-8");
+00000010 };
+
+00000000 /// RTTI Base class descriptor displacement container (#classinformer)
+00000000 struct _PMD // sizeof=0xC
+00000000 {                                       // XREF: _RTTIBaseClassDescriptor/r
+00000000     int mdisp;
+00000004     int pdisp;
+00000008     int vdisp;
+0000000C };
+
+00000000 /// RTTI Class Hierarchy Descriptor (#classinformer)
+00000000 struct _RTTIClassHierarchyDescriptor // sizeof=0x10
+00000000 {                                       // XREF: .std:boost::wrapexcept<boost::uuids::entropy_error>::`RTTI Class Hierarchy Descriptor'/r
+00000000                                         // .std:boost::exception_detail::clone_base::`RTTI Class Hierarchy Descriptor'/r ...
+00000000     int signature;
+00000004     int attributes;
+00000008     int numBaseClasses;
+0000000C     int baseClassArray;
+00000010 };
+
+00000000 /// RTTI Base Class Descriptor (#classinformer)
+00000000 struct _RTTIBaseClassDescriptor // sizeof=0x18
+00000000 {                                       // XREF: .std:boost::wrapexcept<boost::uuids::entropy_error>::`RTTI Base Class Descriptor at (0,-1,0,4)'/r
+00000000                                         // .std:boost::exception_detail::clone_base::`RTTI Base Class Descriptor at (0,-1,0,4)'/r ...
+00000000     int typeDescriptor;
+00000004     int numContainedBases;
+00000008     _PMD pmd;
+00000014     int attributes;
+00000018 };
+
+00000000 /// RTTI Complete Object Locator (#classinformer)
+00000000 struct _RTTICompleteObjectLocator // sizeof=0x18
+00000000 {                                       // XREF: .std:const boost::wrapexcept<boost::uuids::entropy_error>::`RTTI Complete Object Locator'/r
+00000000                                         // .std:const boost::wrapexcept<boost::uuids::entropy_error>::`RTTI Complete Object Locator'{for `boost::uuids::entropy_error'}/r ...
+00000000     int signature;
+00000004     int offset;
+00000008     int cdOffset;
+0000000C     int typeDescriptor;
+00000010     int classDescriptor;
+00000014     int objectBase;
+00000018 };
+
+
+```
+
