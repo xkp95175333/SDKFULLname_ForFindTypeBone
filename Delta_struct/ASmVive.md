@@ -1,3 +1,818 @@
+
+---
+World
+---
+```asm
+
+.std:000000014EE68B60
+.std:000000014EE68B60                                                 ; =============== S U B R O U T I N E =======================================
+.std:000000014EE68B60
+.std:000000014EE68B60
+.std:000000014EE68B60                                                 ; __int64 sub_14EE68B60()
+.std:000000014EE68B60                                                 sub_14EE68B60   proc near               ; CODE XREF: sub_140ACDDD0+41C↑p
+.std:000000014EE68B60                                                                                         ; sub_140ACFC90:loc_140AD0047↑p ...
+.std:000000014EE68B60
+.std:000000014EE68B60                                                 var_68          = dword ptr -68h
+.std:000000014EE68B60                                                 var_60          = dword ptr -60h
+.std:000000014EE68B60                                                 var_58          = dword ptr -58h
+.std:000000014EE68B60                                                 var_18          = byte ptr -18h
+.std:000000014EE68B60
+.std:000000014EE68B60 4C 8B DC                                                        mov     r11, rsp
+.std:000000014EE68B63 48 81 EC 88 00 00 00                                            sub     rsp, 88h        ; Integer Subtraction
+.std:000000014EE68B6A 48 8B 05 AF 8B 71 08                                            mov     rax, cs:qword_157581720
+.std:000000014EE68B71 48 85 C0                                                        test    rax, rax        ; Logical Compare
+.std:000000014EE68B74 0F 85 89 00 00 00                                               jnz     loc_14EE68C03   ; Jump if Not Zero (ZF=0)
+.std:000000014EE68B7A 33 C9                                                           xor     ecx, ecx        ; Logical Exclusive OR
+.std:000000014EE68B7C 48 8D 05 ED AC C6 F1                                            lea     rax, sub_140AD3870 ; Load Effective Address
+.std:000000014EE68B83 49 89 4B F0                                                     mov     [r11-10h], rcx
+.std:000000014EE68B87 4C 8D 0D D2 02 00 00                                            lea     r9, sub_14EE68E60 ; Load Effective Address
+.std:000000014EE68B8E 88 4C 24 70                                                     mov     [rsp+88h+var_18], cl
+.std:000000014EE68B92 4C 8D 05 87 8B 71 08                                            lea     r8, qword_157581720 ; Load Effective Address
+.std:000000014EE68B99 49 89 43 E0                                                     mov     [r11-20h], rax
+.std:000000014EE68B9D 48 8D 15 AE AA 19 06                                            lea     rdx, aUworld+2  ; Load Effective Address
+.std:000000014EE68BA4 49 89 43 D8                                                     mov     [r11-28h], rax
+.std:000000014EE68BA8 48 8D 05 31 AA CB FF                                            lea     rax, sub_14EB235E0 ; Load Effective Address
+.std:000000014EE68BAF 49 89 43 D0                                                     mov     [r11-30h], rax
+.std:000000014EE68BB3 48 8D 05 86 8F C1 F1                                            lea     rax, PxLib_start_UE4_PixUI ; Load Effective Address
+.std:000000014EE68BBA 49 89 43 C8                                                     mov     [r11-38h], rax
+.std:000000014EE68BBE 48 8D 05 1B F7 FF FF                                            lea     rax, sub_14EE682E0 ; Load Effective Address
+.std:000000014EE68BC5 49 89 43 C0                                                     mov     [r11-40h], rax
+.std:000000014EE68BC9 48 8D 05 F8 00 86 01                                            lea     rax, aEngine_0  ; Load Effective Address
+.std:000000014EE68BD0 49 89 43 B8                                                     mov     [r11-48h], rax
+.std:000000014EE68BD4 49 89 4B B0                                                     mov     [r11-50h], rcx
+.std:000000014EE68BD8 48 8D 0D 21 5E 78 05                                            lea     rcx, aScriptEngine ; Load Effective Address
+.std:000000014EE68BDF C7 44 24 30 00 00 00 10                                         mov     [rsp+88h+var_58], 10000000h
+.std:000000014EE68BE7 C7 44 24 28 08 00 00 00                                         mov     [rsp+88h+var_60], 8
+.std:000000014EE68BEF C7 44 24 20 20 08 00 00                                         mov     [rsp+88h+var_68], 820h
+.std:000000014EE68BF7 E8 04 09 C3 FD                                                  call    sub_14CA99500   ; Call Procedure
+.std:000000014EE68BFC 48 8B 05 1D 8B 71 08                                            mov     rax, cs:qword_157581720
+.std:000000014EE68C03
+.std:000000014EE68C03                                                 loc_14EE68C03:                          ; CODE XREF: sub_14EE68B60+14↑j
+.std:000000014EE68C03 48 81 C4 88 00 00 00                                            add     rsp, 88h        ; Add
+.std:000000014EE68C0A C3                                                              retn                    ; Return Near from Procedure
+.std:000000014EE68C0A                                                 sub_14EE68B60   endp
+.std:000000014EE68C0A
+.std:000000014EE68C0A                                                 ; ---------------------------------------------------------------------------
+.std:000000014EE68C0B CC CC CC CC CC                                                  align 10h
+.std:000000014EE68C10
+.std:000000014EE68C10                                                 ; =============== S U B R O U T I N E =======================================
+.std:000000014EE68C10
+.std:000000014EE68C10
+.std:000000014EE68C10                                                 sub_14EE68C10   proc near               ; CODE XREF: sub_14EE68E90+15↓p
+.std:000000014EE68C10 B8 0B 63 D9 C3                                                  mov     eax, 0C3D9630Bh
+.std:000000014EE68C15 C3                                                              retn                    ; Return Near from Procedure
+.std:000000014EE68C15                                                 sub_14EE68C10   endp
+.std:000000014EE68C15
+.std:000000014EE68C15         
+
+.std:00000001506C8C48                                                 aCore:                                  ; DATA XREF: sub_140895C80+B↑o
+.std:00000001506C8C48                                                                                         ; sub_140895DD0+B↑o ...
+.std:00000001506C8C48 43 00 6F 00 72 00 65 00 00 00                                   text "UTF-16LE", 'Core',0
+.std:00000001506C8C52 00                                                              db    0
+.std:00000001506C8C53 00                                                              db    0
+.std:00000001506C8C54 00                                                              db    0
+.std:00000001506C8C55 00                                                              db    0
+.std:00000001506C8C56 00                                                              db    0
+.std:00000001506C8C57 00                                                              db    0
+.std:00000001506C8C58 70 9F A8 40 01 00 00 00                         off_1506C8C58   dq offset sub_140A89F70 ; DATA XREF: sub_140A89D10+6↑o
+.std:00000001506C8C58                                                                                         ; sub_140A89DA0+1A↑o ...
+.std:00000001506C8C60 55 6E 6B 6E 6F 77 6E 00                         aUnknown_0      db 'Unknown',0          ; DATA XREF: sub_1401FB7A0+EB↑o
+.std:00000001506C8C60                                                                                         ; sub_1401FB910+EB↑o ...
+.std:00000001506C8C68                                                 aD:                                     ; DATA XREF: sub_140AC7CC0+18↑o
+.std:00000001506C8C68                                                                                         ; sub_140ADFFB0:loc_140AE010A↑o ...
+.std:00000001506C8C68 25 00 64 00 00 00                                               text "UTF-16LE", '%d',0
+.std:00000001506C8C6E 00                                                              db    0
+.std:00000001506C8C6F 00                                                              db    0
+.std:00000001506C8C70 10 9D A8 40 01 00 00 00                         off_1506C8C70   dq offset sub_140A89D10 ; DATA XREF: sub_140A892D0+36↑o
+.std:00000001506C8C70                                                                                         ; sub_1428C79D0+2A↑o ...
+.std:00000001506C8C78 A0 9D A8 40 01 00 00 00                         off_1506C8C78   dq offset sub_140A89DA0 ; DATA XREF: sub_140A892D0+49↑o
+.std:00000001506C8C80 70 9D A8 40 01 00 00 00                         off_1506C8C80   dq offset sub_140A89D70 ; DATA XREF: sub_140A897A0:loc_140A897D6↑o
+.std:00000001506C8C80                                                                                         ; sub_140A89810:loc_140A89846↑o ...
+.std:00000001506C8C88 51                                                              db  51h ; Q
+.std:00000001506C8C89 63                                                              db  63h ; c
+.std:00000001506C8C8A 26                                                              db  26h ; &
+.std:00000001506C8C8B 50                                                              db  50h ; P
+.std:00000001506C8C8C 01                                                              db    1
+.std:00000001506C8C8D 00                                                              db    0
+.std:00000001506C8C8E 00                                                              db    0
+.std:00000001506C8C8F 00                                                              db    0
+.std:00000001506C8C90 2D 00 00 00                                     dword_1506C8C90 dd 2Dh                  ; DATA XREF: sub_140AAEE20+DA↑o
+.std:00000001506C8C90                                                                                         ; sub_140AB7200+42BB↑o ...
+.std:00000001506C8C94 00                                                              db    0
+.std:00000001506C8C95 00                                                              db    0
+.std:00000001506C8C96 00                                                              db    0
+.std:00000001506C8C97 00                                                              db    0
+.std:00000001506C8C98                                                 aNone:                                  ; DATA XREF: sub_140349030+4B↑o
+.std:00000001506C8C98                                                                                         ; sub_14034B520+4B↑o ...
+.std:00000001506C8C98 4E 00 6F 00 6E 00 65 00 00 00                                   text "UTF-16LE", 'None',0
+.std:00000001506C8CA2 00                                                              db    0
+.std:00000001506C8CA3 00                                                              db    0
+.std:00000001506C8CA4                                                 asc_1506C8CA4:                          ; DATA XREF: sub_140203840+4D↑o
+.std:00000001506C8CA4                                                                                         ; sub_14028FA60+1F↑o ...
+.std:00000001506C8CA4 2E 00 00 00                                                     text "UTF-16LE", '.',0
+.std:00000001506C8CA8                                                 aSS:                                    ; DATA XREF: sub_140AB7200+24D3↑o
+.std:00000001506C8CA8                                                                                         ; sub_140B2FA00+1C7↑o ...
+.std:00000001506C8CA8 25 00 73 00 2E 00 25 00 73 00 00 00                             text "UTF-16LE", '%s.%s',0
+.std:00000001506C8CB4                                                 asc_1506C8CB4:                          ; DATA XREF: sub_1402EA300+C↑o
+.std:00000001506C8CB4                                                                                         ; sub_1402EA340+C↑o ...
+.std:00000001506C8CB4 20 00 00 00                                                     text "UTF-16LE", ' ',0
+.std:00000001506C8CB8                                                 aLocal:                                 ; DATA XREF: sub_140A8B210:loc_140A8B309↑o
+.std:00000001506C8CB8                                                                                         ; sub_14E509170+1A6↑o ...
+.std:00000001506C8CB8 4C 00 6F 00 63 00 61 00 6C 00 00 00                             text "UTF-16LE", 'Local',0
+.std:00000001506C8CC4 00                                                              db    0
+.std:00000001506C8CC5 00                                                              db    0
+.std:00000001506C8CC6 00                                                              db    0
+.std:00000001506C8CC7 00                                                              db    0
+.std:00000001506C8CC8                                                 aEngine_0:                              ; DATA XREF: sub_1409F6ED0+E↑o
+.std:00000001506C8CC8                                                                                         ; sub_1409F6ED0+18↑o ...
+.std:00000001506C8CC8 45 00 6E 00 67 00 69 00 6E 00 65 00 00 00                       text "UTF-16LE", 'Engine',0
+.std:00000001506C8CD6 00                                                              db    0
+.std:00000001506C8CD7 00                                                              db    0
+.std:00000001506C8CD8 51 63 26 50 01 00 00 00                         off_1506C8CD8   dq offset sub_150266351 ; DATA XREF: sub_140233F00+B↑o
+.std:00000001506C8CD8                                                                                         ; sub_140233F60+B↑o ...
+.std:00000001506C8CE0 70 AB AA 40 01 00 00 00                         off_1506C8CE0   dq offset unk_140AAAB70 ; DATA XREF: sub_140AA9CE0+1CB↑o
+.std:00000001506C8CE0                                                                                         ; sub_1410F6480+CC↑o ...
+.std:00000001506C8CE8 50                                                              db  50h ; P
+.std:00000001506C8CE9 1C                                                              db  1Ch
+.std:00000001506C8CEA A8                                                              db 0A8h
+.std:00000001506C8CEB 40                                                              db  40h ; @
+.std:00000001506C8CEC 01                                                              db    1
+.std:00000001506C8CED 00                                                              db    0
+.std:00000001506C8CEE 00                                                              db    0
+.std:00000001506C8CEF 00                                                              db    0
+.std:00000001506C8CF0                                                 aGame_0:                                ; DATA XREF: sub_1409BD5B0+4B↑o
+.std:00000001506C8CF0                                                                                         ; sub_140AAD1C0+16B↑o ...
+.std:00000001506C8CF0 47 00 61 00 6D 00 65 00 00 00                                   text "UTF-16LE", 'Game',0
+.std:00000001506C8CFA 00                                                              db    0
+.std:00000001506C8CFB 00                                                              db    0
+.std:00000001506C8CFC 00                                                              db    0
+.std:00000001506C8CFD 00                                                              db    0
+.std:00000001506C8CFE 00                                                              db    0
+.std:00000001506C8CFF 00                                                              db    0
+.std:00000001506C8D00                                                 aLandscape:                             ; DATA XREF: sub_1409807B0+B↑o
+.std:00000001506C8D00                                                                                         ; sub_140980A00+E↑o ...
+.std:00000001506C8D00 4C 00 61 00 6E 00 64 00 73 00 63 00 61 00 70 00…                text "UTF-16LE", 'Landscape',0
+.std:00000001506C8D14 00                                                              db    0
+.std:00000001506C8D15 00                                                              db    0
+.std:00000001506C8D16 00                                                              db    0
+.std:00000001506C8D17 00                                                              db    0
+.std:00000001506C8D18                                                 aAudio:                                 ; DATA XREF: sub_140AB7200+84C9↑o
+.std:00000001506C8D18                                                                                         ; sub_142983A20+1DF↑o ...
+.std:00000001506C8D18 41 00 75 00 64 00 69 00 6F 00 00 00                             text "UTF-16LE", 'Audio',0
+.std:00000001506C8D24 00                                                              db    0
+.std:00000001506C8D25 00                                                              db    0
+.std:00000001506C8D26 00                                                              db    0
+.std:00000001506C8D27 00                                                              db    0
+.std:00000001506C8D28 51 63 26 50 01 00 00 00                         off_1506C8D28   dq offset sub_150266351 ; DATA XREF: sub_142866960+3D↑o
+.std:00000001506C8D28                                                                                         ; sub_142866C50+29↑o ...
+
+
+```
+
+---
+c core
+---
+```c
+
+__int64 sub_14EE68B60()
+{
+  __int64 result; // rax
+
+  result = qword_157581720;
+  if ( !qword_157581720 )
+  {
+    sub_14CA99500(
+      L"/Script/Engine",
+      L"World",
+      &qword_157581720,
+      sub_14EE68E60,
+      0x820,
+      8,
+      0x10000000,
+      0LL,
+      L"Engine",
+      sub_14EE682E0,
+      PxLib_start_UE4_PixUI,
+      sub_14EB235E0,
+      sub_140AD3870,
+      sub_140AD3870,
+      0,
+      0LL);
+    return qword_157581720;
+  }
+  return result;
+}
+
+
+
+__int64 __fastcall sub_1452CCB50(__int64 a1, __int64 a2, _QWORD *a3)
+{
+  __int64 v3; // r13
+  __int64 v6; // rsi
+  __int64 v7; // rdx
+  __int64 v8; // rcx
+  __int64 v9; // r8
+  __int64 v10; // rax
+  __int64 v11; // rax
+  __int64 v12; // rbp
+  __int16 *v13; // r12
+  unsigned __int64 v14; // rdi
+  __int64 v15; // rax
+  unsigned __int64 v16; // rbx
+  __int64 v17; // rcx
+  __int64 v18; // rax
+  __int64 v19; // r8
+  _QWORD *v20; // rax
+  __int64 v21; // rax
+  __int64 v22; // rax
+  __int64 v23; // rax
+  __int64 v24; // rbx
+  __int64 v26; // rbx
+  __int64 v27; // rax
+  __int64 v28; // rax
+  __int64 v29; // rax
+  __int64 v30; // rcx
+  __int64 v31; // rdx
+  __int64 v32; // r8
+  __int64 v33; // rax
+  unsigned __int64 v34; // rax
+  __int64 v35; // rcx
+  __int64 v36; // rax
+  __int64 v37; // r8
+  __int64 v38; // rax
+  __int64 v39; // rcx
+  __int64 v40; // rdx
+  __int64 v41; // r8
+  __int64 v42; // rax
+  __int64 v43; // rax
+  __int64 v44; // rdx
+  __int64 v45; // r8
+  __int64 v46; // rax
+  int v47; // [rsp+20h] [rbp-68h]
+  __int64 v48; // [rsp+40h] [rbp-48h] BYREF
+  char v49[64]; // [rsp+48h] [rbp-40h] BYREF
+  __int64 v51; // [rsp+98h] [rbp+10h] BYREF
+  __int64 v52; // [rsp+A8h] [rbp+20h]
+
+  v3 = *(_QWORD *)(a2 + 0x20);
+  if ( !v3 )
+    return 0LL;
+  v6 = a3[0x1E];
+  if ( !v6 && (v6 = sub_14E20A610((__int64)a3)) == 0
+    || (v10 = sub_14EE68B60(),
+        v7 = *(_QWORD *)(v6 + 8),
+        v9 = v10 + 0x30,
+        v11 = *(int *)(v10 + 0x38),
+        (int)v11 > *(_DWORD *)(v7 + 0x38))
+    || (v8 = v11, *(_QWORD *)(*(_QWORD *)(v7 + 0x30) + 8 * v11) != v9) )
+  {
+    if ( (unsigned __int8)off_156A1D480(v8, v7, v9) )
+    {
+      v51 = qword_156A20488;
+      LOBYTE(v51) = HIBYTE(qword_156A20488) ^ 0x36;
+      HIBYTE(v51) = qword_156A20488 ^ 0x36;
+      v6 = v51;
+    }
+    else
+    {
+      v6 = qword_156A1E488;
+    }
+  }
+  v12 = a3[0x54];
+  if ( !v12 )
+    return 0LL;
+  if ( *(_DWORD *)(a2 + 0x18) )
+    v13 = (__int16 *)off_15684AC40(a2 + 0x10);
+  else
+    v13 = &word_1506C8658;
+  v52 = *(_QWORD *)(v3 + 8);
+  v14 = 0LL;
+  v15 = *(_QWORD *)(v6 + 0xF8);
+  if ( !v15 )
+  {
+    v16 = 0LL;
+    goto LABEL_25;
+  }
+  v16 = v15 & 0xFFFFFFFFFFFFLL;
+  v17 = HIWORD(v15) & 0x3FFF;
+  v51 = v15 & 0xFFFFFFFFFFFFLL;
+  if ( v15 < 0 )
+  {
+    switch ( dword_15684AC64 )
+    {
+      case 1:
+        sub_140A8CB50(qword_1573D82C0, &v51, 4LL, HIWORD(v15) & 0x3FFF);
+        goto LABEL_23;
+      case 2:
+        v18 = qword_1573D82C8;
+        v19 = (unsigned int)v17;
+        break;
+      case 3:
+        v18 = qword_1573D82D0[v17];
+        v19 = (unsigned int)v17;
+        break;
+      default:
+        goto LABEL_23;
+    }
+    (*(void (__fastcall **)(__int64 *, __int64, __int64, _QWORD))(v18 + 0x40))(&v51, 4LL, v19, *(_QWORD *)(v18 + 8));
+LABEL_23:
+    v16 = v51 & 0xFFFFFFFFFFFFLL;
+    if ( (v51 & 0x800000000000LL) != 0 )
+      v16 = v51 & 0xFFFFFFFFFFFFLL | 0xFFFF000000000000uLL;
+  }
+LABEL_25:
+  v20 = (_QWORD *)sub_14C8D4F80(v49, v13, 1LL);
+  sub_14CC42E70(&v48, v16, v52, *v20);
+  if ( !*(_BYTE *)(a1 + 8) )
+  {
+    v26 = v48;
+    v27 = v12;
+    if ( v12 == 0xFFFFFFFFFFFFFFFFuLL )
+      v27 = sub_14CBE0140();
+    v28 = sub_14CC4E3C0(v3, v27, v26, 0xFFFFFFFLL, 0LL, 0, 0x7F800000);
+    v24 = v28;
+    if ( v28 )
+    {
+      sub_14E210ED0(v28, v6);
+      goto LABEL_36;
+    }
+    return 0LL;
+  }
+  v21 = sub_1452D2930(v6);
+  if ( !v21 )
+  {
+    if ( (unsigned __int8)byte_157062AF0 >= 2u )
+      sub_14C828330(
+        "Unknown",
+        0x1CDLL,
+        &unk_157062AF4,
+        2LL,
+        L"failed to destroy component because player manager is null");
+    return 0LL;
+  }
+  v22 = sub_1452D2990(v21 + 0x88, a3[0x52], v6);
+  v23 = sub_1452D3C20(v22, a2);
+  v24 = v23;
+  if ( !v23 )
+    return 0LL;
+  sub_14E0609E0(v12, v23);
+LABEL_36:
+  v29 = sub_14EE32B80();
+  v31 = *(_QWORD *)(v24 + 8);
+  v32 = v29 + 0x30;
+  v33 = *(int *)(v29 + 0x38);
+  if ( (int)v33 > *(_DWORD *)(v31 + 0x38) )
+    goto LABEL_51;
+  v30 = v33;
+  if ( *(_QWORD *)(*(_QWORD *)(v31 + 0x30) + 8 * v33) != v32 || !v24 )
+    goto LABEL_51;
+  LOBYTE(v47) = 0;
+  sub_14E2DE230(v24, &xmmword_1573A8DF0, 0LL, 0LL, v47);
+  v34 = *(_QWORD *)(v12 + 0x180);
+  v52 = 0LL;
+  if ( v34 )
+  {
+    v14 = v34 & 0xFFFFFFFFFFFFLL;
+    v35 = HIWORD(v34) & 0x3FFF;
+    v51 = v34 & 0xFFFFFFFFFFFFLL;
+    if ( (v34 & 0x8000000000000000uLL) != 0LL )
+    {
+      switch ( dword_15684AC64 )
+      {
+        case 1:
+          sub_140A8CB50(qword_1573D82C0, &v51, 4LL, HIWORD(v34) & 0x3FFF);
+          goto LABEL_48;
+        case 2:
+          v36 = qword_1573D82C8;
+          v37 = (unsigned int)v35;
+          break;
+        case 3:
+          v37 = HIWORD(v34) & 0x3FFF;
+          v36 = qword_1573D82D0[v35];
+          break;
+        default:
+          goto LABEL_48;
+      }
+      (*(void (__fastcall **)(__int64 *, __int64, __int64, _QWORD))(v36 + 0x40))(&v51, 4LL, v37, *(_QWORD *)(v36 + 8));
+LABEL_48:
+      v14 = v51 & 0xFFFFFFFFFFFFLL;
+      if ( (v51 & 0x800000000000LL) != 0 )
+        v14 = v51 & 0xFFFFFFFFFFFFLL | 0xFFFF000000000000uLL;
+    }
+  }
+  sub_14E2BB870(v24, v14, &dword_157532C78, v52);
+LABEL_51:
+  v38 = sub_14EDFFAF0(v30, v31, v32);
+  v40 = *(_QWORD *)(v24 + 8);
+  v41 = v38 + 0x30;
+  v42 = *(int *)(v38 + 0x38);
+  if ( (int)v42 <= *(_DWORD *)(v40 + 0x38) )
+  {
+    v39 = v42;
+    if ( *(_QWORD *)(*(_QWORD *)(v40 + 0x30) + 8 * v42) == v41 )
+    {
+      if ( v24 )
+        *(_BYTE *)(v24 + 0xCB) &= ~0x10u;
+    }
+  }
+  v43 = sub_14EE3A9C0(v39, v40, v41);
+  v44 = *(_QWORD *)(v24 + 8);
+  v45 = v43 + 0x30;
+  v46 = *(int *)(v43 + 0x38);
+  if ( (int)v46 <= *(_DWORD *)(v44 + 0x38) && *(_QWORD *)(*(_QWORD *)(v44 + 0x30) + 8 * v46) == v45 )
+  {
+    if ( v24 )
+    {
+      sub_14E2DC280(v24, 2LL);
+      sub_14E2DC050(v24, 0LL);
+    }
+  }
+  return v24;
+}
+
+
+__int64 sub_1420F1FB0()
+{
+  const char *v0; // rdi
+  __int64 v1; // rbx
+  __int64 result; // rax
+  __int64 v3; // rcx
+  __int64 v4; // rbx
+  __int64 v5; // rcx
+  __int64 *v6; // rbx
+  __int64 v7; // rax
+  __int64 v8; // rax
+  int v9; // r12d
+  int v10; // r13d
+  __int64 v11; // rdx
+  __int64 v12; // rcx
+  __int64 v13; // r8
+  __int64 v14; // rdx
+  __int64 v15; // r8
+  __int64 v16; // rcx
+  __int64 v17; // rcx
+  __int64 v18; // rax
+  __int64 v19; // rax
+  __int64 v20; // rax
+  unsigned int *v21; // rax
+  __int64 v22; // r8
+  __int64 v23; // r9
+  __int16 *v24; // r14
+  __int16 *v25; // r15
+  unsigned __int64 v26; // rsi
+  unsigned __int64 v27; // rbx
+  unsigned int v28; // ebx
+  __int64 v29; // rax
+  const char *v30; // rcx
+  __int16 *v31; // r15
+  unsigned __int64 v32; // rbx
+  unsigned int v33; // ebx
+  __int64 v34; // rax
+  const char *v35; // rcx
+  __int16 *v36; // r15
+  unsigned __int64 v37; // rbx
+  unsigned int v38; // ebx
+  __int64 v39; // rax
+  const char *v40; // rcx
+  __int16 *v41; // r15
+  unsigned __int64 v42; // rbx
+  unsigned int v43; // ebx
+  __int64 v44; // rax
+  const char *v45; // rcx
+  __int64 v46; // rax
+  char *v47; // rcx
+  __int64 v48; // rax
+  __int64 v49; // rax
+  __int64 v50; // rax
+  __int64 v51; // rax
+  __int64 v52; // rax
+  __int64 v53; // rax
+  __int64 v54; // rax
+  __int64 v55; // rax
+  __int64 v56; // rax
+  __int64 v57; // rax
+  __int64 v58; // [rsp+20h] [rbp-E0h]
+  __int64 v59; // [rsp+40h] [rbp-C0h] BYREF
+  int v60; // [rsp+48h] [rbp-B8h]
+  __int64 v61; // [rsp+50h] [rbp-B0h] BYREF
+  __int64 v62; // [rsp+58h] [rbp-A8h]
+  __int64 v63; // [rsp+60h] [rbp-A0h] BYREF
+  __int64 v64; // [rsp+68h] [rbp-98h]
+  char v65[8]; // [rsp+70h] [rbp-90h] BYREF
+  int v66; // [rsp+78h] [rbp-88h]
+  char v67[8]; // [rsp+80h] [rbp-80h] BYREF
+  int v68; // [rsp+88h] [rbp-78h]
+  char v69[128]; // [rsp+90h] [rbp-70h] BYREF
+  __int64 v70; // [rsp+110h] [rbp+10h] BYREF
+  char *v71; // [rsp+118h] [rbp+18h]
+  int v72; // [rsp+120h] [rbp+20h]
+  char v73[128]; // [rsp+130h] [rbp+30h] BYREF
+  __int64 v74; // [rsp+1B0h] [rbp+B0h] BYREF
+  const char *v75; // [rsp+1B8h] [rbp+B8h]
+  int v76; // [rsp+1C0h] [rbp+C0h]
+  char v77[128]; // [rsp+1D0h] [rbp+D0h] BYREF
+  __int64 v78; // [rsp+250h] [rbp+150h] BYREF
+  const char *v79; // [rsp+258h] [rbp+158h]
+  int v80; // [rsp+260h] [rbp+160h]
+  char v81[128]; // [rsp+270h] [rbp+170h] BYREF
+  __int64 v82; // [rsp+2F0h] [rbp+1F0h] BYREF
+  const char *v83; // [rsp+2F8h] [rbp+1F8h]
+  int v84; // [rsp+300h] [rbp+200h]
+  char v85[128]; // [rsp+310h] [rbp+210h] BYREF
+  __int64 v86; // [rsp+390h] [rbp+290h] BYREF
+  const char *v87; // [rsp+398h] [rbp+298h]
+  int v88; // [rsp+3A0h] [rbp+2A0h]
+
+  v0 = 0LL;
+  v1 = qword_156E35710;
+  result = (unsigned __int8)byte_1573D83D8;
+  if ( byte_1573D83D8 )
+  {
+    v3 = (unsigned int)MEMORY[0x10EBCBDD]() != dword_1573D83C8;
+    result = (unsigned __int8)byte_1573D83D8;
+  }
+  else
+  {
+    v3 = 0LL;
+  }
+  if ( *(_BYTE *)(v3 + v1) )
+  {
+    v4 = qword_156E35728;
+    if ( (_BYTE)result )
+    {
+      result = MEMORY[0x10EBCBDD]();
+      v5 = (_DWORD)result != dword_1573D83C8;
+    }
+    else
+    {
+      v5 = 0LL;
+    }
+    if ( *(_BYTE *)(v5 + v4) != 1 )
+    {
+      sub_1420EBE20(v67);
+      v63 = 0LL;
+      v64 = 0LL;
+      v61 = 0LL;
+      v62 = 0LL;
+      sub_14C8E6870(&v63, &v61);
+      v6 = (__int64 *)sub_14C8E64F0(&v59);
+      if ( &v61 != v6 )
+      {
+        off_15684AC40(&v61);
+        if ( off_15684AC40(&v61) )
+        {
+          v7 = off_15684AC40(&v61);
+          sub_14C7AA1D0(v7);
+        }
+        v61 = *v6;
+        off_15684AC40(&v61);
+        *v6 = 0LL;
+        off_15684AC40(v6);
+        v62 = v6[1];
+        v6[1] = 0LL;
+      }
+      off_15684AC40(&v59);
+      sub_140A81920(&v59, 0LL);
+      if ( off_15684AC40(&v59) )
+      {
+        v8 = off_15684AC40(&v59);
+        sub_14C7AA1D0(v8);
+      }
+      v9 = sub_14C8F2200();
+      v10 = sub_14C782090();
+      sub_14E46A460(v65, qword_156E35390);
+      if ( (unsigned __int8)off_156A1D480(v12, v11, v13) )
+      {
+        v59 = qword_156A20488;
+        LOBYTE(v59) = HIBYTE(qword_156A20488) ^ 0x36;
+        HIBYTE(v59) = qword_156A20488 ^ 0x36;
+        v16 = v59;
+      }
+      else
+      {
+        v16 = qword_156A1E488;
+      }
+      if ( v16
+        && ((unsigned __int8)off_156A1D480(v16, v14, v15)
+          ? (v59 = qword_156A20488,
+             LOBYTE(v59) = HIBYTE(qword_156A20488) ^ 0x36,
+             HIBYTE(v59) = qword_156A20488 ^ 0x36,
+             v17 = v59)
+          : (v17 = qword_156A1E488),
+            sub_14EB31150(v17) && (v18 = sub_140A88AE0(&off_156A1D480), *(_QWORD *)(sub_14EB31150(v18) + 0xA0))) )
+      {
+        v19 = sub_140A88AE0(&off_156A1D480);
+        v20 = sub_14EB31150(v19);
+        v21 = (unsigned int *)(*(__int64 (__fastcall **)(_QWORD, __int64 *))(**(_QWORD **)(v20 + 0xA0) + 0x18LL))(
+                                *(_QWORD *)(v20 + 0xA0),
+                                &v59);
+        v22 = *v21;
+        v23 = v21[1];
+      }
+      else
+      {
+        v23 = (unsigned int)v59;
+        v22 = (unsigned int)v59;
+      }
+      sub_14C76BD80(&v59, L"X=%d Y=%d", v22, v23);
+      v24 = &word_1506C8658;
+      if ( v60 )
+        v25 = (__int16 *)off_15684AC40(&v59);
+      else
+        v25 = &word_1506C8658;
+      v86 = 0LL;
+      v26 = 0xFFFFFFFFFFFFFFFFuLL;
+      if ( v25 )
+      {
+        v27 = 0xFFFFFFFFFFFFFFFFuLL;
+        do
+          ++v27;
+        while ( v25[v27] );
+        v88 = v27;
+        v28 = v27 + 1;
+        sub_140B3FFF0(v85, 0LL, v28, 1LL);
+        v29 = off_15684AC40(&v86);
+        v30 = v85;
+        if ( v29 )
+          v30 = (const char *)v29;
+        v87 = v30;
+        sub_140AD5E80((_DWORD)v30, v28, (_DWORD)v25, v28, 0x3F);
+      }
+      else
+      {
+        v87 = 0LL;
+        v88 = 0;
+      }
+      if ( v66 )
+        v31 = (__int16 *)off_15684AC40(v65);
+      else
+        v31 = &word_1506C8658;
+      v82 = 0LL;
+      if ( v31 )
+      {
+        v32 = 0xFFFFFFFFFFFFFFFFuLL;
+        do
+          ++v32;
+        while ( v31[v32] );
+        v84 = v32;
+        v33 = v32 + 1;
+        sub_140B3FFF0(v81, 0LL, v33, 1LL);
+        v34 = off_15684AC40(&v82);
+        v35 = v81;
+        if ( v34 )
+          v35 = (const char *)v34;
+        v83 = v35;
+        sub_140AD5E80((_DWORD)v35, v33, (_DWORD)v31, v33, 0x3F);
+      }
+      else
+      {
+        v83 = 0LL;
+        v84 = 0;
+      }
+      if ( (_DWORD)v62 )
+        v36 = (__int16 *)off_15684AC40(&v61);
+      else
+        v36 = &word_1506C8658;
+      v78 = 0LL;
+      if ( v36 )
+      {
+        v37 = 0xFFFFFFFFFFFFFFFFuLL;
+        do
+          ++v37;
+        while ( v36[v37] );
+        v80 = v37;
+        v38 = v37 + 1;
+        sub_140B3FFF0(v77, 0LL, v38, 1LL);
+        v39 = off_15684AC40(&v78);
+        v40 = v77;
+        if ( v39 )
+          v40 = (const char *)v39;
+        v79 = v40;
+        sub_140AD5E80((_DWORD)v40, v38, (_DWORD)v36, v38, 0x3F);
+      }
+      else
+      {
+        v79 = 0LL;
+        v80 = 0;
+      }
+      if ( (_DWORD)v64 )
+        v41 = (__int16 *)off_15684AC40(&v63);
+      else
+        v41 = &word_1506C8658;
+      v74 = 0LL;
+      if ( v41 )
+      {
+        v42 = 0xFFFFFFFFFFFFFFFFuLL;
+        do
+          ++v42;
+        while ( v41[v42] );
+        v76 = v42;
+        v43 = v42 + 1;
+        sub_140B3FFF0(v73, 0LL, v43, 1LL);
+        v44 = off_15684AC40(&v74);
+        v45 = v73;
+        if ( v44 )
+          v45 = (const char *)v44;
+        v75 = v45;
+        sub_140AD5E80((_DWORD)v45, v43, (_DWORD)v41, v43, 0x3F);
+      }
+      else
+      {
+        v75 = 0LL;
+        v76 = 0;
+      }
+      if ( v68 )
+        v24 = (__int16 *)off_15684AC40(v67);
+      v70 = 0LL;
+      if ( v24 )
+      {
+        do
+          ++v26;
+        while ( v24[v26] );
+        v72 = v26;
+        sub_140B3FFF0(v69, 0LL, (unsigned int)(v26 + 1), 1LL);
+        v46 = off_15684AC40(&v70);
+        v47 = v69;
+        if ( v46 )
+          v47 = (char *)v46;
+        v71 = v47;
+        sub_140AD5E80((_DWORD)v47, v26 + 1, (_DWORD)v24, v26 + 1, 0x3F);
+        v0 = v71;
+      }
+      else
+      {
+        v71 = 0LL;
+        v72 = 0;
+      }
+      LODWORD(v58) = v9;
+      sub_14FEA3EAB("DeviceInfo: %s,%s,%s,%d,%dGB,%s,%s", v0, v75, v79, v58, v10, v83, v87);
+      if ( off_15684AC40(&v70) )
+      {
+        v48 = off_15684AC40(&v70);
+        sub_14C7AA1D0(v48);
+      }
+      if ( off_15684AC40(&v74) )
+      {
+        v49 = off_15684AC40(&v74);
+        sub_14C7AA1D0(v49);
+      }
+      if ( off_15684AC40(&v78) )
+      {
+        v50 = off_15684AC40(&v78);
+        sub_14C7AA1D0(v50);
+      }
+      if ( off_15684AC40(&v82) )
+      {
+        v51 = off_15684AC40(&v82);
+        sub_14C7AA1D0(v51);
+      }
+      if ( off_15684AC40(&v86) )
+      {
+        v52 = off_15684AC40(&v86);
+        sub_14C7AA1D0(v52);
+      }
+      off_15684AC40(&v59);
+      sub_140A81920(&v59, 0LL);
+      if ( off_15684AC40(&v59) )
+      {
+        v53 = off_15684AC40(&v59);
+        sub_14C7AA1D0(v53);
+      }
+      off_15684AC40(v65);
+      sub_140A81920(v65, 0LL);
+      if ( off_15684AC40(v65) )
+      {
+        v54 = off_15684AC40(v65);
+        sub_14C7AA1D0(v54);
+      }
+      off_15684AC40(&v61);
+      sub_140A81920(&v61, 0LL);
+      if ( off_15684AC40(&v61) )
+      {
+        v55 = off_15684AC40(&v61);
+        sub_14C7AA1D0(v55);
+      }
+      off_15684AC40(&v63);
+      sub_140A81920(&v63, 0LL);
+      if ( off_15684AC40(&v63) )
+      {
+        v56 = off_15684AC40(&v63);
+        sub_14C7AA1D0(v56);
+      }
+      off_15684AC40(v67);
+      sub_140A81920(v67, 0LL);
+      result = off_15684AC40(v67);
+      if ( result )
+      {
+        v57 = off_15684AC40(v67);
+        return sub_14C7AA1D0(v57);
+      }
+    }
+  }
+  return result;
+}
+
+```
 ---
 C core Offset C2w = 0x210 && offset BoneArray = {0x6F8,0x708,0x718} size 0x30  
 ---
