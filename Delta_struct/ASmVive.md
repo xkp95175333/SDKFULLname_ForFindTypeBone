@@ -438,6 +438,141 @@ Token
 
 ```
 ---
+ptr RootCom 
+---
+```c
+__int64 __fastcall sub_14E2E02E0(__int64 a1, __int64 a2, int a3, unsigned __int8 a4)
+{
+  unsigned int v4; // ebx
+  int v7; // eax
+  int v8; // eax
+  int v9; // r15d
+  __int64 v10; // rax
+  __int64 v11; // rdi
+  __int64 v12; // rax
+  __int64 v13; // rcx
+  __int64 v14; // rbp
+  unsigned __int64 v15; // rax
+  unsigned __int64 v16; // rdi
+  signed __int64 v17; // rbx
+  unsigned int v18; // eax
+  unsigned __int64 v19; // r14
+  char v20; // cl
+  int v21; // ebx
+  int v22; // eax
+  int v23; // ecx
+  __int64 result; // rax
+  __int64 (__fastcall ***v25)(_QWORD, __int64, _QWORD, _QWORD); // rax
+  int v26; // [rsp+20h] [rbp-88h]
+  __int64 v27; // [rsp+28h] [rbp-80h]
+  __int64 v28[2]; // [rsp+38h] [rbp-70h] BYREF
+  __int64 v29[4]; // [rsp+48h] [rbp-60h] BYREF
+  char v30; // [rsp+B0h] [rbp+8h] BYREF
+  int v31; // [rsp+B8h] [rbp+10h] BYREF
+  int v32; // [rsp+C0h] [rbp+18h]
+  unsigned __int8 v33; // [rsp+C8h] [rbp+20h]
+
+  v33 = a4;
+  v32 = a3;
+  v4 = a3;
+  *(_BYTE *)(a1 + 0x18) = 1;
+  if ( !byte_156A16371 )
+  {
+    if ( dword_157530478 == 0x400 )
+    {
+      if ( dword_15731C098 && byte_157530484 == 1 || !dword_156849814 )
+      {
+        v8 = dword_157530480;
+LABEL_12:
+        v7 = v8 | 0xFF;
+        goto LABEL_13;
+      }
+    }
+    else if ( dword_157530478 == 0x800 && !dword_156849810 )
+    {
+      v8 = dword_157530480;
+      goto LABEL_12;
+    }
+    v8 = dword_157530478 | dword_15753047C;
+    goto LABEL_12;
+  }
+  v7 = 0x6FF;
+LABEL_13:
+  *(_DWORD *)(a1 + 8) = v7;
+  v9 = 0;
+  if ( a2 )
+  {
+    v26 = 0;
+    if ( *(int *)(a2 + 0x28) > 0 )
+    {
+      v10 = a2 + 0x20;
+      v11 = 0LL;
+      v27 = 0LL;
+      do
+      {
+        v12 = off_15684AC40(v10);
+        v13 = a2;
+        v30 = 0;
+        v28[0] = (__int64)sub_140A8B180;
+        v31 = 0;
+        if ( v12 )
+          v13 = v12;
+        v29[1] = a1;
+        v28[1] = (__int64)&v30;
+        v29[0] = (__int64)v28;
+        v14 = *(_QWORD *)(v13 + v11);
+        v29[2] = (__int64)&v31;
+        while ( 1 )
+        {
+          v15 = _InterlockedCompareExchange64((volatile signed __int64 *)(v14 + 8), 0LL, 0LL);
+          v16 = v15 >> 0x1A;
+          v17 = v15;
+          v18 = sub_140A88BF0(v29, (v15 & 0x4000000) != 0);
+          v19 = v18;
+          if ( !v18 )
+            break;
+          if ( ((v16 + 2) & 0x3FFFFFFFFFLL) < v16 )
+            sub_14C76A020();
+          *(_DWORD *)(qword_15731C8D8[v19 >> 0xE] + 0x18 * (v19 & 0x3FFF) + 0x10) = v17 & 0x3FFFFFF;
+          if ( v17 == _InterlockedCompareExchange64(
+                        (volatile signed __int64 *)(v14 + 8),
+                        ((v16 + 2) << 0x1A) | v19,
+                        v17) )
+          {
+            v20 = 1;
+            goto LABEL_27;
+          }
+        }
+        if ( v31 )
+          sub_14C769140();
+        v20 = 0;
+LABEL_27:
+        v21 = v26;
+        v22 = v9 + 1;
+        if ( v20 )
+          v22 = v9;
+        v11 = v27 + 8;
+        ++v26;
+        v9 = v22;
+        v27 += 8LL;
+        v10 = a2 + 0x20;
+      }
+      while ( v21 + 1 < *(_DWORD *)(a2 + 0x28) );
+      v4 = v32;
+    }
+  }
+  v23 = v9 + v33;
+  result = (unsigned int)_InterlockedExchangeAdd((volatile signed __int32 *)(a1 + 0xC), -v23);
+  if ( (_DWORD)result == v23 )
+  {
+    v25 = (__int64 (__fastcall ***)(_QWORD, __int64, _QWORD, _QWORD))sub_14C7694E0();
+    return (**v25)(v25, a1, *(unsigned int *)(a1 + 8), v4);
+  }
+  return result;
+}
+
+```
+---
 SSE Array Offset
 ---
 ```asm
