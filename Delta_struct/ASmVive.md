@@ -3941,3 +3941,505 @@ LABEL_55:
 }
 
 ```
+```asm
+
+
+std:00000001506C7CA0 aLoglaunchwindo:                        ; DATA XREF: sub_1401C2DB0+A↑o
+.std:00000001506C7CA0                 text "UTF-16LE", 'LogLaunchWindows',0
+.std:00000001506C7CC2                 align 4
+.std:00000001506C7CC4 ; Exported entry 1401. D3D12SDKVersion
+.std:00000001506C7CC4                 public D3D12SDKVersion
+.std:00000001506C7CC4 D3D12SDKVersion db  60h ; `             ; DATA XREF: .std:off_155E60438↓o
+.std:00000001506C7CC5                 db    2
+.std:00000001506C7CC6                 db    0
+.std:00000001506C7CC7                 db    0
+.std:00000001506C7CC8 aD3d12_2        db '.\D3D12\',0         ; DATA XREF: .std:D3D12SDKPath↓o
+.std:00000001506C7CD1                 align 8
+.std:00000001506C7CD8 aAssetregistry_1 db 'AssetRegistry',0   ; DATA XREF: sub_1401C2E00+6↑o
+.std:00000001506C7CD8                                         ; sub_1401C3480+6↑o ...
+.std:00000001506C7CE6                 align 10h
+.std:00000001506C7CF0 aIfFalseDisrega:                        ; DATA XREF: sub_1401C2C80+1F↑o
+.std:00000001506C7CF0                 text "UTF-16LE", 'If false, DisregardForGC will be disabled for dedic'
+.std:00000001506C7D56                 text "UTF-16LE", 'ated servers.',0
+.std:00000001506C7D72                 align 20h
+.std:00000001506C7D80 aGcUsedisregard:                        ; DATA XREF: sub_1401C2C80+35↑o
+.std:00000001506C7D80                 text "UTF-16LE", 'gc.UseDisregardForGCOnDedicatedServers',0
+.std:00000001506C7DCE                 align 10h
+.std:00000001506C7DD0 aUsedToAddRando:                        ; DATA XREF: sub_1401C2650+1F↑o
+.std:00000001506C7DD0                 text "UTF-16LE", 'Used to add random sleeps to tick.DoAsyncEndOfFrame'
+.std:00000001506C7E36                 text "UTF-16LE", 'Tasks to shake loose bugs on either thread. Also do'
+.std:00000001506C7E9C                 text "UTF-16LE", 'es random render thread flushes from the game threa'
+.std:00000001506C7F02                 text "UTF-16LE", 'd.',0
+.std:00000001506C7F08                 align 10h
+.std:00000001506C7F10 aTickDoasyncend:                        ; DATA XREF: sub_1401C2650+31↑o
+.std:00000001506C7F10                 text "UTF-16LE", 'tick.DoAsyncEndOfFrameTasks.Randomize',0
+.std:00000001506C7F5C                 align 20h
+.std:00000001506C7F60 aIfTrueValidate:                        ; DATA XREF: sub_1401C26C0+1F↑o
+.std:00000001506C7F60                 text "UTF-16LE", 'If true, validates that replicated properties haven'
+.std:00000001506C7FC6                 text "UTF-16LE", 27h,'t changed during the Slate tick. Results will n'
+.std:00000001506C8026                 text "UTF-16LE", 'ot be valid if demo.ClientRecordAsyncEndOfFrame is '
+.std:00000001506C808C                 text "UTF-16LE", 'also enabled.',0
+.std:00000001506C80A8                 align 10h
+.std:00000001506C80B0 aTickDoasyncend_0:                      ; DATA XREF: sub_1401C26C0+31↑o
+.std:00000001506C80B0                 text "UTF-16LE", 'tick.DoAsyncEndOfFrameTasks.ValidateReplicatedPrope'
+.std:00000001506C8116                 text "UTF-16LE", 'rties',0
+.std:00000001506C8122                 align 10h
+.std:00000001506C8130 aTaskAndThreadP:                        ; DATA XREF: sub_1401C2580+9↑o
+.std:00000001506C8130                 text "UTF-16LE", 'Task and thread priority for the experiemntal async'
+.std:00000001506C8196                 text "UTF-16LE", ' end of frame tasks.',0
+.std:00000001506C81C0 aTaskgraphTaskp:                        ; DATA XREF: sub_1401C2580+18↑o
+.std:00000001506C81C0                 text "UTF-16LE", 'TaskGraph.TaskPriorities.AsyncEndOfFrameGameTasks',0
+.std:00000001506C8224                 align 10h
+.std:00000001506C8230 aWhenBuiltAsEmb:                        ; DATA XREF: sub_1401C2B20+1F↑o
+.std:00000001506C8230                 text "UTF-16LE", 'When built as embedded, how many ticks to perform b'
+.std:00000001506C8296                 text "UTF-16LE", 'efore sleeping',0
+.std:00000001506C82B4                 align 20h
+.std:00000001506C82C0 aTickSecondsbef:                        ; DATA XREF: sub_1401C2B20+2E↑o
+.std:00000001506C82C0                 text "UTF-16LE", 'tick.SecondsBeforeEmbeddedAppSleeps',0
+.std:00000001506C8308                 align 10h
+.std:00000001506C8310 aWhetherEnableA:                        ; DATA XREF: sub_1401C2BA0+1F↑o
+.std:00000001506C8310                 text "UTF-16LE", 'whether enable auxiliary RHI thread',0
+.std:00000001506C8358 aRAuxrhiEnable:                         ; DATA XREF: sub_1401C2BA0+31↑o
+.std:00000001506C8358                 text "UTF-16LE", 'r.AuxRHI.Enable',0
+.std:00000001506C8378                 align 20h
+.std:00000001506C8380 aWhetherOpenglE:                        ; DATA XREF: sub_1401C2AB0+1F↑o
+.std:00000001506C8380                 text "UTF-16LE", 'whether OpenGL enable auxiliary RHI thread',0
+.std:00000001506C83D6                 align 8
+.std:00000001506C83D8 aROpenglAuxrhiE:                        ; DATA XREF: sub_1401C2AB0+31↑o
+.std:00000001506C83D8                 text "UTF-16LE", 'r.OpenGL.AuxRHI.Enable',0
+.std:00000001506C8406                 align 10h
+.std:00000001506C8410 aWhetherEnableA_0:                      ; DATA XREF: sub_1401C2C10+1F↑o
+.std:00000001506C8410                 text "UTF-16LE", 'whether enable auxiliary RHI thread in editor',0
+.std:00000001506C846C                 align 10h
+.std:00000001506C8470 aRAuxrhiEditore:                        ; DATA XREF: sub_1401C2C10+31↑o
+.std:00000001506C8470                 text "UTF-16LE", 'r.AuxRHI.EditorEnable',0
+.std:00000001506C849C                 align 20h
+.std:00000001506C84A0 a0Old1New:                              ; DATA XREF: sub_1401C25D0+1F↑o
+.std:00000001506C84A0                 text "UTF-16LE", '0 old 1 new',0
+.std:00000001506C84B8 aRAuxrhiFlushmo:                        ; DATA XREF: sub_1401C25D0+34↑o
+.std:00000001506C84B8                                         ; sub_14DADD620+653↑o ...
+.std:00000001506C84B8                 text "UTF-16LE", 'r.AuxRHI.FlushMode',0
+.std:00000001506C84DE                 align 20h
+.std:00000001506C84E0 off_1506C84E0   dq offset PxLib_start_UE4_PixUI
+.std:00000001506C84E0                                         ; DATA XREF: sub_140889050+D5↑o
+.std:00000001506C84E0                                         ; sub_140A81B90+18↑o ...
+.std:00000001506C84E8                 dq offset ?GetIsolate@Context@v8_qjs@@QEAAPEAVIsolate@2@XZ ; v8_qjs::Context::GetIsolate(void)
+.std:00000001506C84F0                 dq offset ?Bytes@WriteBytesMem@AK@@UEBAPEAEXZ ; AK::WriteBytesMem::Bytes(void)
+.std:00000001506C84F8                 dq offset sub_140A81B70
+.std:00000001506C8500                 dq offset sub_140A81AF0
+.std:00000001506C8508                 dq offset ?OnNoticeExtract@GCloudDolphinCallBack@GCloud@@UEAA_NXZ ; GCloud::GCloudDolphinCallBack::OnNoticeExtract(void)
+.std:00000001506C8510                 dq offset sub_140A81BF0
+.std:00000001506C8518                 dq offset sub_140A81C00
+.std:00000001506C8520                 dq offset sub_140A81B90
+.std:00000001506C8528                 dq offset sub_140A81BE0
+.std:00000001506C8530                 dq offset sub_150266351
+.std:00000001506C8538 aGRhipacingEnab:                        ; DATA XREF: sub_1401C2CF0+35↑o
+.std:00000001506C8538                                         ; sub_14EAE3BB0+B85↑o
+.std:00000001506C8538                 text "UTF-16LE", 'g.RHIPacing.Enabled',0
+.std:00000001506C8560 aLoadGiosloadid:                        ; DATA XREF: sub_1401C2730+1F↑o
+.std:00000001506C8560                 text "UTF-16LE", 'Load < GIOSLoadId+1 metallib id.',0
+.std:00000001506C85A2                 align 8
+.std:00000001506C85A8 aRShadercompres:                        ; DATA XREF: sub_1401C2730+35↑o
+.std:00000001506C85A8                 text "UTF-16LE", 'r.ShaderCompress.LoadId',0
+.std:00000001506C85D8 off_1506C85D8   dq offset PxLib_start_UE4_PixUI
+.std:00000001506C85D8                                         ; DATA XREF: sub_140889050+F7↑o
+.std:00000001506C85D8                                         ; sub_140A81B90+3A↑o ...
+.std:00000001506C85E0                 dq offset ?GetIsolate@Context@v8_qjs@@QEAAPEAVIsolate@2@XZ ; v8_qjs::Context::GetIsolate(void)
+.std:00000001506C85E8                 dq offset ?Bytes@WriteBytesMem@AK@@UEBAPEAEXZ ; AK::WriteBytesMem::Bytes(void)
+.std:00000001506C85F0                 dq offset sub_140A81B70
+.std:00000001506C85F8                 dq offset sub_140A81AF0
+.std:00000001506C8600                 dq offset ?OnNoticeExtract@GCloudDolphinCallBack@GCloud@@UEAA_NXZ ; GCloud::GCloudDolphinCallBack::OnNoticeExtract(void)
+.std:00000001506C8608                 dq offset sub_140A81BF0
+.std:00000001506C8610                 dq offset sub_140A81C00
+.std:00000001506C8618                 dq offset sub_140A81B90
+.std:00000001506C8620                 dq offset sub_140A81BE0
+.std:00000001506C8628                 dq offset sub_140A81C30
+.std:00000001506C8630 off_1506C8630   dq offset sub_140A81C70 ; DATA XREF: sub_1401C2820+D0↑o
+.std:00000001506C8630                                         ; sub_140239AC0+D0↑o ...
+.std:00000001506C8638 off_1506C8638   dq offset sub_140A81CA0 ; DATA XREF: sub_1401C2730+4D↑o
+.std:00000001506C8638                                         ; sub_1401C2C80+4D↑o ...
+.std:00000001506C8640 aLaunch:                                ; DATA XREF: sub_1401C2E20+E↑o
+.std:00000001506C8640                                         ; sub_1401C2E20+18↑o ...
+.std:00000001506C8640                 text "UTF-16LE", 'Launch',0
+.std:00000001506C864E                 align 10h
+.std:00000001506C8650 off_1506C8650   dq offset sub_140A81D50 ; DATA XREF: sub_1401C25D0+3E↑o
+.std:00000001506C8650                                         ; sub_1401C2650+3B↑o ...
+.std:00000001506C8658 ; const AK::SoundEngine word_1506C8658
+.std:00000001506C8658 word_1506C8658  dw 0                    ; DATA XREF: sub_1401C2CF0+1F↑o
+.std:00000001506C8658                                         ; sub_1401DC380+1F↑o ...
+.std:00000001506C865A                 align 20h
+.std:00000001506C8660 aDefinesIfTimeI:                        ; DATA XREF: sub_1401C2A30+1F↑o
+.std:00000001506C8660                 text "UTF-16LE", 'Defines if time is included in each line in the log'
+.std:00000001506C86C6                 text "UTF-16LE", ' file and in what form. Layout: [time][frame mod 10'
+.std:00000001506C872C                 text "UTF-16LE", '00]',0Ah
+.std:00000001506C8734                 text "UTF-16LE", '  0 = Do not display log timestamps',0Ah
+.std:00000001506C877C                 text "UTF-16LE", '  1 = Log time stamps in UTC and frame time (defaul'
+.std:00000001506C87E2                 text "UTF-16LE", 't) e.g. [2015.11.25-21.28.50:803][376]',0Ah
+.std:00000001506C8830                 text "UTF-16LE", '  2 = Log timestamps in seconds elapsed since GStar'
+.std:00000001506C8896                 text "UTF-16LE", 'tTime e.g. [0130.29][420]  3 = Log timestamps in lo'
+.std:00000001506C88FC                 text "UTF-16LE", 'cal time and frame time e.g. [2017.08.04-17.59.50:8'
+.std:00000001506C8962                 text "UTF-16LE", '03][420]  4 = Log timestamps with the engine',27h,'s'
+.std:00000001506C89BE                 text "UTF-16LE", ' timecode and frame time e.g. [17:59:50:18][420]',0
+.std:00000001506C8A20 aLogTimestamp:                          ; DATA XREF: sub_1401C2A30+34↑o
+.std:00000001506C8A20                 text "UTF-16LE", 'log.Timestamp',0
+.std:00000001506C8A3C                 align 20h
+.std:00000001506C8A40 aDefinesIfTheCa:                        ; DATA XREF: sub_1401C27A0+1F↑o
+.std:00000001506C8A40                 text "UTF-16LE", 'Defines if the categoy is included in each line in '
+.std:00000001506C8AA6                 text "UTF-16LE", 'the log file and in what form.',0Ah
+.std:00000001506C8AE4                 text "UTF-16LE", '  0 = Do not log category',0Ah
+.std:00000001506C8B18                 text "UTF-16LE", '  2 = Log the category (default)',0
+.std:00000001506C8B5A                 align 20h
+.std:00000001506C8B60 aLogCategory:                           ; DATA XREF: sub_1401C27A0+34↑o
+.std:00000001506C8B60                 text "UTF-16LE", 'log.Category',0
+.std:00000001506C8B7A                 align 20h
+.std:00000001506C8B80 off_1506C8B80   dq offset sub_140A81DF0 ; DATA XREF: sub_140A87CF0+A↑o
+.std:00000001506C8B80                                         ; .std:off_155E8E040↓o
+.std:00000001506C8B88                 dq offset sub_140A82A80
+.std:00000001506C8B90                 dq offset sub_140A84940
+.std:00000001506C8B98                 dq offset sub_140A849A0
+.std:00000001506C8BA0 aUnknown_1:                             ; DATA XREF: sub_140203BA0+4B↑o
+.std:00000001506C8BA0                                         ; sub_140204DD0+4B↑o ...
+.std:00000001506C8BA0                 text "UTF-16LE", 'Unknown',0
+.std:00000001506C8BB0 a1001:                                  ; DATA XREF: sub_140AAFC20+6B8D↑o
+.std:00000001506C8BB0                                         ; sub_140AAFC20+6CF9↑o ...
+.std:00000001506C8BB0                 text "UTF-16LE", '1001',0
+.std:00000001506C8BBA                 align 20h
+.std:00000001506C8BC0 a0101:                                  ; DATA XREF: sub_140AAFC20+70EE↑o
+.std:00000001506C8BC0                 text "UTF-16LE", '0101',0
+.std:00000001506C8BCA                 align 10h
+.std:00000001506C8BD0 a1101:                                  ; DATA XREF: sub_140AAFC20:loc_140AB6A6C↑o
+.std:00000001506C8BD0                                         ; sub_140AAFC20+70E7↑o ...
+.std:00000001506C8BD0                 text "UTF-16LE", '1101',0
+.std:00000001506C8BDA                 align 20h
+.std:00000001506C8BE0 a1111:                                  ; DATA XREF: sub_140AAFC20:loc_140AB67C0↑o
+.std:00000001506C8BE0                                         ; sub_140AAFC20:loc_140AB6A02↑o ...
+.std:00000001506C8BE0                 text "UTF-16LE", '1111',0
+.std:00000001506C8BEA                 align 10h
+.std:00000001506C8BF0 off_1506C8BF0   dq offset sub_140A89DF0 ; DATA XREF: sub_144C13BB0+18↑o
+.std:00000001506C8BF0                                         ; sub_146950C40↑o ...
+.std:00000001506C8BF8                 dq offset sub_140AC7B10
+.std:00000001506C8C00                 dq offset sub_150266351
+.std:00000001506C8C08                 dq offset lua_setprotopageout
+.std:00000001506C8C10                 dq offset lua_setprotopageout
+.std:00000001506C8C18                 dq offset lua_setprotopageout
+.std:00000001506C8C20                 dq offset ?Reserve@WriteBytesCount@AK@@UEAA_NJ@Z ; AK::WriteBytesCount::Reserve(long)
+.std:00000001506C8C28                 dq offset ?Reserve@WriteBytesCount@AK@@UEAA_NJ@Z ; AK::WriteBytesCount::Reserve(long)
+.std:00000001506C8C30                 dq offset ?Reserve@WriteBytesCount@AK@@UEAA_NJ@Z ; AK::WriteBytesCount::Reserve(long)
+.std:00000001506C8C38 off_1506C8C38   dq offset sub_150266351 ; DATA XREF: sub_15037C940:loc_140A87EF0↑o
+.std:00000001506C8C38                                         ; sub_140A89CE0+6↑o ...
+.std:00000001506C8C40                 dq offset sub_140A89F40
+.std:00000001506C8C48 aCore:                                  ; DATA XREF: sub_140895C80+B↑o
+.std:00000001506C8C48                                         ; sub_140895DD0+B↑o ...
+.std:00000001506C8C48                 text "UTF-16LE", 'Core',0
+.std:00000001506C8C52                 align 8
+.std:00000001506C8C58 off_1506C8C58   dq offset sub_140A89F70 ; DATA XREF: sub_140A89D10+6↑o
+.std:00000001506C8C58                                         ; sub_140A89DA0+1A↑o ...
+.std:00000001506C8C60 ; const __int64 aUnknown_0
+.std:00000001506C8C60 aUnknown_0      db 'Unknown',0          ; DATA XREF: sub_1401FB7A0+EB↑o
+.std:00000001506C8C60                                         ; sub_1401FB910+EB↑o ...
+.std:00000001506C8C68 aD:                                     ; DATA XREF: sub_140AC7CC0+18↑o
+.std:00000001506C8C68                                         ; sub_140ADFFB0:loc_140AE010A↑o ...
+.std:00000001506C8C68                 text "UTF-16LE", '%d',0
+.std:00000001506C8C6E                 align 10h
+.std:00000001506C8C70 off_1506C8C70   dq offset sub_140A89D10 ; DATA XREF: sub_140A892D0+36↑o
+.std:00000001506C8C70                                         ; sub_1428C79D0+2A↑o ...
+.std:00000001506C8C78 off_1506C8C78   dq offset sub_140A89DA0 ; DATA XREF: sub_140A892D0+49↑o
+.std:00000001506C8C80 off_1506C8C80   dq offset sub_140A89D70 ; DATA XREF: sub_140A897A0:loc_140A897D6↑o
+.std:00000001506C8C80                                         ; sub_140A89810:loc_140A89846↑o ...
+.std:00000001506C8C88                 dq offset sub_150266351
+.std:00000001506C8C90 dword_1506C8C90 dd 2Dh                  ; DATA XREF: sub_140AAEE20+DA↑o
+.std:00000001506C8C90                                         ; sub_140AB7200+42BB↑o ...
+.std:00000001506C8C94                 align 8
+.std:00000001506C8C98 aNone:                                  ; DATA XREF: sub_140349030+4B↑o
+.std:00000001506C8C98                                         ; sub_14034B520+4B↑o ...
+.std:00000001506C8C98                 text "UTF-16LE", 'None',0
+.std:00000001506C8CA2                 align 4
+.std:00000001506C8CA4 asc_1506C8CA4:                          ; DATA XREF: sub_140203840+4D↑o
+.std:00000001506C8CA4                                         ; sub_14028FA60+1F↑o ...
+.std:00000001506C8CA4                 text "UTF-16LE", '.',0
+.std:00000001506C8CA8 aSS:                                    ; DATA XREF: sub_140AB7200+24D3↑o
+.std:00000001506C8CA8                                         ; sub_140B2FA00+1C7↑o ...
+.std:00000001506C8CA8                 text "UTF-16LE", '%s.%s',0
+.std:00000001506C8CB4 asc_1506C8CB4:                          ; DATA XREF: sub_1402EA300+C↑o
+.std:00000001506C8CB4                                         ; sub_1402EA340+C↑o ...
+.std:00000001506C8CB4                 text "UTF-16LE", ' ',0
+.std:00000001506C8CB8 aLocal:                                 ; DATA XREF: sub_140A8B210:loc_140A8B309↑o
+.std:00000001506C8CB8                                         ; sub_14E509170+1A6↑o ...
+.std:00000001506C8CB8                 text "UTF-16LE", 'Local',0
+.std:00000001506C8CC4                 align 8
+.std:00000001506C8CC8 aEngine_0:                              ; DATA XREF: sub_1409F6ED0+E↑o
+.std:00000001506C8CC8                                         ; sub_1409F6ED0+18↑o ...
+.std:00000001506C8CC8                 text "UTF-16LE", 'Engine',0
+.std:00000001506C8CD6                 align 8
+.std:00000001506C8CD8 off_1506C8CD8   dq offset sub_150266351 ; DATA XREF: sub_140233F00+B↑o
+.std:00000001506C8CD8                                         ; sub_140233F60+B↑o ...
+.std:00000001506C8CE0 off_1506C8CE0   dq offset loc_140AAAB70 ; DATA XREF: sub_140AA9CE0+1CB↑o
+.std:00000001506C8CE0                                         ; sub_1410F6480+CC↑o ...
+.std:00000001506C8CE8                 dq offset lua_setprotopageout
+.std:00000001506C8CF0 aGame_0:                                ; DATA XREF: sub_1409BD5B0+4B↑o
+.std:00000001506C8CF0                                         ; sub_140AAD1C0+16B↑o ...
+.std:00000001506C8CF0                 text "UTF-16LE", 'Game',0
+.std:00000001506C8CFA                 align 20h
+.std:00000001506C8D00 aLandscape:                             ; DATA XREF: sub_1409807B0+B↑o
+.std:00000001506C8D00                                         ; sub_140980A00+E↑o ...
+.std:00000001506C8D00                 text "UTF-16LE", 'Landscape',0
+.std:00000001506C8D14                 align 8
+.std:00000001506C8D18 aAudio:                                 ; DATA XREF: sub_140AB7200+84C9↑o
+.std:00000001506C8D18                                         ; sub_142983A20+1DF↑o ...
+.std:00000001506C8D18                 text "UTF-16LE", 'Audio',0
+.std:00000001506C8D24                 align 8
+.std:00000001506C8D28 off_1506C8D28   dq offset sub_150266351 ; DATA XREF: sub_142866960+3D↑o
+.std:00000001506C8D28                                         ; sub_142866C50+29↑o ...
+.std:00000001506C8D30                 dq offset sub_150266351
+.std:00000001506C8D38                 dq offset sub_150266351
+.std:00000001506C8D40                 dq offset sub_150266351
+.std:00000001506C8D48                 dq offset sub_140A81AF0
+.std:00000001506C8D50                 dq offset sub_150266351
+.std:00000001506C8D58                 dq offset sub_150266351
+.std:00000001506C8D60                 dq offset sub_140A81B10
+.std:00000001506C8D68                 dq offset sub_150266351
+.std:00000001506C8D70                 dq offset sub_150266351
+.std:00000001506C8D78 off_1506C8D78   dq offset sub_150266351 ; DATA XREF: sub_142866960+4C↑o
+.std:00000001506C8D78                                         ; sub_142866C50+38↑o ...
+.std:00000001506C8D80                 dq offset sub_150266351
+.std:00000001506C8D88                 dq offset sub_150266351
+.std:00000001506C8D90                 dq offset sub_150266351
+.std:00000001506C8D98                 dq offset sub_140A81AF0
+.std:00000001506C8DA0                 dq offset sub_150266351
+.std:00000001506C8DA8                 dq offset sub_150266351
+.std:00000001506C8DB0                 dq offset sub_140A81B10
+.std:00000001506C8DB8                 dq offset sub_150266351
+.std:00000001506C8DC0                 dq offset sub_150266351
+.std:00000001506C8DC8                 dq offset sub_150266351
+.std:00000001506C8DD0 unk_1506C8DD0   db  22h ; "             ; DATA XREF: sub_140AC47F0+467↑o
+.std:00000001506C8DD0                                         ; sub_140AC47F0+660↑o ...
+.std:00000001506C8DD1                 db    0
+.std:00000001506C8DD2                 db    0
+.std:00000001506C8DD3                 db    0
+.std:00000001506C8DD4                 db    0
+.std:00000001506C8DD5                 db    0
+.std:00000001506C8DD6                 db    0
+.std:00000001506C8DD7                 db    0
+.std:00000001506C8DD8                 db    0
+.std:00000001506C8DD9                 db    0
+.std:00000001506C8DDA                 db    0
+.std:00000001506C8DDB                 db    0
+.std:00000001506C8DDC                 db    0
+.std:00000001506C8DDD                 db    0
+.std:00000001506C8DDE                 db    0
+.std:00000001506C8DDF                 db    0
+.std:00000001506C8DE0 aNewobjectWithE:                        ; DATA XREF: sub_140A862D0+41↑o
+.std:00000001506C8DE0                                         ; sub_140AAFC20+6929↑o ...
+.std:00000001506C8DE0                 text "UTF-16LE", 'NewObject with empty name can',27h,'t be used to cr'
+.std:00000001506C8E3A                 text "UTF-16LE", 'eate default subobjects (inside of UObject derived '
+.std:00000001506C8EA0                 text "UTF-16LE", 'class constructor) as it produces inconsistent obje'
+.std:00000001506C8F06                 text "UTF-16LE", 'ct names. Use ObjectInitializer.CreateDefaultSuobje'
+.std:00000001506C8F6C                 text "UTF-16LE", 'ct<> instead.',0
+.std:00000001506C8F88 aFalse:                                 ; DATA XREF: sub_140895C80+4↑o
+.std:00000001506C8F88                                         ; sub_140895C80+12↑o ...
+.std:00000001506C8F88                 text "UTF-16LE", 'False',0
+.std:00000001506C8F94                 align 8
+.std:00000001506C8F98 aTrue:                                  ; DATA XREF: sub_140895F00+4↑o
+.std:00000001506C8F98                                         ; sub_140895F00+12↑o ...
+.std:00000001506C8F98                 text "UTF-16LE", 'True',0
+.std:00000001506C8FA2                 align 4
+.std:00000001506C8FA4 asc_1506C8FA4:                          ; DATA XREF: sub_140A88D00+79↑o
+.std:00000001506C8FA4                                         ; sub_140AA9FF0+76↑o ...
+.std:00000001506C8FA4                 text "UTF-16LE", ':',0
+.std:00000001506C8FA8                 align 10h
+.std:00000001506C8FB0 aDHotpatchexev3_0 db 'D:/HotPatchExeV3_Ma1_GL_Release_A/Build_Ma1Release/EngineSource/E'
+.std:00000001506C8FB0                                         ; DATA XREF: sub_140AA9FF0+DA↑o
+.std:00000001506C8FB0                                         ; sub_140AAA530+DD↑o
+.std:00000001506C8FF1                 db 'ngine/Source/Runtime/Launch/Private/Launch.cpp',0
+.std:00000001506C9020 aEnginepreinit  db 'EnginePreInit',0    ; DATA XREF: sub_140AAA530+397↑o
+.std:00000001506C902E                 align 10h
+.std:00000001506C9030 aEngineinit     db 'EngineInit',0       ; DATA XREF: sub_140AA9FF0+390↑o
+.std:00000001506C903B                 align 20h
+.std:00000001506C9040 aEngineexitWasC:                        ; DATA XREF: sub_140AAC0A0:loc_140AAC505↑o
+.std:00000001506C9040                 text "UTF-16LE", 'EngineExit() was called',0
+.std:00000001506C9070 aDefaultmain    db 'DefaultMain',0      ; DATA XREF: sub_140AAC0A0+2D↑o
+.std:00000001506C907C                 align 20h
+.std:00000001506C9080 aUnrealVISDmp:                          ; DATA XREF: sub_140AAC0A0+89↑o
+.std:00000001506C9080                 text "UTF-16LE", 'unreal-v%i-%s.dmp',0
+.std:00000001506C90A4                 align 8
+.std:00000001506C90A8 aEngineinitLoad:                        ; DATA XREF: sub_140AAC0A0+17F↑o
+.std:00000001506C90A8                 text "UTF-16LE", 'EngineInit_Loading',0
+.std:00000001506C90CE                 align 10h
+.std:00000001506C90D0 aEngineinit_0:                          ; DATA XREF: sub_140AAC0A0+186↑o
+.std:00000001506C90D0                 text "UTF-16LE", 'EngineInit',0
+.std:00000001506C90E6                 align 8
+.std:00000001506C90E8 aLoading_0:                             ; DATA XREF: sub_140AAC0A0+18D↑o
+.std:00000001506C90E8                                         ; sub_141359260+5D↑o
+.std:00000001506C90E8                 text "UTF-16LE", 'Loading...',0
+.std:00000001506C90FE                 align 20h
+.std:00000001506C9100 aEngineInit:                            ; DATA XREF: sub_140AAC0A0+23D↑o
+.std:00000001506C9100                                         ; sub_140AAC0A0+2E0↑o
+.std:00000001506C9100                 text "UTF-16LE", 'Engine Init',0
+.std:00000001506C9118                 align 20h
+.std:00000001506C9120 aEngineInitiali:                        ; DATA XREF: sub_140AAC0A0+3FB↑o
+.std:00000001506C9120                 text "UTF-16LE", '(Engine Initialization) Total time: %.2f seconds',0
+.std:00000001506C9182                 align 8
+.std:00000001506C9188 aTickLoopStarti db 'Tick loop starting',0
+.std:00000001506C9188                                         ; DATA XREF: sub_140AAC0A0:loc_140AAC4CB↑o
+.std:00000001506C919B                 align 20h
+.std:00000001506C91A0 aPakfile:                               ; DATA XREF: sub_1409A36C0+E↑o
+.std:00000001506C91A0                                         ; sub_1409A36C0+18↑o ...
+.std:00000001506C91A0                 text "UTF-16LE", 'PakFile',0
+.std:00000001506C91B0 off_1506C91B0   dq offset sub_140A81DC0 ; DATA XREF: sub_140AB7200+7AC7↑o
+.std:00000001506C91B0                                         ; sub_14E3F23A0+65↑o
+.std:00000001506C91B8                 dq offset lua_setprotopageout
+.std:00000001506C91C0                 dq offset lua_setprotopageout
+.std:00000001506C91C8                 dq offset lua_setprotopageout
+.std:00000001506C91D0                 dq offset lua_setprotopageout
+.std:00000001506C91D8                 dq offset ?OnNoticeExtract@GCloudDolphinCallBack@GCloud@@UEAA_NXZ ; GCloud::GCloudDolphinCallBack::OnNoticeExtract(void)
+.std:00000001506C91E0                 dq offset ?OnNoticeExtract@GCloudDolphinCallBack@GCloud@@UEAA_NXZ ; GCloud::GCloudDolphinCallBack::OnNoticeExtract(void)
+.std:00000001506C91E8                 dq offset ?Reserve@WriteBytesCount@AK@@UEAA_NJ@Z ; AK::WriteBytesCount::Reserve(long)
+.std:00000001506C91F0                 dq offset sub_14E7D3E10
+.std:00000001506C91F8                 dq offset sub_14E7D58C0
+.std:00000001506C9200                 dq offset sub_140ACFAD0
+.std:00000001506C9208                 dq offset sub_140ACFAD0
+.std:00000001506C9210                 dq offset sub_14E7D6380
+.std:00000001506C9218 aHotreload      db 'HotReload',0        ; DATA XREF: sub_140AAB9C0+3CF↑o
+.std:00000001506C9218                                         ; sub_140F53A10+206↑o ...
+.std:00000001506C9222                 align 8
+.std:00000001506C9228 aMessaging_0    db 'Messaging',0        ; DATA XREF: sub_140AADED0+2E8↑o
+.std:00000001506C9228                                         ; sub_1429ED580+94↑o ...
+.std:00000001506C9232                 align 8
+.std:00000001506C9238 off_1506C9238   dq offset sub_150266351 ; DATA XREF: sub_140A89D40+6↑o
+.std:00000001506C9238                                         ; sub_141656780+6↑o ...
+.std:00000001506C9240                 dq offset sub_140A89D40
+.std:00000001506C9248 off_1506C9248   dq offset sub_14EE87770 ; DATA XREF: sub_140A81DF0+93A↑o
+.std:00000001506C9250                 dq offset sub_140A89D40
+.std:00000001506C9258 aHmd_0:                                 ; DATA XREF: sub_14095DD70+6↑o
+.std:00000001506C9258                                         ; sub_140AAF7D0+41D↑o ...
+.std:00000001506C9258                 text "UTF-16LE", 'HMD',0
+.std:00000001506C9260 off_1506C9260   dq offset sub_140A89E50 ; DATA XREF: sub_140A89E50+6↑o
+.std:00000001506C9260                                         ; sub_140A8B660+42↑o
+.std:00000001506C9268                 dq offset sub_14D9E90D0
+.std:00000001506C9270 off_1506C9270   dq offset sub_140A89E20 ; DATA XREF: sub_140A871C0+6↑o
+.std:00000001506C9278                 dq offset sub_140AC7B10
+.std:00000001506C9280                 dq offset sub_140AC7B20
+.std:00000001506C9288                 dq offset lua_setprotopageout
+.std:00000001506C9290                 dq offset lua_setprotopageout
+.std:00000001506C9298                 dq offset lua_setprotopageout
+.std:00000001506C92A0                 dq offset ?Reserve@WriteBytesCount@AK@@UEAA_NJ@Z ; AK::WriteBytesCount::Reserve(long)
+.std:00000001506C92A8                 dq offset ?OnNoticeExtract@GCloudDolphinCallBack@GCloud@@UEAA_NXZ ; GCloud::GCloudDolphinCallBack::OnNoticeExtract(void)
+.std:00000001506C92B0                 dq offset ?Reserve@WriteBytesCount@AK@@UEAA_NJ@Z ; AK::WriteBytesCount::Reserve(long)
+.std:00000001506C92B8 aGenericconsole:                        ; DATA XREF: sub_140A871C0+46↑o
+.std:00000001506C92B8                 text "UTF-16LE", 'GenericConsoleOutput',0
+.std:00000001506C92E2                 align 8
+.std:00000001506C92E8 aAllowstdoutlog:                        ; DATA XREF: sub_140A871C0+67↑o
+.std:00000001506C92E8                 text "UTF-16LE", 'AllowStdOutLogVerbosity',0
+.std:00000001506C9318 aFullstdoutlogo:                        ; DATA XREF: sub_140A871C0+83↑o
+.std:00000001506C9318                 text "UTF-16LE", 'FullStdOutLogOutput',0
+.std:00000001506C9340 aS_0:                                   ; DATA XREF: sub_140AC7B20+140↑o
+.std:00000001506C9340                                         ; sub_140BE6DA0+EF↑o ...
+.std:00000001506C9340                 text "UTF-16LE", '%s',0Ah,0
+.std:00000001506C9348 off_1506C9348   dq offset sub_140A89C70 ; DATA XREF: sub_140A89C70+A↑o
+.std:00000001506C9348                                         ; sub_140A8C820+127↑o ...
+.std:00000001506C9350                 dq offset sub_140AAB8B0
+.std:00000001506C9358 aUe4game:                               ; DATA XREF: sub_140AAD500:loc_140AAD83A↑o
+.std:00000001506C9358                 text "UTF-16LE", 'UE4Game',0
+.std:00000001506C9368 asc_1506C9368:                          ; DATA XREF: sub_140AAD500:loc_140AADAA9↑o
+.std:00000001506C9368                                         ; sub_142403440:loc_1424036AD↑o ...
+.std:00000001506C9368                 text "UTF-16LE", '..',0
+.std:00000001506C936E                 align 10h
+.std:00000001506C9370 aRunningEngineF:                        ; DATA XREF: sub_140AAD500+76B↑o
+.std:00000001506C9370                 text "UTF-16LE", 'Running engine for game: %s',0
+.std:00000001506C93A8                 align 10h
+.std:00000001506C93B0 aNonAgnosticGam:                        ; DATA XREF: sub_140AAD500:loc_140AADC9C↑o
+.std:00000001506C93B0                 text "UTF-16LE", 'Non-agnostic games on cooked platforms require a up'
+.std:00000001506C9416                 text "UTF-16LE", 'roject file be specified.',0
+.std:00000001506C944A                 align 10h
+.std:00000001506C9450 aNonAgnosticGam_0:                      ; DATA XREF: sub_140AAD500+88A↑o
+.std:00000001506C9450                 text "UTF-16LE", 'Non-agnostic games cannot load projects on cooked p'
+.std:00000001506C94B6                 text "UTF-16LE", 'latforms - try running UE4Game.',0
+.std:00000001506C94F6                 align 8
+.std:00000001506C94F8 aCouldNotSetGam:                        ; DATA XREF: sub_140AAD500:loc_140AADE15↑o
+.std:00000001506C94F8                 text "UTF-16LE", 'Could not set game name!',0
+.std:00000001506C952A                 align 10h
+.std:00000001506C9530 aMismatchedgame:                        ; DATA XREF: sub_140AAC9E0+324↑o
+.std:00000001506C9530                 text "UTF-16LE", 'MismatchedGameNames',0
+.std:00000001506C9558                 align 20h
+.std:00000001506C9560 aTheNameOfTheUp:                        ; DATA XREF: sub_140AAC9E0+335↑o
+.std:00000001506C9560                 text "UTF-16LE", 'The name of the .uproject file (',27h,'{0}',27h,') '
+.std:00000001506C95AE                 text "UTF-16LE", 'must match the name of the project passed in the co'
+.std:00000001506C9614                 text "UTF-16LE", 'mmand line (',27h,'{1}',27h,').',0
+.std:00000001506C963C aS:                                     ; DATA XREF: sub_140AAC9E0+655↑o
+.std:00000001506C963C                                         ; sub_140AAFC20+6B86↑o ...
+.std:00000001506C963C                 text "UTF-16LE", '%s',0
+.std:00000001506C9642                 align 8
+.std:00000001506C9648 aCachedreadfile:                        ; DATA XREF: sub_140AAC800+9A↑o
+.std:00000001506C9648                                         ; sub_14C7AF360↑o ...
+.std:00000001506C9648                 text "UTF-16LE", 'CachedReadFile',0
+.std:00000001506C9666                 align 8
+.std:00000001506C9668 aSandboxfile:                           ; DATA XREF: sub_140A41870+E↑o
+.std:00000001506C9668                                         ; sub_140A41870+18↑o ...
+.std:00000001506C9668                 text "UTF-16LE", 'SandboxFile',0
+.std:00000001506C9680 aLogfile:                               ; DATA XREF: sub_140AAC800+158↑o
+.std:00000001506C9680                                         ; sub_14C7AF420↑o ...
+.std:00000001506C9680                 text "UTF-16LE", 'LogFile',0
+.std:00000001506C9690 aFailedToDeterm:                        ; DATA XREF: sub_140AAC710+C1↑o
+.std:00000001506C9690                 text "UTF-16LE", 'Failed to determine if OSS is server in PIE, OSS re'
+.std:00000001506C96F6                 text "UTF-16LE", 'quests will fail',0
+.std:00000001506C9718                 align 20h
+.std:00000001506C9720 aApplifetimeApp_1:                      ; DATA XREF: sub_140A8ADC0+D↑o
+.std:00000001506C9720                 text "UTF-16LE", 'AppLifetime: Application will deactivate',0
+.std:00000001506C9772                 align 20h
+.std:00000001506C9780 aApplifetimeApp_0:                      ; DATA XREF: sub_140A8A100+D↑o
+.std:00000001506C9780                 text "UTF-16LE", 'AppLifetime: Application has reactivated',0
+.std:00000001506C97D2                 align 20h
+.std:00000001506C97E0 aApplifetimeApp_2:                      ; DATA XREF: sub_140A8AE00+D↑o
+.std:00000001506C97E0                 text "UTF-16LE", 'AppLifetime: Application will enter background',0
+.std:00000001506C983E                 align 20h
+.std:00000001506C9840 aApplifetimeApp:                        ; DATA XREF: sub_140A8A0C0+D↑o
+.std:00000001506C9840                 text "UTF-16LE", 'AppLifetime: Application has entered foreground',0
+.std:00000001506C98A0 off_1506C98A0   dq offset PxLib_start_UE4_PixUI
+.std:00000001506C98A0                                         ; DATA XREF: sub_1401C2820+A1↑o
+.std:00000001506C98A0                                         ; sub_1401D6770+AF↑o ...
+.std:00000001506C98A8                 dq offset PxLib_start_UE4_PixUI
+.std:00000001506C98B0                 dq offset ?GetIsolate@Context@v8_qjs@@QEAAPEAVIsolate@2@XZ ; v8_qjs::Context::GetIsolate(void)
+.std:00000001506C98B8                 dq offset ?Reserve@WriteBytesCount@AK@@UEAA_NJ@Z ; AK::WriteBytesCount::Reserve(long)
+.std:00000001506C98C0                 dq offset sub_140A81AF0
+.std:00000001506C98C8                 dq offset ?OnNoticeExtract@GCloudDolphinCallBack@GCloud@@UEAA_NXZ ; GCloud::GCloudDolphinCallBack::OnNoticeExtract(void)
+.std:00000001506C98D0                 dq offset sub_140AAC090
+.std:00000001506C98D8                 dq offset sub_140A89710
+.std:00000001506C98E0                 dq offset sub_140A8B920
+.std:00000001506C98E8                 dq offset sub_140AAAB30
+.std:00000001506C98F0                 dq offset sub_150266351
+.std:00000001506C98F8 off_1506C98F8   dq offset PxLib_start_UE4_PixUI
+.std:00000001506C98F8                                         ; DATA XREF: sub_1401C2820+BF↑o
+.std:00000001506C98F8                                         ; sub_1401D6770+CD↑o ...
+.std:00000001506C9900                 dq offset PxLib_start_UE4_PixUI
+.std:00000001506C9908                 dq offset ?GetIsolate@Context@v8_qjs@@QEAAPEAVIsolate@2@XZ ; v8_qjs::Context::GetIsolate(void)
+.std:00000001506C9910                 dq offset ?Reserve@WriteBytesCount@AK@@UEAA_NJ@Z ; AK::WriteBytesCount::Reserve(long)
+.std:00000001506C9918                 dq offset sub_140A81AF0
+.std:00000001506C9920                 dq offset ?OnNoticeExtract@GCloudDolphinCallBack@GCloud@@UEAA_NXZ ; GCloud::GCloudDolphinCallBack::OnNoticeExtract(void)
+.std:00000001506C9928                 dq offset sub_140AAC090
+.std:00000001506C9930                 dq offset sub_140A89710
+.std:00000001506C9938                 dq offset sub_140A8B920
+.std:00000001506C9940                 dq offset sub_140AAAB30
+.std:00000001506C9948                 dq offset sub_140AAADC0
+.std:00000001506C9950 aDHotpatchexev3 db 'D:/HotPatchExeV3_Ma1_GL_Release_A/Build_Ma1Release/EngineSource/E'
+.std:00000001506C9950                                         ; DATA XREF: sub_140A88D00+DD↑o
+.std:00000001506C9950                                         ; sub_140AAF260+E5↑o ...
+.std:00000001506C9991                 db 'ngine/Source/Runtime/Launch/Private/LaunchEngineLoop.cpp',0
+.std:00000001506C99CA                 align 10h
+.std:00000001506C99D0 aInpackagelocal db 'InPackageLocalizationManager.InitializeFromCache()',0
+.std:00000001506C99D0                                         ; DATA XREF: sub_140A88D00+398↑o
+.std:00000001506C9A03                 align 8
+.std:00000001506C9A08 aPreinitprestar db 'PreInitPreStartupScreen',0
+.std:00000001506C9A08                                         ; DATA XREF: sub_140AB7200+221↑o
+.std:00000001506C9A20 aFengineloopPre db 'FEngineLoop::PreInit',0
+.std:00000001506C9A20                                         ; DATA XREF: sub_140AAF260+39F↑o
+.std:00000001506C9A20                                         ; sub_140AB7200+34B↑o
+.std:00000001506C9A35                 align 8
+.std:00000001506C9A38 aPriorityclass_0:                       ; DATA XREF: sub_140AB7200+376↑o
+.std:00000001506C9A38                 text "UTF-16LE", '-priorityclass=',0
+.std:00000001506C9A58                 align 20h
+.std:00000001506C9A60 aFengineloopPre_0:                      ; DATA XREF: sub_140AB7200+3BF↑o
+.std:00000001506C9A60                 text "UTF-16LE", 'FEngineLoop::PreInitPreStartupScreen, PriorityClass'
+.std:00000001506C9AC6                 text "UTF-16LE", ': %s',0
+.std:00000001506C9AD0 byte_1506C9AD0  db 44h                  ; DATA XREF: sub_140AB7200:loc_140AB7670↑r
+.std:00000001506C9AD1                 align 2
+```
