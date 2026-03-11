@@ -1,6 +1,303 @@
 ```asm
 
-
+.std:00000001555C432E 00                                                              db    0
+.std:00000001555C432F 00                                                              db    0
+.std:00000001555C4330                                                 ; const IDelegateInstance::`RTTI Complete Object Locator'
+.std:00000001555C4330 01 00 00 00 00 00 00 00 00 00 00 00 D0 6D DD 16 ??_R4IDelegateInstance@@6B@ _RTTICompleteObjectLocator <1, 0, 0, 16DD6DD0h, 155C4358h, 155C4330h>
+.std:00000001555C4330 58 43 5C 15 30 43 5C 15                                                                 ; DATA XREF: .std:0000000150D78180↑o
+.std:00000001555C4330                                                                                         ; RTTI Complete Object Locator (#classinformer)
+.std:00000001555C4348 00                                                              db    0
+.std:00000001555C4349 00                                                              db    0
+.std:00000001555C434A 00                                                              db    0
+.std:00000001555C434B 00                                                              db    0
+.std:00000001555C434C 00                                                              db    0
+.std:00000001555C434D 00                                                              db    0
+.std:00000001555C434E 00                                                              db    0
+.std:00000001555C434F 00                                                              db    0
+.std:00000001555C4350 00                                                              db    0
+.std:00000001555C4351 00                                                              db    0
+.std:00000001555C4352 00                                                              db    0
+.std:00000001555C4353 00                                                              db    0
+.std:00000001555C4354 00                                                              db    0
+.std:00000001555C4355 00                                                              db    0
+.std:00000001555C4356 00                                                              db    0
+.std:00000001555C4357 00                                                              db    0
+.std:00000001555C4358                                                 ; IDelegateInstance::`RTTI Class Hierarchy Descriptor'
+.std:00000001555C4358 00 00 00 00 00 00 00 00 01 00 00 00 70 43 5C 15 ??_R3IDelegateInstance@@8 _RTTIClassHierarchyDescriptor <0, 0, 1, 155C4370h> ; RTTI Class Hierarchy Descriptor (#classinformer)
+.std:00000001555C4368 00                                                              db    0
+.std:00000001555C4369 00                                                              db    0
+.std:00000001555C436A 00                                                              db    0
+.std:00000001555C436B 00                                                              db    0
+.std:00000001555C436C 00                                                              db    0
+.std:00000001555C436D 00                                                              db    0
+.std:00000001555C436E 00                                                              db    0
+.std:00000001555C436F 00                                                              db    0
+.std:00000001555C4370
+.std:00000001555C4370                                                 ; IDelegateInstance::`RTTI Base Class Array'
+.std:00000001555C4370 80 43 5C 15                                     ??_R2IDelegateInstance@@8 dd 155C4380h  ;   BaseClass 0x00000001555C4380
+.std:00000001555C4374 00 00 00 00                                                     dd 0
+.std:00000001555C4378 00                                                              db    0
+.std:00000001555C4379 00                                                              db    0
+.std:00000001555C437A 00                                                              db    0
+.std:00000001555C437B 00                                                              db    0
+.std:00000001555C437C 00                                                              db    0
+.std:00000001555C437D 00                                                              db    0
+.std:00000001555C437E 00                                                              db    0
+.std:00000001555C437F 00                                                              db    0
+.std:00000001555C4380                                                 ; IDelegateInstance::`RTTI Base Class Descriptor at (0, -1, 0, 4)'
+.std:00000001555C4380 D0 6D DD 16 00 00 00 00 00 00 00 00 FF FF FF FF…??_R1A@?0A@AE@IDelegateInstance@@8 _RTTIBaseClassDescriptor <16DD6DD0h, 0, <0, 0FFFFFFFFh, 0>, 40h> ; RTTI Base Class Descriptor (#classinformer)
+.std:00000001555C4398 58 43 5C 15                                                     dd 155C4358h            ; 0x00000001555C4358
+.std:00000001555C439C 00                                                              db    0
+.std:00000001555C439D 00                                                              db    0
+.std:00000001555C439E 00                                                              db    0
+.std:00000001555C439F 00                                                              db    0
+.std:00000001555C43A0 00                                                              db    0
+.std:00000001555C43A1 00                                                              db    0
+.std:00000001555C43A2 00                                                              db    0
+.std:00000001555C43A3 00                                                              db    0
+.std:00000001555C43A4 00                                                              db    0
+.std:00000001555C43A5 00                                                              db    0
+.std:00000001555C43A6 00                                                              db    0
+.std:00000001555C43A7 00                                                              db    0
+.std:00000001555C43A8                                                 ; const IModuleInterface::`RTTI Complete Object Locator'
+.std:00000001555C43A8 01 00 00 00 00 00 00 00 00 00 00 00 F8 6D DD 16 ??_R4IModuleInterface@@6B@ _RTTICompleteObjectLocator <1, 0, 0, 16DD6DF8h, 155C43D0h, 155C43A8h>
+.std:00000001555C43A8 D0 43 5C 15 A8 43 5C 15                                                                 ; DATA XREF: .std:0000000150D781C8↑o
+.std:00000001555C43A8                                                                                         ; RTTI Complete Object Locator (#classinformer)
+.std:00000001555C43C0 00                                                              db    0
+.std:00000001555C43C1 00                                                              db    0
+.std:00000001555C43C2 00                                                              db    0
+.std:00000001555C43C3 00                                                              db    0
+.std:00000001555C43C4 00                                                              db    0
+.std:00000001555C43C5 00                                                              db    0
+.std:00000001555C43C6 00                                                              db    0
+.std:00000001555C43C7 00                                                              db    0
+.std:00000001555C43C8 00                                                              db    0
+.std:00000001555C43C9 00                                                              db    0
+.std:00000001555C43CA 00                                                              db    0
+.std:00000001555C43CB 00                                                              db    0
+.std:00000001555C43CC 00                                                              db    0
+.std:00000001555C43CD 00                                                              db    0
+.std:00000001555C43CE 00                                                              db    0
+.std:00000001555C43CF 00                                                              db    0
+.std:00000001555C43D0                                                 ; IModuleInterface::`RTTI Class Hierarchy Descriptor'
+.std:00000001555C43D0 00 00 00 00 00 00 00 00 01 00 00 00 E8 43 5C 15 ??_R3IModuleInterface@@8 _RTTIClassHierarchyDescriptor <0, 0, 1, 155C43E8h> ; RTTI Class Hierarchy Descriptor (#classinformer)
+.std:00000001555C43E0 00                                                              db    0
+.std:00000001555C43E1 00                                                              db    0
+.std:00000001555C43E2 00                                                              db    0
+.std:00000001555C43E3 00                                                              db    0
+.std:00000001555C43E4 00                                                              db    0
+.std:00000001555C43E5 00                                                              db    0
+.std:00000001555C43E6 00                                                              db    0
+.std:00000001555C43E7 00                                                              db    0
+.std:00000001555C43E8
+.std:00000001555C43E8                                                 ; IModuleInterface::`RTTI Base Class Array'
+.std:00000001555C43E8 F8 43 5C 15                                     ??_R2IModuleInterface@@8 dd 155C43F8h   ;   BaseClass 0x00000001555C43F8
+.std:00000001555C43EC 00 00 00 00                                                     dd 0
+.std:00000001555C43F0 00                                                              db    0
+.std:00000001555C43F1 00                                                              db    0
+.std:00000001555C43F2 00                                                              db    0
+.std:00000001555C43F3 00                                                              db    0
+.std:00000001555C43F4 00                                                              db    0
+.std:00000001555C43F5 00                                                              db    0
+.std:00000001555C43F6 00                                                              db    0
+.std:00000001555C43F7 00                                                              db    0
+.std:00000001555C43F8                                                 ; IModuleInterface::`RTTI Base Class Descriptor at (0, -1, 0, 4)'
+.std:00000001555C43F8 F8 6D DD 16 00 00 00 00 00 00 00 00 FF FF FF FF…??_R1A@?0A@AE@IModuleInterface@@8 _RTTIBaseClassDescriptor <16DD6DF8h, 0, <0, 0FFFFFFFFh, 0>, 40h> ; RTTI Base Class Descriptor (#classinformer)
+.std:00000001555C4410 D0 43 5C 15                                                     dd 155C43D0h            ; 0x00000001555C43D0
+.std:00000001555C4414 00                                                              db    0
+.std:00000001555C4415 00                                                              db    0
+.std:00000001555C4416 00                                                              db    0
+.std:00000001555C4417 00                                                              db    0
+.std:00000001555C4418 00                                                              db    0
+.std:00000001555C4419 00                                                              db    0
+.std:00000001555C441A 00                                                              db    0
+.std:00000001555C441B 00                                                              db    0
+.std:00000001555C441C 00                                                              db    0
+.std:00000001555C441D 00                                                              db    0
+.std:00000001555C441E 00                                                              db    0
+.std:00000001555C441F 00                                                              db    0
+.std:00000001555C4420                                                 ; const IBaseDelegateInstance<class IModuleInterface * (void)>::`RTTI Complete Object Locator'
+.std:00000001555C4420 01 00 00 00 00 00 00 00 00 00 00 00 20 6E DD 16 ??_R4?$IBaseDelegateInstance@$$A6APEAVIModuleInterface@@XZ@@6B@ _RTTICompleteObjectLocator <1, 0, 0, 16DD6E20h, 155C4448h, 155C4420h>
+.std:00000001555C4420 48 44 5C 15 20 44 5C 15                                                                 ; DATA XREF: .std:0000000150D78268↑o
+.std:00000001555C4420                                                                                         ; RTTI Complete Object Locator (#classinformer)
+.std:00000001555C4438 00                                                              db    0
+.std:00000001555C4439 00                                                              db    0
+.std:00000001555C443A 00                                                              db    0
+.std:00000001555C443B 00                                                              db    0
+.std:00000001555C443C 00                                                              db    0
+.std:00000001555C443D 00                                                              db    0
+.std:00000001555C443E 00                                                              db    0
+.std:00000001555C443F 00                                                              db    0
+.std:00000001555C4440 00                                                              db    0
+.std:00000001555C4441 00                                                              db    0
+.std:00000001555C4442 00                                                              db    0
+.std:00000001555C4443 00                                                              db    0
+.std:00000001555C4444 00                                                              db    0
+.std:00000001555C4445 00                                                              db    0
+.std:00000001555C4446 00                                                              db    0
+.std:00000001555C4447 00                                                              db    0
+.std:00000001555C4448                                                 ; IBaseDelegateInstance<class IModuleInterface * (void)>::`RTTI Class Hierarchy Descriptor'
+.std:00000001555C4448 00 00 00 00 00 00 00 00 03 00 00 00 60 44 5C 15 ??_R3?$IBaseDelegateInstance@$$A6APEAVIModuleInterface@@XZ@@8 _RTTIClassHierarchyDescriptor <0, 0, 3, 155C4460h> ; RTTI Class Hierarchy Descriptor (#classinformer)
+.std:00000001555C4458 00                                                              db    0
+.std:00000001555C4459 00                                                              db    0
+.std:00000001555C445A 00                                                              db    0
+.std:00000001555C445B 00                                                              db    0
+.std:00000001555C445C 00                                                              db    0
+.std:00000001555C445D 00                                                              db    0
+.std:00000001555C445E 00                                                              db    0
+.std:00000001555C445F 00                                                              db    0
+.std:00000001555C4460
+.std:00000001555C4460                                                 ; IBaseDelegateInstance<class IModuleInterface * (void)>::`RTTI Base Class Array'
+.std:00000001555C4460 80 44 5C 15                                     ??_R2?$IBaseDelegateInstance@$$A6APEAVIModuleInterface@@XZ@@8 dd 155C4480h ;   BaseClass[0] 0x00000001555C4480
+.std:00000001555C4464 A8 44 5C 15                                                     dd 155C44A8h            ;   BaseClass[1] 0x00000001555C44A8
+.std:00000001555C4468 80 43 5C 15                                                     dd 155C4380h            ;   BaseClass[2] 0x00000001555C4380
+.std:00000001555C446C 00 00 00 00                                                     dd 0
+.std:00000001555C4470 00                                                              db    0
+.std:00000001555C4471 00                                                              db    0
+.std:00000001555C4472 00                                                              db    0
+.std:00000001555C4473 00                                                              db    0
+.std:00000001555C4474 00                                                              db    0
+.std:00000001555C4475 00                                                              db    0
+.std:00000001555C4476 00                                                              db    0
+.std:00000001555C4477 00                                                              db    0
+.std:00000001555C4478 00                                                              db    0
+.std:00000001555C4479 00                                                              db    0
+.std:00000001555C447A 00                                                              db    0
+.std:00000001555C447B 00                                                              db    0
+.std:00000001555C447C 00                                                              db    0
+.std:00000001555C447D 00                                                              db    0
+.std:00000001555C447E 00                                                              db    0
+.std:00000001555C447F 00                                                              db    0
+.std:00000001555C4480                                                 ; IBaseDelegateInstance<class IModuleInterface * (void)>::`RTTI Base Class Descriptor at (0, -1, 0, 4)'
+.std:00000001555C4480 20 6E DD 16 02 00 00 00 00 00 00 00 FF FF FF FF…??_R1A@?0A@AE@?$IBaseDelegateInstance@$$A6APEAVIModuleInterface@@XZ@@8 _RTTIBaseClassDescriptor <16DD6E20h, 2, <0, 0FFFFFFFFh, 0>, 40h> ; RTTI Base Class Descriptor (#classinformer)
+.std:00000001555C4498 48 44 5C 15                                                     dd 155C4448h            ; 0x00000001555C4448
+.std:00000001555C449C 00                                                              db    0
+.std:00000001555C449D 00                                                              db    0
+.std:00000001555C449E 00                                                              db    0
+.std:00000001555C449F 00                                                              db    0
+.std:00000001555C44A0 00                                                              db    0
+.std:00000001555C44A1 00                                                              db    0
+.std:00000001555C44A2 00                                                              db    0
+.std:00000001555C44A3 00                                                              db    0
+.std:00000001555C44A4 00                                                              db    0
+.std:00000001555C44A5 00                                                              db    0
+.std:00000001555C44A6 00                                                              db    0
+.std:00000001555C44A7 00                                                              db    0
+.std:00000001555C44A8                                                 ; IBaseDelegateInstanceCommon<class IModuleInterface * (void)>::`RTTI Base Class Descriptor at (0, -1, 0, 4)'
+.std:00000001555C44A8 70 6E DD 16 01 00 00 00 00 00 00 00 FF FF FF FF…??_R1A@?0A@AE@?$IBaseDelegateInstanceCommon@$$A6APEAVIModuleInterface@@XZ@@8 _RTTIBaseClassDescriptor <16DD6E70h, 1, <0, 0FFFFFFFFh, 0>, 40h> ; RTTI Base Class Descriptor (#classinformer)
+.std:00000001555C44C0 D0 44 5C 15                                                     dd 155C44D0h            ; 0x00000001555C44D0
+.std:00000001555C44C4 00                                                              db    0
+.std:00000001555C44C5 00                                                              db    0
+.std:00000001555C44C6 00                                                              db    0
+.std:00000001555C44C7 00                                                              db    0
+.std:00000001555C44C8 00                                                              db    0
+.std:00000001555C44C9 00                                                              db    0
+.std:00000001555C44CA 00                                                              db    0
+.std:00000001555C44CB 00                                                              db    0
+.std:00000001555C44CC 00                                                              db    0
+.std:00000001555C44CD 00                                                              db    0
+.std:00000001555C44CE 00                                                              db    0
+.std:00000001555C44CF 00                                                              db    0
+.std:00000001555C44D0                                                 ; IBaseDelegateInstanceCommon<class IModuleInterface * (void)>::`RTTI Class Hierarchy Descriptor'
+.std:00000001555C44D0 00 00 00 00 00 00 00 00 02 00 00 00 E8 44 5C 15 ??_R3?$IBaseDelegateInstanceCommon@$$A6APEAVIModuleInterface@@XZ@@8 _RTTIClassHierarchyDescriptor <0, 0, 2, 155C44E8h> ; RTTI Class Hierarchy Descriptor (#classinformer)
+.std:00000001555C44E0 00                                                              db    0
+.std:00000001555C44E1 00                                                              db    0
+.std:00000001555C44E2 00                                                              db    0
+.std:00000001555C44E3 00                                                              db    0
+.std:00000001555C44E4 00                                                              db    0
+.std:00000001555C44E5 00                                                              db    0
+.std:00000001555C44E6 00                                                              db    0
+.std:00000001555C44E7 00                                                              db    0
+.std:00000001555C44E8
+.std:00000001555C44E8                                                 ; IBaseDelegateInstanceCommon<class IModuleInterface * (void)>::`RTTI Base Class Array'
+.std:00000001555C44E8 A8 44 5C 15                                     ??_R2?$IBaseDelegateInstanceCommon@$$A6APEAVIModuleInterface@@XZ@@8 dd 155C44A8h ;   BaseClass[0] 0x00000001555C44A8
+.std:00000001555C44EC 80 43 5C 15                                                     dd 155C4380h            ;   BaseClass[1] 0x00000001555C4380
+.std:00000001555C44F0 00 00 00 00                                                     dd 0
+.std:00000001555C44F4 00                                                              db    0
+.std:00000001555C44F5 00                                                              db    0
+.std:00000001555C44F6 00                                                              db    0
+.std:00000001555C44F7 00                                                              db    0
+.std:00000001555C44F8 00                                                              db    0
+.std:00000001555C44F9 00                                                              db    0
+.std:00000001555C44FA 00                                                              db    0
+.std:00000001555C44FB 00                                                              db    0
+.std:00000001555C44FC 00                                                              db    0
+.std:00000001555C44FD 00                                                              db    0
+.std:00000001555C44FE 00                                                              db    0
+.std:00000001555C44FF 00                                                              db    0
+.std:00000001555C4500                                                 ; const IBaseDelegateInstanceCommon<class IModuleInterface * (void)>::`RTTI Complete Object Locator'
+.std:00000001555C4500 01 00 00 00 00 00 00 00 00 00 00 00 70 6E DD 16 ??_R4?$IBaseDelegateInstanceCommon@$$A6APEAVIModuleInterface@@XZ@@6B@ _RTTICompleteObjectLocator <1, 0, 0, 16DD6E70h, 155C44D0h, 155C4500h>
+.std:00000001555C4500 D0 44 5C 15 00 45 5C 15                                                                 ; DATA XREF: .std:0000000150D78210↑o
+.std:00000001555C4500                                                                                         ; RTTI Complete Object Locator (#classinformer)
+.std:00000001555C4518 00                                                              db    0
+.std:00000001555C4519 00                                                              db    0
+.std:00000001555C451A 00                                                              db    0
+.std:00000001555C451B 00                                                              db    0
+.std:00000001555C451C 00                                                              db    0
+.std:00000001555C451D 00                                                              db    0
+.std:00000001555C451E 00                                                              db    0
+.std:00000001555C451F 00                                                              db    0
+.std:00000001555C4520 00                                                              db    0
+.std:00000001555C4521 00                                                              db    0
+.std:00000001555C4522 00                                                              db    0
+.std:00000001555C4523 00                                                              db    0
+.std:00000001555C4524 00                                                              db    0
+.std:00000001555C4525 00                                                              db    0
+.std:00000001555C4526 00                                                              db    0
+.std:00000001555C4527 00                                                              db    0
+.std:00000001555C4528                                                 ; const FGCloudCoreModule::`RTTI Complete Object Locator'
+.std:00000001555C4528 01 00 00 00 00 00 00 00 00 00 00 00 C8 6E DD 16 ??_R4FGCloudCoreModule@@6B@ _RTTICompleteObjectLocator <1, 0, 0, 16DD6EC8h, 155C4550h, 155C4528h>
+.std:00000001555C4528 50 45 5C 15 28 45 5C 15                                                                 ; DATA XREF: .std:0000000150D782C0↑o
+.std:00000001555C4528                                                                                         ; RTTI Complete Object Locator (#classinformer)
+.std:00000001555C4540 00                                                              db    0
+.std:00000001555C4541 00                                                              db    0
+.std:00000001555C4542 00                                                              db    0
+.std:00000001555C4543 00                                                              db    0
+.std:00000001555C4544 00                                                              db    0
+.std:00000001555C4545 00                                                              db    0
+.std:00000001555C4546 00                                                              db    0
+.std:00000001555C4547 00                                                              db    0
+.std:00000001555C4548 00                                                              db    0
+.std:00000001555C4549 00                                                              db    0
+.std:00000001555C454A 00                                                              db    0
+.std:00000001555C454B 00                                                              db    0
+.std:00000001555C454C 00                                                              db    0
+.std:00000001555C454D 00                                                              db    0
+.std:00000001555C454E 00                                                              db    0
+.std:00000001555C454F 00                                                              db    0
+.std:00000001555C4550                                                 ; FGCloudCoreModule::`RTTI Class Hierarchy Descriptor'
+.std:00000001555C4550 00 00 00 00 00 00 00 00 02 00 00 00 68 45 5C 15 ??_R3FGCloudCoreModule@@8 _RTTIClassHierarchyDescriptor <0, 0, 2, 155C4568h> ; RTTI Class Hierarchy Descriptor (#classinformer)
+.std:00000001555C4560 00                                                              db    0
+.std:00000001555C4561 00                                                              db    0
+.std:00000001555C4562 00                                                              db    0
+.std:00000001555C4563 00                                                              db    0
+.std:00000001555C4564 00                                                              db    0
+.std:00000001555C4565 00                                                              db    0
+.std:00000001555C4566 00                                                              db    0
+.std:00000001555C4567 00                                                              db    0
+.std:00000001555C4568
+.std:00000001555C4568                                                 ; FGCloudCoreModule::`RTTI Base Class Array'
+.std:00000001555C4568 80 45 5C 15                                     ??_R2FGCloudCoreModule@@8 dd 155C4580h  ;   BaseClass[0] 0x00000001555C4580
+.std:00000001555C456C F8 43 5C 15                                                     dd 155C43F8h            ;   BaseClass[1] 0x00000001555C43F8
+.std:00000001555C4570 00 00 00 00                                                     dd 0
+.std:00000001555C4574 00                                                              db    0
+.std:00000001555C4575 00                                                              db    0
+.std:00000001555C4576 00                                                              db    0
+.std:00000001555C4577 00                                                              db    0
+.std:00000001555C4578 00                                                              db    0
+.std:00000001555C4579 00                                                              db    0
+.std:00000001555C457A 00                                                              db    0
+.std:00000001555C457B 00                                                              db    0
+.std:00000001555C457C 00                                                              db    0
+.std:00000001555C457D 00                                                              db    0
+.std:00000001555C457E 00                                                              db    0
+.std:00000001555C457F 00                                                              db    0
+.std:00000001555C4580                                                 ; FGCloudCoreModule::`RTTI Base Class Descriptor at (0, -1, 0, 4)'
+.std:00000001555C4580 C8 6E DD 16 01 00 00 00 00 00 00 00 FF FF FF FF…??_R1A@?0A@AE@FGCloudCoreModule@@8 _RTTIBaseClassDescriptor <16DD6EC8h, 1, <0, 0FFFFFFFFh, 0>, 40h> ; RTTI Base Class Descriptor (#classinformer)
+.std:00000001555C4598 50 45 5C 15                                                     dd 155C4550h            ; 0x00000001555C4550
+.std:00000001555C459C 00                                                              db    0
+.std:00000001555C459D 00                                                              db    0
+.std:00000001555C459E 00                                                              db    0
 
 .std:00000001547C1358 aChunks:                                ; DATA XREF: sub_14D95CBC0+5↑o
 .std:00000001547C1358                 text "UTF-16LE", 'Chunks',0
