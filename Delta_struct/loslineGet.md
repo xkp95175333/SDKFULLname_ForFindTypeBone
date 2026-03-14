@@ -1,4 +1,26 @@
 ```asm
+
+GetRuntimeBaseDll
+
+
+-------FullDllName
+        DeltaForceClient-Win64-ShippingBase.dll-------
+                Base Address ->     0x7fffcc180000
+                Size of Image ->    0x22e0000
+                EndAddress ->       0x7fffce45ffff
+                Entry Point ->      0x7fffcc39f260
+                Section Pointer ->  0x0
+                Checksum ->         0x222d695
+        Export FunData
+                        VirtualAddress[0].text->0x0x10000 SizeOfRawData->0x0x551a00 += BaseVirtualAddress->0x0x7fffcc190000
+Import FunData
+                        VirtualAddress[1].rdata->0x0x570000 SizeOfRawData->0x0x15f200 += BaseVirtualAddress->0x0x7fffcc6f0000
+Resource FunData
+                        VirtualAddress[1].data->0x0x6d0000 SizeOfRawData->0x0x13200 += BaseVirtualAddress->0x0x7fffcc850000
+
+
+
+
 .std:00000001506D60A8 46 44 61 74 61 54 61 62 6C 65 4C 69 74 65 43 6F aFdatatablelite db 'FDataTableLiteContent',0
 .std:00000001506D60A8 6E 74 65 6E 74 00                                                                       ; DATA XREF: sub_140AE1CE0+1E↑o
 .std:00000001506D60A8                                                                                         ; sub_140AE1CE0+23C↑o ...
