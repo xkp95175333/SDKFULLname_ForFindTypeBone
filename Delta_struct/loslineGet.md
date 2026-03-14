@@ -52,7 +52,635 @@
 ---
 fun arraymap
 ---
+```asm
+
+.std:0000000140001000 ; File Name   : E:\SteamLibrary\steamapps\common\Delta Force\Game\DeltaForce\Binaries\Win64\DeltaForceClient-Win64-Shipping_dump.exe
+.std:0000000140001000 ; Format      : Portable executable for AMD64 (PE)
+.std:0000000140001000 ; Imagebase   : 140000000
+.std:0000000140001000 ; Timestamp   : 69845D93 (Thu Feb 05 09:06:27 2026)
+.std:0000000140001000 ; Section 1. (virtual address 00001000)
+.std:0000000140001000 ; Virtual size                  : 10579000 (274173952.)
+.std:0000000140001000 ; Section size in file          : 10578400 (274170880.)
+.std:0000000140001000 ; Offset to raw data for section: 00000600
+.std:0000000140001000 ; Flags 60000020: Text Executable Readable
+.std:0000000140001000 ; Alignment     : default
+.std:0000000140001000 ; ===========================================================================
+.std:0000000140001000
+.std:0000000140001000 ; Segment type: Pure code
+.std:0000000140001000 ; Segment permissions: Read/Execute
+.std:0000000140001000 _std            segment para public 'CODE' use64
+.std:0000000140001000                 assume cs:_std
+.std:0000000140001000                 ;org 140001000h
+.std:0000000140001000                 assume es:FLAT, ss:FLAT, ds:FLAT, fs:nothing, gs:nothing
+.std:0000000140001000
+.std:0000000140001000 ; =============== S U B R O U T I N E =======================================
+.std:0000000140001000
+.std:0000000140001000
+.std:0000000140001000 sub_140001000   proc near               ; DATA XREF: HEADER:0000000140000304↑o
+.std:0000000140001000                                         ; HEADER:00000001400003EC↑o ...
+.std:0000000140001000
+.std:0000000140001000 arg_20          = qword ptr  28h
+.std:0000000140001000 arg_28          = qword ptr  30h
+.std:0000000140001000 arg_30          = dword ptr  38h
+.std:0000000140001000 arg_38          = qword ptr  40h
+.std:0000000140001000
+.std:0000000140001000                 push    r14
+.std:0000000140001002                 push    rsi
+.std:0000000140001003                 push    rdi
+.std:0000000140001004                 push    rbp
+.std:0000000140001005                 push    rbx
+.std:0000000140001006                 test    r9d, r9d        ; Logical Compare
+.std:0000000140001009                 jle     loc_140001255   ; Jump if Less or Equal (ZF=1 | SF!=OF)
+.std:000000014000100F
+.std:000000014000100F loc_14000100F:                          ; DATA XREF: .std:00000001559D3C74↓o
+.std:000000014000100F                                         ; .std:0000000155A12D8C↓o ...
+.std:000000014000100F                 mov     rax, [rsp+68h]
+.std:0000000140001014                 vpsllw  xmm0, xmmword ptr [rax], 0Fh ; Packed Shift Left Logical (Word)
+.std:000000014000101B
+.std:000000014000101B loc_14000101B:                          ; DATA XREF: .std:000000015574FF94↓o
+.std:000000014000101B                                         ; .std:00000001557F8528↓o ...
+.std:000000014000101B                 vpmovw2m k0, xmm0       ; Convert a Vector Register to a Mask
+.std:0000000140001021                 mov     r10d, [rsp+60h]
+.std:0000000140001026                 mov     r11, [rsp+58h]
+.std:000000014000102B                 mov     rax, [rsp+50h]
+.std:0000000140001030
+.std:0000000140001030 loc_140001030:                          ; DATA XREF: .std:000000015573D9E8↓o
+.std:0000000140001030                                         ; .std:00000001557D6324↓o ...
+.std:0000000140001030                 lea     edi, [r10-1]    ; Load Effective Address
+.std:0000000140001034                 lea     esi, [r10+6]    ; Load Effective Address
+.std:0000000140001038
+.std:0000000140001038 loc_140001038:                          ; DATA XREF: .std:000000015573E164↓o
+.std:0000000140001038                 test    edi, edi        ; Logical Compare
+.std:000000014000103A                 cmovns  esi, edi        ; Move if Not Sign (SF=0)
+.std:000000014000103D                 and     esi, 0FFFFFFF8h ; Logical AND
+.std:0000000140001040
+.std:0000000140001040 loc_140001040:                          ; DATA XREF: .std:000000015574DFFC↓o
+.std:0000000140001040                                         ; .std:00000001558F1714↓o ...
+.std:0000000140001040                 or      esi, 1          ; Logical Inclusive OR
+.std:0000000140001043
+.std:0000000140001043 loc_140001043:                          ; DATA XREF: .std:0000000155904F74↓o
+.std:0000000140001043                 vpbroadcastd ymm0, r10d ; Broadcast a Dword Integer
+.std:0000000140001049                 mov     r9d, r9d
+.std:000000014000104C                 cmp     esi, 1          ; Compare Two Operands
+.std:000000014000104F
+.std:000000014000104F loc_14000104F:                          ; DATA XREF: .std:00000001557A3ADC↓o
+.std:000000014000104F                                         ; .std:00000001557B1CEC↓o ...
+.std:000000014000104F                 jle     loc_1400011AA   ; Jump if Less or Equal (ZF=1 | SF!=OF)
+.std:0000000140001055                 xor     r14d, r14d      ; Logical Exclusive OR
+.std:0000000140001058
+.std:0000000140001058 loc_140001058:                          ; DATA XREF: .std:0000000155A90A9C↓o
+.std:0000000140001058                                         ; .std:0000000155AF7F2C↓o
+.std:0000000140001058                 vmovdqa ymm1, cs:ymmword_151031AE0 ; Move Aligned Double Quadword
+.std:0000000140001060
+.std:0000000140001060 loc_140001060:                          ; DATA XREF: .std:0000000155872748↓o
+.std:0000000140001060                                         ; .std:0000000155872E68↓o ...
+.std:0000000140001060                 jmp     short loc_140001092 ; Jump
+.std:0000000140001060 ; ---------------------------------------------------------------------------
+.std:0000000140001062                 align 10h
+.std:0000000140001070
+.std:0000000140001070 loc_140001070:                          ; CODE XREF: sub_140001000+125↓j
+.std:0000000140001070                                         ; sub_140001000+1A5↓j
+.std:0000000140001070                                         ; DATA XREF: ...
+.std:0000000140001070                 kandb   k1, k1, k0      ; Bitwise Logical AND Masks
+.std:0000000140001074                 kmovb   ebx, k1         ; Move from and to Mask Registers
+.std:0000000140001078                 popcnt  rbx, rbx        ; Return the Count of Number of Bits Set to 1
+.std:000000014000107D                 and     ebx, 1          ; Logical AND
+.std:0000000140001080
+.std:0000000140001080 loc_140001080:                          ; DATA XREF: .std:000000015574DAE0↓o
+.std:0000000140001080                                         ; .std:00000001559024F4↓o ...
+.std:0000000140001080                 neg     ebx             ; Two's Complement Negation
+.std:0000000140001082                 mov     [r8+r14], bl
+.std:0000000140001086
+.std:0000000140001086 loc_140001086:                          ; DATA XREF: .std:0000000155878184↓o
+.std:0000000140001086                                         ; .std:00000001559CD650↓o ...
+.std:0000000140001086                 inc     r14             ; Increment by 1
+.std:0000000140001089                 cmp     r14, r9         ; Compare Two Operands
+.std:000000014000108C
+.std:000000014000108C loc_14000108C:                          ; DATA XREF: .std:000000015574AD58↓o
+.std:000000014000108C                                         ; .std:000000015582A880↓o ...
+.std:000000014000108C                 jz      loc_140001255   ; Jump if Zero (ZF=1)
+.std:0000000140001092
+.std:0000000140001092 loc_140001092:                          ; CODE XREF: sub_140001000:loc_140001060↑j
+.std:0000000140001092                 vbroadcastss ymm3, dword ptr [rcx+r14*4] ; Broadcast Single-Precision Floating-Point Element
+.std:0000000140001098
+.std:0000000140001098 loc_140001098:                          ; DATA XREF: .std:00000001558729C8↓o
+.std:0000000140001098                                         ; .std:0000000155B7B298↓o
+.std:0000000140001098                 vbroadcastss ymm2, dword ptr [rdx+r14*4] ; Broadcast Single-Precision Floating-Point Element
+.std:000000014000109E
+.std:000000014000109E loc_14000109E:                          ; DATA XREF: .std:00000001557FD4F4↓o
+.std:000000014000109E                                         ; .std:0000000155904FC4↓o ...
+.std:000000014000109E                 kxorw   k1, k0, k0      ; Bitwise Logical XOR Masks
+.std:00000001400010A2                 mov     ebp, 1
+.std:00000001400010A7                 mov     ebx, 4
+.std:00000001400010AC                 nop     dword ptr [rax+00h] ; No Operation
+.std:00000001400010B0
+.std:00000001400010B0 loc_1400010B0:                          ; CODE XREF: sub_140001000:loc_140001120↓j
+.std:00000001400010B0                 lea     edi, [rbx-4]    ; Load Effective Address
+.std:00000001400010B3                 movsxd  rdi, edi        ; Move with Sign-Extend Doubleword
+.std:00000001400010B6
+.std:00000001400010B6 loc_1400010B6:                          ; DATA XREF: .std:00000001559A0F38↓o
+.std:00000001400010B6                                         ; .std:0000000155A20654↓o ...
+.std:00000001400010B6                 vmovups ymm4, ymmword ptr [rax+rdi] ; Move Unaligned Four Packed Single-FP
+.std:00000001400010BB                 movsxd  rbx, ebx        ; Move with Sign-Extend Doubleword
+.std:00000001400010BE
+.std:00000001400010BE loc_1400010BE:                          ; DATA XREF: .std:00000001557010BC↓o
+.std:00000001400010BE                                         ; .std:0000000155814570↓o ...
+.std:00000001400010BE                 vmovups ymm5, ymmword ptr [rax+rbx] ; Move Unaligned Four Packed Single-FP
+.std:00000001400010C3                 vmovups ymm16, ymmword ptr [r11+rdi] ; Move Unaligned Four Packed Single-FP
+.std:00000001400010CA
+.std:00000001400010CA loc_1400010CA:                          ; DATA XREF: .std:0000000155841698↓o
+.std:00000001400010CA                                         ; .std:0000000155857BA4↓o ...
+.std:00000001400010CA                 vmovups ymm17, ymmword ptr [r11+rbx] ; Move Unaligned Four Packed Single-FP
+.std:00000001400010D1                 vminps  ymm18, ymm16, ymm17 ; Packed Single-FP Minimum
+.std:00000001400010D7
+.std:00000001400010D7 loc_1400010D7:                          ; DATA XREF: .std:00000001559B7408↓o
+.std:00000001400010D7                                         ; .std:0000000155A433E8↓o
+.std:00000001400010D7                 vmaxps  ymm16, ymm16, ymm17 ; Packed Single-FP Maximum
+.std:00000001400010DD
+.std:00000001400010DD loc_1400010DD:                          ; DATA XREF: .std:00000001559F3840↓o
+.std:00000001400010DD                                         ; .std:0000000155A3345C↓o
+.std:00000001400010DD                 vcmpleps k2, ymm2, ymm16 ; Packed Single-FP Compare - Less-than-or-equal (ordered, signaling)
+.std:00000001400010E4                 vcmpltps k2{k2}, ymm18, ymm2 ; Packed Single-FP Compare - Less-than (ordered, signaling)
+.std:00000001400010EB
+.std:00000001400010EB loc_1400010EB:                          ; DATA XREF: .std:0000000155A082B8↓o
+.std:00000001400010EB                                         ; .std:0000000155BD7B58↓o
+.std:00000001400010EB                 vsubps  ymm17, ymm3, ymm4 ; Packed Single-FP Subtract
+.std:00000001400010F1                 vsubps  ymm16, ymm16, ymm18 ; Packed Single-FP Subtract
+.std:00000001400010F7                 vmulps  ymm16, ymm17, ymm16 ; Packed Single-FP Multiply
+.std:00000001400010FD
+.std:00000001400010FD loc_1400010FD:                          ; DATA XREF: .std:00000001557FCECC↓o
+.std:00000001400010FD                                         ; .std:000000015599C3A8↓o ...
+.std:00000001400010FD                 vsubps  ymm17, ymm2, ymm18 ; Packed Single-FP Subtract
+.std:0000000140001103                 vsubps  ymm4, ymm5, ymm4 ; Packed Single-FP Subtract
+.std:0000000140001107
+.std:0000000140001107 loc_140001107:                          ; DATA XREF: .std:000000015573F2F0↓o
+.std:0000000140001107                 vmulps  ymm4, ymm4, ymm17 ; Packed Single-FP Multiply
+.std:000000014000110D
+.std:000000014000110D loc_14000110D:                          ; DATA XREF: .std:0000000155A08230↓o
+.std:000000014000110D                                         ; .std:0000000155AF6634↓o ...
+.std:000000014000110D                 vcmpleps k2{k2}, ymm16, ymm4 ; Packed Single-FP Compare - Less-than-or-equal (ordered, signaling)
+.std:0000000140001114                 kxorb   k1, k2, k1      ; Bitwise Logical XOR Masks
+.std:0000000140001118                 add     ebp, 8          ; Add
+.std:000000014000111B                 add     ebx, 20h ; ' '  ; Add
+.std:000000014000111E                 cmp     ebp, esi        ; Compare Two Operands
+.std:0000000140001120
+.std:0000000140001120 loc_140001120:                          ; DATA XREF: .std:0000000155A385F0↓o
+.std:0000000140001120                 jl      short loc_1400010B0 ; Jump if Less (SF!=OF)
+.std:0000000140001122                 cmp     ebp, r10d       ; Compare Two Operands
+.std:0000000140001125                 jge     loc_140001070   ; Jump if Greater or Equal (SF=OF)
+.std:000000014000112B
+.std:000000014000112B loc_14000112B:                          ; DATA XREF: .std:0000000155701018↓o
+.std:000000014000112B                                         ; .std:00000001557F47E4↓o
+.std:000000014000112B                 vpbroadcastd ymm4, ebp  ; Broadcast a Dword Integer
+.std:0000000140001131                 vpaddd  ymm4, ymm4, ymm1 ; Packed Add Dword
+.std:0000000140001135                 vpcmpgtd k2, ymm0, ymm4 ; Packed Compare for Greater Than (Dword)
+.std:000000014000113B                 lea     ebp, [rbx-4]    ; Load Effective Address
+.std:000000014000113E
+.std:000000014000113E loc_14000113E:                          ; DATA XREF: .std:00000001557FD2BC↓o
+.std:000000014000113E                                         ; .std:0000000155AF84F8↓o ...
+.std:000000014000113E                 movsxd  rbp, ebp        ; Move with Sign-Extend Doubleword
+.std:0000000140001141                 vmovups ymm4{k2}{z}, ymmword ptr [rax+rbp] ; Move Unaligned Four Packed Single-FP
+.std:0000000140001148                 movsxd  rbx, ebx        ; Move with Sign-Extend Doubleword
+.std:000000014000114B
+.std:000000014000114B loc_14000114B:                          ; DATA XREF: .std:00000001557F8330↓o
+.std:000000014000114B                                         ; .std:00000001559EC91C↓o ...
+.std:000000014000114B                 vmovups ymm5{k2}{z}, ymmword ptr [rax+rbx] ; Move Unaligned Four Packed Single-FP
+.std:0000000140001152                 vmovups ymm16{k2}{z}, ymmword ptr [r11+rbp] ; Move Unaligned Four Packed Single-FP
+.std:0000000140001159                 vmovups ymm17{k2}{z}, ymmword ptr [r11+rbx] ; Move Unaligned Four Packed Single-FP
+.std:0000000140001160
+.std:0000000140001160 loc_140001160:                          ; DATA XREF: .std:0000000155856DBC↓o
+.std:0000000140001160                                         ; .std:0000000155DFFA1C↓o
+.std:0000000140001160                 vminps  ymm18, ymm16, ymm17 ; Packed Single-FP Minimum
+.std:0000000140001166
+.std:0000000140001166 loc_140001166:                          ; DATA XREF: .std:0000000155B1CC24↓o
+.std:0000000140001166                 vmaxps  ymm16, ymm16, ymm17 ; Packed Single-FP Maximum
+.std:000000014000116C                 vsubps  ymm3, ymm3, ymm4 ; Packed Single-FP Subtract
+.std:0000000140001170
+.std:0000000140001170 loc_140001170:                          ; DATA XREF: .std:00000001557F9E98↓o
+.std:0000000140001170                                         ; .std:00000001558F4C10↓o ...
+.std:0000000140001170                 vsubps  ymm17, ymm16, ymm18 ; Packed Single-FP Subtract
+.std:0000000140001176                 vmulps  ymm3, ymm3, ymm17 ; Packed Single-FP Multiply
+.std:000000014000117C
+.std:000000014000117C loc_14000117C:                          ; DATA XREF: .std:00000001557F6008↓o
+.std:000000014000117C                                         ; .std:00000001558A96BC↓o ...
+.std:000000014000117C                 vsubps  ymm17, ymm2, ymm18 ; Packed Single-FP Subtract
+.std:0000000140001182                 vsubps  ymm4, ymm5, ymm4 ; Packed Single-FP Subtract
+.std:0000000140001186                 vmulps  ymm4, ymm4, ymm17 ; Packed Single-FP Multiply
+.std:000000014000118C
+.std:000000014000118C loc_14000118C:                          ; DATA XREF: .std:00000001557FBE84↓o
+.std:000000014000118C                                         ; .std:00000001559FDE60↓o ...
+.std:000000014000118C                 vcmpltps k2{k2}, ymm18, ymm2 ; Packed Single-FP Compare - Less-than (ordered, signaling)
+.std:0000000140001193
+.std:0000000140001193 loc_140001193:                          ; DATA XREF: .std:0000000155B1DF50↓o
+.std:0000000140001193                 vcmpleps k2{k2}, ymm2, ymm16 ; Packed Single-FP Compare - Less-than-or-equal (ordered, signaling)
+.std:000000014000119A
+.std:000000014000119A loc_14000119A:                          ; DATA XREF: .std:0000000155A42A4C↓o
+.std:000000014000119A                                         ; .std:0000000155BD1D4C↓o ...
+.std:000000014000119A                 vcmpleps k2{k2}, ymm3, ymm4 ; Packed Single-FP Compare - Less-than-or-equal (ordered, signaling)
+.std:00000001400011A1                 kxorb   k1, k2, k1      ; Bitwise Logical XOR Masks
+.std:00000001400011A5                 jmp     loc_140001070   ; Jump
+.std:00000001400011AA ; ---------------------------------------------------------------------------
+.std:00000001400011AA
+.std:00000001400011AA loc_1400011AA:                          ; CODE XREF: sub_140001000:loc_14000104F↑j
+.std:00000001400011AA                 xor     esi, esi        ; Logical Exclusive OR
+.std:00000001400011AC
+.std:00000001400011AC loc_1400011AC:                          ; DATA XREF: .std:000000015572A7F8↓o
+.std:00000001400011AC                                         ; .std:00000001557F5A9C↓o ...
+.std:00000001400011AC                 vpcmpgtd k1, ymm0, cs:ymmword_151031AC0 ; Packed Compare for Greater Than (Dword)
+.std:00000001400011B6                 jmp     loc_140001245   ; Jump
+.std:00000001400011B6 ; ---------------------------------------------------------------------------
+.std:00000001400011BB                 align 20h
+.std:00000001400011C0
+.std:00000001400011C0 loc_1400011C0:                          ; CODE XREF: sub_140001000+249↓j
+.std:00000001400011C0                                         ; DATA XREF: .std:00000001557FA09C↓o ...
+.std:00000001400011C0                 vbroadcastss ymm0, dword ptr [rdx+rsi*4] ; Broadcast Single-Precision Floating-Point Element
+.std:00000001400011C6                 vbroadcastss ymm1, dword ptr [rcx+rsi*4] ; Broadcast Single-Precision Floating-Point Element
+.std:00000001400011CC                 vmovups ymm2{k1}{z}, ymmword ptr [rax] ; Move Unaligned Four Packed Single-FP
+.std:00000001400011D2                 vmovups ymm3{k1}{z}, ymmword ptr [rax+4] ; Move Unaligned Four Packed Single-FP
+.std:00000001400011DC
+.std:00000001400011DC loc_1400011DC:                          ; DATA XREF: .std:0000000155AF2908↓o
+.std:00000001400011DC                 vmovups ymm4{k1}{z}, ymmword ptr [r11] ; Move Unaligned Four Packed Single-FP
+.std:00000001400011E2                 vmovups ymm5{k1}{z}, ymmword ptr [r11+4] ; Move Unaligned Four Packed Single-FP
+.std:00000001400011EC
+.std:00000001400011EC loc_1400011EC:                          ; DATA XREF: .std:00000001559EB034↓o
+.std:00000001400011EC                                         ; .std:0000000155AF7D1C↓o
+.std:00000001400011EC                 vminps  ymm16, ymm4, ymm5 ; Packed Single-FP Minimum
+.std:00000001400011F2                 vmaxps  ymm4, ymm4, ymm5 ; Packed Single-FP Maximum
+.std:00000001400011F6                 vsubps  ymm1, ymm1, ymm2 ; Packed Single-FP Subtract
+.std:00000001400011FA                 vsubps  ymm5, ymm4, ymm16 ; Packed Single-FP Subtract
+.std:0000000140001200
+.std:0000000140001200 loc_140001200:                          ; DATA XREF: .std:000000015582251C↓o
+.std:0000000140001200                                         ; .std:00000001558579D8↓o ...
+.std:0000000140001200                 vmulps  ymm1, ymm1, ymm5 ; Packed Single-FP Multiply
+.std:0000000140001204                 vsubps  ymm5, ymm0, ymm16 ; Packed Single-FP Subtract
+.std:000000014000120A                 vsubps  ymm2, ymm3, ymm2 ; Packed Single-FP Subtract
+.std:000000014000120E
+.std:000000014000120E loc_14000120E:                          ; DATA XREF: .std:000000015574BEE0↓o
+.std:000000014000120E                                         ; .std:00000001557ED144↓o
+.std:000000014000120E                 vmulps  ymm2, ymm2, ymm5 ; Packed Single-FP Multiply
+.std:0000000140001212
+.std:0000000140001212 loc_140001212:                          ; DATA XREF: .std:00000001559047EC↓o
+.std:0000000140001212                 vcmpltps k2{k1}, ymm16, ymm0 ; Packed Single-FP Compare - Less-than (ordered, signaling)
+.std:0000000140001219                 vcmpleps k2{k2}, ymm0, ymm4 ; Packed Single-FP Compare - Less-than-or-equal (ordered, signaling)
+.std:0000000140001220
+.std:0000000140001220 loc_140001220:                          ; DATA XREF: .std:00000001559F78A0↓o
+.std:0000000140001220                 vcmpleps k2{k2}, ymm1, ymm2 ; Packed Single-FP Compare - Less-than-or-equal (ordered, signaling)
+.std:0000000140001227
+.std:0000000140001227 loc_140001227:                          ; CODE XREF: sub_140001000+253↓j
+.std:0000000140001227                 kandb   k2, k2, k0      ; Bitwise Logical AND Masks
+.std:000000014000122B                 kmovb   edi, k2         ; Move from and to Mask Registers
+.std:000000014000122F
+.std:000000014000122F loc_14000122F:                          ; DATA XREF: .std:0000000155834BBC↓o
+.std:000000014000122F                                         ; .std:00000001558F1D38↓o ...
+.std:000000014000122F                 popcnt  rdi, rdi        ; Return the Count of Number of Bits Set to 1
+.std:0000000140001234                 and     edi, 1          ; Logical AND
+.std:0000000140001237
+.std:0000000140001237 loc_140001237:                          ; DATA XREF: .std:000000015581AF08↓o
+.std:0000000140001237                 neg     edi             ; Two's Complement Negation
+.std:0000000140001239                 mov     [r8+rsi], dil
+.std:000000014000123D                 inc     rsi             ; Increment by 1
+.std:0000000140001240                 cmp     r9, rsi         ; Compare Two Operands
+.std:0000000140001243                 jz      short loc_140001255 ; Jump if Zero (ZF=1)
+.std:0000000140001245
+.std:0000000140001245 loc_140001245:                          ; CODE XREF: sub_140001000+1B6↑j
+.std:0000000140001245                 cmp     r10d, 2         ; Compare Two Operands
+.std:0000000140001249                 jge     loc_1400011C0   ; Jump if Greater or Equal (SF=OF)
+.std:000000014000124F
+.std:000000014000124F loc_14000124F:                          ; DATA XREF: .std:00000001557E786C↓o
+.std:000000014000124F                                         ; .std:0000000155A4409C↓o ...
+.std:000000014000124F                 kxorw   k2, k0, k0      ; Bitwise Logical XOR Masks
+.std:0000000140001253                 jmp     short loc_140001227 ; Jump
+.std:0000000140001255 ; ---------------------------------------------------------------------------
+.std:0000000140001255
+.std:0000000140001255 loc_140001255:                          ; CODE XREF: sub_140001000+9↑j
+.std:0000000140001255                                         ; sub_140001000:loc_14000108C↑j ...
+.std:0000000140001255                 pop     rbx
+.std:0000000140001256                 pop     rbp
+.std:0000000140001257                 pop     rdi
+.std:0000000140001258                 pop     rsi
+.std:0000000140001259                 pop     r14
+.std:000000014000125B                 vzeroupper              ; Zero Upper Bits of YMM Registers
+.std:000000014000125E                 retn                    ; Return Near from Procedure
+.std:000000014000125E sub_140001000   endp
+.std:000000014000125E
+.std:000000014000125E ; ---------------------------------------------------------------------------
+.std:000000014000125F                 align 20h
+.std:0000000140001260
+.std:0000000140001260 ; =============== S U B R O U T I N E =======================================
+.std:0000000140001260
+.std:0000000140001260
+.std:0000000140001260 sub_140001260   proc near               ; CODE XREF: sub_140004A80+5D↓p
+.std:0000000140001260                                         ; DATA XREF: .std:00000001559F9684↓o ...
+.std:0000000140001260
+.std:0000000140001260 arg_20          = qword ptr  28h
+.std:0000000140001260 arg_28          = qword ptr  30h
+.std:0000000140001260 arg_30          = dword ptr  38h
+.std:0000000140001260
+.std:0000000140001260                 push    r14
+.std:0000000140001262                 push    rsi
+.std:0000000140001263                 push    rdi
+.std:0000000140001264                 push    rbp
+.std:0000000140001265                 push    rbx
+.std:0000000140001266
+.std:0000000140001266 loc_140001266:                          ; DATA XREF: .std:000000015573DF64↓o
+.std:0000000140001266                 test    r9d, r9d        ; Logical Compare
+.std:0000000140001269                 jle     loc_140001491   ; Jump if Less or Equal (ZF=1 | SF!=OF)
+.std:000000014000126F
+.std:000000014000126F loc_14000126F:                          ; DATA XREF: .std:0000000155857A3C↓o
+.std:000000014000126F                                         ; .std:0000000155A39E84↓o ...
+.std:000000014000126F                 mov     r10d, [rsp+60h]
+.std:0000000140001274                 mov     r11, [rsp+58h]
+.std:0000000140001279                 mov     rax, [rsp+50h]
+.std:000000014000127E
+.std:000000014000127E loc_14000127E:                          ; DATA XREF: .std:0000000155857C64↓o
+.std:000000014000127E                                         ; .std:000000015585970C↓o ...
+.std:000000014000127E                 lea     edi, [r10-1]    ; Load Effective Address
+.std:0000000140001282                 lea     esi, [r10+6]    ; Load Effective Address
+.std:0000000140001286                 test    edi, edi        ; Logical Compare
+.std:0000000140001288                 cmovns  esi, edi        ; Move if Not Sign (SF=0)
+.std:000000014000128B                 and     esi, 0FFFFFFF8h ; Logical AND
+.std:000000014000128E
+.std:000000014000128E loc_14000128E:                          ; DATA XREF: .std:000000015591A948↓o
+.std:000000014000128E                                         ; .std:0000000155B1B544↓o
+.std:000000014000128E                 or      esi, 1          ; Logical Inclusive OR
+.std:0000000140001291                 vpbroadcastd ymm0, r10d ; Broadcast a Dword Integer
+.std:0000000140001297
+.std:0000000140001297 loc_140001297:                          ; DATA XREF: .std:000000015585370C↓o
+.std:0000000140001297                 mov     r9d, r9d
+.std:000000014000129A                 cmp     esi, 1          ; Compare Two Operands
+.std:000000014000129D                 jle     loc_1400013EA   ; Jump if Less or Equal (ZF=1 | SF!=OF)
+.std:00000001400012A3                 xor     r14d, r14d      ; Logical Exclusive OR
+.std:00000001400012A6                 vmovdqa ymm1, cs:ymmword_151031AE0 ; Move Aligned Double Quadword
+.std:00000001400012AE                 jmp     short loc_1400012CE ; Jump
+.std:00000001400012B0 ; ---------------------------------------------------------------------------
+.std:00000001400012B0
+.std:00000001400012B0 loc_1400012B0:                          ; CODE XREF: sub_140001260+105↓j
+.std:00000001400012B0                                         ; sub_140001260:loc_1400013E5↓j
+.std:00000001400012B0                                         ; DATA XREF: ...
+.std:00000001400012B0                 kmovb   ebx, k0         ; Move from and to Mask Registers
+.std:00000001400012B4                 popcnt  rbx, rbx        ; Return the Count of Number of Bits Set to 1
+.std:00000001400012B9                 and     ebx, 1          ; Logical AND
+.std:00000001400012BC                 neg     ebx             ; Two's Complement Negation
+.std:00000001400012BE
+.std:00000001400012BE loc_1400012BE:                          ; DATA XREF: .std:0000000155857B5C↓o
+.std:00000001400012BE                 mov     [r8+r14], bl
+.std:00000001400012C2                 inc     r14             ; Increment by 1
+.std:00000001400012C5                 cmp     r14, r9         ; Compare Two Operands
+.std:00000001400012C8
+.std:00000001400012C8 loc_1400012C8:                          ; DATA XREF: .std:00000001559FDE8C↓o
+.std:00000001400012C8                 jz      loc_140001491   ; Jump if Zero (ZF=1)
+.std:00000001400012CE
+.std:00000001400012CE loc_1400012CE:                          ; CODE XREF: sub_140001260+4E↑j
+.std:00000001400012CE                                         ; DATA XREF: .std:00000001557DD004↓o ...
+.std:00000001400012CE                 vbroadcastss ymm3, dword ptr [rcx+r14*4] ; Broadcast Single-Precision Floating-Point Element
+.std:00000001400012D4                 vbroadcastss ymm2, dword ptr [rdx+r14*4] ; Broadcast Single-Precision Floating-Point Element
+.std:00000001400012DA                 kxorw   k0, k0, k0      ; Bitwise Logical XOR Masks
+.std:00000001400012DE
+.std:00000001400012DE loc_1400012DE:                          ; DATA XREF: .std:00000001557F9C70↓o
+.std:00000001400012DE                                         ; .std:00000001557FD33C↓o ...
+.std:00000001400012DE                 mov     ebp, 1
+.std:00000001400012E3                 mov     ebx, 4
+.std:00000001400012E8                 nop     dword ptr [rax+rax+00000000h] ; No Operation
+.std:00000001400012F0
+.std:00000001400012F0 loc_1400012F0:                          ; CODE XREF: sub_140001260+100↓j
+.std:00000001400012F0                 lea     edi, [rbx-4]    ; Load Effective Address
+.std:00000001400012F3                 movsxd  rdi, edi        ; Move with Sign-Extend Doubleword
+.std:00000001400012F6
+.std:00000001400012F6 loc_1400012F6:                          ; DATA XREF: .std:00000001558F8184↓o
+.std:00000001400012F6                 vmovups ymm4, ymmword ptr [rax+rdi] ; Move Unaligned Four Packed Single-FP
+.std:00000001400012FB                 movsxd  rbx, ebx        ; Move with Sign-Extend Doubleword
+.std:00000001400012FE
+.std:00000001400012FE loc_1400012FE:                          ; DATA XREF: .std:00000001557E73B8↓o
+.std:00000001400012FE                                         ; .std:0000000155AFAEA8↓o
+.std:00000001400012FE                 vmovups ymm5, ymmword ptr [rax+rbx] ; Move Unaligned Four Packed Single-FP
+.std:0000000140001303                 vmovups ymm16, ymmword ptr [r11+rdi] ; Move Unaligned Four Packed Single-FP
+.std:000000014000130A
+.std:000000014000130A loc_14000130A:                          ; DATA XREF: .std:0000000155892D3C↓o
+.std:000000014000130A                                         ; .std:00000001559037BC↓o ...
+.std:000000014000130A                 vmovups ymm17, ymmword ptr [r11+rbx] ; Move Unaligned Four Packed Single-FP
+.std:0000000140001311                 vminps  ymm18, ymm16, ymm17 ; Packed Single-FP Minimum
+.std:0000000140001317                 vmaxps  ymm16, ymm16, ymm17 ; Packed Single-FP Maximum
+.std:000000014000131D
+.std:000000014000131D loc_14000131D:                          ; DATA XREF: .std:000000015583B208↓o
+.std:000000014000131D                                         ; .std:000000015584E924↓o
+.std:000000014000131D                 vcmpleps k1, ymm2, ymm16 ; Packed Single-FP Compare - Less-than-or-equal (ordered, signaling)
+.std:0000000140001324                 vcmpltps k1{k1}, ymm18, ymm2 ; Packed Single-FP Compare - Less-than (ordered, signaling)
+.std:000000014000132B
+.std:000000014000132B loc_14000132B:                          ; DATA XREF: .std:00000001557DCB3C↓o
+.std:000000014000132B                                         ; .std:00000001557FD244↓o ...
+.std:000000014000132B                 vsubps  ymm17, ymm3, ymm4 ; Packed Single-FP Subtract
+.std:0000000140001331                 vsubps  ymm16, ymm16, ymm18 ; Packed Single-FP Subtract
+.std:0000000140001337                 vmulps  ymm16, ymm17, ymm16 ; Packed Single-FP Multiply
+.std:000000014000133D
+.std:000000014000133D loc_14000133D:                          ; DATA XREF: .std:00000001557F9B7C↓o
+.std:000000014000133D                 vsubps  ymm17, ymm2, ymm18 ; Packed Single-FP Subtract
+.std:0000000140001343                 vsubps  ymm4, ymm5, ymm4 ; Packed Single-FP Subtract
+.std:0000000140001347                 vmulps  ymm4, ymm4, ymm17 ; Packed Single-FP Multiply
+.std:000000014000134D                 vcmpleps k1{k1}, ymm16, ymm4 ; Packed Single-FP Compare - Less-than-or-equal (ordered, signaling)
+.std:0000000140001354                 kxorb   k0, k1, k0      ; Bitwise Logical XOR Masks
+.std:0000000140001358                 add     ebp, 8          ; Add
+.std:000000014000135B                 add     ebx, 20h ; ' '  ; Add
+.std:000000014000135E                 cmp     ebp, esi        ; Compare Two Operands
+.std:0000000140001360                 jl      short loc_1400012F0 ; Jump if Less (SF!=OF)
+.std:0000000140001362                 cmp     ebp, r10d       ; Compare Two Operands
+.std:0000000140001365                 jge     loc_1400012B0   ; Jump if Greater or Equal (SF=OF)
+.std:000000014000136B
+.std:000000014000136B loc_14000136B:                          ; DATA XREF: .std:00000001557B94F4↓o
+.std:000000014000136B                 vpbroadcastd ymm4, ebp  ; Broadcast a Dword Integer
+.std:0000000140001371                 vpaddd  ymm4, ymm4, ymm1 ; Packed Add Dword
+.std:0000000140001375                 vpcmpgtd k1, ymm0, ymm4 ; Packed Compare for Greater Than (Dword)
+.std:000000014000137B                 lea     ebp, [rbx-4]    ; Load Effective Address
+.std:000000014000137E
+.std:000000014000137E loc_14000137E:                          ; DATA XREF: .std:000000015574A2E8↓o
+.std:000000014000137E                                         ; .std:0000000155A08434↓o ...
+.std:000000014000137E                 movsxd  rbp, ebp        ; Move with Sign-Extend Doubleword
+.std:0000000140001381                 vmovups ymm4{k1}{z}, ymmword ptr [rax+rbp] ; Move Unaligned Four Packed Single-FP
+.std:0000000140001388                 movsxd  rbx, ebx        ; Move with Sign-Extend Doubleword
+.std:000000014000138B
+.std:000000014000138B loc_14000138B:                          ; DATA XREF: .std:000000015574F050↓o
+.std:000000014000138B                                         ; .std:0000000155AF8420↓o
+.std:000000014000138B                 vmovups ymm5{k1}{z}, ymmword ptr [rax+rbx] ; Move Unaligned Four Packed Single-FP
+.std:0000000140001392                 vmovups ymm16{k1}{z}, ymmword ptr [r11+rbp] ; Move Unaligned Four Packed Single-FP
+.std:0000000140001399                 vmovups ymm17{k1}{z}, ymmword ptr [r11+rbx] ; Move Unaligned Four Packed Single-FP
+.std:00000001400013A0
+.std:00000001400013A0 loc_1400013A0:                          ; DATA XREF: .std:00000001557A0450↓o
+.std:00000001400013A0                                         ; .std:00000001557F5244↓o
+.std:00000001400013A0                 vminps  ymm18, ymm16, ymm17 ; Packed Single-FP Minimum
+.std:00000001400013A6                 vmaxps  ymm16, ymm16, ymm17 ; Packed Single-FP Maximum
+.std:00000001400013AC                 vsubps  ymm3, ymm3, ymm4 ; Packed Single-FP Subtract
+.std:00000001400013B0
+.std:00000001400013B0 loc_1400013B0:                          ; DATA XREF: .std:000000015599A254↓o
+.std:00000001400013B0                                         ; .std:00000001559C5C78↓o ...
+.std:00000001400013B0                 vsubps  ymm17, ymm16, ymm18 ; Packed Single-FP Subtract
+.std:00000001400013B6
+.std:00000001400013B6 loc_1400013B6:                          ; DATA XREF: .std:0000000155A069DC↓o
+.std:00000001400013B6                 vmulps  ymm3, ymm3, ymm17 ; Packed Single-FP Multiply
+.std:00000001400013BC
+.std:00000001400013BC loc_1400013BC:                          ; DATA XREF: .std:0000000155A083F0↓o
+.std:00000001400013BC                 vsubps  ymm17, ymm2, ymm18 ; Packed Single-FP Subtract
+.std:00000001400013C2                 vsubps  ymm4, ymm5, ymm4 ; Packed Single-FP Subtract
+.std:00000001400013C6                 vmulps  ymm4, ymm4, ymm17 ; Packed Single-FP Multiply
+.std:00000001400013CC
+.std:00000001400013CC loc_1400013CC:                          ; DATA XREF: .std:000000015572F180↓o
+.std:00000001400013CC                                         ; .std:0000000155A3D23C↓o
+.std:00000001400013CC                 vcmpltps k1{k1}, ymm18, ymm2 ; Packed Single-FP Compare - Less-than (ordered, signaling)
+.std:00000001400013D3                 vcmpleps k1{k1}, ymm2, ymm16 ; Packed Single-FP Compare - Less-than-or-equal (ordered, signaling)
+.std:00000001400013DA
+.std:00000001400013DA loc_1400013DA:                          ; DATA XREF: .std:000000015581A800↓o
+.std:00000001400013DA                 vcmpleps k1{k1}, ymm3, ymm4 ; Packed Single-FP Compare - Less-than-or-equal (ordered, signaling)
+.std:00000001400013E1                 kxorb   k0, k1, k0      ; Bitwise Logical XOR Masks
+.std:00000001400013E5
+.std:00000001400013E5 loc_1400013E5:                          ; DATA XREF: .std:0000000155BE2160↓o
+.std:00000001400013E5                 jmp     loc_1400012B0   ; Jump
+.std:00000001400013EA ; ---------------------------------------------------------------------------
+.std:00000001400013EA
+.std:00000001400013EA loc_1400013EA:                          ; CODE XREF: sub_140001260+3D↑j
+.std:00000001400013EA                 xor     esi, esi        ; Logical Exclusive OR
+.std:00000001400013EC
+.std:00000001400013EC loc_1400013EC:                          ; DATA XREF: .std:000000015598A578↓o
+.std:00000001400013EC                                         ; .std:0000000155D11548↓o ...
+.std:00000001400013EC                 vpcmpgtd k1, ymm0, cs:ymmword_151031AC0 ; Packed Compare for Greater Than (Dword)
+.std:00000001400013F6                 jmp     loc_140001481   ; Jump
+.std:00000001400013F6 ; ---------------------------------------------------------------------------
+.std:00000001400013FB                 align 20h
+.std:0000000140001400
+.std:0000000140001400 loc_140001400:                          ; CODE XREF: sub_140001260+225↓j
+.std:0000000140001400                                         ; DATA XREF: .std:000000015593E074↓o ...
+.std:0000000140001400                 vbroadcastss ymm0, dword ptr [rdx+rsi*4] ; Broadcast Single-Precision Floating-Point Element
+.std:0000000140001406                 vbroadcastss ymm1, dword ptr [rcx+rsi*4] ; Broadcast Single-Precision Floating-Point Element
+.std:000000014000140C
+.std:000000014000140C loc_14000140C:                          ; DATA XREF: .std:00000001557F9620↓o
+.std:000000014000140C                                         ; .std:00000001559C5CB4↓o ...
+.std:000000014000140C                 vmovups ymm2{k1}{z}, ymmword ptr [rax] ; Move Unaligned Four Packed Single-FP
+.std:0000000140001412                 vmovups ymm3{k1}{z}, ymmword ptr [rax+4] ; Move Unaligned Four Packed Single-FP
+.std:000000014000141C
+.std:000000014000141C loc_14000141C:                          ; DATA XREF: .std:000000015574A2FC↓o
+.std:000000014000141C                                         ; .std:0000000155A2E434↓o ...
+.std:000000014000141C                 vmovups ymm4{k1}{z}, ymmword ptr [r11] ; Move Unaligned Four Packed Single-FP
+.std:0000000140001422                 vmovups ymm5{k1}{z}, ymmword ptr [r11+4] ; Move Unaligned Four Packed Single-FP
+.std:000000014000142C
+.std:000000014000142C loc_14000142C:                          ; DATA XREF: .std:000000015574F0D4↓o
+.std:000000014000142C                                         ; .std:0000000155926FFC↓o ...
+.std:000000014000142C                 vminps  ymm16, ymm4, ymm5 ; Packed Single-FP Minimum
+.std:0000000140001432                 vmaxps  ymm4, ymm4, ymm5 ; Packed Single-FP Maximum
+.std:0000000140001436                 vsubps  ymm1, ymm1, ymm2 ; Packed Single-FP Subtract
+.std:000000014000143A                 vsubps  ymm5, ymm4, ymm16 ; Packed Single-FP Subtract
+.std:0000000140001440
+.std:0000000140001440 loc_140001440:                          ; DATA XREF: .std:00000001556F9B74↓o
+.std:0000000140001440                                         ; .std:00000001557FAE9C↓o ...
+.std:0000000140001440                 vmulps  ymm1, ymm1, ymm5 ; Packed Single-FP Multiply
+.std:0000000140001444                 vsubps  ymm5, ymm0, ymm16 ; Packed Single-FP Subtract
+.std:000000014000144A                 vsubps  ymm2, ymm3, ymm2 ; Packed Single-FP Subtract
+.std:000000014000144E
+.std:000000014000144E loc_14000144E:                          ; DATA XREF: .std:000000015564E70C↓o
+.std:000000014000144E                                         ; .std:0000000155904A30↓o ...
+.std:000000014000144E                 vmulps  ymm2, ymm2, ymm5 ; Packed Single-FP Multiply
+.std:0000000140001452                 vcmpltps k2{k1}, ymm16, ymm0 ; Packed Single-FP Compare - Less-than (ordered, signaling)
+.std:0000000140001459                 vcmpleps k2{k2}, ymm0, ymm4 ; Packed Single-FP Compare - Less-than-or-equal (ordered, signaling)
+.std:0000000140001460
+.std:0000000140001460 loc_140001460:                          ; DATA XREF: .std:0000000155BE68F8↓o
+.std:0000000140001460                 vcmpleps k0{k2}, ymm1, ymm2 ; Packed Single-FP Compare - Less-than-or-equal (ordered, signaling)
+.std:0000000140001467
+.std:0000000140001467 loc_140001467:                          ; CODE XREF: sub_140001260:loc_14000148F↓j
+.std:0000000140001467                                         ; DATA XREF: .std:0000000155C1686C↓o
+.std:0000000140001467                 kmovb   edi, k0         ; Move from and to Mask Registers
+.std:000000014000146B                 popcnt  rdi, rdi        ; Return the Count of Number of Bits Set to 1
+.std:0000000140001470
+.std:0000000140001470 loc_140001470:                          ; DATA XREF: .std:00000001557C40C4↓o
+.std:0000000140001470                                         ; .std:0000000155AF850C↓o ...
+.std:0000000140001470                 and     edi, 1          ; Logical AND
+.std:0000000140001473                 neg     edi             ; Two's Complement Negation
+.std:0000000140001475                 mov     [r8+rsi], dil
+.std:0000000140001479                 inc     rsi             ; Increment by 1
+.std:000000014000147C                 cmp     r9, rsi         ; Compare Two Operands
+.std:000000014000147F
+.std:000000014000147F loc_14000147F:                          ; DATA XREF: .std:00000001558F27F4↓o
+.std:000000014000147F                                         ; .std:0000000155AF7BCC↓o
+.std:000000014000147F                 jz      short loc_140001491 ; Jump if Zero (ZF=1)
+.std:0000000140001481
+.std:0000000140001481 loc_140001481:                          ; CODE XREF: sub_140001260+196↑j
+.std:0000000140001481                 cmp     r10d, 2         ; Compare Two Operands
+.std:0000000140001485                 jge     loc_140001400   ; Jump if Greater or Equal (SF=OF)
+.std:000000014000148B                 kxorw   k0, k0, k0      ; Bitwise Logical XOR Masks
+.std:000000014000148F
+.std:000000014000148F loc_14000148F:                          ; DATA XREF: .std:0000000155A4E144↓o
+.std:000000014000148F                 jmp     short loc_140001467 ; Jump
+.std:0000000140001491 ; ---------------------------------------------------------------------------
+.std:0000000140001491
+.std:0000000140001491 loc_140001491:                          ; CODE XREF: sub_140001260+9↑j
+.std:0000000140001491                                         ; sub_140001260:loc_1400012C8↑j ...
+.std:0000000140001491                 pop     rbx
+.std:0000000140001492                 pop     rbp
+.std:0000000140001493                 pop     rdi
+.std:0000000140001494                 pop     rsi
+.std:0000000140001495                 pop     r14
+.std:0000000140001497
+.std:0000000140001497 loc_140001497:                          ; DATA XREF: .std:00000001559A7E48↓o
+.std:0000000140001497                 vzeroupper              ; Zero Upper Bits of YMM Registers
+.std:000000014000149A                 retn                    ; Return Near from Procedure
+.std:000000014000149A sub_140001260   endp
+.std:000000014000149A
+
+.std:0000000158187909 ;
+.std:0000000158187909 ; Imports from DeltaForceClient-Win64-ShippingBase.dll
+.std:0000000158187909 ;
+.std:0000000158187909 DeltaForceClient_Win64_ShippingBase_1 dq 7FFB53A9BDE0h
+.std:0000000158187909                                         ; DATA XREF: .std:0000000158187929↓o
+.std:0000000158187909                                         ; .std:0000000158187981↓r
+.std:0000000158187909                                         ; Import by ordinal 1
+.std:0000000158187911                 align 8
+.std:0000000158187918                 db 0
+.std:0000000158187919 off_158187919   dd rva qword_158187941  ; DATA XREF: HEADER:off_140000368↑o
+.std:0000000158187919                                         ; Import Name Table
+.std:000000015818791D                 dd 0                    ; Time stamp
+.std:0000000158187921                 dd 0                    ; Forwarder Chain
+.std:0000000158187925                 dd rva aDeltaforceclie  ; DLL Name
+.std:0000000158187929                 dd rva DeltaForceClient_Win64_ShippingBase_1 ; Import Address Table
+.std:000000015818792D                 align 10h
+.std:0000000158187930                 dq 2 dup(0)
+.std:0000000158187940                 db 0
+.std:0000000158187941 ;
+.std:0000000158187941 ; Import names for DeltaForceClient-Win64-ShippingBase.dll
+.std:0000000158187941 ;
+.std:0000000158187941 qword_158187941 dq 8000000000000001h    ; DATA XREF: .std:off_158187919↑o
+.std:0000000158187949                 dq 0
+.std:0000000158187951                 db 4 dup(0)
+.std:0000000158187955 aDeltaforceclie db 'DeltaForceClient-Win64-ShippingBase.dll',0
+.std:0000000158187955                                         ; DATA XREF: .std:0000000158187925↑o
+.std:000000015818797D ; ---------------------------------------------------------------------------
+.std:000000015818797D                 assume ds:_std
+.std:000000015818797D
+.std:000000015818797D                 public start
+.std:000000015818797D start:                                  ; DATA XREF: HEADER:off_140000300↑o
+.std:000000015818797D                 sub     rsp, 28h        ; Integer Subtraction
+.std:0000000158187981                 call    cs:DeltaForceClient_Win64_ShippingBase_1 ; Indirect Call Near Procedure
+.std:0000000158187981 ; ---------------------------------------------------------------------------
+.std:0000000158187987 TlsDirectory    dd 5564DB60h            ; DATA XREF: HEADER:off_1400003A8↑o
+.std:000000015818798B                 db 1, 3 dup(0)
+.std:000000015818798F TlsEnd_ptr      dd 5564DE80h
+.std:0000000158187993                 db 1, 3 dup(0)
+.std:0000000158187997 TlsIndex_ptr    dd 57615828h
+.std:000000015818799B                 db 1, 3 dup(0)
+.std:000000015818799F TlsCallbacks_ptr dd 581879AFh
+.std:00000001581879A3                 db 1, 3 dup(0)
+.std:00000001581879A7 TlsSizeOfZeroFill dd 0
+.std:00000001581879AB TlsCharacteristics dd 500000h
+.std:00000001581879AF TlsCallbacks    dd 581879BFh
+.std:00000001581879B3                 db 1, 3 dup(0)
+.std:00000001581879B7                 dq 0
+.std:00000001581879BF ; [00000006 BYTES: COLLAPSED FUNCTION TlsCallback_0. PRESS CTRL-NUMPAD+ TO EXPAND]
+.std:00000001581879C5 ; [00000001 BYTES: COLLAPSED FUNCTION nullsub_3255. PRESS CTRL-NUMPAD+ TO EXPAND]
+.std:00000001581879C6 qword_1581879C6 dq 7FFB539EB2D0h        ; DATA XREF: TlsCallback_0↑r
+.std:00000001581879CE                 dw 57F8h
+.std:00000001581879D0                 dq 804F000000545757h, 4D00D062C2714D88h, 52BAAB2F88C98635h
+.std:00000001581879E8                 dq 0EC28DECC5352F962h, 47F314D767DD69DBh, 0F3F5D161895703C3h
+
+
+```
 ```c
+
+
+
 __int64 __fastcall sub_14C78FBF0(__int64 a1)
 {
   __int16 v2; // ax
