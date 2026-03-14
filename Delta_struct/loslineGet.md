@@ -1076,3 +1076,1199 @@ __int64 __fastcall sub_14C78FBF0(__int64 a1)
 }
 
 ```
+
+---
+vftable
+---
+```c
+
+	//	00000000 
+		/// RTTI std::type_info class (#classinformer)
+	//	00000000 
+	struct type_info // sizeof=0x10;variable_size
+		//	00000000 
+	{                                       // XREF: .std:CSingletonCriticalSection `RTTI Type Descriptor'/r
+	//	00000000                                         // .std:boost::wrapexcept<boost::uuids::entropy_error> `RTTI Type Descriptor'/r ...
+		//	00000000     
+		void* vType;// __off;
+		//00000008     
+		int _M_data[2];                     // XREF: sub_14FFE3B20+B/o
+		//	00000008                                         // sub_14FFE3B60+14/o ...
+		//	00000010     
+		char _M_d_name[];//("UTF-8");
+		//00000010 
+	};
+
+	//	00000000 
+		/// RTTI Base class descriptor displacement container (#classinformer)
+//		00000000 
+	struct _PMD // sizeof=0xC
+		//	00000000 
+	{                                       // XREF: _RTTIBaseClassDescriptor/r
+	//	00000000     
+		int mdisp;
+		//	00000004     
+		int pdisp;
+		//	00000008    
+		int vdisp;
+		//	0000000C 
+	};
+
+	//00000000 
+		/// RTTI Class Hierarchy Descriptor (#classinformer)
+	//	00000000
+	struct _RTTIClassHierarchyDescriptor // sizeof=0x10
+		//	00000000 
+	{                                       // XREF: .std:boost::wrapexcept<boost::uuids::entropy_error>::`RTTI Class Hierarchy Descriptor'/r
+	//	00000000                                         // .std:boost::exception_detail::clone_base::`RTTI Class Hierarchy Descriptor'/r ...
+		//	00000000     
+		int signature;
+		//	00000004    
+		int attributes;
+		//	00000008   
+		int numBaseClasses;
+		//0000000C   
+		int baseClassArray;
+		//00000010
+	};
+
+	//00000000 
+		/// RTTI Base Class Descriptor (#classinformer)
+		//00000000 
+	struct _RTTIBaseClassDescriptor // sizeof=0x18
+		//00000000 
+	{                                       // XREF: .std:boost::wrapexcept<boost::uuids::entropy_error>::`RTTI Base Class Descriptor at (0,-1,0,4)'/r
+		//00000000                                         // .std:boost::exception_detail::clone_base::`RTTI Base Class Descriptor at (0,-1,0,4)'/r ...
+			//00000000     
+		int typeDescriptor;
+		//00000004     
+		int numContainedBases;
+		//00000008     
+		_PMD pmd;
+		//00000014     
+		int attributes;
+		//00000018 
+	};
+
+	//00000000 
+		/// RTTI Complete Object Locator (#classinformer)
+		//00000000 
+	struct _RTTICompleteObjectLocator // sizeof=0x18
+		//00000000 
+	{                                       // XREF: .std:const boost::wrapexcept<boost::uuids::entropy_error>::`RTTI Complete Object Locator'/r
+		//00000000                                         // .std:const boost::wrapexcept<boost::uuids::entropy_error>::`RTTI Complete Object Locator'{for `boost::uuids::entropy_error'}/r ...
+			//00000000     
+		int signature;
+		//00000004     
+		int offset;
+		//00000008     
+		int cdOffset;
+		//0000000C     
+		int typeDescriptor;
+		//00000010     
+		int classDescriptor;
+		//00000014     
+		int objectBase;
+		//00000018 
+	};
+
+	//00000000 
+	union __declspec(align(16)) __m128						// sizeof=0x10
+		////00000000 
+	{														// XREF: sub_140AE6880/r
+		//00000000                                         // sub_140AE6880/r ...
+		//	00000000     
+		float m128_f32[4];
+		//	00000000     
+		unsigned __int64 m128_u64[2];
+		//00000000     
+		__int8 m128_i8[16];
+		//00000000     
+		__int16 m128_i16[8];
+		//00000000     
+		__int32 m128_i32[4];
+		//00000000     
+		__int64 m128_i64[2];
+		//00000000     
+		unsigned __int8 m128_u8[16];
+		//	00000000     
+		unsigned __int16 m128_u16[8];
+		//	00000000     
+		unsigned __int32 m128_u32[4];
+		//00000000 
+	};
+
+
+
+/*
+00000000 struct RUNTIME_FUNCTION // sizeof=0xC
+00000000 {                                       // XREF: .std:000000015564DEC0/r
+00000000                                         // .std:000000015564DED0/r ...
+00000000     void *__ptr32 FunctionStart __offset(OFF64|RVAOFF);
+00000000                                         // XREF: sub_14F416E9B+30E68/w
+00000004     void *__ptr32 FunctionEnd __offset(OFF64|RVAOFF|PASTEND);
+00000004                                         // XREF: HEADER:off_140000380/o
+00000004                                         // sub_14F345229:loc_14F308F74/w
+00000008     void *__ptr32 UnwindInfo __offset(OFF64|RVAOFF);
+0000000C };
+
+00000000 struct UNWIND_INFO_HDR // sizeof=0x4
+00000000 {                                       // XREF: .std:stru_15564DE90/r
+00000000                                         // .std:stru_15564DEA4/r ...
+00000000     char Ver3_Flags __hex;
+00000001     char PrologSize __hex;
+00000002     char CntUnwindCodes __hex;
+00000003     char FrReg_FrRegOff __hex;
+00000004 };
+
+00000000 struct UNWIND_CODE // sizeof=0x2
+00000000 {                                       // XREF: .std:000000015564DE94/r
+00000000                                         // .std:000000015564DE98/r ...
+00000000     char PrologOff;
+00000001.0   __int8 UnwindOp : 4 __udec;
+00000001.4   __int8 OpInfo : 4 __udec;
+00000002 };
+
+00000000 struct FuncInfo // sizeof=0x28
+00000000 {                                       // XREF: .std:stru_155121680/r
+00000000                                         // .std:stru_155121720/r ...
+00000000     int magicNumber __hex;
+00000004     int maxState __dec;
+00000008     void *__ptr32 pUnwindMap __offset(OFF64|RVAOFF);
+0000000C     int nTryBlocks __dec;
+00000010     void *__ptr32 pTryBlockMap __offset(OFF64|RVAOFF);
+00000014     int nIPMapEntries __dec;
+00000018     void *__ptr32 pIPtoStateMap __offset(OFF64|RVAOFF);
+0000001C     int dispUnwindHelp __dec;
+00000020     void *__ptr32 pESTypeList __offset(OFF64|RVAOFF);
+00000024     int EHFlags __hex;
+00000028 };
+
+00000000 struct UnwindMapEntry // sizeof=0x8
+00000000 {                                       // XREF: .std:stru_155D93000/r
+00000000                                         // .std:0000000155D93008/r ...
+00000000     int toState __dec;
+00000004     void *__ptr32 action __offset(OFF64|RVAOFF);
+00000008 };
+
+00000000 struct IPtoStateMap // sizeof=0x8
+00000000 {                                       // XREF: .std:stru_155D92FE0/r
+00000000                                         // .std:stru_155D93070/r ...
+00000000     void *__ptr32 pc __offset(OFF64|RVAOFF);
+00000004     int state __dec;
+00000008 };
+
+00000000 struct TryBlockMapEntry // sizeof=0x14
+00000000 {                                       // XREF: .std:stru_155D93020/r
+00000000                                         // .std:0000000155D93034/r ...
+00000000     int tryLow __dec;
+00000004     int tryHigh __dec;
+00000008     int catchHigh __dec;
+0000000C     int nCatches __dec;
+00000010     void *__ptr32 pHandlerArray __offset(OFF64|RVAOFF);
+00000014 };
+
+00000000 struct HandlerType // sizeof=0x14
+00000000 {                                       // XREF: .std:stru_155D93048/r
+00000000                                         // .std:stru_155D9305C/r ...
+00000000     int adjectives __hex;
+00000004     void *__ptr32 pType __offset(OFF64|RVAOFF);
+00000008     int dispCatchObj __dec;
+0000000C     void *__ptr32 addressOfHandler __offset(OFF64|RVAOFF);
+00000010     int dispFrame __dec;
+00000014 };
+
+00000000 struct TypeDescriptor // sizeof=0x10;variable_size
+00000000 {                                       // XREF: .std:stru_156DC94D8/r
+00000000                                         // .std:stru_156DC9540/r
+00000000     void *pVFTable;
+00000008     void *spare;
+00000010     char name[] __strlit(C,"windows-1252");
+00000010 };
+
+00000000 #pragma pack(push, 8)
+00000000 struct _IMAGEHLP_MODULE64 // sizeof=0x690
+00000000 {                                       // XREF: sub_1420EBEA0+17E/o
+00000000                                         // sub_14C8FC4C0+219/o ...
+00000000     DWORD SizeOfStruct;                 // XREF: sub_1420EBEA0+187/w
+00000000                                         // sub_14C8FC4C0+22E/w ...
+00000004     // padding byte
+00000005     // padding byte
+00000006     // padding byte
+00000007     // padding byte
+00000008     DWORD64 BaseOfImage;                // XREF: sub_14FE97600+204/r
+00000010     DWORD ImageSize;                    // XREF: sub_14FE97600+214/r
+00000014     DWORD TimeDateStamp;
+00000018     DWORD CheckSum;
+0000001C     DWORD NumSyms;
+00000020     SYM_TYPE SymType;
+00000024     CHAR ModuleName[32];
+00000044     CHAR ImageName[256];                // XREF: sub_14C8FC4C0+264/o
+00000144     CHAR LoadedImageName[256];          // XREF: sub_14FE97600+1F4/o
+00000244     CHAR LoadedPdbName[256];
+00000344     DWORD CVSig;
+00000348     CHAR CVData[780];
+00000654     DWORD PdbSig;
+00000658     GUID PdbSig70;                      // XREF: sub_1420EBEA0+1DF/o
+00000658                                         // sub_14FE97600+243/o
+00000668     DWORD PdbAge;                       // XREF: sub_1420EBEA0+4EE/r
+00000668                                         // sub_1420EBEA0:loc_1420EC3C7/r
+0000066C     BOOL PdbUnmatched;
+00000670     BOOL DbgUnmatched;
+00000674     BOOL LineNumbers;
+00000678     BOOL GlobalSymbols;
+0000067C     BOOL TypeInfo;
+00000680     BOOL SourceIndexed;
+00000684     BOOL Publics;
+00000688     DWORD MachineType;
+0000068C     DWORD Reserved;
+00000690 };
+00000690 #pragma pack(pop)
+
+00000004 typedef unsigned int DWORD;             // XREF: _IMAGEHLP_MODULE64/r
+00000004                                         // _IMAGEHLP_MODULE64/r ...
+
+00000008 typedef unsigned __int64 DWORD64;       // XREF: _IMAGEHLP_MODULE64/r
+00000008                                         // _tagADDRESS64/r ...
+
+00000004 typedef enum $536385C8F382172408CEC3CAC70F99E4 SYM_TYPE;
+00000004                                         // XREF: _IMAGEHLP_MODULE64/r
+00000004                                         // _IMAGEHLP_MODULEW64/r
+
+FFFFFFFF enum $536385C8F382172408CEC3CAC70F99E4 // 4 bytes
+FFFFFFFF {
+FFFFFFFF     SymNone     = 0x0,
+FFFFFFFF     SymCoff     = 0x1,
+FFFFFFFF     SymCv       = 0x2,
+FFFFFFFF     SymPdb      = 0x3,
+FFFFFFFF     SymExport   = 0x4,
+FFFFFFFF     SymDeferred = 0x5,
+FFFFFFFF     SymSym      = 0x6,
+FFFFFFFF     SymDia      = 0x7,
+FFFFFFFF     SymVirtual  = 0x8,
+FFFFFFFF     NumSymTypes = 0x9,
+FFFFFFFF };
+
+00000001 typedef char CHAR;                      // XREF: _IMAGEHLP_MODULE64/r
+00000001                                         // _IMAGEHLP_MODULE64/r ...
+
+00000010 typedef struct _GUID GUID;              // XREF: _IMAGEHLP_MODULE64/r
+00000010                                         // IID/r ...
+
+00000000 struct _GUID // sizeof=0x10
+00000000 {
+00000000     unsigned int Data1;                 // XREF: sub_14C8FAF80+1DC/r
+00000004     unsigned __int16 Data2;
+00000006     unsigned __int16 Data3;
+00000008     unsigned __int8 Data4[8];
+00000010 };
+
+00000004 typedef int BOOL;                       // XREF: _IMAGEHLP_MODULE64/r
+00000004                                         // _IMAGEHLP_MODULE64/r ...
+
+00000010 typedef struct $65766D1D32EBE5EF8CB506B1785A9095 QITAB;
+00000010                                         // XREF: .std:stru_1512CEA38/r
+00000010                                         // .std:pqit/r ...
+
+00000000 #pragma pack(push, 8)
+00000000 struct $65766D1D32EBE5EF8CB506B1785A9095 // sizeof=0x10
+00000000 {
+00000000     const IID *piid;
+00000008     DWORD dwOffset;
+0000000C     // padding byte
+0000000D     // padding byte
+0000000E     // padding byte
+0000000F     // padding byte
+00000010 };
+00000010 #pragma pack(pop)
+
+00000010 typedef GUID IID;                       // XREF: .std:riid/r
+
+00000000 #pragma pack(push, 8)
+00000000 struct _tagSTACKFRAME64 // sizeof=0x108
+00000000 {                                       // XREF: sub_14C8FA940/r
+00000000     ADDRESS64 AddrPC;                   // XREF: sub_14C8FA940+FF/w
+00000000                                         // sub_14C8FA940+124/w ...
+00000010     ADDRESS64 AddrReturn;
+00000020     ADDRESS64 AddrFrame;                // XREF: sub_14C8FA940+112/w
+00000020                                         // sub_14C8FA940+13F/w ...
+00000030     ADDRESS64 AddrStack;                // XREF: sub_14C8FA940+107/w
+00000030                                         // sub_14C8FA940+130/w
+00000040     ADDRESS64 AddrBStore;
+00000050     PVOID FuncTableEntry;
+00000058     DWORD64 Params[4];
+00000078     BOOL Far;
+0000007C     BOOL Virtual;
+00000080     DWORD64 Reserved[3];
+00000098     KDHELP64 KdHelp;
+00000108 };
+00000108 #pragma pack(pop)
+
+00000010 typedef struct _tagADDRESS64 ADDRESS64; // XREF: _tagSTACKFRAME64/r
+00000010                                         // _tagSTACKFRAME64/r ...
+
+00000000 #pragma pack(push, 8)
+00000000 struct _tagADDRESS64 // sizeof=0x10
+00000000 {
+00000000     DWORD64 Offset;                     // XREF: sub_14C8FA940+124/w
+00000000                                         // sub_14C8FA940+130/w ...
+00000008     WORD Segment;
+0000000A     // padding byte
+0000000B     // padding byte
+0000000C     ADDRESS_MODE Mode;                  // XREF: sub_14C8FA940+FF/w
+0000000C                                         // sub_14C8FA940+107/w ...
+00000010 };
+00000010 #pragma pack(pop)
+
+00000002 typedef unsigned __int16 WORD;          // XREF: _tagADDRESS64/r
+
+00000004 typedef enum $8C57D1DDA788D6050A7C554DBD1EB1AC ADDRESS_MODE;
+00000004                                         // XREF: _tagADDRESS64/r
+
+FFFFFFFF enum $8C57D1DDA788D6050A7C554DBD1EB1AC // 4 bytes
+FFFFFFFF {
+FFFFFFFF     AddrMode1616 = 0x0,
+FFFFFFFF     AddrMode1632 = 0x1,
+FFFFFFFF     AddrModeReal = 0x2,
+FFFFFFFF     AddrModeFlat = 0x3,
+FFFFFFFF };
+
+00000008 typedef void *PVOID;                    // XREF: _tagSTACKFRAME64/r
+00000008                                         // _IMAGEHLP_LINE64/r
+
+00000070 typedef struct _KDHELP64 KDHELP64;      // XREF: _tagSTACKFRAME64/r
+
+00000000 #pragma pack(push, 8)
+00000000 struct _KDHELP64 // sizeof=0x70
+00000000 {
+00000000     DWORD64 Thread;
+00000008     DWORD ThCallbackStack;
+0000000C     DWORD ThCallbackBStore;
+00000010     DWORD NextCallback;
+00000014     DWORD FramePointer;
+00000018     DWORD64 KiCallUserMode;
+00000020     DWORD64 KeUserCallbackDispatcher;
+00000028     DWORD64 SystemRangeStart;
+00000030     DWORD64 KiUserExceptionDispatcher;
+00000038     DWORD64 StackBase;
+00000040     DWORD64 StackLimit;
+00000048     DWORD BuildVersion;
+0000004C     DWORD RetpolineStubFunctionTableSize;
+00000050     DWORD64 RetpolineStubFunctionTable;
+00000058     DWORD RetpolineStubOffset;
+0000005C     DWORD RetpolineStubSize;
+00000060     DWORD64 Reserved0[2];
+00000070 };
+00000070 #pragma pack(pop)
+
+00000000 #pragma pack(push, 8)
+00000000 struct _IMAGEHLP_MODULEW64 // sizeof=0xCC0
+00000000 {                                       // XREF: sub_14C8FAF80+6D/o
+00000000                                         // sub_14C8FAF80/r
+00000000     DWORD SizeOfStruct;                 // XREF: sub_14C8FAF80+7C/w
+00000004     // padding byte
+00000005     // padding byte
+00000006     // padding byte
+00000007     // padding byte
+00000008     DWORD64 BaseOfImage;                // XREF: sub_14C8FAF80+164/r
+00000010     DWORD ImageSize;                    // XREF: sub_14C8FAF80+186/r
+00000014     DWORD TimeDateStamp;                // XREF: sub_14C8FAF80+1F5/r
+00000018     DWORD CheckSum;
+0000001C     DWORD NumSyms;
+00000020     SYM_TYPE SymType;
+00000024     WCHAR ModuleName[32];               // XREF: sub_14C8FAF80:loc_14C8FB140/r
+00000064     WCHAR ImageName[256];               // XREF: sub_14C8FAF80:loc_14C8FB0F0/r
+00000264     WCHAR LoadedImageName[256];         // XREF: sub_14C8FAF80:loc_14C8FB120/r
+00000464     WCHAR LoadedPdbName[256];
+00000664     DWORD CVSig;
+00000668     WCHAR CVData[780];
+00000C80     DWORD PdbSig;                       // XREF: sub_14C8FAF80+1E9/r
+00000C84     GUID PdbSig70;                      // XREF: sub_14C8FAF80+1DC/r
+00000C94     DWORD PdbAge;                       // XREF: sub_14C8FAF80+1D6/r
+00000C98     BOOL PdbUnmatched;
+00000C9C     BOOL DbgUnmatched;
+00000CA0     BOOL LineNumbers;
+00000CA4     BOOL GlobalSymbols;
+00000CA8     BOOL TypeInfo;
+00000CAC     BOOL SourceIndexed;
+00000CB0     BOOL Publics;
+00000CB4     DWORD MachineType;
+00000CB8     DWORD Reserved;
+00000CBC     // padding byte
+00000CBD     // padding byte
+00000CBE     // padding byte
+00000CBF     // padding byte
+00000CC0 };
+00000CC0 #pragma pack(pop)
+
+00000002 typedef wchar_t WCHAR;                  // XREF: _IMAGEHLP_MODULEW64/r
+00000002                                         // _IMAGEHLP_MODULEW64/r ...
+
+00000002 typedef unsigned __int16 wchar_t;
+
+00000000 #pragma pack(push, 8)
+00000000 struct _IMAGEHLP_SYMBOL64 // sizeof=0x20
+00000000 {                                       // XREF: sub_14C8FC4C0/r
+00000000     DWORD SizeOfStruct;                 // XREF: sub_14C8FC4C0+EB/w
+00000004     // padding byte
+00000005     // padding byte
+00000006     // padding byte
+00000007     // padding byte
+00000008     DWORD64 Address;
+00000010     DWORD Size;
+00000014     DWORD Flags;
+00000018     DWORD MaxNameLength;                // XREF: sub_14C8FC4C0+F8/w
+0000001C     CHAR Name[1];                       // XREF: sub_14C8FC4C0+116/o
+0000001C                                         // sub_14C8FC4C0+136/o
+0000001D     // padding byte
+0000001E     // padding byte
+0000001F     // padding byte
+00000020 };
+00000020 #pragma pack(pop)
+
+00000000 #pragma pack(push, 8)
+00000000 struct _IMAGEHLP_LINE64 // sizeof=0x28
+00000000 {                                       // XREF: sub_14C8FC4C0/r
+00000000     DWORD SizeOfStruct;
+00000004     // padding byte
+00000005     // padding byte
+00000006     // padding byte
+00000007     // padding byte
+00000008     PVOID Key;                          // XREF: sub_14C8FC4C0+1AA/o
+00000008                                         // sub_14C8FC4C0+1AF/w ...
+00000010     DWORD LineNumber;
+00000014     // padding byte
+00000015     // padding byte
+00000016     // padding byte
+00000017     // padding byte
+00000018     PCHAR FileName;                     // XREF: sub_14C8FC4C0+1C7/w
+00000018                                         // sub_14C8FC4C0+1FE/r
+00000020     DWORD64 Address;                    // XREF: sub_14C8FC4C0:loc_14C8FC6A6/r
+00000028 };
+00000028 #pragma pack(pop)
+
+00000008 typedef CHAR *PCHAR;                    // XREF: _IMAGEHLP_LINE64/r
+
+00000000 struct D3D12_VERSIONED_ROOT_SIGNATURE_DESC // sizeof=0x30
+00000000 {                                       // XREF: sub_14CF5E0E0/r
+00000000     D3D_ROOT_SIGNATURE_VERSION Version; // XREF: sub_14CF5E0E0+FD/w
+00000004     // padding byte
+00000005     // padding byte
+00000006     // padding byte
+00000007     // padding byte
+00000008     union D3D12_VERSIONED_ROOT_SIGNATURE_DESC::$7DF868A668695248CB0996B829D8D97E;
+00000008                                         // XREF: sub_14CF5E0E0+63/w
+00000008                                         // sub_14CF5E0E0+7A/w ...
+00000030 };
+
+FFFFFFFF enum D3D_ROOT_SIGNATURE_VERSION // 4 bytes
+FFFFFFFF {                                       // XREF: D3D12_VERSIONED_ROOT_SIGNATURE_DESC/r
+FFFFFFFF     D3D_ROOT_SIGNATURE_VERSION_1   = 0x1,
+FFFFFFFF     D3D_ROOT_SIGNATURE_VERSION_1_0 = 0x1,
+FFFFFFFF     D3D_ROOT_SIGNATURE_VERSION_1_1 = 0x2,
+FFFFFFFF };
+
+00000000 union D3D12_VERSIONED_ROOT_SIGNATURE_DESC::$7DF868A668695248CB0996B829D8D97E // sizeof=0x28
+00000000 {                                       // XREF: sub_14CF5E0E0+63/w
+00000000                                         // sub_14CF5E0E0+7A/w ...
+00000000     D3D12_ROOT_SIGNATURE_DESC Desc_1_0;
+00000000     D3D12_ROOT_SIGNATURE_DESC1 Desc_1_1;
+00000000 };
+
+00000000 struct D3D12_ROOT_SIGNATURE_DESC // sizeof=0x28
+00000000 {                                       // XREF: D3D12_VERSIONED_ROOT_SIGNATURE_DESC::$7DF868A668695248CB0996B829D8D97E/r
+00000000     UINT NumParameters;
+00000004     // padding byte
+00000005     // padding byte
+00000006     // padding byte
+00000007     // padding byte
+00000008     const D3D12_ROOT_PARAMETER *pParameters;
+00000010     UINT NumStaticSamplers;
+00000014     // padding byte
+00000015     // padding byte
+00000016     // padding byte
+00000017     // padding byte
+00000018     const D3D12_STATIC_SAMPLER_DESC *pStaticSamplers;
+00000020     D3D12_ROOT_SIGNATURE_FLAGS Flags;
+00000024     // padding byte
+00000025     // padding byte
+00000026     // padding byte
+00000027     // padding byte
+00000028 };
+
+00000004 typedef unsigned int UINT;              // XREF: D3D12_DESCRIPTOR_RANGE/r
+00000004                                         // D3D12_DESCRIPTOR_RANGE/r ...
+
+00000000 struct D3D12_ROOT_PARAMETER // sizeof=0x20
+00000000 {
+00000000     D3D12_ROOT_PARAMETER_TYPE ParameterType;
+00000004     // padding byte
+00000005     // padding byte
+00000006     // padding byte
+00000007     // padding byte
+00000008     union D3D12_ROOT_PARAMETER::$B62A4B5287FBA555E6E12E3BC44405A7;
+00000018     D3D12_SHADER_VISIBILITY ShaderVisibility;
+0000001C     // padding byte
+0000001D     // padding byte
+0000001E     // padding byte
+0000001F     // padding byte
+00000020 };
+
+FFFFFFFF enum D3D12_ROOT_PARAMETER_TYPE // 4 bytes
+FFFFFFFF {                                       // XREF: D3D12_ROOT_PARAMETER/r
+FFFFFFFF                                         // D3D12_ROOT_PARAMETER1/r
+FFFFFFFF     D3D12_ROOT_PARAMETER_TYPE_DESCRIPTOR_TABLE = 0x0,
+FFFFFFFF     D3D12_ROOT_PARAMETER_TYPE_32BIT_CONSTANTS = 0x1,
+FFFFFFFF     D3D12_ROOT_PARAMETER_TYPE_CBV = 0x2,
+FFFFFFFF     D3D12_ROOT_PARAMETER_TYPE_SRV = 0x3,
+FFFFFFFF     D3D12_ROOT_PARAMETER_TYPE_UAV = 0x4,
+FFFFFFFF };
+
+00000000 union D3D12_ROOT_PARAMETER::$B62A4B5287FBA555E6E12E3BC44405A7 // sizeof=0x10
+00000000 {                                       // XREF: D3D12_ROOT_PARAMETER/r
+00000000     D3D12_ROOT_DESCRIPTOR_TABLE DescriptorTable;
+00000000     D3D12_ROOT_CONSTANTS Constants;
+00000000     D3D12_ROOT_DESCRIPTOR Descriptor;
+00000000 };
+
+00000000 struct D3D12_ROOT_DESCRIPTOR_TABLE // sizeof=0x10
+00000000 {                                       // XREF: D3D12_ROOT_PARAMETER::$B62A4B5287FBA555E6E12E3BC44405A7/r
+00000000     UINT NumDescriptorRanges;
+00000004     // padding byte
+00000005     // padding byte
+00000006     // padding byte
+00000007     // padding byte
+00000008     const D3D12_DESCRIPTOR_RANGE *pDescriptorRanges;
+00000010 };
+
+00000000 struct D3D12_DESCRIPTOR_RANGE // sizeof=0x14
+00000000 {
+00000000     D3D12_DESCRIPTOR_RANGE_TYPE RangeType;
+00000004     UINT NumDescriptors;
+00000008     UINT BaseShaderRegister;
+0000000C     UINT RegisterSpace;
+00000010     UINT OffsetInDescriptorsFromTableStart;
+00000014 };
+
+FFFFFFFF enum D3D12_DESCRIPTOR_RANGE_TYPE // 4 bytes
+FFFFFFFF {                                       // XREF: D3D12_DESCRIPTOR_RANGE/r
+FFFFFFFF                                         // D3D12_DESCRIPTOR_RANGE1/r
+FFFFFFFF     D3D12_DESCRIPTOR_RANGE_TYPE_SRV = 0x0,
+FFFFFFFF     D3D12_DESCRIPTOR_RANGE_TYPE_UAV = 0x1,
+FFFFFFFF     D3D12_DESCRIPTOR_RANGE_TYPE_CBV = 0x2,
+FFFFFFFF     D3D12_DESCRIPTOR_RANGE_TYPE_SAMPLER = 0x3,
+FFFFFFFF };
+
+00000000 struct D3D12_ROOT_CONSTANTS // sizeof=0xC
+00000000 {                                       // XREF: D3D12_ROOT_PARAMETER::$B62A4B5287FBA555E6E12E3BC44405A7/r
+00000000                                         // D3D12_ROOT_PARAMETER1::$C6C1F9D9C964CBCE57E46D245E99749F/r
+00000000     UINT ShaderRegister;
+00000004     UINT RegisterSpace;
+00000008     UINT Num32BitValues;
+0000000C };
+
+00000000 struct D3D12_ROOT_DESCRIPTOR // sizeof=0x8
+00000000 {                                       // XREF: D3D12_ROOT_PARAMETER::$B62A4B5287FBA555E6E12E3BC44405A7/r
+00000000     UINT ShaderRegister;
+00000004     UINT RegisterSpace;
+00000008 };
+
+FFFFFFFF enum D3D12_SHADER_VISIBILITY // 4 bytes
+FFFFFFFF {                                       // XREF: D3D12_ROOT_PARAMETER/r
+FFFFFFFF                                         // D3D12_STATIC_SAMPLER_DESC/r ...
+FFFFFFFF     D3D12_SHADER_VISIBILITY_ALL      = 0x0,
+FFFFFFFF     D3D12_SHADER_VISIBILITY_VERTEX   = 0x1,
+FFFFFFFF     D3D12_SHADER_VISIBILITY_HULL     = 0x2,
+FFFFFFFF     D3D12_SHADER_VISIBILITY_DOMAIN   = 0x3,
+FFFFFFFF     D3D12_SHADER_VISIBILITY_GEOMETRY = 0x4,
+FFFFFFFF     D3D12_SHADER_VISIBILITY_PIXEL    = 0x5,
+FFFFFFFF };
+
+00000000 struct D3D12_STATIC_SAMPLER_DESC // sizeof=0x34
+00000000 {
+00000000     D3D12_FILTER Filter;
+00000004     D3D12_TEXTURE_ADDRESS_MODE AddressU;
+00000008     D3D12_TEXTURE_ADDRESS_MODE AddressV;
+0000000C     D3D12_TEXTURE_ADDRESS_MODE AddressW;
+00000010     FLOAT MipLODBias;
+00000014     UINT MaxAnisotropy;
+00000018     D3D12_COMPARISON_FUNC ComparisonFunc;
+0000001C     D3D12_STATIC_BORDER_COLOR BorderColor;
+00000020     FLOAT MinLOD;
+00000024     FLOAT MaxLOD;
+00000028     UINT ShaderRegister;
+0000002C     UINT RegisterSpace;
+00000030     D3D12_SHADER_VISIBILITY ShaderVisibility;
+00000034 };
+
+FFFFFFFF enum D3D12_FILTER // 4 bytes
+FFFFFFFF {                                       // XREF: D3D12_STATIC_SAMPLER_DESC/r
+FFFFFFFF     D3D12_FILTER_MIN_MAG_MIP_POINT   = 0x0,
+FFFFFFFF     D3D12_FILTER_MIN_MAG_POINT_MIP_LINEAR = 0x1,
+FFFFFFFF     D3D12_FILTER_MIN_POINT_MAG_LINEAR_MIP_POINT = 0x4,
+FFFFFFFF     D3D12_FILTER_MIN_POINT_MAG_MIP_LINEAR = 0x5,
+FFFFFFFF     D3D12_FILTER_MIN_LINEAR_MAG_MIP_POINT = 0x10,
+FFFFFFFF     D3D12_FILTER_MIN_LINEAR_MAG_POINT_MIP_LINEAR = 0x11,
+FFFFFFFF     D3D12_FILTER_MIN_MAG_LINEAR_MIP_POINT = 0x14,
+FFFFFFFF     D3D12_FILTER_MIN_MAG_MIP_LINEAR  = 0x15,
+FFFFFFFF     D3D12_FILTER_ANISOTROPIC         = 0x55,
+FFFFFFFF     D3D12_FILTER_COMPARISON_MIN_MAG_MIP_POINT = 0x80,
+FFFFFFFF     D3D12_FILTER_COMPARISON_MIN_MAG_POINT_MIP_LINEAR = 0x81,
+FFFFFFFF     D3D12_FILTER_COMPARISON_MIN_POINT_MAG_LINEAR_MIP_POINT = 0x84,
+FFFFFFFF     D3D12_FILTER_COMPARISON_MIN_POINT_MAG_MIP_LINEAR = 0x85,
+FFFFFFFF     D3D12_FILTER_COMPARISON_MIN_LINEAR_MAG_MIP_POINT = 0x90,
+FFFFFFFF     D3D12_FILTER_COMPARISON_MIN_LINEAR_MAG_POINT_MIP_LINEAR = 0x91,
+FFFFFFFF     D3D12_FILTER_COMPARISON_MIN_MAG_LINEAR_MIP_POINT = 0x94,
+FFFFFFFF     D3D12_FILTER_COMPARISON_MIN_MAG_MIP_LINEAR = 0x95,
+FFFFFFFF     D3D12_FILTER_COMPARISON_ANISOTROPIC = 0xD5,
+FFFFFFFF     D3D12_FILTER_MINIMUM_MIN_MAG_MIP_POINT = 0x100,
+FFFFFFFF     D3D12_FILTER_MINIMUM_MIN_MAG_POINT_MIP_LINEAR = 0x101,
+FFFFFFFF     D3D12_FILTER_MINIMUM_MIN_POINT_MAG_LINEAR_MIP_POINT = 0x104,
+FFFFFFFF     D3D12_FILTER_MINIMUM_MIN_POINT_MAG_MIP_LINEAR = 0x105,
+FFFFFFFF     D3D12_FILTER_MINIMUM_MIN_LINEAR_MAG_MIP_POINT = 0x110,
+FFFFFFFF     D3D12_FILTER_MINIMUM_MIN_LINEAR_MAG_POINT_MIP_LINEAR = 0x111,
+FFFFFFFF     D3D12_FILTER_MINIMUM_MIN_MAG_LINEAR_MIP_POINT = 0x114,
+FFFFFFFF     D3D12_FILTER_MINIMUM_MIN_MAG_MIP_LINEAR = 0x115,
+FFFFFFFF     D3D12_FILTER_MINIMUM_ANISOTROPIC = 0x155,
+FFFFFFFF     D3D12_FILTER_MAXIMUM_MIN_MAG_MIP_POINT = 0x180,
+FFFFFFFF     D3D12_FILTER_MAXIMUM_MIN_MAG_POINT_MIP_LINEAR = 0x181,
+FFFFFFFF     D3D12_FILTER_MAXIMUM_MIN_POINT_MAG_LINEAR_MIP_POINT = 0x184,
+FFFFFFFF     D3D12_FILTER_MAXIMUM_MIN_POINT_MAG_MIP_LINEAR = 0x185,
+FFFFFFFF     D3D12_FILTER_MAXIMUM_MIN_LINEAR_MAG_MIP_POINT = 0x190,
+FFFFFFFF     D3D12_FILTER_MAXIMUM_MIN_LINEAR_MAG_POINT_MIP_LINEAR = 0x191,
+FFFFFFFF     D3D12_FILTER_MAXIMUM_MIN_MAG_LINEAR_MIP_POINT = 0x194,
+FFFFFFFF     D3D12_FILTER_MAXIMUM_MIN_MAG_MIP_LINEAR = 0x195,
+FFFFFFFF     D3D12_FILTER_MAXIMUM_ANISOTROPIC = 0x1D5,
+FFFFFFFF };
+
+FFFFFFFF enum D3D12_TEXTURE_ADDRESS_MODE // 4 bytes
+FFFFFFFF {                                       // XREF: D3D12_STATIC_SAMPLER_DESC/r
+FFFFFFFF                                         // D3D12_STATIC_SAMPLER_DESC/r ...
+FFFFFFFF     D3D12_TEXTURE_ADDRESS_MODE_WRAP  = 0x1,
+FFFFFFFF     D3D12_TEXTURE_ADDRESS_MODE_MIRROR = 0x2,
+FFFFFFFF     D3D12_TEXTURE_ADDRESS_MODE_CLAMP = 0x3,
+FFFFFFFF     D3D12_TEXTURE_ADDRESS_MODE_BORDER = 0x4,
+FFFFFFFF     D3D12_TEXTURE_ADDRESS_MODE_MIRROR_ONCE = 0x5,
+FFFFFFFF };
+
+00000004 typedef float FLOAT;                    // XREF: D3D12_STATIC_SAMPLER_DESC/r
+00000004                                         // D3D12_STATIC_SAMPLER_DESC/r ...
+
+FFFFFFFF enum D3D12_COMPARISON_FUNC // 4 bytes
+FFFFFFFF {                                       // XREF: D3D12_STATIC_SAMPLER_DESC/r
+FFFFFFFF     D3D12_COMPARISON_FUNC_NEVER      = 0x1,
+FFFFFFFF     D3D12_COMPARISON_FUNC_LESS       = 0x2,
+FFFFFFFF     D3D12_COMPARISON_FUNC_EQUAL      = 0x3,
+FFFFFFFF     D3D12_COMPARISON_FUNC_LESS_EQUAL = 0x4,
+FFFFFFFF     D3D12_COMPARISON_FUNC_GREATER    = 0x5,
+FFFFFFFF     D3D12_COMPARISON_FUNC_NOT_EQUAL  = 0x6,
+FFFFFFFF     D3D12_COMPARISON_FUNC_GREATER_EQUAL = 0x7,
+FFFFFFFF     D3D12_COMPARISON_FUNC_ALWAYS     = 0x8,
+FFFFFFFF };
+
+FFFFFFFF enum D3D12_STATIC_BORDER_COLOR // 4 bytes
+FFFFFFFF {                                       // XREF: D3D12_STATIC_SAMPLER_DESC/r
+FFFFFFFF     D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK = 0x0,
+FFFFFFFF     D3D12_STATIC_BORDER_COLOR_OPAQUE_BLACK = 0x1,
+FFFFFFFF     D3D12_STATIC_BORDER_COLOR_OPAQUE_WHITE = 0x2,
+FFFFFFFF };
+
+FFFFFFFF enum D3D12_ROOT_SIGNATURE_FLAGS // 4 bytes
+FFFFFFFF {                                       // XREF: D3D12_ROOT_SIGNATURE_DESC/r
+FFFFFFFF                                         // D3D12_ROOT_SIGNATURE_DESC1/r
+FFFFFFFF     D3D12_ROOT_SIGNATURE_FLAG_NONE = 0x0,
+FFFFFFFF     D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT = 0x1,
+FFFFFFFF     D3D12_ROOT_SIGNATURE_FLAG_DENY_VERTEX_SHADER_ROOT_ACCESS = 0x2,
+FFFFFFFF     D3D12_ROOT_SIGNATURE_FLAG_DENY_HULL_SHADER_ROOT_ACCESS = 0x4,
+FFFFFFFF     D3D12_ROOT_SIGNATURE_FLAG_DENY_DOMAIN_SHADER_ROOT_ACCESS = 0x8,
+FFFFFFFF     D3D12_ROOT_SIGNATURE_FLAG_DENY_GEOMETRY_SHADER_ROOT_ACCESS = 0x10,
+FFFFFFFF     D3D12_ROOT_SIGNATURE_FLAG_DENY_PIXEL_SHADER_ROOT_ACCESS = 0x20,
+FFFFFFFF     D3D12_ROOT_SIGNATURE_FLAG_ALLOW_STREAM_OUTPUT = 0x40,
+FFFFFFFF     D3D12_ROOT_SIGNATURE_FLAG_LOCAL_ROOT_SIGNATURE = 0x80,
+FFFFFFFF };
+
+00000000 struct D3D12_ROOT_SIGNATURE_DESC1 // sizeof=0x28
+00000000 {                                       // XREF: D3D12_VERSIONED_ROOT_SIGNATURE_DESC::$7DF868A668695248CB0996B829D8D97E/r
+00000000     UINT NumParameters;
+00000004     // padding byte
+00000005     // padding byte
+00000006     // padding byte
+00000007     // padding byte
+00000008     const D3D12_ROOT_PARAMETER1 *pParameters;
+00000010     UINT NumStaticSamplers;
+00000014     // padding byte
+00000015     // padding byte
+00000016     // padding byte
+00000017     // padding byte
+00000018     const D3D12_STATIC_SAMPLER_DESC *pStaticSamplers;
+00000020     D3D12_ROOT_SIGNATURE_FLAGS Flags;
+00000024     // padding byte
+00000025     // padding byte
+00000026     // padding byte
+00000027     // padding byte
+00000028 };
+
+00000000 struct D3D12_ROOT_PARAMETER1 // sizeof=0x20
+00000000 {
+00000000     D3D12_ROOT_PARAMETER_TYPE ParameterType;
+00000004     // padding byte
+00000005     // padding byte
+00000006     // padding byte
+00000007     // padding byte
+00000008     union D3D12_ROOT_PARAMETER1::$C6C1F9D9C964CBCE57E46D245E99749F;
+00000018     D3D12_SHADER_VISIBILITY ShaderVisibility;
+0000001C     // padding byte
+0000001D     // padding byte
+0000001E     // padding byte
+0000001F     // padding byte
+00000020 };
+
+00000000 union D3D12_ROOT_PARAMETER1::$C6C1F9D9C964CBCE57E46D245E99749F // sizeof=0x10
+00000000 {                                       // XREF: D3D12_ROOT_PARAMETER1/r
+00000000     D3D12_ROOT_DESCRIPTOR_TABLE1 DescriptorTable;
+00000000     D3D12_ROOT_CONSTANTS Constants;
+00000000     D3D12_ROOT_DESCRIPTOR1 Descriptor;
+00000000 };
+
+00000000 struct D3D12_ROOT_DESCRIPTOR_TABLE1 // sizeof=0x10
+00000000 {                                       // XREF: D3D12_ROOT_PARAMETER1::$C6C1F9D9C964CBCE57E46D245E99749F/r
+00000000     UINT NumDescriptorRanges;
+00000004     // padding byte
+00000005     // padding byte
+00000006     // padding byte
+00000007     // padding byte
+00000008     const D3D12_DESCRIPTOR_RANGE1 *pDescriptorRanges;
+00000010 };
+
+00000000 struct D3D12_DESCRIPTOR_RANGE1 // sizeof=0x18
+00000000 {
+00000000     D3D12_DESCRIPTOR_RANGE_TYPE RangeType;
+00000004     UINT NumDescriptors;
+00000008     UINT BaseShaderRegister;
+0000000C     UINT RegisterSpace;
+00000010     D3D12_DESCRIPTOR_RANGE_FLAGS Flags;
+00000014     UINT OffsetInDescriptorsFromTableStart;
+00000018 };
+
+FFFFFFFF enum D3D12_DESCRIPTOR_RANGE_FLAGS // 4 bytes
+FFFFFFFF {                                       // XREF: D3D12_DESCRIPTOR_RANGE1/r
+FFFFFFFF     D3D12_DESCRIPTOR_RANGE_FLAG_NONE = 0x0,
+FFFFFFFF     D3D12_DESCRIPTOR_RANGE_FLAG_DESCRIPTORS_VOLATILE = 0x1,
+FFFFFFFF     D3D12_DESCRIPTOR_RANGE_FLAG_DATA_VOLATILE = 0x2,
+FFFFFFFF     D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC_WHILE_SET_AT_EXECUTE = 0x4,
+FFFFFFFF     D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC = 0x8,
+FFFFFFFF     D3D12_DESCRIPTOR_RANGE_FLAG_DESCRIPTORS_STATIC_KEEPING_BUFFER_BOUNDS_CHECKS = 0x10000,
+FFFFFFFF };
+
+00000000 struct D3D12_ROOT_DESCRIPTOR1 // sizeof=0xC
+00000000 {                                       // XREF: D3D12_ROOT_PARAMETER1::$C6C1F9D9C964CBCE57E46D245E99749F/r
+00000000     UINT ShaderRegister;
+00000004     UINT RegisterSpace;
+00000008     D3D12_ROOT_DESCRIPTOR_FLAGS Flags;
+0000000C };
+
+FFFFFFFF enum D3D12_ROOT_DESCRIPTOR_FLAGS // 4 bytes
+FFFFFFFF {                                       // XREF: D3D12_ROOT_DESCRIPTOR1/r
+FFFFFFFF     D3D12_ROOT_DESCRIPTOR_FLAG_NONE = 0x0,
+FFFFFFFF     D3D12_ROOT_DESCRIPTOR_FLAG_DATA_VOLATILE = 0x2,
+FFFFFFFF     D3D12_ROOT_DESCRIPTOR_FLAG_DATA_STATIC_WHILE_SET_AT_EXECUTE = 0x4,
+FFFFFFFF     D3D12_ROOT_DESCRIPTOR_FLAG_DATA_STATIC = 0x8,
+FFFFFFFF };
+
+00000000 struct C_SCOPE_TABLE // sizeof=0x10
+00000000 {                                       // XREF: .std:000000015564E9D8/r
+00000000                                         // .std:0000000155BAB214/r ...
+00000000     void *__ptr32 Begin __offset(OFF64|RVAOFF);
+00000004     void *__ptr32 End __offset(OFF64|RVAOFF|PASTEND);
+00000008     void *__ptr32 Handler __offset(OFF64|RVAOFF);
+0000000C     void *__ptr32 Target __offset(OFF64|RVAOFF);
+00000010 };
+
+FFFFFFFF struct v8_qjs::Context;
+
+FFFFFFFF struct AK::WriteBytesMem;
+
+FFFFFFFF struct GCloud::GCloudDolphinCallBack;
+
+FFFFFFFF struct AK::WriteBytesCount;
+
+FFFFFFFF struct v8_qjs::External;
+
+FFFFFFFF struct v8_qjs::Boolean;
+
+FFFFFFFF struct v8_qjs::String::Utf8Value;
+
+FFFFFFFF struct GCloud::AObject;
+
+FFFFFFFF struct v8_qjs::ObjectTemplate;
+
+FFFFFFFF struct GCloud::_tagApolloBufferBase;
+
+FFFFFFFF struct GCloud::PropertyInfo;
+
+FFFFFFFF struct IAntiLag2Module;
+
+FFFFFFFF struct GUA::GUAToolsFreeFlowInfo;
+
+FFFFFFFF struct GCloud::CApolloBufferReader;
+
+FFFFFFFF struct GCloud::TGPA::TGPAHelper;
+
+FFFFFFFF struct GUA::GUABaseResult;
+
+FFFFFFFF struct GUA::GUAToolsResult;
+
+FFFFFFFF struct GUA::GUAAccountObserver;
+
+FFFFFFFF struct GUA::GUAAccountProfile;
+
+FFFFFFFF struct GUA::GUAAccountResult;
+
+FFFFFFFF struct GUA::GUADetectNetworkResult;
+
+FFFFFFFF struct GUA::GUAWebViewObserver;
+
+FFFFFFFF struct GUA::GUACrashObserver;
+
+FFFFFFFF struct GUA::GUADNSObserver;
+
+FFFFFFFF struct GUA::GUACutoutRect;
+
+FFFFFFFF struct GUA::GUACutoutResult;
+
+FFFFFFFF struct GUA::GUADNSResult;
+
+FFFFFFFF struct GUA::GUADeviceLevelResult;
+
+FFFFFFFF struct GUA::GUAToolsObserver;
+
+FFFFFFFF struct GUA::GUAFriendReqInfo;
+
+FFFFFFFF struct GUA::GUAFriendResult;
+
+FFFFFFFF struct GUA::GUAIDTokenResult;
+
+FFFFFFFF struct GUA::GUALocalNotification;
+
+FFFFFFFF struct GUA::GUALoginResult;
+
+FFFFFFFF struct GUA::GUANoticePictureInfo;
+
+FFFFFFFF struct GUA::GUANoticeResult;
+
+FFFFFFFF struct GUA::GUANoticeTextInfo;
+
+FFFFFFFF struct GUA::GUAPersonInfo;
+
+FFFFFFFF struct GUA::GUAPushResult;
+
+FFFFFFFF struct GUA::GUAWebViewRet;
+
+FFFFFFFF struct GUA::GUAToolsFreeFlowRet;
+
+FFFFFFFF struct v8_qjs::Isolate;
+
+FFFFFFFF struct GCloud::Conn::RouteInfoBase;
+
+FFFFFFFF struct v8_qjs::ArrayBuffer::Allocator;
+
+FFFFFFFF struct v8_qjs::Data;
+
+FFFFFFFF struct v8_qjs::HandleScope;
+
+FFFFFFFF struct v8_qjs::Message;
+
+FFFFFFFF struct v8_qjs::Isolate::Scope;
+
+FFFFFFFF struct v8_qjs::Script;
+
+FFFFFFFF struct v8_qjs::TryCatch;
+
+FFFFFFFF struct v8_qjs::Value;
+
+FFFFFFFF struct v8_qjs::ArrayBufferView;
+
+FFFFFFFF struct v8_qjs::Set;
+
+FFFFFFFF struct v8_qjs::Promise;
+
+FFFFFFFF struct v8_qjs::BigInt;
+
+FFFFFFFF struct v8_qjs::Array;
+
+FFFFFFFF struct v8_qjs::String;
+
+FFFFFFFF struct v8_qjs::Int32;
+
+FFFFFFFF struct v8_qjs::Integer;
+
+FFFFFFFF struct v8_qjs::Number;
+
+FFFFFFFF struct v8_qjs::Date;
+
+FFFFFFFF struct GCloud::IGCloud;
+
+FFFFFFFF struct GCloud::ITDir;
+
+FFFFFFFF struct GCloud::TDirObserver;
+
+FFFFFFFF struct GCloud::Result;
+
+FFFFFFFF struct GCloud::Access;
+
+FFFFFFFF struct GCloud::Conn::ConnectorObserver;
+
+FFFFFFFF struct GCloud::Conn::IConnector;
+
+FFFFFFFF struct GCloud::Conn::ServerRouteInfo;
+
+FFFFFFFF struct GCloud::Conn::ZoneRouteInfo;
+
+FFFFFFFF struct ABase::AObject;
+
+FFFFFFFF struct GCloud::CNetworkObserver;
+
+FFFFFFFF struct GCloud::IConnectorFactory;
+
+FFFFFFFF struct GCloud::INetwork;
+
+FFFFFFFF struct GCloud::IGcloudPufferCallBack;
+
+FFFFFFFF struct GCloud::IGcloudPufferCallBackOri;
+
+FFFFFFFF struct GCloud::IGcloudPufferInterface;
+
+FFFFFFFF struct GCloud::GCloudDolphinCallBackOri;
+
+FFFFFFFF struct GCloud::GCloudDolphinInterface;
+
+FFFFFFFF struct AK::SoundEngine;
+
+FFFFFFFF struct AK::SoundEngine::DynamicSequence;
+
+FFFFFFFF struct AK;
+
+FFFFFFFF struct AK::ReadBytesMem;
+
+FFFFFFFF struct AK::ReadBytesSkip;
+
+FFFFFFFF struct CAkRegistryMgr;
+
+FFFFFFFF struct AK::MemoryMgr;
+
+FFFFFFFF struct AK::StreamMgr;
+
+FFFFFFFF struct AK::MusicEngine;
+
+FFFFFFFF struct GUA::GUANoticeInfo;
+
+FFFFFFFF struct v8_qjs::Object;
+
+FFFFFFFF struct GCloud::CApolloBufferWriter;
+
+FFFFFFFF struct GCloud::InitializeInfo;
+
+FFFFFFFF struct GCloud::PropertyCPUInfo;
+
+FFFFFFFF struct GCloud::UserInfo;
+
+FFFFFFFF struct GCloud::Conn::ConnectedInfo;
+
+FFFFFFFF struct GCloud::Conn::ConnectorResult;
+
+FFFFFFFF struct GCloud::Conn::NameDataRouteInfo;
+
+FFFFFFFF struct GCloud::Conn::NameRouteInfo;
+
+FFFFFFFF struct GCloud::_tagADetailNetworkInfo;
+
+FFFFFFFF struct AK::SoundEngine::Query;
+
+FFFFFFFF struct AkMixer;
+
+FFFFFFFF struct v8_qjs::Template;
+
+FFFFFFFF struct v8_qjs::EscapableHandleScope;
+
+FFFFFFFF struct v8_qjs::FunctionTemplate;
+
+FFFFFFFF struct GUA::GUACrashRet;
+
+FFFFFFFF struct AK::SoundEngine::DynamicDialogue;
+
+FFFFFFFF struct CAkEmitter;
+
+FFFFFFFF struct CAkRegisteredObj;
+
+FFFFFFFF struct CAkGameObject;
+
+*/
+```
+```asm
+
+
+.std:000000015512B00D                 db  0Ch
+.std:000000015512B00E                 db    0
+.std:000000015512B00F                 db    0
+.std:000000015512B010                 db    0
+.std:000000015512B011                 db  10h
+.std:000000015512B012                 db    0
+.std:000000015512B013                 db    0
+.std:000000015512B014                 db    0
+.std:000000015512B015                 db  18h
+.std:000000015512B016                 db    0
+.std:000000015512B017                 db    0
+.std:000000015512B018                 db    0
+.std:000000015512B019                 db  20h
+.std:000000015512B01A                 db    0
+.std:000000015512B01B                 db    0
+.std:000000015512B01C                 db    0
+.std:000000015512B01D                 db  30h ; 0
+.std:000000015512B01E                 db    0
+.std:000000015512B01F                 db    0
+.std:000000015512B020                 db    0
+.std:000000015512B021                 db  40h ; @
+.std:000000015512B022                 db    0
+.std:000000015512B023                 db    0
+.std:000000015512B024                 db    0
+.std:000000015512B025                 db  60h ; `
+.std:000000015512B026                 db    0
+.std:000000015512B027                 db    0
+.std:000000015512B028 unk_15512B028   db 0F2h                 ; DATA XREF: sub_14CF42520+49↑o
+.std:000000015512B029                 db 0AAh
+.std:000000015512B02A                 db  15h
+.std:000000015512B02B                 db  6Fh ; o
+.std:000000015512B02C                 db    8
+.std:000000015512B02D                 db 0D2h
+.std:000000015512B02E                 db  89h
+.std:000000015512B02F                 db  4Eh ; N
+.std:000000015512B030                 db  9Ah
+.std:000000015512B031                 db 0B4h
+.std:000000015512B032                 db  48h ; H
+.std:000000015512B033                 db  95h
+.std:000000015512B034                 db  35h ; 5
+.std:000000015512B035                 db 0D3h
+.std:000000015512B036                 db  4Fh ; O
+.std:000000015512B037                 db  9Ch
+.std:000000015512B038 unk_15512B038   db 0B6h                 ; DATA XREF: sub_14CF40540+69↑o
+.std:000000015512B038                                         ; sub_14CF431E0+1DCA↑o
+.std:000000015512B039                 db 0DBh
+.std:000000015512B03A                 db  43h ; C
+.std:000000015512B03B                 db  65h ; e
+.std:000000015512B03C                 db  48h ; H
+.std:000000015512B03D                 db  1Bh
+.std:000000015512B03E                 db 0F5h
+.std:000000015512B03F                 db  42h ; B
+.std:000000015512B040                 db 0ABh
+.std:000000015512B041                 db  82h
+.std:000000015512B042                 db 0E9h
+.std:000000015512B043                 db  7Eh ; ~
+.std:000000015512B044                 db 0C7h
+.std:000000015512B045                 db  43h ; C
+.std:000000015512B046                 db  26h ; &
+.std:000000015512B047                 db 0F6h
+.std:000000015512B048 unk_15512B048   db  3Fh ; ?             ; DATA XREF: sub_14F5DCDA0+2D↑o
+.std:000000015512B049                 db 0CCh
+.std:000000015512B04A                 db    1
+.std:000000015512B04B                 db  39h ; 9
+.std:000000015512B04C                 db 0B5h
+.std:000000015512B04D                 db  84h
+.std:000000015512B04E                 db 0A4h
+.std:000000015512B04F                 db  4Fh ; O
+.std:000000015512B050                 db 0BAh
+.std:000000015512B051                 db  35h ; 5
+.std:000000015512B052                 db 0AAh
+.std:000000015512B053                 db  81h
+.std:000000015512B054                 db  72h ; r
+.std:000000015512B055                 db 0B8h
+.std:000000015512B056                 db 0A0h
+.std:000000015512B057                 db  9Bh
+.std:000000015512B058 xmmword_15512B058 xmmword 35C2B8FDA4DF1AA47ED9C6DDEF00003h
+.std:000000015512B058                                         ; DATA XREF: sub_14F1DB780:loc_14F1DBA04↑r
+.std:000000015512B068 unk_15512B068   db  93h                 ; DATA XREF: sub_14F5DCDA0+23↑o
+.std:000000015512B069                 db  7Eh ; ~
+.std:000000015512B06A                 db  0Ah
+.std:000000015512B06B                 db 0C5h
+.std:000000015512B06C                 db  95h
+.std:000000015512B06D                 db 0F3h
+.std:000000015512B06E                 db  34h ; 4
+.std:000000015512B06F                 db  48h ; H
+.std:000000015512B070                 db  9Eh
+.std:000000015512B071                 db 0F6h
+.std:000000015512B072                 db  7Fh ; 
+.std:000000015512B073                 db 0A9h
+.std:000000015512B074                 db  9Dh
+.std:000000015512B075                 db 0E5h
+.std:000000015512B076                 db    9
+.std:000000015512B077                 db  66h ; f
+.std:000000015512B078 unk_15512B078   db  49h ; I             ; DATA XREF: sub_14F5DC8E0+120↑o
+.std:000000015512B079                 db 0A4h
+.std:000000015512B07A                 db  25h ; %
+.std:000000015512B07B                 db  68h ; h
+.std:000000015512B07C                 db  24h ; $
+.std:000000015512B07D                 db  75h ; u
+.std:000000015512B07E                 db  82h
+.std:000000015512B07F                 db  4Dh ; M
+.std:000000015512B080                 db  92h
+.std:000000015512B081                 db  0Fh
+.std:000000015512B082                 db  50h ; P
+.std:000000015512B083                 db 0E3h
+.std:000000015512B084                 db  6Ah ; j
+.std:000000015512B085                 db 0B3h
+.std:000000015512B086                 db 0ABh
+.std:000000015512B087                 db  1Eh
+.std:000000015512B088 unk_15512B088   db 0F4h                 ; DATA XREF: sub_14F1D8EB0+3BB↑o
+.std:000000015512B089                 db  0Dh
+.std:000000015512B08A                 db  99h
+.std:000000015512B08B                 db    0
+.std:000000015512B08C                 db 0BBh
+.std:000000015512B08D                 db  0Dh
+.std:000000015512B08E                 db  72h ; r
+.std:000000015512B08F                 db  48h ; H
+.std:000000015512B090                 db  83h
+.std:000000015512B091                 db  3Eh ; >
+.std:000000015512B092                 db  6Dh ; m
+.std:000000015512B093                 db  30h ; 0
+.std:000000015512B094                 db  3Eh ; >
+.std:000000015512B095                 db  80h
+.std:000000015512B096                 db 0AEh
+.std:000000015512B097                 db 0B6h
+.std:000000015512B098 unk_15512B098   db  83h                 ; DATA XREF: sub_14F1D8EB0+45D↑o
+.std:000000015512B099                 db    7
+.std:000000015512B09A                 db  21h ; !
+.std:000000015512B09B                 db 0B0h
+.std:000000015512B09C                 db 0CDh
+.std:000000015512B09D                 db  89h
+.std:000000015512B09E                 db 0D0h
+.std:000000015512B09F                 db  11h
+.std:000000015512B0A0                 db 0AFh
+.std:000000015512B0A1                 db    8
+.std:000000015512B0A2                 db    0
+.std:000000015512B0A3                 db 0A0h
+.std:000000015512B0A4                 db 0C9h
+.std:000000015512B0A5                 db  25h ; %
+.std:000000015512B0A6                 db 0CDh
+.std:000000015512B0A7                 db  16h
+.std:000000015512B0A8                 db    0
+.std:000000015512B0A9                 db    0
+.std:000000015512B0AA                 db    0
+.std:000000015512B0AB                 db    0
+.std:000000015512B0AC                 db    0
+.std:000000015512B0AD                 db    0
+.std:000000015512B0AE                 db    0
+.std:000000015512B0AF                 db    0
+.std:000000015512B0B0 aD3d12Dll       db 'd3d12.dll',0        ; DATA XREF: .std:0000000155E5C384↓o
+.std:000000015512B0BA                 align 20h
+.std:000000015512B0C0 aLibxellDll     db 'libxell.dll',0      ; DATA XREF: .std:0000000155E5C3A4↓o
+.std:000000015512B0CC                 align 10h
+.std:000000015512B0D0 aLibxessFgDll   db 'libxess_fg.dll',0   ; DATA XREF: .std:0000000155E5C3C4↓o
+.std:000000015512B0DF                 align 20h
+.std:000000015512B0E0
+.std:000000015512B0E0 ; class CSingletonCriticalSection:    (#classinformer)
+.std:000000015512B0E0                 dq offset ??_R4CSingletonCriticalSection@@6B@ ; const CSingletonCriticalSection::`RTTI Complete Object Locator'
+.std:000000015512B0E8 ; const CSingletonCriticalSection::`vftable'
+.std:000000015512B0E8 ??_7CSingletonCriticalSection@@6B@ dq offset sub_1400CBFD0
+.std:000000015512B0E8                                         ; DATA XREF: sub_1400CBFD0+6↑o
+.std:000000015512B0E8                                         ; sub_1400CDBD0+1A↑o ...
+
+```
