@@ -1,6 +1,25 @@
 ---
-ทดลองตาม Ida มี 3 ตัวหลัก  - , def , +   
-โค้ด  printf มาแบบนี้  สำคัญตรง uintptr_t GetBlackReChackStart = Addr::selectedAddress - (int)0x1500;  มีการ ลบ ให้ กลับไป เริ่ม แบบ ติด ลบ มันมี Array ถาม 1400 กว่า และ ตรง 1500 และ 1a00 ครบ 3 กลุ่ม เหลือ ฟังชั้น GetGname 3 ฟังชั้น 
+
+LabelBase0xF8 decore + loop ScanArrayoffsey , ScanKeyOffsetWorldContiArray 
+
+Addr::selectedAddress =  AddrStartLavel0x00;or PersistentLevel  : 0x7295DC70
+fieldAddr= PersistentLevel+ i or +offArray;
+Count = Id loop 
+count*8  = Array.Count*8 this Offset or NewBaseOffset 
+Ex1 NewGetBase  
+find offsetIdSize 
+
+SizeOffset= (Array+i*8)-(Array+0*8)
+id = i 
+
+newBase = read<uintptr_t>(Uworld+0x108)
+newPtrArray = newBase+id*8; this->BasenewType
+
+
+
+
+>0x61004d002f0065 Count = [33||40] count*8[0x108]
+
 
 ---
 
