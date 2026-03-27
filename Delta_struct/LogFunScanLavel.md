@@ -322,11 +322,10 @@ ReChack - 0x1500  Loop debug 0x2500  * 4
 
 ```
 
-```md
+---
 ระบบ กรองจาก จาก ที่ ต้องการ อันไหน ที่ อ่าน ได้ ชื่อ นี้ ค่อย ยืนยัน
+ ---
 
 <img width="1388" height="446" alt="image" src="https://github.com/user-attachments/assets/09d27e0a-c9f2-4ee3-bf78-b55370b98617" />
 
-
-```
 
