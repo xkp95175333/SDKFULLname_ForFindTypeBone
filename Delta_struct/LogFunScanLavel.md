@@ -1,4 +1,8 @@
 ---
+How To Get NewBase
+---
+```cpp
+
 
 LabelBase0xF8 decore + loop ScanArrayoffsey , ScanKeyOffsetWorldContiArray 
 
@@ -21,7 +25,11 @@ newPtrArray = newBase+id*8; this->BasenewType
 >0x61004d002f0065 Count = [33||40] count*8[0x108]
 
 
+```
 ---
+core work scan
+---
+
 
 
 ```cpp
