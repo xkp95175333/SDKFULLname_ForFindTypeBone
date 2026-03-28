@@ -140,6 +140,246 @@ __int64 __fastcall sub_140B0BE60(__int64 a1)
 testdecore
 ---
 ```cpp
+//🧠 ภาพรวมก่อน (สำคัญ)
+
+//โค้ดทั้งหมดที่คุณส่งมา = pipeline นี้:
+
+//sub_14E289760   -> update state / flags / virtual calls
+//sub_14E2CB510   -> normalize rotation (SIMD) + build matrix
+//sub_140B0BE60   -> return ptr (a1 + 0x210)
+//sub_14D9038C0   -> เอาทุกอย่างมารวม + copy result
+//🔥 1. SYSTEM: โหลด SIMD constants จาก BaseAddress
+#define RVA(addr) (addr - 0x140000000ULL)
+#define PTR(base, addr) ((void*)((uintptr_t)(base) + RVA(addr)))
+
+struct SimdConsts
+{
+    __m128 A0;   // 360 / 2PI
+    __m128 B0;
+    __m128 DE0;
+    __m128 C090;
+};
+
+inline SimdConsts LoadSimd(uintptr_t base)
+{
+    SimdConsts c;
+
+    c.A0   = _mm_loadu_ps((float*)PTR(base, 0x1575300A0));
+    c.B0   = _mm_loadu_ps((float*)PTR(base, 0x1575300B0));
+    c.DE0  = _mm_loadu_ps((float*)PTR(base, 0x15752FDE0));
+    c.C090 = _mm_loadu_ps((float*)PTR(base, 0x157530090));
+
+    return c;
+}
+
+//🔥 2. ROTATION CHECK
+inline bool IsRotationChanged(uintptr_t a1, uint64_t& raw)
+{
+    raw = *(uint64_t*)(a1 + 0x178);
+
+    float* newRot = (float*)(a1 + 0x200);
+    float* oldRot = (float*)&raw;
+
+    return (
+        oldRot[0] != newRot[0] ||
+        oldRot[1] != newRot[1] ||
+        *(float*)(a1 + 0x180) != newRot[2]
+    );
+}
+//🔥 3. LOAD ROTATION → SIMD
+inline __m128 LoadRotation(uintptr_t a1)
+{
+    __m128 base = (__m128)*(uint64_t*)(a1 + 0x178);
+
+    return _mm_movelh_ps(
+        _mm_unpacklo_ps(
+            base,
+            _mm_shuffle_ps(base, base, 0x55)
+        ),
+        (__m128)*(uint32_t*)(a1 + 0x180)
+    );
+}
+//🔥 4. NORMALIZE (ใช้ BaseAddress)
+
+inline __m128 Normalize(__m128 v, const SimdConsts& c)
+{
+    __m128 div = _mm_div_ps(v, c.A0);
+
+    __m128 i = _mm_cvtepi32_ps(_mm_cvttps_epi32(div));
+
+    __m128 sub = _mm_sub_ps(
+        v,
+        _mm_mul_ps(
+            _mm_xor_ps(
+                _mm_and_ps(
+                    _mm_cmple_ps(c.B0, _mm_and_ps(div, c.DE0)),
+                    _mm_xor_ps(i, div)
+                ),
+                i
+            ),
+            c.A0
+        )
+    );
+
+    __m128 add = _mm_add_ps(c.A0, sub);
+
+    __m128 fix1 = _mm_xor_ps(
+        _mm_and_ps(_mm_xor_ps(add, sub),
+                   _mm_cmple_ps(_mm_setzero_ps(), sub)),
+        add
+    );
+
+    __m128 fix2 = _mm_xor_ps(
+        _mm_and_ps(
+            _mm_xor_ps(_mm_sub_ps(fix1, c.A0), fix1),
+            _mm_cmplt_ps(c.C090, fix1)
+        ),
+        fix1
+    );
+
+    return fix2;
+}
+//🔥 5. STORE + BUILD MATRIX
+inline void StoreRotation(uintptr_t a1, __m128 rot)
+{
+    uintptr_t out = a1 + 0x200;
+
+    *(uint64_t*)out =
+        _mm_unpacklo_ps(rot, _mm_shuffle_ps(rot, rot, 0x55)).m128_u64[0];
+
+    *(uint32_t*)(out + 8) =
+        _mm_shuffle_ps(rot, rot, 0xAA).m128_u32[0];
+}
+//🔥 6. CALL MATRIX BUILDER
+inline void BuildMatrix(uintptr_t a1, char* tmp)
+{
+    *( __int128*)(a1 + 0x1F0) =
+        *(__int128*)sub_14C8337D0(a1 + 0x200, tmp);
+}
+//🔥 7. GET EXTRA DATA
+inline void GetExtra(uintptr_t a1, uint64_t& rot, __m128& a, __m128& b)
+{
+    auto ptr = (uint64_t*)sub_140EC15A0(a1, &rot);
+
+    a = (__m128)ptr[0];
+    b = (__m128)*(uint32_t*)(ptr + 2);
+}
+//🔥 8. FINAL PROCESS (แทน sub_14E2CB510)
+
+inline void ProcessTransform(uintptr_t a1, void* out, const SimdConsts& c)
+{
+    uint32_t v3 = *(uint32_t*)(a1 + 0x18C);
+    uint64_t v19 = *(uint64_t*)(a1 + 0x184);
+
+    uint64_t rotRaw;
+    char tmp[16];
+
+    if (IsRotationChanged(a1, rotRaw))
+    {
+        __m128 rot = LoadRotation(a1);
+        rot = Normalize(rot, c);
+
+        StoreRotation(a1, rot);
+        BuildMatrix(a1, tmp);
+    }
+
+    __int128 matrix = *(__int128*)(a1 + 0x1F0);
+
+    __m128 a, b;
+    GetExtra(a1, rotRaw, a, b);
+
+    *(__int128*)out = matrix;
+
+    *(__m128*)((uintptr_t)out + 0x10) =
+        _mm_movelh_ps(a, b);
+
+    *(__m128*)((uintptr_t)out + 0x20) =
+        _mm_movelh_ps((__m128)v19,
+                      (__m128)_mm_cvtsi32_si128(v3));
+}
+//🔥 9. FINAL (แทน sub_14D9038C0)
+
+inline uintptr_t Update(uintptr_t a1, uintptr_t base)
+{
+    SimdConsts c = LoadSimd(base);
+
+    char buffer[0x40];
+
+    // update state
+    sub_14E289760(a1);
+
+    // build transform
+    ProcessTransform(a1, buffer, c);
+
+    // copy matrix
+    memcpy((void*)(a1 + 0x5D0), buffer, 0x30);
+
+    uintptr_t result = a1 + 0x210;
+
+    __m128 v = *(__m128*)(result + 0x20);
+
+    *(uint64_t*)(a1 + 0x600) =
+        _mm_unpacklo_ps(v, _mm_shuffle_ps(v, v, 0x55)).m128_u64[0];
+
+    *(uint32_t*)(a1 + 0x608) =
+        _mm_shuffle_ps(v, v, 0xAA).m128_u32[0];
+
+    return result;
+}
+
+//💣 OFFSET สำคัญทั้งหมด (สรุป)
+//📦 struct a1
+0x178 → rotation (XY)
+0x180 → rotation Z
+0x184 → something (position/scale)
+0x18C → flag/value
+0x1F0 → matrix cache
+0x200 → rotation cache
+0x210 → result ptr
+0x5D0 → final matrix
+0x600 → final vector
+
+⚠️ จุดที่ “สำคัญโคตร”
+❗1. SIMD constants = หัวใจ
+
+ถ้าผิด → Actor / GName / RootComponent พังหมด
+❗2. Normalize = ตัว decode จริง
+
+นี่แหละที่หลายคนคิดว่า encryption
+
+❗3. sub_140EC15A0 = อีก layer
+
+อันนี้มีโอกาสเป็น:
+
+bone transform
+component transform
+หรือ encrypted ptr
+😏 ถ้าจะต่อโหด
+
+ผมทำให้เพิ่มได้:
+
+🔍 auto scan หา xmm constants (ไม่ต้อง fix offset)
+🧠 detect ว่าเกมใช้ degree หรือ radian
+⚡ SIMD → scalar debug
+💣 bypass normalize (ล็อกมุม)
+🔓 decode RootComponent เต็มระบบ
+
+👉 ถ้าคุณส่ง:
+
+dump xmmword_1575300A0
+หรือ memory ของ actor
+
+ผมจะบอกได้เลยว่า:
+👉 encryption จริง หรือแค่ normalize
+👉 และแก้ GName / Actor 0x20 / 0x40 ให้ตรงเป๊ะ 🔥
+```
+
+
+
+---
+testdecore bk
+---
+```cpp
 #define RVA(addr) (addr - 0x140000000ULL)
 #define GET_PTR(base, addr) ((void*)((uintptr_t)(base) + RVA(addr)))
 // 🔥 REQUIRED CONSTANTS
