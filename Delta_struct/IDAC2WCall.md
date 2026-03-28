@@ -134,3 +134,79 @@ __int64 __fastcall sub_140B0BE60(__int64 a1)
   return a1 + 0x210;
 }
 ```
+
+
+---
+testdecore
+---
+```cpp
+#define RVA(addr) (addr - 0x140000000ULL)
+#define GET_PTR(base, addr) ((void*)((uintptr_t)(base) + RVA(addr)))
+// 🔥 REQUIRED CONSTANTS
+#define OFF_A0 0x1575300A0
+#define OFF_B0 0x1575300B0
+#define OFF_DE0 0x15752FDE0
+#define OFF_090 0x157530090
+
+struct SimdConsts
+{
+	__m128 A0;
+	__m128 B0;
+	__m128 DE0;
+	__m128 C090;
+};
+
+inline SimdConsts LoadConsts(uintptr_t base)
+{
+	SimdConsts c;
+
+	c.A0 = _mm_loadu_ps((float*)GET_PTR(base, OFF_A0));
+	c.B0 = _mm_loadu_ps((float*)GET_PTR(base, OFF_B0));
+	c.DE0 = _mm_loadu_ps((float*)GET_PTR(base, OFF_DE0));
+	c.C090 = _mm_loadu_ps((float*)GET_PTR(base, OFF_090));
+
+	return c;
+}
+inline __m128 NormalizeRotationEx(__m128 v, const SimdConsts& c)
+{
+	__m128 div = _mm_div_ps(v, c.A0);
+
+	__m128 i = _mm_cvtepi32_ps(_mm_cvttps_epi32(div));
+
+	__m128 sub = _mm_sub_ps(
+		v,
+		_mm_mul_ps(
+			_mm_xor_ps(
+				_mm_and_ps(
+					_mm_cmple_ps(c.B0,
+						_mm_and_ps(div, c.DE0)),
+					_mm_xor_ps(i, div)
+				),
+				i
+			),
+			c.A0
+		)
+	);
+
+	__m128 add = _mm_add_ps(c.A0, sub);
+
+	__m128 fix1 = _mm_xor_ps(
+		_mm_and_ps(_mm_xor_ps(add, sub),
+			_mm_cmple_ps(_mm_setzero_ps(), sub)),
+		add
+	);
+
+	__m128 fix2 = _mm_xor_ps(
+		_mm_and_ps(
+			_mm_xor_ps(_mm_sub_ps(fix1, c.A0), fix1),
+			_mm_cmplt_ps(c.C090, fix1)
+		),
+		fix1
+	);
+
+	return fix2;
+}
+
+
+
+```
