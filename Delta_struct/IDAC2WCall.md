@@ -63,6 +63,24 @@ Get a1
 .rdata:0000000150D7850A 00 00 00 00 00 00                       align 10h
 .rdata:0000000150D78510 54                      unk_150D78510   db  54h ; T             ; DATA XREF: sub_1413926C0+479↑o
 
+Get a2
+.rdata:0000000150CA9BA0                         ; const _QWORD a2
+.rdata:0000000150CA9BA0                         a2:                                     ; DATA XREF: sub_141123D50:loc_141124862↑o
+.rdata:0000000150CA9BA0                                                                 ; .text:000000014127BD16↑o ...
+.rdata:0000000150CA9BA0 32 00 00 00                             text "UTF-16LE", '2',0
+.rdata:0000000150CA9BA4                         ; const _QWORD a3_1
+.rdata:0000000150CA9BA4                         a3_1:                                   ; DATA XREF: sub_141123D50:loc_14112488C↑o
+.rdata:0000000150CA9BA4                                                                 ; .text:000000014127BC90↑o ...
+.rdata:0000000150CA9BA4 33 00 00 00                             text "UTF-16LE", '3',0
+.rdata:0000000150CA9BA8                         aSllogconsole:                          ; DATA XREF: sub_141123D50+B6E↑o
+.rdata:0000000150CA9BA8 73 00 6C 00 6C 00 6F 00…                text "UTF-16LE", 'sllogconsole=',0
+.rdata:0000000150CA9BC4 00 00 00 00                             align 8
+.rdata:0000000150CA9BC8                         aProjectid:                             ; DATA XREF: sub_141123D50+D19↑o
+.rdata:0000000150CA9BC8 50 00 72 00 6F 00 6A 00…                text "UTF-16LE", 'ProjectID',0
+.rdata:0000000150CA9BDC 00 00 00 00                             align 20h
+.rdata:0000000150CA9BE0                         aScriptEnginese_0:                      ; DATA XREF: sub_141123D50+D20↑o
+.rdata:0000000150CA9BE0                                                                 ; sub_141393920+139↑o ...
+
 
 __int64 __fastcall sub_14D9038C0(__int64 a1)
 {
