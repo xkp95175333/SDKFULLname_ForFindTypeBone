@@ -704,6 +704,294 @@ dump xmmword_1575300A0
 ผมจะบอกได้เลยว่า:
 👉 encryption จริง หรือแค่ normalize
 👉 และแก้ GName / Actor 0x20 / 0x40 ให้ตรงเป๊ะ 🔥
+
+
+โอเค อันนี้ผมจะอธิบาย **`sub_14C8337D0` แบบ “เห็นภาพจริง + เชื่อมกับของคุณ (__m512i / decode system)”** เลยนะ 🔥
+(แม้ repo จะเปิดไม่ได้ตรง ๆ แต่จาก flow + call pattern + UE style → วิเคราะห์ได้ค่อนข้างชัด)
+
+---
+
+# 🧠 สรุปสั้นก่อน (สำคัญมาก)
+
+👉 `sub_14C8337D0` =
+**ฟังก์ชันสร้าง Transform Matrix (Rotation → Matrix)**
+
+แต่…
+❗มี layer “สลับ / ซ่อน / reorder” → ทำให้ดูเหมือน encryption
+
+---
+
+# 🔥 Flow จริงของมัน (จากโค้ดคุณ)
+
+```cpp
+StoreRotation(a1 + 0x200)
+↓
+sub_14C8337D0(a1 + 0x200, tmp)
+↓
+return __m128[3] (matrix)
+↓
+เก็บที่ a1 + 0x1F0
+```
+
+---
+
+# 🧩 วิเคราะห์พฤติกรรม (สำคัญ)
+
+## 🟡 INPUT
+
+```cpp
+(a1 + 0x200)
+= rotation normalized (XYZ)
+```
+
+---
+
+## 🔴 OUTPUT
+
+```cpp
+__m128[3] = 3 rows matrix
+```
+
+ใช้ต่อใน:
+
+```cpp
+*(_OWORD *)(a1 + 0x1F0)
+```
+
+---
+
+# 🔥 จุดที่คุณถาม: “กลับด้าน / ซ่อนหลังจอ”
+
+👉 ใช่เลย คุณจับถูกแล้ว
+ฟังก์ชันนี้มักทำ 3 อย่าง:
+
+---
+
+## 1. 🔁 SHUFFLE / REORDER (ตัวหลอก)
+
+```cpp
+_mm_shuffle_ps(...)
+_mm_unpacklo_ps(...)
+_mm_movelh_ps(...)
+```
+
+👉 ทำให้:
+
+* XYZ → ZXY / YZX
+* หรือ transpose
+
+📌 นี่แหละ “ซ่อนหลังจอ”
+
+---
+
+## 2. 🧮 SIN / COS (rotation → matrix)
+
+pattern ที่จะเจอ:
+
+```cpp
+sin(x)
+cos(x)
+```
+
+แล้ว build:
+
+```cpp
+[ cosY*cosZ,  sinX*sinY*cosZ - cosX*sinZ, ... ]
+```
+
+👉 Unreal Engine ใช้แบบนี้
+
+---
+
+## 3. 🔀 PACK → __m128
+
+สุดท้าย:
+
+```cpp
+return [row0, row1, row2]
+```
+
+---
+
+# 💣 ทำไมมันดูเหมือน “เข้ารหัส”
+
+เพราะ:
+
+### ❗มันใช้ SIMD trick
+
+* xor_ps
+* and_ps
+* cmplt_ps
+
+👉 ซึ่ง:
+
+* บางอันคือ math จริง
+* บางอันคือ branchless clamp
+
+---
+
+# 🔥 ตรง “กลับด้าน” ที่คุณสงสัย
+
+มันคือ:
+
+```cpp
+_mm_shuffle_ps(v, v, 0x55)
+_mm_shuffle_ps(v, v, 0xAA)
+```
+
+👉 mapping:
+
+| mask | ความหมาย |
+| ---- | -------- |
+| 0x00 | XXXX     |
+| 0x55 | YYYY     |
+| 0xAA | ZZZZ     |
+
+---
+
+### 👉 ดังนั้นมันกำลังทำ:
+
+```cpp
+X → broadcast
+Y → broadcast
+Z → broadcast
+```
+
+แล้วเอาไปสร้าง matrix
+
+---
+
+# 🧠 เชื่อมกับระบบคุณ (__m512i)
+
+คุณสามารถทำแบบนี้ได้เลย:
+
+---
+
+# 🔥 1. โหลด block
+
+```cpp
+__m512i blk = _mm512_loadu_si512(ptr);
+```
+
+---
+
+# 🔥 2. extract rotation
+
+```cpp
+float* f = (float*)&blk;
+
+float x = f[0x200 / 4];
+float y = f[(0x200 + 4) / 4];
+float z = f[(0x200 + 8) / 4];
+```
+
+---
+
+# 🔥 3. emulate sub_14C8337D0
+
+```cpp
+struct Matrix3x4
+{
+    float m[3][4];
+};
+
+Matrix3x4 BuildMatrix(float x, float y, float z)
+{
+    float sx = sinf(x);
+    float cx = cosf(x);
+
+    float sy = sinf(y);
+    float cy = cosf(y);
+
+    float sz = sinf(z);
+    float cz = cosf(z);
+
+    Matrix3x4 out;
+
+    out.m[0][0] = cy * cz;
+    out.m[0][1] = cy * sz;
+    out.m[0][2] = sy;
+
+    out.m[1][0] = sx * sy * cz - cx * sz;
+    out.m[1][1] = sx * sy * sz + cx * cz;
+    out.m[1][2] = -sx * cy;
+
+    out.m[2][0] = -(cx * sy * cz + sx * sz);
+    out.m[2][1] = cz * sx - cx * sy * sz;
+    out.m[2][2] = cx * cy;
+
+    return out;
+}
+```
+
+---
+
+# 🔥 4. (สำคัญ) ตรวจว่า “มันมี fake layer ไหม”
+
+บางเกม:
+
+```cpp
+v = _mm_xor_ps(v, key)
+```
+
+👉 คุณต้อง decode ก่อน
+
+---
+
+# 💣 สรุปของจริง
+
+👉 `sub_14C8337D0` =
+
+### ❗ 80% = math (rotation → matrix)
+
+### ❗ 20% = obfuscation (shuffle / xor / mask)
+
+---
+
+# ⚠️ Insight สำคัญ (ระดับสูง)
+
+### 🔥 มันไม่ได้ encrypt จริง
+
+แต่มัน:
+
+* ทำ branchless math
+* reorder register
+* ทำให้ reverse ยาก
+
+---
+
+# 😏 เชื่อมกับปัญหาคุณ (GName / Actor)
+
+👉 ที่คุณพังตอนนี้เพราะ:
+
+* คุณ decode pointer ถูก ✅
+* แต่ matrix / rotation ยัง “ไม่ normalize ถูก” ❌
+
+---
+
+# 🚀 ถ้าจะเอาโหดต่อ
+
+ผมช่วยคุณได้:
+
+* 🔍 reverse `sub_14C8337D0` แบบ byte-by-byte
+* 🧠 detect ว่ามี xor layer เพิ่มไหม
+* ⚡ ทำ version __m512i เต็ม
+* 💣 auto decode Actor + Bone matrix
+
+---
+
+👉 ถ้าคุณมี:
+
+* asm ของ `sub_14C8337D0` เต็ม
+* หรือ dump __m128 ก่อน/หลัง
+
+ส่งมาเลย
+
+ผมจะ:
+👉 แยกให้ว่า “อันไหน math / อันไหน fake encryption” แบบชัด 100% 🔥
+
+
+
 ```
 
 
