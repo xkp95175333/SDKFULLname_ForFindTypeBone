@@ -1,4 +1,68 @@
 ```c
+newbase+ 0x200
+Xref	Line	Column	Pseudocode line
+r	22	19	  v3 = *(_DWORD *)(a1 + 0x18C);
+r	23	20	  v19 = *(_QWORD *)(a1 + 0x184);
+r	24	19	  v5 = *(_QWORD *)(a1 + 0x178);
+r	25	7	  v6 = a1 + 0x200;
+r	29	18	    || *(float *)(a1 + 0x180) != *(float *)(v6 + 8) )
+r	33	43	             (__m128)*(unsigned __int64 *)(a1 + 0x178),
+r	34	58	             _mm_shuffle_ps((__m128)*(unsigned __int64 *)(a1 + 0x178), (__m128)*(unsigned __int64 *)(a1 + 0x178), 0x55)),
+r	34	101	             _mm_shuffle_ps((__m128)*(unsigned __int64 *)(a1 + 0x178), (__m128)*(unsigned __int64 *)(a1 + 0x178), 0x55)),
+r	35	37	           (__m128)*(unsigned int *)(a1 + 0x180));
+r	36	22	    v20 = *(_QWORD *)(a1 + 0x178);
+r	57	16	    *(_OWORD *)(a1 + 0x1F0) = *(_OWORD *)sub_14C8337D0(v6, v21);
+r	59	20	  v14 = *(_OWORD *)(a1 + 0x1F0);
+r	60	42	  v15 = (unsigned __int64 *)sub_140EC15A0(a1, &v20);
+
+Get a1
+.rdata:0000000150D783E0                         aGettgpaservice:                        ; DATA XREF: sub_1413930E0+1D↑o
+.rdata:0000000150D783E0 47 00 65 00 74 00 54 00…                text "UTF-16LE", 'GetTGPAServiceInstance in Window platform first.',0
+.rdata:0000000150D78442 00 00 00 00 00 00                       align 8
+.rdata:0000000150D78448                         aPlatformIsNotA:                        ; DATA XREF: sub_141391D40+37↑o
+.rdata:0000000150D78448                                                                 ; sub_141391E70+2A↑o ...
+.rdata:0000000150D78448 50 00 6C 00 61 00 74 00…                text "UTF-16LE", 'Platform is not available.',0
+.rdata:0000000150D7847E 00 00                                   align 20h
+.rdata:0000000150D78480                         ; const _QWORD a1
+.rdata:0000000150D78480                         a1:                                     ; DATA XREF: sub_1413925E0+BB↑o
+.rdata:0000000150D78480                                                                 ; sub_141393020+9C↑o ...
+.rdata:0000000150D78480 2D 00 31 00 00 00                       text "UTF-16LE", '-1',0
+.rdata:0000000150D78486 00 00                                   align 8
+.rdata:0000000150D78488                         ; const _QWORD aResult0_0
+.rdata:0000000150D78488                         aResult0_0:                             ; DATA XREF: sub_141391D40+9C↑o
+.rdata:0000000150D78488 7B 00 22 00 72 00 65 00…                text "UTF-16LE", '{"result":0}',0
+.rdata:0000000150D784A2 00 00 00 00 00 00                       align 8
+.rdata:0000000150D784A8 54 72 61 6E 73 63 65 69 aTransceiver    db 'Transceiver',0      ; DATA XREF: .text:000000014139538D↑o
+.rdata:0000000150D784A8 76 65 72 00                                                     ; .text:0000000141395499↑o
+.rdata:0000000150D784B4 00 00 00 00                             align 8
+.rdata:0000000150D784B8                         aSS_54:                                 ; DATA XREF: sub_141391F40+24C↑o
+.rdata:0000000150D784B8                                                                 ; sub_14147DF10+319↑o
+.rdata:0000000150D784B8 22 00 25 00 73 00 22 00…                text "UTF-16LE", '"%s":"%s",',0
+.rdata:0000000150D784CE 00 00                                   align 10h
+.rdata:0000000150D784D0                         aS_46:                                  ; DATA XREF: sub_141391F40+37F↑o
+.rdata:0000000150D784D0 25 00 73 00 7D 00 00 00                 text "UTF-16LE", '%s}',0
+.rdata:0000000150D784D8 2D                      unk_150D784D8   db  2Dh ; -             ; DATA XREF: sub_141391E00+4E↑o
+.rdata:0000000150D784D8                                                                 ; sub_141393DA0+AF↑o ...
+.rdata:0000000150D784D9 31                                      db  31h ; 1
+.rdata:0000000150D784DA 00                                      db    0
+.rdata:0000000150D784DB 00                                      db    0
+.rdata:0000000150D784DC 00                                      db    0
+.rdata:0000000150D784DD 00                                      db    0
+.rdata:0000000150D784DE 00                                      db    0
+.rdata:0000000150D784DF 00                                      db    0
+.rdata:0000000150D784E0                         ; const _QWORD aXid_1
+.rdata:0000000150D784E0                         aXid_1:                                 ; DATA XREF: sub_1413926C0:loc_14139271F↑o
+.rdata:0000000150D784E0                                                                 ; sub_14A860C30+BF↑o
+.rdata:0000000150D784E0 58 00 49 00 44 00 00 00                 text "UTF-16LE", 'XID',0
+.rdata:0000000150D784E8                         ; const _QWORD aWithoutinit
+.rdata:0000000150D784E8                         aWithoutinit:                           ; DATA XREF: sub_1413926C0+2DD↑o
+.rdata:0000000150D784E8                                                                 ; sub_14A860C30+73↑o
+.rdata:0000000150D784E8 57 00 69 00 74 00 68 00…                text "UTF-16LE", 'WithoutInit',0
+.rdata:0000000150D78500 58 54 6F 6B 65 6E 52 65 aXtokenret      db 'XTokenRet',0        ; DATA XREF: sub_1413926C0+3F7↑o
+.rdata:0000000150D78500 74 00                                                           ; sub_1413926C0+674↑o ...
+.rdata:0000000150D7850A 00 00 00 00 00 00                       align 10h
+.rdata:0000000150D78510 54                      unk_150D78510   db  54h ; T             ; DATA XREF: sub_1413926C0+479↑o
+
 
 __int64 __fastcall sub_14D9038C0(__int64 a1)
 {
@@ -133,6 +197,256 @@ __int64 __fastcall sub_140B0BE60(__int64 a1)
 {
   return a1 + 0x210;
 }
+//debugfun
+
+///Get  v15 = (unsigned __int64 *)sub_140EC15A0(a1, &v20);
+int *__fastcall sub_140EC15A0(__int64 a1, int *a2)
+{
+  __int64 v2; // rdi
+  int v4; // xmm0_4
+  int v5; // xmm1_4
+  int v6; // xmm2_4
+  int *result; // rax
+  int v8; // [rsp+28h] [rbp-20h] BYREF
+  int v9; // [rsp+2Ch] [rbp-1Ch]
+  int v10; // [rsp+30h] [rbp-18h]
+
+  v2 = a1 + 0x174;
+  v4 = *(_DWORD *)(a1 + 0x168);
+  v5 = *(_DWORD *)(a1 + 0x16C);
+  v6 = *(_DWORD *)(a1 + 0x170);
+  v8 = v4;
+  v9 = v5;
+  v10 = v6;
+  if ( *(_WORD *)(a1 + 0x174) != 0xFFFF )
+  {
+    if ( !*(_BYTE *)(a1 + 0x176) )
+      sub_14C835390(L"double decryption in EEncHandlerPolicy::None");
+    qword_1573ACC58(&v8, 0xCLL, v2);
+    v6 = v10;
+    v5 = v9;
+    v4 = v8;
+  }
+  *a2 = v4;
+  result = a2;
+  a2[1] = v5;
+  a2[2] = v6;
+  return result;
+}
+__int64 __fastcall sub_14C835390(__int64 a1)
+{
+  __int64 result; // rax
+
+  if ( byte_15684A0A0 )
+  {
+    sub_14C829130(
+      (unsigned int)"Unknown",
+      0x1C,
+      (unsigned int)&unk_1573D86F4,
+      1,
+      (__int64)L"FEncHandler::ReportError: %s",
+      a1);
+    return sub_14C85BB10();
+  }
+  else if ( (unsigned __int8)byte_1573D86F0 >= 2u )
+  {
+    return sub_14C829130(
+             (unsigned int)"Unknown",
+             0x20,
+             (unsigned int)&unk_1573D86F4,
+             2,
+             (__int64)L"FEncHandler::ReportError: %s",
+             a1);
+  }
+  return result;
+}
+
+
+
+//Get *(_OWORD *)(a1 + 0x1F0) = *(_OWORD *)sub_14C8337D0(v6, v21);
+__m128 *__fastcall sub_14C8337D0(unsigned __int64 *a1, __m128 *a2)
+{
+  __m128 v2; // xmm7
+  __m128 v3; // xmm2
+  __m128 v4; // xmm3
+  __m128 v5; // xmm7
+  __m128 v6; // xmm7
+  __m128 si128; // xmm1
+  __m128 v8; // xmm5
+  __m128 v9; // xmm0
+  __m128 v10; // xmm2
+  __m128 v11; // xmm3
+  __m128 v12; // xmm6
+  __m128 v13; // xmm0
+  __m128 v14; // xmm6
+  __m128 v15; // xmm1
+  __m128 v16; // xmm6
+  __m128 *result; // rax
+  __m128 v18; // xmm4
+  __m128 v19; // xmm3
+
+  v2 = _mm_movelh_ps((__m128)*a1, (__m128)*((unsigned int *)a1 + 2));
+  v3 = _mm_div_ps(v2, (__m128)xmmword_1573A8C20);
+  v4 = _mm_cvtepi32_ps(_mm_cvttps_epi32(v3));
+  v5 = _mm_mul_ps(
+         _mm_sub_ps(
+           v2,
+           _mm_mul_ps(
+             _mm_xor_ps(
+               _mm_and_ps(
+                 _mm_cmple_ps((__m128)xmmword_1573A8C10, _mm_and_ps(v3, (__m128)xmmword_1573A8970)),
+                 _mm_xor_ps(v4, v3)),
+               v4),
+             (__m128)xmmword_1573A8C20)),
+         (__m128)xmmword_1573A8C30);
+  v6 = _mm_sub_ps(
+         v5,
+         _mm_mul_ps(
+           _mm_cvtepi32_ps(_mm_cvtps_epi32(_mm_mul_ps((__m128)xmmword_1573A8B20, v5))),
+           (__m128)xmmword_1573A8B10));
+  si128 = (__m128)_mm_load_si128((const __m128i *)&xmmword_15077F770);
+  v8 = _mm_cmplt_ps((__m128)xmmword_1573A8AE0, _mm_and_ps(v6, (__m128)xmmword_1573A8970));
+  v9 = (__m128)_mm_load_si128((const __m128i *)&xmmword_15077F740);
+  v10 = _mm_xor_ps(
+          _mm_and_ps(
+            _mm_xor_ps(
+              _mm_sub_ps(_mm_or_ps(_mm_and_ps(v6, (__m128)xmmword_1573A8B00), (__m128)xmmword_1573A8AF0), v6),
+              v6),
+            v8),
+          v6);
+  v11 = _mm_mul_ps(v10, v10);
+  v12 = _mm_add_ps(
+          _mm_mul_ps(
+            _mm_add_ps(
+              _mm_mul_ps(
+                _mm_add_ps(
+                  _mm_mul_ps(_mm_add_ps(_mm_mul_ps(_mm_shuffle_ps(v9, v9, 0x55), v11), _mm_shuffle_ps(v9, v9, 0)), v11),
+                  _mm_shuffle_ps(si128, si128, 0xFF)),
+                v11),
+              _mm_shuffle_ps(si128, si128, 0xAA)),
+            v11),
+          _mm_shuffle_ps(si128, si128, 0x55));
+  v13 = (__m128)_mm_load_si128((const __m128i *)&xmmword_15077F750);
+  v14 = _mm_add_ps(_mm_mul_ps(v12, v11), _mm_shuffle_ps(si128, si128, 0));
+  v15 = (__m128)_mm_load_si128((const __m128i *)&xmmword_15077F780);
+  v16 = _mm_mul_ps(v14, v10);
+  result = a2;
+  v18 = _mm_mul_ps(
+          _mm_add_ps(
+            _mm_mul_ps(
+              _mm_add_ps(
+                _mm_mul_ps(
+                  _mm_add_ps(
+                    _mm_mul_ps(
+                      _mm_add_ps(
+                        _mm_mul_ps(
+                          _mm_add_ps(_mm_mul_ps(_mm_shuffle_ps(v13, v13, 0x55), v11), _mm_shuffle_ps(v13, v13, 0)),
+                          v11),
+                        _mm_shuffle_ps(v15, v15, 0xFF)),
+                      v11),
+                    _mm_shuffle_ps(v15, v15, 0xAA)),
+                  v11),
+                _mm_shuffle_ps(v15, v15, 0x55)),
+              v11),
+            _mm_shuffle_ps(v15, v15, 0)),
+          _mm_xor_ps(
+            _mm_and_ps(_mm_xor_ps((__m128)xmmword_1573A8A50, (__m128)xmmword_1573A8980), v8),
+            (__m128)xmmword_1573A8980));
+  v19 = _mm_shuffle_ps(v16, v18, 0x55);
+  *a2 = _mm_add_ps(
+          _mm_xor_ps(
+            _mm_mul_ps(
+              _mm_mul_ps(_mm_shuffle_ps(v19, v19, 0x88), _mm_shuffle_ps(v16, v18, 0)),
+              _mm_shuffle_ps(v18, v18, 0xAA)),
+            (__m128)xmmword_154588EF0),
+          _mm_xor_ps(
+            _mm_mul_ps(
+              _mm_mul_ps(_mm_shuffle_ps(v19, v19, 0x22), _mm_shuffle_ps(v18, v16, 0)),
+              _mm_shuffle_ps(v16, v16, 0xAA)),
+            (__m128)xmmword_154588F10));
+  return result;
+}
+
+//   Get   _mm_cmplt_ps((__m128)xmmword_157530090, v12)),
+.data:0000000157530090 ?? ?? ?? ?? ?? ?? ?? ?? xmmword_157530090 xmmword ?             ; DATA XREF: sub_14E2B8300+105↑r
+.data:0000000157530090 ?? ?? ?? ?? ?? ?? ?? ??                                         ; sub_14E2B85F0+DA↑r ...
+.data:00000001575300A0 ?? ?? ?? ?? ?? ?? ?? ?? xmmword_1575300A0 xmmword ?             ; DATA XREF: sub_14E2B8300+96↑r
+.data:00000001575300A0 ?? ?? ?? ?? ?? ?? ?? ??                                         ; sub_14E2B85F0+93↑r ...
+.data:00000001575300B0 ?? ?? ?? ?? ?? ?? ?? ?? xmmword_1575300B0 xmmword ?             ; DATA XREF: sub_14E2B8300+AB↑r
+.data:00000001575300B0 ?? ?? ?? ?? ?? ?? ?? ??                                         ; sub_14E2B85F0+71↑r ...
+.data:00000001575300C0 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575300C0 dq ?                    ; DATA XREF: sub_15054C5C0+12↑w
+.data:00000001575300C8 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575300C8 dq ?                    ; DATA XREF: sub_15054C5C0+30↑r
+.data:00000001575300D0 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575300D0 dq ?                    ; DATA XREF: sub_14E2CFAD0+60D↑r
+.data:00000001575300D0                                                                 ; sub_14E2D7E60+195↑r
+.data:00000001575300D8 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575300D8 dq ?                    ; DATA XREF: sub_15054CBB0+12↑w
+.data:00000001575300E0 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575300E0 dq ?                    ; DATA XREF: sub_15054CBB0+30↑r
+.data:00000001575300E8 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575300E8 dq ?                    ; DATA XREF: sub_15054CD40+12↑w
+.data:00000001575300F0 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575300F0 dq ?                    ; DATA XREF: sub_15054CD40+30↑r
+.data:00000001575300F8 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575300F8 dq ?                    ; DATA XREF: sub_14E0F2460+38F↑r
+.data:00000001575300F8                                                                 ; sub_14E2C6110+1D2↑r ...
+.data:0000000157530100 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530100 dq ?                    ; DATA XREF: sub_15054CCF0+12↑w
+.data:0000000157530108 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530108 dq ?                    ; DATA XREF: sub_15054CCF0+30↑r
+.data:0000000157530110 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530110 dq ?                    ; DATA XREF: sub_14E0F2460+383↑r
+.data:0000000157530118 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530118 dq ?                    ; DATA XREF: sub_15054C610+12↑w
+.data:0000000157530120 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530120 dq ?                    ; DATA XREF: sub_15054C610+30↑r
+.data:0000000157530128 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530128 dq ?                    ; DATA XREF: sub_14E0F2460:loc_14E0F278E↑r
+.data:0000000157530130 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530130 dq ?                    ; DATA XREF: sub_15054CD90+12↑w
+.data:0000000157530138 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530138 dq ?                    ; DATA XREF: sub_15054CD90+30↑r
+.data:0000000157530140 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530140 dq ?                    ; DATA XREF: sub_14E2D5B00+13↑r
+.data:0000000157530140                                                                 ; sub_14E2D6CA0+77↑r ...
+.data:0000000157530148 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530148 dq ?                    ; DATA XREF: sub_15054C8E0+12↑w
+.data:0000000157530150 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530150 dq ?                    ; DATA XREF: sub_15054C8E0+30↑r
+.data:0000000157530158 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530158 dq ?                    ; DATA XREF: sub_14E2C6110:loc_14E2C64AD↑r
+.data:0000000157530158                                                                 ; sub_14E2C6110:loc_14E2C6511↑r ...
+.data:0000000157530160 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530160 dq ?                    ; DATA XREF: sub_15054C890+12↑w
+.data:0000000157530168 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530168 dq ?                    ; DATA XREF: sub_15054C890+30↑r
+.data:0000000157530170 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530170 dq ?                    ; DATA XREF: sub_14E2C5BE0+22↑r
+.data:0000000157530178 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530178 dq ?                    ; DATA XREF: sub_15054C980+12↑w
+.data:0000000157530180 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530180 dq ?                    ; DATA XREF: sub_15054C980+30↑r
+.data:0000000157530188 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530188 dq ?                    ; DATA XREF: sub_14E2D5F50+35↑r
+.data:0000000157530188                                                                 ; sub_14E2D6340+52↑r
+.data:0000000157530190 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530190 dq ?                    ; DATA XREF: sub_15054C930+12↑w
+.data:0000000157530198 ?? ?? ?? ?? ?? ?? ?? ?? qword_157530198 dq ?                    ; DATA XREF: sub_15054C930+30↑r
+.data:00000001575301A0 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575301A0 dq ?                    ; DATA XREF: sub_14E2BDEB0+23↑r
+.data:00000001575301A0                                                                 ; sub_14E2BDEB0+8F↑r ...
+.data:00000001575301A8 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575301A8 dq ?                    ; DATA XREF: sub_15054C700+12↑w
+.data:00000001575301B0 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575301B0 dq ?                    ; DATA XREF: sub_15054C700+30↑r
+.data:00000001575301B8 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575301B8 dq ?                    ; DATA XREF: sub_14E2D84D0:loc_14E2D86B9↑r
+.data:00000001575301C0 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575301C0 dq ?                    ; DATA XREF: sub_15054C6B0+12↑w
+.data:00000001575301C8 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575301C8 dq ?                    ; DATA XREF: sub_15054C6B0+30↑r
+.data:00000001575301D0 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575301D0 dq ?                    ; DATA XREF: sub_14E2D8080:loc_14E2D825A↑r
+.data:00000001575301D8 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575301D8 dq ?                    ; DATA XREF: sub_15054C480+12↑w
+.data:00000001575301E0 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575301E0 dq ?                    ; DATA XREF: sub_15054C480+30↑r
+.data:00000001575301E8 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575301E8 dq ?                    ; DATA XREF: sub_14E2D8920+37↑r
+.data:00000001575301F0 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575301F0 dq ?                    ; DATA XREF: sub_15054CC50+12↑w
+.data:00000001575301F8 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575301F8 dq ?                    ; DATA XREF: sub_15054CC50+30↑r
+
+
+
+get xmmword_15752FDE0
+.data:000000015752FDE0 ?? ?? ?? ?? ?? ?? ?? ?? xmmword_15752FDE0 xmmword ?             ; DATA XREF: sub_14E2B1C90+E7↑r
+.data:000000015752FDE0 ?? ?? ?? ?? ?? ?? ?? ??                                         ; sub_14E2B8300+CF↑r ...
+.data:000000015752FDF0 ?? ?? ?? ?? ?? ?? ?? ?? xmmword_15752FDF0 xmmword ?             ; DATA XREF: sub_14E2B6F10+1AF↑r
+.data:000000015752FDF0 ?? ?? ?? ?? ?? ?? ?? ??                                         ; sub_14E2B89E0+4CF↑r ...
+.data:000000015752FE00 ?? ?? ?? ?? ?? ?? ?? ?? xmmword_15752FE00 xmmword ?             ; DATA XREF: sub_14E2B4490+85E↑r
+.data:000000015752FE00 ?? ?? ?? ?? ?? ?? ?? ??                                         ; sub_14E2B4490+8F5↑r ...
+.data:000000015752FE10 ?? ?? ?? ?? ?? ?? ?? ??…                align 20h
+.data:000000015752FE20 ?? ?? ?? ?? ?? ?? ?? ?? xmmword_15752FE20 xmmword ?             ; DATA XREF: sub_14E2B89E0+16D↑r
+.data:000000015752FE20 ?? ?? ?? ?? ?? ?? ?? ??                                         ; sub_14E2BA9F0+DA↑r ...
+.data:000000015752FE30 ??                      byte_15752FE30  db ?                    ; DATA XREF: sub_14E2D23B0+16↑r
+.data:000000015752FE30                                                                 ; sub_14E2D2600+16↑r ...
+.data:000000015752FE31 ?? ?? ??                                align 4
+.data:000000015752FE34 ??                      unk_15752FE34   db    ? ;               ; DATA XREF: sub_14E2D23B0+55↑o
+
+
+get xmmword_1575300B0
+
+.data:00000001575300B0 ?? ?? ?? ?? ?? ?? ?? ?? xmmword_1575300B0 xmmword ?             ; DATA XREF: sub_14E2B8300+AB↑r
+.data:00000001575300B0 ?? ?? ?? ?? ?? ?? ?? ??                                         ; sub_14E2B85F0+71↑r ...
+.data:00000001575300C0 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575300C0 dq ?                    ; DATA XREF: sub_15054C5C0+12↑w
+.data:00000001575300C8 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575300C8 dq ?                    ; DATA XREF: sub_15054C5C0+30↑r
+.data:00000001575300D0 ?? ?? ?? ?? ?? ?? ?? ?? qword_1575300D0 dq ?                    ; DATA XREF: sub_14E2CFAD0+60D↑r
+
 ```
 
 
