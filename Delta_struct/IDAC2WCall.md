@@ -11,9 +11,9 @@ r	34	58	             _mm_shuffle_ps((__m128)*(unsigned __int64 *)(a1 + 0x178), (
 r	34	101	             _mm_shuffle_ps((__m128)*(unsigned __int64 *)(a1 + 0x178), (__m128)*(unsigned __int64 *)(a1 + 0x178), 0x55)),
 r	35	37	           (__m128)*(unsigned int *)(a1 + 0x180));
 r	36	22	    v20 = *(_QWORD *)(a1 + 0x178);
-r	57	16	    *(_OWORD *)(a1 + 0x1F0) = *(_OWORD *)sub_14C8337D0(v6, v21);
+r	57	16	    *(_OWORD *)(a1 + 0x1F0) = *(_OWORD *)sub_14C8337D0(v6, v21);    "48 83 EC 28 F3 0F 10 51 08"
 r	59	20	  v14 = *(_OWORD *)(a1 + 0x1F0);
-r	60	42	  v15 = (unsigned __int64 *)sub_140EC15A0(a1, &v20);
+r	60	42	  v15 = (unsigned __int64 *)sub_140EC15A0(a1, &v20);    aob "48 89 5C 24 18 57 48 83 EC 40 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 44 24 38 C7 44 24 20 00 00 00 00 48 8D B9 74 01 00 00"
 
 Get a1
 .rdata:0000000150D783E0                         aGettgpaservice:                        ; DATA XREF: sub_1413930E0+1D↑o
@@ -99,7 +99,8 @@ __int64 __fastcall sub_14D9038C0(__int64 a1)
   *(_QWORD *)(a1 + 0x600) = _mm_unpacklo_ps(v4, _mm_shuffle_ps(v4, v4, 0x55)).m128_u64[0];
   *(_DWORD *)(a1 + 0x608) = _mm_shuffle_ps(v4, v4, 0xAA).m128_u32[0];
   return result;
-} 
+}
+
 __int64 __fastcall sub_14E289760(__int64 a1)
 {
   float v2; // xmm0_4
@@ -142,6 +143,7 @@ __int64 __fastcall sub_14E289760(__int64 a1)
   }
   return result;
 }
+
 
 __int64 __fastcall sub_14E2CB510(__int64 a1, __int64 a2)
 {
@@ -476,10 +478,10 @@ testdecore
 
 //โค้ดทั้งหมดที่คุณส่งมา = pipeline นี้:
 
-//sub_14E289760   -> update state / flags / virtual calls
-//sub_14E2CB510   -> normalize rotation (SIMD) + build matrix
-//sub_140B0BE60   -> return ptr (a1 + 0x210)
-//sub_14D9038C0   -> เอาทุกอย่างมารวม + copy result
+//sub_14E289760   -> update state / flags / virtual calls    "40 53 48 83 EC 20 48 8B D9 F0 FF 05 ?? ?? ?? ?? 0F 57 C9"
+//sub_14E2CB510   -> normalize rotation (SIMD) + build matrix  "48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 60 F2 0F 10 81 84 01 00 00"
+//sub_140B0BE60   -> return ptr (a1 + 0x210)    // "C7 44 24 08 00 00 00 00 8B 44 24 08 FF C0 89 44 24 08 8B 44 24 08 FF C8 89 44 24 08 48 8D 81 10 02 00 00"
+//sub_14D9038C0   -> เอาทุกอย่างมารวม + copy result  "40 53 48 83 EC 60 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 44 24 50 48 8B D9 E8"
 //🔥 1. SYSTEM: โหลด SIMD constants จาก BaseAddress
 #define RVA(addr) (addr - 0x140000000ULL)
 #define PTR(base, addr) ((void*)((uintptr_t)(base) + RVA(addr)))
