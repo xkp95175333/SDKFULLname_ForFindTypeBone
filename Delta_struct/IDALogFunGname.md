@@ -1,3 +1,72 @@
+---
+เก็บรายการkey
+---
+
+```c
+static const uint64_t GNAME_KEYS[] =
+{
+    // basic
+    0x0ULL,
+    0xFFFFFFFFFFFFFFFFULL,
+
+    // repeat pattern
+    0xA5A5A5A5A5A5A5A5ULL,
+    0x5A5A5A5A5A5A5A5AULL,
+    0x3C3C3C3C3C3C3C3CULL,
+    0xC3C3C3C3C3C3C3C3ULL,
+
+    // alternating
+    0xFF00FF00FF00FF00ULL,
+    0x00FF00FF00FF00FFULL,
+    0xAA55AA55AA55AA55ULL,
+    0x55AA55AA55AA55AAULL,
+
+    // debug / filler
+    0xCCCCCCCCCCCCCCCCULL,
+    0xDDDDDDDDDDDDDDDDULL,
+    0xEEEEEEEEEEEEEEEEULL,
+    0x1111111111111111ULL,
+    0x2222222222222222ULL,
+
+    // ida combined example
+    0x1735146AULL,
+
+    // random
+    0x123456789ABCDEF0ULL,
+    0xFEDCBA9876543210ULL,
+    0xCAFEBABECAFEBABEULL,
+    0xDEADBEEFDEADBEEFULL,
+};
+//ex decore
+uint64_t AutoDecryptGName(uint64_t enc)
+{
+    // split ก่อน
+    uint64_t s = Decrypt_SPLIT(enc);
+    if (IsValidPtr(s)) return s;
+
+    for (auto k1 : GNAME_KEYS)
+    {
+        for (auto k2 : GNAME_KEYS)
+        {
+            for (int r = 1; r < 32; r++)
+            {
+                uint64_t v = enc;
+
+                v ^= k1;
+                v = ROR64(v, r);
+                v ^= k2;
+
+                if (IsValidPtr(v))
+                    return v;
+            }
+        }
+    }
+
+    return 0;
+}
+
+
+```
 ```asm
 Address	Function	Instruction
 .text:000000014C8D5192	sub_14C8D5120	lea     rsi, unk_1573DC1C0; Load Effective Address  ++   0xFFFF    0x10
@@ -5,6 +74,7 @@ Address	Function	Instruction
 .text:000000014C8F1059	sub_14C8F1020	lea     rsi, unk_1573DC1C0; Load Effective Address  -- 0x10020 and 0x10024   0x20  newBase 0x401  
 .text:000000014D95FF9C		db  48h ; H
 ```
+
 
 ---
 FunBase 0x3FFFF
