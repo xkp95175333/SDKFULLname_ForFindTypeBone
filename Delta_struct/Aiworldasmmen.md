@@ -1,6 +1,118 @@
+<img width="1198" height="459" alt="image" src="https://github.com/user-attachments/assets/4f368569-d7d0-47a1-9659-0fa15f639dc5" />
+<img width="2521" height="8579" alt="45UworldArray" src="https://github.com/user-attachments/assets/ccd32bd0-2bff-4224-bd17-e8bff6b0fdd3" />
 <img width="2594" height="9744" alt="3UworldArray" src="https://github.com/user-attachments/assets/c401e91d-2def-44df-8dac-535098de328f" />
 
+---
+ทำฟังชั้น AOB Scamเก็บ 
+---
+```asm
+1452CCFBF - 48 8B 35 F2057511     - mov rsi,[156A1D5B8] { (2A11F2E20) }    // +0x03
+1452CCFC6 - EB 31                 - jmp 1452CCFF9
+1452CCFC8 - 48 8B 0D E9257511     - mov rcx,[156A1F5B8] { (16000002A11F2E36) }
+1452CCFCF - 0FB6 05 E9257511      - movzx eax,byte ptr [156A1F5BF] { (22) }
+1452CCFD6 - 48 89 8C 24 98000000  - mov [rsp+00000098],rcx
+1452CCFDE - 34 36                 - xor al,36 { 54 }                                //+0x1F chack bytes == 0x34 return +0x20 keyxorbuid_decoreptr
+1452CCFE0 - 80 F1 36              - xor cl,36 { 54 }                                //+0x21 chack bytes2 == {0x80,0xF1} return + 0x23 keyxorbuid_decoreptr
+1452CCFE3 - 88 84 24 98000000     - mov [rsp+00000098],al
+1452CCFEA - 88 8C 24 9F000000     - mov [rsp+0000009F],cl
+1452CCFF1 - 48 8B B4 24 98000000  - mov rsi,[rsp+00000098]
+1452CCFF9 - 49 8B AE A0020000     - mov rbp,[r14+000002A0]
 
+
+
+
+
+// Entity  EncStruct
+14EAE08E7 - 48 8B 35 CACCF307     - mov rsi,[156A1D5B8] { (2A11F2E20) }
+14EAE08EE - EB 31                 - jmp 14EAE0921
+14EAE08F0 - 48 8B 0D C1ECF307     - mov rcx,[156A1F5B8] { (16000002A11F2E36) }
+14EAE08F7 - 0FB6 05 C1ECF307      - movzx eax,byte ptr [156A1F5BF] { (22) }
+14EAE08FE - 48 89 8C 24 D0000000  - mov [rsp+000000D0],rcx
+14EAE0906 - 34 36                 - xor al,36 { 54 }
+14EAE0908 - 80 F1 36              - xor cl,36 { 54 }
+14EAE090B - 88 84 24 D0000000     - mov [rsp+000000D0],al
+14EAE0912 - 88 8C 24 D7000000     - mov [rsp+000000D7],cl
+14EAE0919 - 48 8B B4 24 D0000000  - mov rsi,[rsp+000000D0]
+14EAE0921 - 48 8B 9C 24 C0000000  - mov rbx,[rsp+000000C0]
+14EAE0929 - 48 8B 7B 28           - mov rdi,[rbx+28]
+14EAE092D - E8 8E14DCFD           - call 14C8A1DC0
+14EAE0932 - 4C 8B C8              - mov r9,rax
+14EAE0935 - 48 8D 4B 28           - lea rcx,[rbx+28]
+14EAE0939 - 4D 8B C6              - mov r8,r14
+14EAE093C - 48 8B D6              - mov rdx,rsi
+14EAE093F - FF 57 08              - call qword ptr [rdi+08]
+14EAE0942 - 48 8B 74 24 40        - mov rsi,[rsp+40]
+14EAE0947 - 49 83 C4 10           - add r12,10 { 16 }
+14EAE094B - 48 83 AC 24 D8000000 01 - sub qword ptr [rsp+000000D8],01 { 1 }
+14EAE0954 - 0F85 86FEFFFF         - jne 14EAE07E0
+14EAE095A - 48 8B 5C 24 48        - mov rbx,[rsp+48]
+14EAE095F - 4C 8B 7C 24 78        - mov r15,[rsp+78]
+14EAE0964 - 8B F3                 - mov esi,ebx
+14EAE0966 - 4C 8B B4 24 80000000  - mov r14,[rsp+00000080]
+14EAE096E - 4C 8B A4 24 88000000  - mov r12,[rsp+00000088]
+14EAE0976 - 48 8B BC 24 C0000000  - mov rdi,[rsp+000000C0]
+14EAE097E - 48 8D 8C 24 C0000000  - lea rcx,[rsp+000000C0]
+14EAE0986 - FF 15 449BA901        - call qword ptr [15057A4D0] { ->->7FFA205C0E50 }
+14EAE098C - 0F57 F6               - xorps xmm6,xmm6
+14EAE098F - F2 48 0F2A B4 24 C0000000  - cvtsi2sd xmm6,[rsp+000000C0]
+14EAE0999 - F2 0F59 35 FF338408   - mulsd xmm6,[157323DA0] { (0.00) }
+14EAE09A1 - F2 0F5C F7            - subsd xmm6,xmm7
+14EAE09A5 - F2 0F59 35 5BBCBE01   - mulsd xmm6,[1506CC608] { (0.00) }
+14EAE09AD - E8 CE89C4FF           - call 14E729380
+14EAE09B2 - 0F28 7C 24 50         - movaps xmm7,[rsp+50]
+14EAE09B7 - 0F57 C9               - xorps xmm1,xmm1
+14EAE09BA - F3 0F5A C8            - cvtss2sd xmm1,xmm0
+14EAE09BE - 66 0F2F F1            - comisd xmm6,xmm1
+14EAE09C2 - 0F82 AC000000         - jb 14EAE0A74
+14EAE09C8 - 80 3D 5948A808 03     - cmp byte ptr [157565228],03 { (134610946),3 }
+14EAE09CF - 72 34                 - jb 14EAE0A05
+14EAE09D1 - 89 74 24 30           - mov [rsp+30],esi
+14EAE09D5 - 48 8D 05 14E91706     - lea rax,[154C5F2F0] { ("UEngine::TickDeferredCommands t") }
+14EAE09DC - F2 0F11 74 24 28      - movsd [rsp+28],xmm6
+14EAE09E2 - 4C 8D 05 4348A808     - lea r8,[15756522C] { (1023281) }
+14EAE09E9 - 41 B9 03000000        - mov r9d,00000003 { 3 }
+14EAE09EF - 48 89 44 24 20        - mov [rsp+20],rax
+14EAE09F4 - BA C7090000           - mov edx,000009C7 { 2503 }
+14EAE09F9 - 48 8D 0D 6073BE01     - lea rcx,[1506C7D60] { ("Unknown") }
+14EAE0A00 - E8 2B7DD4FD           - call 14C828730
+14EAE0A05 - 48 85 DB              - test rbx,rbx
+14EAE0A08 - 7E 6A                 - jle 14EAE0A74
+14EAE0A0A - 48 8D 2D 6FA63402     - lea rbp,[150E2B080] { (2424841) }
+14EAE0A11 - 80 3D 1048A808 03     - cmp byte ptr [157565228],03 { (134610946),3 }
+14EAE0A18 - 72 50                 - jb 14EAE0A6A
+14EAE0A1A - 48 8D 8F 18090000     - lea rcx,[rdi+00000918]
+14EAE0A21 - FF 15 4993D607        - call qword ptr [156849D70] { ->140A86E30 }
+14EAE0A27 - 49 03 C5              - add rax,r13
+14EAE0A2A - 83 78 08 00           - cmp dword ptr [rax+08],00 { 0 }
+14EAE0A2E - 74 0B                 - je 14EAE0A3B
+14EAE0A30 - 48 8B C8              - mov rcx,rax
+14EAE0A33 - FF 15 3793D607        - call qword ptr [156849D70] { ->140A86E30 }
+14EAE0A39 - EB 07                 - jmp 14EAE0A42
+14EAE0A3B - 48 8D 05 166DBE01     - lea rax,[1506C7758] { (0) }
+14EAE0A42 - 48 89 44 24 28        - mov [rsp+28],rax
+14EAE0A47 - 4C 8D 05 DE47A808     - lea r8,[15756522C] { (1023281) }
+14EAE0A4E - 41 B9 03000000        - mov r9d,00000003 { 3 }
+14EAE0A54 - 48 89 6C 24 20        - mov [rsp+20],rbp
+14EAE0A59 - BA CB090000           - mov edx,000009CB { 2507 }
+14EAE0A5E - 48 8D 0D FB72BE01     - lea rcx,[1506C7D60] { ("Unknown") }
+14EAE0A65 - E8 C67CD4FD           - call 14C828730
+14EAE0A6A - 49 83 C5 10           - add r13,10 { 16 }
+14EAE0A6E - 48 83 EB 01           - sub rbx,01 { 1 }
+14EAE0A72 - 75 9D                 - jne 14EAE0A11
+14EAE0A74 - 48 8D 8F 18090000     - lea rcx,[rdi+00000918]
+14EAE0A7B - 41 B1 01              - mov r9b,01 { 1 }
+14EAE0A7E - 44 8B C6              - mov r8d,esi
+14EAE0A81 - 33 D2                 - xor edx,edx
+14EAE0A83 - 0F28 74 24 60         - movaps xmm6,[rsp+60]
+14EAE0A88 - 48 81 C4 90000000     - add rsp,00000090 { 144 }
+14EAE0A8F - 41 5D                 - pop r13
+14EAE0A91 - 5F                    - pop rdi
+14EAE0A92 - 5E                    - pop rsi
+14EAE0A93 - 5D                    - pop rbp
+14EAE0A94 - 5B                    - pop rbx
+14EAE0A95 - E9 862580F2           - jmp 1412E3020
+
+```
 ```cpp
 โอเค อันนี้เป็นจุด “ทอง” เลย 🔥
 โค้ดชุดนี้คือ **UWorld resolver + pointer decode pipeline** ครบในฟังก์ชันเดียว
