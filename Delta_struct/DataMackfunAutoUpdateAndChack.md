@@ -163,6 +163,345 @@ __int64 __fastcall sub_14D9038C0(__int64 a1)
 
 
 --- 
+ส่วนการทำงาน ที่ 2 คือboneกับ C2w   ทำงานร่วมกัน  call    sub_14E2CB510  
+
+---
+เดวค่อบบวกSize ขุดสำหรับ ของ อันนี้ พวก cs:xmmword_ ต่างๆ 
+```asm
+.text:000000014E2CB508 CC CC CC CC CC CC CC CC                 align 10h
+.text:000000014E2CB510
+.text:000000014E2CB510                         ; =============== S U B R O U T I N E =======================================
+.text:000000014E2CB510
+.text:000000014E2CB510
+.text:000000014E2CB510                         ; __int64 __fastcall sub_14E2CB510(_QWORD, _QWORD)
+.text:000000014E2CB510                         sub_14E2CB510   proc near               ; CODE XREF: .text:0000000141CEB251↑p
+.text:000000014E2CB510                                                                 ; sub_141D52270+2B28↑p ...
+.text:000000014E2CB510
+.text:000000014E2CB510                         var_48          = qword ptr -48h
+.text:000000014E2CB510                         var_3C          = qword ptr -3Ch
+.text:000000014E2CB510                         var_28          = byte ptr -28h
+.text:000000014E2CB510                         var_18          = xmmword ptr -18h
+.text:000000014E2CB510                         arg_0           = qword ptr  8
+.text:000000014E2CB510                         arg_8           = qword ptr  10h
+.text:000000014E2CB510
+.text:000000014E2CB510 48 89 5C 24 08                          mov     [rsp+8], rbx
+.text:000000014E2CB515 48 89 74 24 10                          mov     [rsp+10h], rsi
+.text:000000014E2CB51A 57                                      push    rdi
+.text:000000014E2CB51B 48 83 EC 60                             sub     rsp, 60h
+.text:000000014E2CB51F F2 0F 10 81 84 01 00 00                 movsd   xmm0, qword ptr [rcx+184h]
+.text:000000014E2CB527 48 8B D9                                mov     rbx, rcx
+.text:000000014E2CB52A 8B B1 8C 01 00 00                       mov     esi, [rcx+18Ch]
+.text:000000014E2CB530 48 8B FA                                mov     rdi, rdx
+.text:000000014E2CB533 F2 0F 11 44 24 20                       movsd   qword ptr [rsp+20h], xmm0
+.text:000000014E2CB539 F2 0F 10 81 78 01 00 00                 movsd   xmm0, qword ptr [rcx+178h]
+.text:000000014E2CB541 48 81 C1 00 02 00 00                    add     rcx, 200h
+.text:000000014E2CB548 0F 29 74 24 50                          movaps  xmmword ptr [rsp+50h], xmm6
+.text:000000014E2CB54D F2 0F 11 44 24 2C                       movsd   qword ptr [rsp+2Ch], xmm0
+.text:000000014E2CB553 0F 2E 01                                ucomiss xmm0, dword ptr [rcx]
+.text:000000014E2CB556 75 1E                                   jnz     short loc_14E2CB576
+.text:000000014E2CB558 F3 0F 10 44 24 30                       movss   xmm0, dword ptr [rsp+30h]
+.text:000000014E2CB55E 0F 2E 41 04                             ucomiss xmm0, dword ptr [rcx+4]
+.text:000000014E2CB562 75 12                                   jnz     short loc_14E2CB576
+.text:000000014E2CB564 F3 0F 10 83 80 01 00 00                 movss   xmm0, dword ptr [rbx+180h]
+.text:000000014E2CB56C 0F 2E 41 08                             ucomiss xmm0, dword ptr [rcx+8]
+.text:000000014E2CB570 0F 84 C5 00 00 00                       jz      loc_14E2CB63B
+.text:000000014E2CB576
+.text:000000014E2CB576                         loc_14E2CB576:                          ; CODE XREF: sub_14E2CB510+46↑j
+.text:000000014E2CB576                                                                 ; sub_14E2CB510+52↑j
+.text:000000014E2CB576 F2 0F 10 9B 78 01 00 00                 movsd   xmm3, qword ptr [rbx+178h]
+.text:000000014E2CB57E 48 8D 54 24 40                          lea     rdx, [rsp+40h]
+.text:000000014E2CB583 0F 28 35 16 4B 26 09                    movaps  xmm6, cs:xmmword_1575300A0
+.text:000000014E2CB58A 0F 28 CB                                movaps  xmm1, xmm3
+.text:000000014E2CB58D F3 0F 10 83 80 01 00 00                 movss   xmm0, dword ptr [rbx+180h]
+.text:000000014E2CB595 0F 28 EB                                movaps  xmm5, xmm3
+.text:000000014E2CB598 0F 28 25 11 4B 26 09                    movaps  xmm4, cs:xmmword_1575300B0
+.text:000000014E2CB59F 0F C6 C9 55                             shufps  xmm1, xmm1, 55h ; 'U'
+.text:000000014E2CB5A3 0F 14 E9                                unpcklps xmm5, xmm1
+.text:000000014E2CB5A6 0F 16 E8                                movlhps xmm5, xmm0
+.text:000000014E2CB5A9 F2 0F 11 5C 24 2C                       movsd   qword ptr [rsp+2Ch], xmm3
+.text:000000014E2CB5AF 0F 28 D5                                movaps  xmm2, xmm5
+.text:000000014E2CB5B2 0F 5E D6                                divps   xmm2, xmm6
+.text:000000014E2CB5B5 F3 0F 5B C2                             cvttps2dq xmm0, xmm2
+.text:000000014E2CB5B9 0F 28 CA                                movaps  xmm1, xmm2
+.text:000000014E2CB5BC 0F 54 0D 1D 48 26 09                    andps   xmm1, cs:xmmword_15752FDE0
+.text:000000014E2CB5C3 0F 5B D8                                cvtdq2ps xmm3, xmm0
+.text:000000014E2CB5C6 0F C2 E1 02                             cmpleps xmm4, xmm1
+.text:000000014E2CB5CA 0F 28 C3                                movaps  xmm0, xmm3
+.text:000000014E2CB5CD 0F 28 CE                                movaps  xmm1, xmm6
+.text:000000014E2CB5D0 0F 57 C2                                xorps   xmm0, xmm2
+.text:000000014E2CB5D3 0F 54 E0                                andps   xmm4, xmm0
+.text:000000014E2CB5D6 0F 57 C0                                xorps   xmm0, xmm0
+.text:000000014E2CB5D9 0F 57 E3                                xorps   xmm4, xmm3
+.text:000000014E2CB5DC 0F 59 E6                                mulps   xmm4, xmm6
+.text:000000014E2CB5DF 0F 5C EC                                subps   xmm5, xmm4
+.text:000000014E2CB5E2 0F C2 C5 02                             cmpleps xmm0, xmm5
+.text:000000014E2CB5E6 0F 58 CD                                addps   xmm1, xmm5
+.text:000000014E2CB5E9 0F 28 D1                                movaps  xmm2, xmm1
+.text:000000014E2CB5EC 0F 57 D5                                xorps   xmm2, xmm5
+.text:000000014E2CB5EF 0F 54 D0                                andps   xmm2, xmm0
+.text:000000014E2CB5F2 0F 28 05 97 4A 26 09                    movaps  xmm0, cs:xmmword_157530090
+.text:000000014E2CB5F9 0F 57 D1                                xorps   xmm2, xmm1
+.text:000000014E2CB5FC 0F C2 C2 01                             cmpltps xmm0, xmm2
+.text:000000014E2CB600 0F 28 DA                                movaps  xmm3, xmm2
+.text:000000014E2CB603 0F 5C DE                                subps   xmm3, xmm6
+.text:000000014E2CB606 0F 57 DA                                xorps   xmm3, xmm2
+.text:000000014E2CB609 0F 54 D8                                andps   xmm3, xmm0
+.text:000000014E2CB60C 0F 57 DA                                xorps   xmm3, xmm2
+.text:000000014E2CB60F 0F 28 CB                                movaps  xmm1, xmm3
+.text:000000014E2CB612 0F 28 C3                                movaps  xmm0, xmm3
+.text:000000014E2CB615 0F C6 CB 55                             shufps  xmm1, xmm3, 55h ; 'U'
+.text:000000014E2CB619 0F 28 D3                                movaps  xmm2, xmm3
+.text:000000014E2CB61C 0F 14 C1                                unpcklps xmm0, xmm1
+.text:000000014E2CB61F 0F C6 D3 AA                             shufps  xmm2, xmm3, 0AAh
+.text:000000014E2CB623 F2 0F 11 01                             movsd   qword ptr [rcx], xmm0
+.text:000000014E2CB627 F3 0F 11 51 08                          movss   dword ptr [rcx+8], xmm2
+.text:000000014E2CB62C E8 9F 81 56 FE                          call    sub_14C8337D0
+.text:000000014E2CB631 0F 10 00                                movups  xmm0, xmmword ptr [rax]
+.text:000000014E2CB634 0F 11 83 F0 01 00 00                    movups  xmmword ptr [rbx+1F0h], xmm0
+.text:000000014E2CB63B
+.text:000000014E2CB63B                         loc_14E2CB63B:                          ; CODE XREF: sub_14E2CB510+60↑j
+.text:000000014E2CB63B 0F 10 B3 F0 01 00 00                    movups  xmm6, xmmword ptr [rbx+1F0h]
+.text:000000014E2CB642 48 8D 54 24 2C                          lea     rdx, [rsp+2Ch]
+.text:000000014E2CB647 48 8B CB                                mov     rcx, rbx
+.text:000000014E2CB64A E8 51 5F BF F2                          call    sub_140EC15A0
+.text:000000014E2CB64F 48 8B 5C 24 70                          mov     rbx, [rsp+70h]
+.text:000000014E2CB654 66 0F 6E C6                             movd    xmm0, esi
+.text:000000014E2CB658 48 8B 74 24 78                          mov     rsi, [rsp+78h]
+.text:000000014E2CB65D F3 0F 10 50 08                          movss   xmm2, dword ptr [rax+8]
+.text:000000014E2CB662 F2 0F 10 18                             movsd   xmm3, qword ptr [rax]
+.text:000000014E2CB666 48 8B C7                                mov     rax, rdi
+.text:000000014E2CB669 0F 16 DA                                movlhps xmm3, xmm2
+.text:000000014E2CB66C 0F 11 5F 10                             movups  xmmword ptr [rdi+10h], xmm3
+.text:000000014E2CB670 F2 0F 10 5C 24 20                       movsd   xmm3, qword ptr [rsp+20h]
+.text:000000014E2CB676 0F 16 D8                                movlhps xmm3, xmm0
+.text:000000014E2CB679 0F 11 37                                movups  xmmword ptr [rdi], xmm6
+.text:000000014E2CB67C 0F 28 74 24 50                          movaps  xmm6, xmmword ptr [rsp+50h]
+.text:000000014E2CB681 0F 11 5F 20                             movups  xmmword ptr [rdi+20h], xmm3
+.text:000000014E2CB685 48 83 C4 60                             add     rsp, 60h
+.text:000000014E2CB689 5F                                      pop     rdi
+.text:000000014E2CB68A C3                                      retn
+
+```
+ 
+
+
+
+--- 
+ตรวจ ตรง .text:000000014E2CB5BC 0F 54 0D 1D 48 26 09                    andps   xmm1, cs:xmmword_15752FDE0  ละ กัน มัน ค่า น้อย สุกจะได้ ไม่ - กลับเยอะ  
+ได้ ตรง  
+
+
+---
+```asm
+
+
+data:000000015752FDE0 ?? ?? ?? ?? ?? ?? ?? ?? xmmword_15752FDE0 xmmword ?             ; DATA XREF: sub_14E2B1C90+E7↑r
+.data:000000015752FDE0 ?? ?? ?? ?? ?? ?? ?? ??                                         ; sub_14E2B8300+CF↑r ...
+// ตรวจสอบจุดที่ค่อย เริ่ม อ่าน
+
+.data:000000015752FC68 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FC68 dq ?                    ; DATA XREF: sub_14E29A6A0+6AE↑r
+.data:000000015752FC68                                                                 ; sub_14E29A6A0+15BB↑o
+.data:000000015752FC70 ?? ?? ?? ??             dword_15752FC70 dd ?                    ; DATA XREF: sub_14E29A6A0+595↑r
+.data:000000015752FC70                                                                 ; sub_14E29A6A0:loc_14E29BC35↑o ...
+.data:000000015752FC74 ?? ?? ?? ??                             align 8
+.data:000000015752FC78 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FC78 dq ?                    ; DATA XREF: sub_14E29A6A0+600↑r
+.data:000000015752FC78                                                                 ; sub_14E29A6A0+1578↑o
+.data:000000015752FC80 ?? ?? ?? ??             dword_15752FC80 dd ?                    ; DATA XREF: sub_14E29A6A0+5EB↑r
+.data:000000015752FC80                                                                 ; sub_14E29A6A0:loc_14E29BBF2↑o ...
+.data:000000015752FC84 ?? ?? ?? ??                             align 8
+.data:000000015752FC88 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FC88 dq ?                    ; DATA XREF: sub_14E280CC0:loc_14E280CEC↑r
+.data:000000015752FC88                                                                 ; sub_14E280CC0+61↑o
+.data:000000015752FC90 ?? ?? ?? ??             dword_15752FC90 dd ?                    ; DATA XREF: sub_14E280CC0+24↑r
+.data:000000015752FC90                                                                 ; sub_14E280CC0:loc_14E280CFF↑o ...
+.data:000000015752FC94 ?? ?? ?? ??                             align 8
+.data:000000015752FC98 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FC98 dq ?                    ; DATA XREF: sub_14E279F00:loc_14E279F40↑r
+.data:000000015752FC98                                                                 ; sub_14E279F00+A1↑o
+.data:000000015752FCA0 ?? ?? ?? ??             dword_15752FCA0 dd ?                    ; DATA XREF: sub_14E279F00+38↑r
+.data:000000015752FCA0                                                                 ; sub_14E279F00:loc_14E279F7F↑o ...
+.data:000000015752FCA4 ?? ?? ?? ??                             align 8
+.data:000000015752FCA8 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FCA8 dq ?                    ; DATA XREF: sub_14E28D470:loc_14E28D64E↑r
+.data:000000015752FCA8                                                                 ; sub_14E28D470+336↑o
+.data:000000015752FCB0 ?? ?? ?? ??             dword_15752FCB0 dd ?                    ; DATA XREF: sub_14E28D470+1D2↑r
+.data:000000015752FCB0                                                                 ; sub_14E28D470:loc_14E28D780↑o ...
+.data:000000015752FCB4 ?? ?? ?? ??                             align 8
+.data:000000015752FCB8 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FCB8 dq ?                    ; DATA XREF: sub_14E28CF50:loc_14E28D07A↑r
+.data:000000015752FCB8                                                                 ; sub_14E28CF50+1CF↑o
+.data:000000015752FCC0 ?? ?? ?? ??             dword_15752FCC0 dd ?                    ; DATA XREF: sub_14E28CF50+122↑r
+.data:000000015752FCC0                                                                 ; sub_14E28CF50:loc_14E28D0F9↑o ...
+.data:000000015752FCC4 ?? ?? ?? ??                             align 8
+.data:000000015752FCC8 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FCC8 dq ?                    ; DATA XREF: sub_14E28CD60:loc_14E28CE8A↑r
+.data:000000015752FCC8                                                                 ; sub_14E28CD60+1CF↑o
+.data:000000015752FCD0 ?? ?? ?? ??             dword_15752FCD0 dd ?                    ; DATA XREF: sub_14E28CD60+122↑r
+.data:000000015752FCD0                                                                 ; sub_14E28CD60:loc_14E28CF09↑o ...
+.data:000000015752FCD4 ?? ?? ?? ??                             align 8
+.data:000000015752FCD8 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FCD8 dq ?                    ; DATA XREF: sub_14E28D140:loc_14E28D312↑r
+.data:000000015752FCD8                                                                 ; sub_14E28D140+2B2↑o
+.data:000000015752FCE0 ?? ?? ?? ??             dword_15752FCE0 dd ?                    ; DATA XREF: sub_14E28D140+1C6↑r
+.data:000000015752FCE0                                                                 ; sub_14E28D140:loc_14E28D3CC↑o ...
+.data:000000015752FCE4 ?? ?? ?? ??                             align 8
+.data:000000015752FCE8 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FCE8 dq ?                    ; DATA XREF: sub_14E28CA30:loc_14E28CC02↑r
+.data:000000015752FCE8                                                                 ; sub_14E28CA30+2B2↑o
+.data:000000015752FCF0 ?? ?? ?? ??             dword_15752FCF0 dd ?                    ; DATA XREF: sub_14E28CA30+1C6↑r
+.data:000000015752FCF0                                                                 ; sub_14E28CA30:loc_14E28CCBC↑o ...
+.data:000000015752FCF4 ?? ?? ?? ??                             align 8
+.data:000000015752FCF8 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FCF8 dq ?                    ; DATA XREF: sub_14E279D90:loc_14E279DC9↑r
+.data:000000015752FCF8                                                                 ; sub_14E279D90+90↑o
+.data:000000015752FD00 ?? ?? ?? ??             dword_15752FD00 dd ?                    ; DATA XREF: sub_14E279D90+31↑r
+.data:000000015752FD00                                                                 ; sub_14E279D90:loc_14E279DFE↑o ...
+.data:000000015752FD04 ?? ?? ?? ??                             align 8
+.data:000000015752FD08 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FD08 dq ?                    ; DATA XREF: sub_14E28C700:loc_14E28C8C9↑r
+.data:000000015752FD08                                                                 ; sub_14E28C700+305↑o
+.data:000000015752FD10 ?? ?? ?? ??             dword_15752FD10 dd ?                    ; DATA XREF: sub_14E28C700+1BD↑r
+.data:000000015752FD10                                                                 ; sub_14E28C700:loc_14E28C9DF↑o ...
+.data:000000015752FD14 ?? ?? ?? ??                             align 8
+.data:000000015752FD18 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FD18 dq ?                    ; DATA XREF: sub_14E28D7D0:loc_14E28D889↑r
+.data:000000015752FD18                                                                 ; sub_14E28D7D0+1F6↑o
+.data:000000015752FD20 ?? ?? ?? ??             dword_15752FD20 dd ?                    ; DATA XREF: sub_14E28D7D0+AD↑r
+.data:000000015752FD20                                                                 ; sub_14E28D7D0:loc_14E28D9A0↑o ...
+.data:000000015752FD24 ?? ?? ?? ??                             align 8
+.data:000000015752FD28 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FD28 dq ?                    ; DATA XREF: sub_14E28D7D0:loc_14E28D850↑r
+.data:000000015752FD28                                                                 ; sub_14E28D7D0+1B3↑o
+.data:000000015752FD30 ?? ?? ?? ??             dword_15752FD30 dd ?                    ; DATA XREF: sub_14E28D7D0+74↑r
+.data:000000015752FD30                                                                 ; sub_14E28D7D0:loc_14E28D95D↑o ...
+.data:000000015752FD34 ?? ?? ?? ??                             align 8
+.data:000000015752FD38 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FD38 dq ?                    ; DATA XREF: sub_14E279E40:loc_14E279E80↑r
+.data:000000015752FD38                                                                 ; sub_14E279E40+A1↑o
+.data:000000015752FD40 ?? ?? ?? ??             dword_15752FD40 dd ?                    ; DATA XREF: sub_14E279E40+38↑r
+.data:000000015752FD40                                                                 ; sub_14E279E40:loc_14E279EBF↑o ...
+.data:000000015752FD44 ?? ?? ?? ??                             align 8
+.data:000000015752FD48 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FD48 dq ?                    ; DATA XREF: sub_14E28D470:loc_14E28D5B5↑r
+.data:000000015752FD48                                                                 ; sub_14E28D470+2F3↑o
+.data:000000015752FD50 ?? ?? ?? ??             dword_15752FD50 dd ?                    ; DATA XREF: sub_14E28D470+139↑r
+.data:000000015752FD50                                                                 ; sub_14E28D470:loc_14E28D73D↑o ...
+.data:000000015752FD54 ?? ?? ?? ??                             align 8
+.data:000000015752FD58 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FD58 dq ?                    ; DATA XREF: sub_14E28CF50:loc_14E28CFDE↑r
+.data:000000015752FD58                                                                 ; sub_14E28CF50+18C↑o
+.data:000000015752FD60 ?? ?? ?? ??             dword_15752FD60 dd ?                    ; DATA XREF: sub_14E28CF50+82↑r
+.data:000000015752FD60                                                                 ; sub_14E28CF50:loc_14E28D0B6↑o ...
+.data:000000015752FD64 ?? ?? ?? ??                             align 8
+.data:000000015752FD68 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FD68 dq ?                    ; DATA XREF: sub_14E28CD60:loc_14E28CDEE↑r
+.data:000000015752FD68                                                                 ; sub_14E28CD60+18C↑o
+.data:000000015752FD70 ?? ?? ?? ??             dword_15752FD70 dd ?                    ; DATA XREF: sub_14E28CD60+82↑r
+.data:000000015752FD70                                                                 ; sub_14E28CD60:loc_14E28CEC6↑o ...
+.data:000000015752FD74 ?? ?? ?? ??                             align 8
+.data:000000015752FD78 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FD78 dq ?                    ; DATA XREF: sub_14E28D140:loc_14E28D21B↑r
+.data:000000015752FD78                                                                 ; sub_14E28D140+2F5↑o ...
+.data:000000015752FD80 ?? ?? ?? ??             dword_15752FD80 dd ?                    ; DATA XREF: sub_14E28D140+CF↑r
+.data:000000015752FD80                                                                 ; sub_14E28D140:loc_14E28D40F↑o ...
+.data:000000015752FD84 ?? ?? ?? ??                             align 8
+.data:000000015752FD88 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FD88 dq ?                    ; DATA XREF: sub_14E28CA30:loc_14E28CB0B↑r
+.data:000000015752FD88                                                                 ; sub_14E28CA30+2F5↑o ...
+.data:000000015752FD90 ?? ?? ?? ??             dword_15752FD90 dd ?                    ; DATA XREF: sub_14E28CA30+CF↑r
+.data:000000015752FD90                                                                 ; sub_14E28CA30:loc_14E28CCFF↑o ...
+.data:000000015752FD94 ?? ?? ?? ??                             align 8
+.data:000000015752FD98 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FD98 dq ?                    ; DATA XREF: sub_14E279B60:loc_14E279B99↑r
+.data:000000015752FD98                                                                 ; sub_14E279B60+90↑o
+.data:000000015752FDA0 ?? ?? ?? ??             dword_15752FDA0 dd ?                    ; DATA XREF: sub_14E279B60+31↑r
+.data:000000015752FDA0                                                                 ; sub_14E279B60:loc_14E279BCE↑o ...
+.data:000000015752FDA4 ?? ?? ?? ??                             align 8
+.data:000000015752FDA8 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FDA8 dq ?                    ; DATA XREF: sub_14E28C700:loc_14E28C838↑r
+.data:000000015752FDA8                                                                 ; sub_14E28C700+2C2↑o
+.data:000000015752FDB0 ?? ?? ?? ??             dword_15752FDB0 dd ?                    ; DATA XREF: sub_14E28C700+12C↑r
+.data:000000015752FDB0                                                                 ; sub_14E28C700:loc_14E28C99C↑o ...
+.data:000000015752FDB4 ?? ?? ?? ??                             align 8
+.data:000000015752FDB8 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FDB8 dq ?                    ; DATA XREF: sub_14E2A3FA0:loc_14E2A40D3↑r
+.data:000000015752FDB8                                                                 ; sub_14E2A3FA0:loc_14E2A42D0↑r ...
+.data:000000015752FDC0 ?? ?? ?? ??             dword_15752FDC0 dd ?                    ; DATA XREF: sub_14E2A3FA0+127↑r
+.data:000000015752FDC0                                                                 ; sub_14E2A3FA0+324↑r ...
+.data:000000015752FDC4 ?? ?? ?? ??             dword_15752FDC4 dd ?                    ; DATA XREF: sub_14E2B5890+16F↑r
+.data:000000015752FDC4                                                                 ; sub_14E2B5890+177↑w
+.data:000000015752FDC8 ?? ?? ?? ??             dword_15752FDC8 dd ?                    ; DATA XREF: sub_14E2D23B0:loc_14E2D2469↑r
+.data:000000015752FDC8                                                                 ; sub_14E2D2600:loc_14E2D26B9↑r
+.data:000000015752FDCC ??                                      db    ? ;
+.data:000000015752FDCD ??                      byte_15752FDCD  db ?                    ; DATA XREF: sub_14E2E2440:loc_14E2E25AB↑r
+.data:000000015752FDCE ??                      byte_15752FDCE  db ?                    ; DATA XREF: sub_14E0F2460:loc_14E0F27A2↑r
+.data:000000015752FDCE                                                                 ; sub_14E14DC10+3D↑r ...
+.data:000000015752FDCF ??                      byte_15752FDCF  db ?                    ; DATA XREF: sub_14E2D6CA0+AB1↑r
+.data:000000015752FDD0 ?? ?? ?? ??             dword_15752FDD0 dd ?                    ; DATA XREF: sub_14E143440+D↑r
+.data:000000015752FDD0                                                                 ; sub_14E143440+156↑r ...
+.data:000000015752FDD4 ?? ?? ?? ?? ?? ?? ?? ??…                align 20h
+.data:000000015752FDE0 ?? ?? ?? ?? ?? ?? ?? ?? xmmword_15752FDE0 xmmword ?             ; DATA XREF: sub_14E2B1C90+E7↑r
+.data:000000015752FDE0 ?? ?? ?? ?? ?? ?? ?? ??                                         ; sub_14E2B8300+CF↑r ...
+.data:000000015752FDF0 ?? ?? ?? ?? ?? ?? ?? ?? xmmword_15752FDF0 xmmword ?             ; DATA XREF: sub_14E2B6F10+1AF↑r
+.data:000000015752FDF0 ?? ?? ?? ?? ?? ?? ?? ??                                         ; sub_14E2B89E0+4CF↑r ...
+.data:000000015752FE00 ?? ?? ?? ?? ?? ?? ?? ?? xmmword_15752FE00 xmmword ?             ; DATA XREF: sub_14E2B4490+85E↑r
+.data:000000015752FE00 ?? ?? ?? ?? ?? ?? ?? ??                                         ; sub_14E2B4490+8F5↑r ...
+.data:000000015752FE10 ?? ?? ?? ?? ?? ?? ?? ??…                align 20h
+.data:000000015752FE20 ?? ?? ?? ?? ?? ?? ?? ?? xmmword_15752FE20 xmmword ?             ; DATA XREF: sub_14E2B89E0+16D↑r
+.data:000000015752FE20 ?? ?? ?? ?? ?? ?? ?? ??                                         ; sub_14E2BA9F0+DA↑r ...
+.data:000000015752FE30 ??                      byte_15752FE30  db ?                    ; DATA XREF: sub_14E2D23B0+16↑r
+.data:000000015752FE30                                                                 ; sub_14E2D2600+16↑r ...
+.data:000000015752FE31 ?? ?? ??                                align 4
+.data:000000015752FE34 ??                      unk_15752FE34   db    ? ;               ; DATA XREF: sub_14E2D23B0+55↑o
+.data:000000015752FE34                                                                 ; sub_14E2D2600+55↑o ...
+.data:000000015752FE35 ??                                      db    ? ;
+.data:000000015752FE36 ??                                      db    ? ;
+.data:000000015752FE37 ??                                      db    ? ;
+.data:000000015752FE38 ??                                      db    ? ;
+.data:000000015752FE39 ??                                      db    ? ;
+.data:000000015752FE3A ??                                      db    ? ;
+.data:000000015752FE3B ??                                      db    ? ;
+.data:000000015752FE3C ?? ?? ?? ??             dword_15752FE3C dd ?                    ; DATA XREF: sub_14E2E2640+163↑w
+.data:000000015752FE3C                                                                 ; sub_14E2E2640+191↑w ...
+.data:000000015752FE40 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FE40 dq ?                    ; DATA XREF: sub_15054CA20+12↑w
+.data:000000015752FE48 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FE48 dq ?                    ; DATA XREF: sub_15054CA20+30↑r
+.data:000000015752FE50 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FE50 dq ?                    ; DATA XREF: sub_14E2C9540+E5↑r
+.data:000000015752FE50                                                                 ; sub_14E2CB280+D↑r
+.data:000000015752FE58 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FE58 dq ?                    ; DATA XREF: sub_15054C750+12↑w
+.data:000000015752FE60 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FE60 dq ?                    ; DATA XREF: sub_15054C750+30↑r
+.data:000000015752FE68 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FE68 dq ?                    ; DATA XREF: sub_14E2CAE10+D↑r
+.data:000000015752FE70 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FE70 dq ?                    ; DATA XREF: sub_15054CA70+12↑w
+.data:000000015752FE78 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FE78 dq ?                    ; DATA XREF: sub_15054CA70+30↑r
+.data:000000015752FE80 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FE80 dq ?                    ; DATA XREF: sub_14E2E5B60:loc_14E2E5BDA↑r
+.data:000000015752FE88 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FE88 dq ?                    ; DATA XREF: sub_15054C9D0+12↑w
+.data:000000015752FE90 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FE90 dq ?                    ; DATA XREF: sub_15054C9D0+30↑r
+.data:000000015752FE98 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FE98 dq ?                    ; DATA XREF: sub_14E2CB270↑r
+.data:000000015752FEA0 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FEA0 dq ?                    ; DATA XREF: sub_15054C840+12↑w
+.data:000000015752FEA8 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FEA8 dq ?                    ; DATA XREF: sub_15054C840+30↑r
+.data:000000015752FEB0 ??                                      db    ? ;
+.data:000000015752FEB1 ??                                      db    ? ;
+.data:000000015752FEB2 ??                                      db    ? ;
+.data:000000015752FEB3 ??                                      db    ? ;
+.data:000000015752FEB4 ??                                      db    ? ;
+.data:000000015752FEB5 ??                                      db    ? ;
+.data:000000015752FEB6 ??                                      db    ? ;
+.data:000000015752FEB7 ??                                      db    ? ;
+.data:000000015752FEB8 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FEB8 dq ?                    ; DATA XREF: sub_15054C570+12↑w
+.data:000000015752FEC0 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FEC0 dq ?                    ; DATA XREF: sub_15054C570+30↑r
+.data:000000015752FEC8 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FEC8 dq ?                    ; DATA XREF: sub_15054C390+12↑w
+.data:000000015752FED0 ?? ?? ?? ?? ?? ?? ?? ?? qword_15752FED0 dq ?                    ; DATA XREF: sub_15054C390+30↑r
+.data:000000015752FED8 ??                      unk_15752FED8   db    ? ;               ; DATA XREF: sub_14E2BD940+3A↑o
+.data:000000015752FED8                                                                 ; sub_14E2D23B0+186↑o ...
+.data:000000015752FED9 ??                                      db    ? ;
+.data:000000015752FEDA ??                                      db    ? ;
+.data:000000015752FEDB ??                                      db    ? ;
+.data:000000015752FEDC ??                                      db    ? ;
+.data:000000015752FEDD ??                                      db    ? ;
+.data:000000015752FEDE ??                                      db    ? ;
+.data:000000015752FEDF ??                                      db    ? ;
+.data:000000015752FEE0 ?? ?? ?? ??             dword_15752FEE0 dd ?                    ; DATA XREF: sub_14E2D23B0+1D0↑r
+.data:000000015752FEE0                                                                 ; sub_14E2D23B0+208↑w ...
+.data:000000015752FEE4 ?? ?? ?? ??             dword_15752FEE4 dd ?                    ; DATA XREF: sub_14E2D23B0+202↑r
+.data:000000015752FEE4                                                                 ; sub_14E2D2600+165↑r
+.data:000000015752FEE8 ??                      unk_15752FEE8   db    ? ;               ; DATA XREF: sub_14E2BD940+4E↑o
+.data:000000015752FEE8                                                                 ; sub_14E2D77B0+D4↑o ...
+.data:000000015752FEE9 ??                                      db    ? ;
+.data:000000015752FEEA ??                                      db    ? ;
+.data:000000015752FEEB ??                                      db    ? ;
+.data:000000015752FEEC ??                                      db    ? ;
+.data:000000015752FEED ??                                      db    ? ;
+.data:000000015752FEEE ??                                      db    ? ;
+.data:000000015752FEEF ??                                      db    ? ;
+.data:000000015752FEF0 ?? ?? ?? ??             dword_15752FEF0 dd ?                    ; DATA XREF: sub_14E2D77B0+E1↑r
+.data:000000015752FEF0                                                                 ; sub_14E2D77B0+119↑w ...
+.data:000000015752FEF4 ?? ?? ?? ??             dword_15752FEF4 dd ?                    ; DATA XREF: sub_14E2D77B0+113↑r
+.data:000000015752FEF8 ??                      unk_15752FEF8   db    ? ;               ; DATA XREF: sub_14E2BD940+25↑o
+.data:000000015752FEF8                                                                 ; sub_14E2BD940+5A↑o ...
+.data:000000015752FEF9 ??                                      db    ? ;
+
+
+```
+--- 
 สร้างเผื่อ มีจุดที่ ต้อง ใช้ เผื่อ   สำหรับ  .text:000000014D9038C0    
 ---
 ```asm
