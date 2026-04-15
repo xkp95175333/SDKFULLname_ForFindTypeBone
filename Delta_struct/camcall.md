@@ -525,6 +525,13 @@ float *__fastcall sub_143BA4650(float *a1)
   return a1 + 0x17748;
 }
 //Base Enc Cam
+
+__int64 __fastcall sub_1416334C0(__int64 a1, __int64 a2, float a3, float a4, float a5)
+{
+  sub_14C76CB80(a1, a2, a3, a4, a5);
+  return a1;
+}
+
 int *__fastcall sub_143BA47A0(__int64 a1, int *a2, __int64 *a3, __int64 a4, char a5)
 {
   int v5; // r8d
