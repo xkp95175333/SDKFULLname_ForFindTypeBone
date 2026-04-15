@@ -6,6 +6,13 @@ Address								Function						  Instruction
 .text:0000000143BA4664	sub_143BA4650	call    sub_143BAAA30; Call Procedure
 	.text:0000000143BA4664 E8 C7 63 00 00                          call    sub_143BAAA30   ; Call Procedure
 
+
+
+
+
+
+
+
 ```asm
 
 .text:0000000143BA4650                         sub_143BA4650   proc near               ; CODE XREF: sub_143BB0CC0+1C↓p
@@ -41,8 +48,279 @@ Address								Function						  Instruction
 			.text:0000000143BAAA38
 
 
+```
+---
+full Asm ArrayCam_call_follow
+---
+```c
+float *__fastcall sub_143BA4650(float *a1)
+{
+  __int64 v2; // r8
+  float v3; // [rsp+20h] [rbp-158h]
+  _QWORD *v4; // [rsp+28h] [rbp-150h]
+  __int64 v5; // [rsp+30h] [rbp-148h]
+  char v6[64]; // [rsp+40h] [rbp-138h] BYREF
+  char v7[248]; // [rsp+80h] [rbp-F8h] BYREF
 
-//full Asm ArrayCam
+  v3 = sub_143BAAA30(a1);
+  if ( v3 == a1[0x17744] )
+    return a1 + 0x17748;
+  v5 = (*(__int64 (__fastcall **)(float *))(*(_QWORD *)a1 + 0x6F0LL))(a1);
+  if ( v5 )
+  {
+    v4 = (_QWORD *)sub_14E7D2260(v5);
+    if ( v4 )
+    {
+      if ( v4[0xE] )
+      {
+        sub_140ADBF30(v7);
+        if ( (*(unsigned __int8 (__fastcall **)(_QWORD *, _QWORD, _QWORD, char *))(*v4 + 0x2B0LL))(
+               v4,
+               *(_QWORD *)(v4[0xE] + 0xA0LL),
+               0LL,
+               v7) )
+        {
+          sub_140AEE980(v7, v6);
+          LOBYTE(v2) = 1;
+          sub_14E33E2D0(a1 + 0x17748, v6, v2);
+          a1[0x17744] = v3;
+        }
+      }
+    }
+  }
+  return a1 + 0x17748;
+}
+
+
+unsigned __int64 __fastcall sub_14E7D2260(__int64 a1)
+{
+  __int64 v1; // rdi
+  unsigned __int64 v2; // rax
+  bool v3; // bp
+  __int64 v4; // rsi
+  unsigned __int64 v5; // rbx
+  __int64 v6; // rcx
+  __int64 v7; // rax
+  __int64 v8; // r8
+  __int64 v9; // rax
+  __int64 v10; // rdx
+  __int64 v11; // r8
+  __int64 v12; // rax
+  __int64 v13; // rax
+  __int64 v14; // rdx
+  __int64 v15; // rax
+  __int64 v16; // r8
+  unsigned __int64 v18; // [rsp+50h] [rbp+8h]
+  unsigned __int64 v19; // [rsp+58h] [rbp+10h] BYREF
+
+  v1 = *(_QWORD *)(a1 + 0x3E8) >> 0x3E;
+  v2 = *(_QWORD *)(a1 + 0x3E8);
+  v3 = (v2 & 0x4000000000000000LL) != 0;
+  v4 = HIWORD(v2) & 0x3FFF;
+  if ( !v2 )
+    goto LABEL_15;
+  v5 = v2 & 0xFFFFFFFFFFFFLL;
+  v6 = HIWORD(v2) & 0x3FFF;
+  v19 = v2 & 0xFFFFFFFFFFFFLL;
+  if ( (v2 & 0x8000000000000000uLL) == 0LL )
+    goto LABEL_12;
+  switch ( dword_15684A794 )
+  {
+    case 1:
+      sub_140A8D910(qword_1573D8080, &v19, 4LL, HIWORD(v2) & 0x3FFF);
+      goto LABEL_10;
+    case 2:
+      v7 = qword_1573D8088;
+      v8 = (unsigned int)v6;
+      break;
+    case 3:
+      v7 = *(&qword_1573D8090 + v6);
+      v8 = (unsigned int)v6;
+      break;
+    default:
+      goto LABEL_10;
+  }
+  (*(void (__fastcall **)(unsigned __int64 *, __int64, __int64, _QWORD))(v7 + 0x40))(&v19, 4LL, v8, *(_QWORD *)(v7 + 8));
+LABEL_10:
+  v5 = v19 & 0xFFFFFFFFFFFFLL;
+  if ( (v19 & 0x800000000000LL) != 0 )
+    v5 = v19 & 0xFFFFFFFFFFFFLL | 0xFFFF000000000000uLL;
+LABEL_12:
+  if ( !v5
+    || (v9 = sub_14EDD0B80(v6),
+        v10 = *(_QWORD *)(v5 + 8),
+        v11 = v9 + 0x30,
+        v12 = *(int *)(v9 + 0x38),
+        (int)v12 > *(_DWORD *)(v10 + 0x38))
+    || *(_QWORD *)(*(_QWORD *)(v10 + 0x30) + 8 * v12) != v11 )
+  {
+LABEL_15:
+    v5 = 0LL;
+  }
+  v13 = 0LL;
+  if ( v5 )
+  {
+    if ( v3 && byte_1573D801B )
+    {
+      v19 = v5;
+      switch ( dword_15684A794 )
+      {
+        case 1:
+          sub_140A9C980(qword_1573D8080, &v19, 4LL, (unsigned int)v4);
+          break;
+        case 2:
+          (*(void (__fastcall **)(unsigned __int64 *, __int64, _QWORD, _QWORD))(qword_1573D8088 + 0x38LL))(
+            &v19,
+            4LL,
+            (unsigned int)v4,
+            *(_QWORD *)(qword_1573D8088 + 8LL));
+          break;
+        case 3:
+          (*(void (__fastcall **)(unsigned __int64 *, __int64, _QWORD, _QWORD))(*(&qword_1573D8090 + v4) + 0x38LL))(
+            &v19,
+            4LL,
+            (unsigned int)v4,
+            *(_QWORD *)(*(&qword_1573D8090 + v4) + 8LL));
+          break;
+      }
+      v5 = v19;
+      v13 = 2LL;
+    }
+    v18 = v5 | (((unsigned int)v4 | ((v13 | v1 & 1) << 0xE)) << 0x30);
+  }
+  else
+  {
+    v18 = 0LL;
+  }
+  if ( !v18 )
+    return 0LL;
+  v14 = v18 & 0xFFFFFFFFFFFFLL;
+  v19 = v18 & 0xFFFFFFFFFFFFLL;
+  if ( (v18 & 0x8000000000000000uLL) == 0LL )
+    return v14;
+  switch ( dword_15684A794 )
+  {
+    case 1:
+      sub_140A8D910(qword_1573D8080, &v19, 4LL, HIWORD(v18) & 0x3FFF);
+      goto LABEL_38;
+    case 2:
+      v15 = qword_1573D8088;
+      v16 = HIWORD(v18) & 0x3FFF;
+      break;
+    case 3:
+      v15 = *(&qword_1573D8090 + (HIWORD(v18) & 0x3FFF));
+      v16 = HIWORD(v18) & 0x3FFF;
+      break;
+    default:
+      goto LABEL_38;
+  }
+  (*(void (__fastcall **)(unsigned __int64 *, __int64, __int64, _QWORD))(v15 + 0x40))(
+    &v19,
+    4LL,
+    v16,
+    *(_QWORD *)(v15 + 8));
+LABEL_38:
+  v14 = v19 & 0xFFFFFFFFFFFFLL;
+  if ( (v19 & 0x800000000000LL) != 0 )
+    return v19 & 0xFFFFFFFFFFFFLL | 0xFFFF000000000000uLL;
+  return v14;
+}
+
+```
+```asm
+
+.text:0000000143BA4650
+.text:0000000143BA4650                         ; =============== S U B R O U T I N E =======================================
+.text:0000000143BA4650
+.text:0000000143BA4650
+.text:0000000143BA4650                         sub_143BA4650   proc near               ; CODE XREF: sub_143BB0CC0+1C↓p
+.text:0000000143BA4650                                                                 ; sub_143BBEB20+18↓p ...
+.text:0000000143BA4650
+.text:0000000143BA4650                         var_158         = dword ptr -158h
+.text:0000000143BA4650                         var_150         = qword ptr -150h
+.text:0000000143BA4650                         var_148         = qword ptr -148h
+.text:0000000143BA4650                         var_140         = qword ptr -140h
+.text:0000000143BA4650                         var_138         = byte ptr -138h
+.text:0000000143BA4650                         var_F8          = byte ptr -0F8h
+.text:0000000143BA4650                         arg_0           = qword ptr  8
+.text:0000000143BA4650
+.text:0000000143BA4650 48 89 4C 24 08                          mov     [rsp+8], rcx
+.text:0000000143BA4655 48 81 EC 78 01 00 00                    sub     rsp, 178h       ; Integer Subtraction
+.text:0000000143BA465C 48 8B 8C 24 80 01 00 00                 mov     rcx, [rsp+180h]
+.text:0000000143BA4664 E8 C7 63 00 00                          call    sub_143BAAA30   ; Call Procedure
+.text:0000000143BA4669 F3 0F 11 44 24 20                       movss   dword ptr [rsp+20h], xmm0 ; Move Scalar Single-FP
+.text:0000000143BA466F 48 8B 84 24 80 01 00 00                 mov     rax, [rsp+180h]
+.text:0000000143BA4677 F3 0F 10 44 24 20                       movss   xmm0, dword ptr [rsp+20h] ; Move Scalar Single-FP
+.text:0000000143BA467D 0F 2E 80 10 DD 05 00                    ucomiss xmm0, dword ptr [rax+5DD10h] ; Scalar Unordered Single-FP Compare and Set EFLAGS
+.text:0000000143BA4684 75 13                                   jnz     short loc_143BA4699 ; Jump if Not Zero (ZF=0)
+.text:0000000143BA4686 48 8B 84 24 80 01 00 00                 mov     rax, [rsp+180h]
+.text:0000000143BA468E 48 05 20 DD 05 00                       add     rax, 5DD20h     ; Add
+.text:0000000143BA4694 E9 F6 00 00 00                          jmp     loc_143BA478F   ; Jump
+.text:0000000143BA4699                         ; ---------------------------------------------------------------------------
+.text:0000000143BA4699
+.text:0000000143BA4699                         loc_143BA4699:                          ; CODE XREF: sub_143BA4650+34↑j
+.text:0000000143BA4699 48 8B 84 24 80 01 00 00                 mov     rax, [rsp+180h]
+.text:0000000143BA46A1 48 8B 00                                mov     rax, [rax]
+.text:0000000143BA46A4 48 8B 8C 24 80 01 00 00                 mov     rcx, [rsp+180h]
+.text:0000000143BA46AC FF 90 F0 06 00 00                       call    qword ptr [rax+6F0h] ; Indirect Call Near Procedure
+.text:0000000143BA46B2 48 89 44 24 30                          mov     [rsp+30h], rax
+.text:0000000143BA46B7 48 83 7C 24 30 00                       cmp     qword ptr [rsp+30h], 0 ; Compare Two Operands
+.text:0000000143BA46BD 0F 84 BE 00 00 00                       jz      loc_143BA4781   ; Jump if Zero (ZF=1)
+.text:0000000143BA46C3 48 8B 4C 24 30                          mov     rcx, [rsp+30h]
+.text:0000000143BA46C8 E8 93 DB C2 0A                          call    sub_14E7D2260   ; Call Procedure
+.text:0000000143BA46CD 48 89 44 24 28                          mov     [rsp+28h], rax
+.text:0000000143BA46D2 48 83 7C 24 28 00                       cmp     qword ptr [rsp+28h], 0 ; Compare Two Operands
+.text:0000000143BA46D8 0F 84 A3 00 00 00                       jz      loc_143BA4781   ; Jump if Zero (ZF=1)
+.text:0000000143BA46DE 48 8B 44 24 28                          mov     rax, [rsp+28h]
+.text:0000000143BA46E3 48 83 78 70 00                          cmp     qword ptr [rax+70h], 0 ; Compare Two Operands
+.text:0000000143BA46E8 0F 84 93 00 00 00                       jz      loc_143BA4781   ; Jump if Zero (ZF=1)
+.text:0000000143BA46EE 48 8D 8C 24 80 00 00 00                 lea     rcx, [rsp+80h]  ; Load Effective Address
+.text:0000000143BA46F6 E8 35 78 F3 FC                          call    sub_140ADBF30   ; Call Procedure
+.text:0000000143BA46FB 90                                      nop                     ; No Operation
+.text:0000000143BA46FC 48 8B 44 24 28                          mov     rax, [rsp+28h]
+.text:0000000143BA4701 48 8B 40 70                             mov     rax, [rax+70h]
+.text:0000000143BA4705 48 8B 4C 24 28                          mov     rcx, [rsp+28h]
+.text:0000000143BA470A 48 8B 09                                mov     rcx, [rcx]
+.text:0000000143BA470D 48 89 4C 24 38                          mov     [rsp+38h], rcx
+.text:0000000143BA4712 4C 8D 8C 24 80 00 00 00                 lea     r9, [rsp+80h]   ; Load Effective Address
+.text:0000000143BA471A 45 33 C0                                xor     r8d, r8d        ; Logical Exclusive OR
+.text:0000000143BA471D 48 8B 90 A0 00 00 00                    mov     rdx, [rax+0A0h]
+.text:0000000143BA4724 48 8B 4C 24 28                          mov     rcx, [rsp+28h]
+.text:0000000143BA4729 48 8B 44 24 38                          mov     rax, [rsp+38h]
+.text:0000000143BA472E FF 90 B0 02 00 00                       call    qword ptr [rax+2B0h] ; Indirect Call Near Procedure
+.text:0000000143BA4734 0F B6 C0                                movzx   eax, al         ; Move with Zero-Extend
+.text:0000000143BA4737 85 C0                                   test    eax, eax        ; Logical Compare
+.text:0000000143BA4739 74 46                                   jz      short loc_143BA4781 ; Jump if Zero (ZF=1)
+.text:0000000143BA473B 48 8D 54 24 40                          lea     rdx, [rsp+40h]  ; Load Effective Address
+.text:0000000143BA4740 48 8D 8C 24 80 00 00 00                 lea     rcx, [rsp+80h]  ; Load Effective Address
+.text:0000000143BA4748 E8 33 A2 F4 FC                          call    sub_140AEE980   ; Call Procedure
+.text:0000000143BA474D 48 8B 84 24 80 01 00 00                 mov     rax, [rsp+180h]
+.text:0000000143BA4755 48 05 20 DD 05 00                       add     rax, 5DD20h     ; Add
+.text:0000000143BA475B 41 B0 01                                mov     r8b, 1
+.text:0000000143BA475E 48 8D 54 24 40                          lea     rdx, [rsp+40h]  ; Load Effective Address
+.text:0000000143BA4763 48 8B C8                                mov     rcx, rax
+.text:0000000143BA4766 E8 65 9B 79 0A                          call    sub_14E33E2D0   ; Call Procedure
+.text:0000000143BA476B 48 8B 84 24 80 01 00 00                 mov     rax, [rsp+180h]
+.text:0000000143BA4773 F3 0F 10 44 24 20                       movss   xmm0, dword ptr [rsp+20h] ; Move Scalar Single-FP
+.text:0000000143BA4779 F3 0F 11 80 10 DD 05 00                 movss   dword ptr [rax+5DD10h], xmm0 ; Move Scalar Single-FP
+.text:0000000143BA4781
+.text:0000000143BA4781                         loc_143BA4781:                          ; CODE XREF: sub_143BA4650+6D↑j
+.text:0000000143BA4781                                                                 ; sub_143BA4650+88↑j ...
+.text:0000000143BA4781 48 8B 84 24 80 01 00 00                 mov     rax, [rsp+180h]
+.text:0000000143BA4789 48 05 20 DD 05 00                       add     rax, 5DD20h     ; Add
+.text:0000000143BA478F
+.text:0000000143BA478F                         loc_143BA478F:                          ; CODE XREF: sub_143BA4650+44↑j
+.text:0000000143BA478F 48 81 C4 78 01 00 00                    add     rsp, 178h       ; Add
+.text:0000000143BA4796 C3                                      retn                    ; Return Near from Procedure
+.text:0000000143BA4796                         sub_143BA4650   endp
+.text:0000000143BA4796
+.text:0000000143BA4796                         ; ---------------------------------------------------------------------------
+.text:0000000143BA4797 CC CC CC CC CC CC CC CC…                align 20h
+.text:0000000143BA47A0
+
+//in call 
+
+
 .text:0000000143BA95D0
 .text:0000000143BA95D0                         ; =============== S U B R O U T I N E =======================================
 .text:0000000143BA95D0
