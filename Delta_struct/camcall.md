@@ -1,5 +1,367 @@
 
 ---
+Call fun Bone and C2w
+---
+```lua
+
+Address	Function	Instruction
+.text:000000014D9038E5	sub_14D9038C0	call    sub_14E2CB510; Call Procedure'
+
+
+
+
+
+
+	.text:000000014D9038E5 E8 26 7C 9C 00                          call    sub_14E2CB510   ; Call Procedure
+	.text:000000014D9038C0                         sub_14D9038C0   proc near
+	.text:000000014D9038C0
+	.text:000000014D9038C0                         var_48          = byte ptr -48h
+	.text:000000014D9038C0                         var_18          = qword ptr -18h
+	.text:000000014D9038C0
+	.text:000000014D9038C0 40 53                                   push    rbx
+	.text:000000014D9038C2 48 83 EC 60                             sub     rsp, 60h        ; Integer Subtraction
+	.text:000000014D9038C6 48 8B 05 73 1A 4C 09                    mov     rax, cs:off_156DC5340
+	.text:000000014D9038CD 48 33 C4                                xor     rax, rsp        ; Logical Exclusive OR
+	.text:000000014D9038D0 48 89 44 24 50                          mov     [rsp+50h], rax
+	.text:000000014D9038D5 48 8B D9                                mov     rbx, rcx
+	.text:000000014D9038D8 E8 83 5E 98 00                          call    sub_14E289760   ; Call Procedure
+	.text:000000014D9038DD 48 8D 54 24 20                          lea     rdx, [rsp+20h]  ; Load Effective Address
+	.text:000000014D9038E2 48 8B CB                                mov     rcx, rbx
+	.text:000000014D9038E5 E8 26 7C 9C 00                          call    sub_14E2CB510   ; Call Procedure
+	.text:000000014D9038EA 48 8B CB                                mov     rcx, rbx
+	.text:000000014D9038ED 0F 10 00                                movups  xmm0, xmmword ptr [rax] ; Move Unaligned Four Packed Single-FP
+	.text:000000014D9038F0 0F 11 83 D0 05 00 00                    movups  xmmword ptr [rbx+5D0h], xmm0 ; Move Unaligned Four Packed Single-FP
+	.text:000000014D9038F7 0F 10 48 10                             movups  xmm1, xmmword ptr [rax+10h] ; Move Unaligned Four Packed Single-FP
+	.text:000000014D9038FB 0F 11 8B E0 05 00 00                    movups  xmmword ptr [rbx+5E0h], xmm1 ; Move Unaligned Four Packed Single-FP
+	.text:000000014D903902 0F 10 40 20                             movups  xmm0, xmmword ptr [rax+20h] ; Move Unaligned Four Packed Single-FP
+	.text:000000014D903906 0F 11 83 F0 05 00 00                    movups  xmmword ptr [rbx+5F0h], xmm0 ; Move Unaligned Four Packed Single-FP
+	.text:000000014D90390D E8 4E 85 20 F3                          call    sub_140B0BE60   ; Call Procedure
+	.text:000000014D903912 0F 10 40 20                             movups  xmm0, xmmword ptr [rax+20h] ; Move Unaligned Four Packed Single-FP
+	.text:000000014D903916 0F 28 C8                                movaps  xmm1, xmm0      ; Move Aligned Four Packed Single-FP
+	.text:000000014D903919 0F 28 D0                                movaps  xmm2, xmm0      ; Move Aligned Four Packed Single-FP
+	.text:000000014D90391C 0F C6 D0 AA                             shufps  xmm2, xmm0, 0AAh ; Shuffle Single-FP
+	.text:000000014D903920 0F C6 C8 55                             shufps  xmm1, xmm0, 55h ; 'U' ; Shuffle Single-FP
+	.text:000000014D903924 0F 14 C1                                unpcklps xmm0, xmm1     ; Unpack Low Packed Single-FP Data
+	.text:000000014D903927 F2 0F 11 83 00 06 00 00                 movsd   qword ptr [rbx+600h], xmm0 ; Move Scalar Double-Precision Floating-Point Values
+	.text:000000014D90392F F3 0F 11 93 08 06 00 00                 movss   dword ptr [rbx+608h], xmm2 ; Move Scalar Single-FP
+	.text:000000014D903937 48 8B 4C 24 50                          mov     rcx, [rsp+50h]
+	.text:000000014D90393C 48 33 CC                                xor     rcx, rsp        ; StackCookie
+	.text:000000014D90393F E8 1C C5 95 02                          call    __security_check_cookie ; Call Procedure
+	.text:000000014D903944 48 83 C4 60                             add     rsp, 60h        ; Add
+	.text:000000014D903948 5B                                      pop     rbx
+	.text:000000014D903949 C3                                      retn                    ; Return Near from Procedure
+	.text:000000014D903949                         sub_14D9038C0   endp
+	
+	//follow   call    sub_14E2CB510
+	
+	
+	.text:000000014E2CB510                         ; __int64 __fastcall sub_14E2CB510(_QWORD, _QWORD)
+.text:000000014E2CB510                         sub_14E2CB510   proc near               ; CODE XREF: .text:0000000141CEB251↑p
+.text:000000014E2CB510                                                                 ; sub_141D52270+2B28↑p ...
+.text:000000014E2CB510
+.text:000000014E2CB510                         var_48          = qword ptr -48h
+.text:000000014E2CB510                         var_3C          = qword ptr -3Ch
+.text:000000014E2CB510                         var_28          = byte ptr -28h
+.text:000000014E2CB510                         var_18          = xmmword ptr -18h
+.text:000000014E2CB510                         arg_0           = qword ptr  8
+.text:000000014E2CB510                         arg_8           = qword ptr  10h
+.text:000000014E2CB510
+.text:000000014E2CB510 48 89 5C 24 08                          mov     [rsp+8], rbx
+.text:000000014E2CB515 48 89 74 24 10                          mov     [rsp+10h], rsi
+.text:000000014E2CB51A 57                                      push    rdi
+.text:000000014E2CB51B 48 83 EC 60                             sub     rsp, 60h        ; Integer Subtraction
+.text:000000014E2CB51F F2 0F 10 81 84 01 00 00                 movsd   xmm0, qword ptr [rcx+184h] ; Move Scalar Double-Precision Floating-Point Values
+.text:000000014E2CB527 48 8B D9                                mov     rbx, rcx
+.text:000000014E2CB52A 8B B1 8C 01 00 00                       mov     esi, [rcx+18Ch]
+.text:000000014E2CB530 48 8B FA                                mov     rdi, rdx
+.text:000000014E2CB533 F2 0F 11 44 24 20                       movsd   qword ptr [rsp+20h], xmm0 ; Move Scalar Double-Precision Floating-Point Values
+.text:000000014E2CB539 F2 0F 10 81 78 01 00 00                 movsd   xmm0, qword ptr [rcx+178h] ; Move Scalar Double-Precision Floating-Point Values
+.text:000000014E2CB541 48 81 C1 00 02 00 00                    add     rcx, 200h       ; Add
+.text:000000014E2CB548 0F 29 74 24 50                          movaps  xmmword ptr [rsp+50h], xmm6 ; Move Aligned Four Packed Single-FP
+.text:000000014E2CB54D F2 0F 11 44 24 2C                       movsd   qword ptr [rsp+2Ch], xmm0 ; Move Scalar Double-Precision Floating-Point Values
+.text:000000014E2CB553 0F 2E 01                                ucomiss xmm0, dword ptr [rcx] ; Scalar Unordered Single-FP Compare and Set EFLAGS
+.text:000000014E2CB556 75 1E                                   jnz     short loc_14E2CB576 ; Jump if Not Zero (ZF=0)
+.text:000000014E2CB558 F3 0F 10 44 24 30                       movss   xmm0, dword ptr [rsp+30h] ; Move Scalar Single-FP
+.text:000000014E2CB55E 0F 2E 41 04                             ucomiss xmm0, dword ptr [rcx+4] ; Scalar Unordered Single-FP Compare and Set EFLAGS
+.text:000000014E2CB562 75 12                                   jnz     short loc_14E2CB576 ; Jump if Not Zero (ZF=0)
+.text:000000014E2CB564 F3 0F 10 83 80 01 00 00                 movss   xmm0, dword ptr [rbx+180h] ; Move Scalar Single-FP
+.text:000000014E2CB56C 0F 2E 41 08                             ucomiss xmm0, dword ptr [rcx+8] ; Scalar Unordered Single-FP Compare and Set EFLAGS
+.text:000000014E2CB570 0F 84 C5 00 00 00                       jz      loc_14E2CB63B   ; Jump if Zero (ZF=1)
+.text:000000014E2CB576
+.text:000000014E2CB576                         loc_14E2CB576:                          ; CODE XREF: sub_14E2CB510+46↑j
+.text:000000014E2CB576                                                                 ; sub_14E2CB510+52↑j
+.text:000000014E2CB576 F2 0F 10 9B 78 01 00 00                 movsd   xmm3, qword ptr [rbx+178h] ; Move Scalar Double-Precision Floating-Point Values
+.text:000000014E2CB57E 48 8D 54 24 40                          lea     rdx, [rsp+40h]  ; Load Effective Address
+.text:000000014E2CB583 0F 28 35 16 4B 26 09                    movaps  xmm6, cs:xmmword_1575300A0 ; Move Aligned Four Packed Single-FP
+.text:000000014E2CB58A 0F 28 CB                                movaps  xmm1, xmm3      ; Move Aligned Four Packed Single-FP
+.text:000000014E2CB58D F3 0F 10 83 80 01 00 00                 movss   xmm0, dword ptr [rbx+180h] ; Move Scalar Single-FP
+.text:000000014E2CB595 0F 28 EB                                movaps  xmm5, xmm3      ; Move Aligned Four Packed Single-FP
+.text:000000014E2CB598 0F 28 25 11 4B 26 09                    movaps  xmm4, cs:xmmword_1575300B0 ; Move Aligned Four Packed Single-FP
+.text:000000014E2CB59F 0F C6 C9 55                             shufps  xmm1, xmm1, 55h ; 'U' ; Shuffle Single-FP
+.text:000000014E2CB5A3 0F 14 E9                                unpcklps xmm5, xmm1     ; Unpack Low Packed Single-FP Data
+.text:000000014E2CB5A6 0F 16 E8                                movlhps xmm5, xmm0      ; Move Low to High Packed Single-FP
+.text:000000014E2CB5A9 F2 0F 11 5C 24 2C                       movsd   qword ptr [rsp+2Ch], xmm3 ; Move Scalar Double-Precision Floating-Point Values
+.text:000000014E2CB5AF 0F 28 D5                                movaps  xmm2, xmm5      ; Move Aligned Four Packed Single-FP
+.text:000000014E2CB5B2 0F 5E D6                                divps   xmm2, xmm6      ; Packed Single-FP Divide
+.text:000000014E2CB5B5 F3 0F 5B C2                             cvttps2dq xmm0, xmm2    ; Convert With Truncation Packed Single-Precision Floating-Point Values to Packed Doubleword Integers
+.text:000000014E2CB5B9 0F 28 CA                                movaps  xmm1, xmm2      ; Move Aligned Four Packed Single-FP
+.text:000000014E2CB5BC 0F 54 0D 1D 48 26 09                    andps   xmm1, cs:xmmword_15752FDE0 ; Bitwise Logical And for Single-FP
+.text:000000014E2CB5C3 0F 5B D8                                cvtdq2ps xmm3, xmm0     ; Convert Packed Doubleword Integers to Packed Double-Precision Floating-Point Values
+.text:000000014E2CB5C6 0F C2 E1 02                             cmpleps xmm4, xmm1      ; Packed Single-FP Compare LE
+.text:000000014E2CB5CA 0F 28 C3                                movaps  xmm0, xmm3      ; Move Aligned Four Packed Single-FP
+.text:000000014E2CB5CD 0F 28 CE                                movaps  xmm1, xmm6      ; Move Aligned Four Packed Single-FP
+.text:000000014E2CB5D0 0F 57 C2                                xorps   xmm0, xmm2      ; Bitwise Logical XOR for Single-FP Data
+.text:000000014E2CB5D3 0F 54 E0                                andps   xmm4, xmm0      ; Bitwise Logical And for Single-FP
+.text:000000014E2CB5D6 0F 57 C0                                xorps   xmm0, xmm0      ; Bitwise Logical XOR for Single-FP Data
+.text:000000014E2CB5D9 0F 57 E3                                xorps   xmm4, xmm3      ; Bitwise Logical XOR for Single-FP Data
+.text:000000014E2CB5DC 0F 59 E6                                mulps   xmm4, xmm6      ; Packed Single-FP Multiply
+.text:000000014E2CB5DF 0F 5C EC                                subps   xmm5, xmm4      ; Packed Single-FP Subtract
+.text:000000014E2CB5E2 0F C2 C5 02                             cmpleps xmm0, xmm5      ; Packed Single-FP Compare LE
+.text:000000014E2CB5E6 0F 58 CD                                addps   xmm1, xmm5      ; Packed Single-FP Add
+.text:000000014E2CB5E9 0F 28 D1                                movaps  xmm2, xmm1      ; Move Aligned Four Packed Single-FP
+.text:000000014E2CB5EC 0F 57 D5                                xorps   xmm2, xmm5      ; Bitwise Logical XOR for Single-FP Data
+.text:000000014E2CB5EF 0F 54 D0                                andps   xmm2, xmm0      ; Bitwise Logical And for Single-FP
+.text:000000014E2CB5F2 0F 28 05 97 4A 26 09                    movaps  xmm0, cs:xmmword_157530090 ; Move Aligned Four Packed Single-FP
+.text:000000014E2CB5F9 0F 57 D1                                xorps   xmm2, xmm1      ; Bitwise Logical XOR for Single-FP Data
+.text:000000014E2CB5FC 0F C2 C2 01                             cmpltps xmm0, xmm2      ; Packed Single-FP Compare LT
+.text:000000014E2CB600 0F 28 DA                                movaps  xmm3, xmm2      ; Move Aligned Four Packed Single-FP
+.text:000000014E2CB603 0F 5C DE                                subps   xmm3, xmm6      ; Packed Single-FP Subtract
+.text:000000014E2CB606 0F 57 DA                                xorps   xmm3, xmm2      ; Bitwise Logical XOR for Single-FP Data
+.text:000000014E2CB609 0F 54 D8                                andps   xmm3, xmm0      ; Bitwise Logical And for Single-FP
+.text:000000014E2CB60C 0F 57 DA                                xorps   xmm3, xmm2      ; Bitwise Logical XOR for Single-FP Data
+.text:000000014E2CB60F 0F 28 CB                                movaps  xmm1, xmm3      ; Move Aligned Four Packed Single-FP
+.text:000000014E2CB612 0F 28 C3                                movaps  xmm0, xmm3      ; Move Aligned Four Packed Single-FP
+.text:000000014E2CB615 0F C6 CB 55                             shufps  xmm1, xmm3, 55h ; 'U' ; Shuffle Single-FP
+.text:000000014E2CB619 0F 28 D3                                movaps  xmm2, xmm3      ; Move Aligned Four Packed Single-FP
+.text:000000014E2CB61C 0F 14 C1                                unpcklps xmm0, xmm1     ; Unpack Low Packed Single-FP Data
+.text:000000014E2CB61F 0F C6 D3 AA                             shufps  xmm2, xmm3, 0AAh ; Shuffle Single-FP
+.text:000000014E2CB623 F2 0F 11 01                             movsd   qword ptr [rcx], xmm0 ; Move Scalar Double-Precision Floating-Point Values
+.text:000000014E2CB627 F3 0F 11 51 08                          movss   dword ptr [rcx+8], xmm2 ; Move Scalar Single-FP
+.text:000000014E2CB62C E8 9F 81 56 FE                          call    sub_14C8337D0   ; Call Procedure
+.text:000000014E2CB631 0F 10 00                                movups  xmm0, xmmword ptr [rax] ; Move Unaligned Four Packed Single-FP
+.text:000000014E2CB634 0F 11 83 F0 01 00 00                    movups  xmmword ptr [rbx+1F0h], xmm0 ; Move Unaligned Four Packed Single-FP
+.text:000000014E2CB63B
+.text:000000014E2CB63B                         loc_14E2CB63B:                          ; CODE XREF: sub_14E2CB510+60↑j
+.text:000000014E2CB63B 0F 10 B3 F0 01 00 00                    movups  xmm6, xmmword ptr [rbx+1F0h] ; Move Unaligned Four Packed Single-FP
+.text:000000014E2CB642 48 8D 54 24 2C                          lea     rdx, [rsp+2Ch]  ; Load Effective Address
+.text:000000014E2CB647 48 8B CB                                mov     rcx, rbx
+.text:000000014E2CB64A E8 51 5F BF F2                          call    sub_140EC15A0   ; Call Procedure
+.text:000000014E2CB64F 48 8B 5C 24 70                          mov     rbx, [rsp+70h]
+.text:000000014E2CB654 66 0F 6E C6                             movd    xmm0, esi       ; Move 32 bits
+.text:000000014E2CB658 48 8B 74 24 78                          mov     rsi, [rsp+78h]
+.text:000000014E2CB65D F3 0F 10 50 08                          movss   xmm2, dword ptr [rax+8] ; Move Scalar Single-FP
+.text:000000014E2CB662 F2 0F 10 18                             movsd   xmm3, qword ptr [rax] ; Move Scalar Double-Precision Floating-Point Values
+.text:000000014E2CB666 48 8B C7                                mov     rax, rdi
+.text:000000014E2CB669 0F 16 DA                                movlhps xmm3, xmm2      ; Move Low to High Packed Single-FP
+.text:000000014E2CB66C 0F 11 5F 10                             movups  xmmword ptr [rdi+10h], xmm3 ; Move Unaligned Four Packed Single-FP
+.text:000000014E2CB670 F2 0F 10 5C 24 20                       movsd   xmm3, qword ptr [rsp+20h] ; Move Scalar Double-Precision Floating-Point Values
+.text:000000014E2CB676 0F 16 D8                                movlhps xmm3, xmm0      ; Move Low to High Packed Single-FP
+.text:000000014E2CB679 0F 11 37                                movups  xmmword ptr [rdi], xmm6 ; Move Unaligned Four Packed Single-FP
+.text:000000014E2CB67C 0F 28 74 24 50                          movaps  xmm6, xmmword ptr [rsp+50h] ; Move Aligned Four Packed Single-FP
+.text:000000014E2CB681 0F 11 5F 20                             movups  xmmword ptr [rdi+20h], xmm3 ; Move Unaligned Four Packed Single-FP
+.text:000000014E2CB685 48 83 C4 60                             add     rsp, 60h        ; Add
+.text:000000014E2CB689 5F                                      pop     rdi
+.text:000000014E2CB68A C3                                      retn                    ; Return Near from Procedure
+.text:000000014E2CB68A                         sub_14E2CB510   endp
+.text:000000014E2CB68A
+.text:000000014E2CB68A                         ; ---------------------------------------------------------------------------
+.text:000000014E2CB68B CC CC CC CC CC                          align 10h
+
+
+//Follow  call    sub_14E289760
+
+.text:000000014E289760
+.text:000000014E289760                         ; __int64 sub_14E289760(void)
+.text:000000014E289760                         sub_14E289760   proc near               ; CODE XREF: sub_142A15100+9↑p
+.text:000000014E289760                                                                 ; sub_145E8EC00+A3↑p ...
+.text:000000014E289760 40 53                                   push    rbx
+.text:000000014E289762 48 83 EC 20                             sub     rsp, 20h        ; Integer Subtraction
+.text:000000014E289766 48 8B D9                                mov     rbx, rcx
+.text:000000014E289769 F0 FF 05 88 60 2A 09                    lock inc cs:dword_15752F7F8 ; Increment by 1
+.text:000000014E289770 0F 57 C9                                xorps   xmm1, xmm1      ; Bitwise Logical XOR for Single-FP Data
+.text:000000014E289773 0F 2E 89 60 02 00 00                    ucomiss xmm1, dword ptr [rcx+260h] ; Scalar Unordered Single-FP Compare and Set EFLAGS
+.text:000000014E28977A 75 2B                                   jnz     short loc_14E2897A7 ; Jump if Not Zero (ZF=0)
+.text:000000014E28977C F3 0F 10 81 5C 02 00 00                 movss   xmm0, dword ptr [rcx+25Ch] ; Move Scalar Single-FP
+.text:000000014E289784 0F 2F C1                                comiss  xmm0, xmm1      ; Scalar Ordered Single-FP Compare and Set EFLAGS
+.text:000000014E289787 76 1E                                   jbe     short loc_14E2897A7 ; Jump if Below or Equal (CF=1 | ZF=1)
+.text:000000014E289789 F6 81 68 02 00 00 40                    test    byte ptr [rcx+268h], 40h ; Logical Compare
+.text:000000014E289790 75 0A                                   jnz     short loc_14E28979C ; Jump if Not Zero (ZF=0)
+.text:000000014E289792 48 83 B9 80 04 00 00 00                 cmp     qword ptr [rcx+480h], 0 ; Compare Two Operands
+.text:000000014E28979A 74 03                                   jz      short loc_14E28979F ; Jump if Zero (ZF=1)
+.text:000000014E28979C
+.text:000000014E28979C                         loc_14E28979C:                          ; CODE XREF: sub_14E289760+30↑j
+.text:000000014E28979C 0F 57 C0                                xorps   xmm0, xmm0      ; Bitwise Logical XOR for Single-FP Data
+.text:000000014E28979F
+.text:000000014E28979F                         loc_14E28979F:                          ; CODE XREF: sub_14E289760+3A↑j
+.text:000000014E28979F F3 0F 11 81 60 02 00 00                 movss   dword ptr [rcx+260h], xmm0 ; Move Scalar Single-FP
+.text:000000014E2897A7
+.text:000000014E2897A7                         loc_14E2897A7:                          ; CODE XREF: sub_14E289760+1A↑j
+.text:000000014E2897A7                                                                 ; sub_14E289760+27↑j
+.text:000000014E2897A7 E8 24 95 F7 FF                          call    sub_14E202CD0   ; Call Procedure
+.text:000000014E2897AC 48 8B 03                                mov     rax, [rbx]
+.text:000000014E2897AF 48 8B CB                                mov     rcx, rbx
+.text:000000014E2897B2 FF 90 D8 04 00 00                       call    qword ptr [rax+4D8h] ; Indirect Call Near Procedure
+.text:000000014E2897B8 48 8B CB                                mov     rcx, rbx
+.text:000000014E2897BB E8 10 75 05 00                          call    sub_14E2E0CD0   ; Call Procedure
+.text:000000014E2897C0 84 C0                                   test    al, al          ; Logical Compare
+.text:000000014E2897C2 74 38                                   jz      short loc_14E2897FC ; Jump if Zero (ZF=1)
+.text:000000014E2897C4 48 8B CB                                mov     rcx, rbx
+.text:000000014E2897C7 E8 D4 75 05 00                          call    sub_14E2E0DA0   ; Call Procedure
+.text:000000014E2897CC 84 C0                                   test    al, al          ; Logical Compare
+.text:000000014E2897CE 75 09                                   jnz     short loc_14E2897D9 ; Jump if Not Zero (ZF=0)
+.text:000000014E2897D0 F6 83 94 02 00 00 20                    test    byte ptr [rbx+294h], 20h ; Logical Compare
+.text:000000014E2897D7 74 23                                   jz      short loc_14E2897FC ; Jump if Zero (ZF=1)
+.text:000000014E2897D9
+.text:000000014E2897D9                         loc_14E2897D9:                          ; CODE XREF: sub_14E289760+6E↑j
+.text:000000014E2897D9 48 8B 83 F0 00 00 00                    mov     rax, [rbx+0F0h]
+.text:000000014E2897E0 48 85 C0                                test    rax, rax        ; Logical Compare
+.text:000000014E2897E3 75 08                                   jnz     short loc_14E2897ED ; Jump if Not Zero (ZF=0)
+.text:000000014E2897E5 48 8B CB                                mov     rcx, rbx
+.text:000000014E2897E8 E8 03 13 F8 FF                          call    sub_14E20AAF0   ; Call Procedure
+.text:000000014E2897ED
+.text:000000014E2897ED                         loc_14E2897ED:                          ; CODE XREF: sub_14E289760+83↑j
+.text:000000014E2897ED 48 8B 88 B8 01 00 00                    mov     rcx, [rax+1B8h]
+.text:000000014E2897F4 48 8B D3                                mov     rdx, rbx
+.text:000000014E2897F7 48 8B 01                                mov     rax, [rcx]
+.text:000000014E2897FA FF 10                                   call    qword ptr [rax] ; Indirect Call Near Procedure
+.text:000000014E2897FC
+.text:000000014E2897FC                         loc_14E2897FC:                          ; CODE XREF: sub_14E289760+62↑j
+.text:000000014E2897FC                                                                 ; sub_14E289760+77↑j
+.text:000000014E2897FC 0F B6 83 69 02 00 00                    movzx   eax, byte ptr [rbx+269h] ; Move with Zero-Extend
+.text:000000014E289803 A8 04                                   test    al, 4           ; Logical Compare
+.text:000000014E289805 75 51                                   jnz     short loc_14E289858 ; Jump if Not Zero (ZF=0)
+.text:000000014E289807 80 BB 9F 01 00 00 00                    cmp     byte ptr [rbx+19Fh], 0 ; Compare Two Operands
+.text:000000014E28980E 75 2C                                   jnz     short loc_14E28983C ; Jump if Not Zero (ZF=0)
+.text:000000014E289810 A8 02                                   test    al, 2           ; Logical Compare
+.text:000000014E289812 75 28                                   jnz     short loc_14E28983C ; Jump if Not Zero (ZF=0)
+.text:000000014E289814 80 BB 68 02 00 00 00                    cmp     byte ptr [rbx+268h], 0 ; Compare Two Operands
+.text:000000014E28981B 7C 3B                                   jl      short loc_14E289858 ; Jump if Less (SF!=OF)
+.text:000000014E28981D 48 8B 8B E8 00 00 00                    mov     rcx, [rbx+0E8h]
+.text:000000014E289824 48 85 C9                                test    rcx, rcx        ; Logical Compare
+.text:000000014E289827 74 2F                                   jz      short loc_14E289858 ; Jump if Zero (ZF=1)
+.text:000000014E289829 E8 E2 EF DE FF                          call    sub_14E078810   ; Call Procedure
+.text:000000014E28982E 48 85 C0                                test    rax, rax        ; Logical Compare
+.text:000000014E289831 74 25                                   jz      short loc_14E289858 ; Jump if Zero (ZF=1)
+.text:000000014E289833 F6 80 E4 01 00 00 10                    test    byte ptr [rax+1E4h], 10h ; Logical Compare
+.text:000000014E28983A 74 1C                                   jz      short loc_14E289858 ; Jump if Zero (ZF=1)
+.text:000000014E28983C
+.text:000000014E28983C                         loc_14E28983C:                          ; CODE XREF: sub_14E289760+AE↑j
+.text:000000014E28983C                                                                 ; sub_14E289760+B2↑j
+.text:000000014E28983C E8 1F 4C 0B 00                          call    sub_14E33E460   ; Call Procedure
+.text:000000014E289841 48 85 C0                                test    rax, rax        ; Logical Compare
+.text:000000014E289844 74 12                                   jz      short loc_14E289858 ; Jump if Zero (ZF=1)
+.text:000000014E289846 4C 8B 00                                mov     r8, [rax]
+.text:000000014E289849 48 8B D3                                mov     rdx, rbx
+.text:000000014E28984C 48 8B C8                                mov     rcx, rax
+.text:000000014E28984F 48 83 C4 20                             add     rsp, 20h        ; Add
+.text:000000014E289853 5B                                      pop     rbx
+.text:000000014E289854 49 FF 60 78                             jmp     qword ptr [r8+78h] ; Indirect Near Jump
+.text:000000014E289858                         ; ---------------------------------------------------------------------------
+.text:000000014E289858
+.text:000000014E289858                         loc_14E289858:                          ; CODE XREF: sub_14E289760+A5↑j
+.text:000000014E289858                                                                 ; sub_14E289760+BB↑j ...
+.text:000000014E289858 48 83 C4 20                             add     rsp, 20h        ; Add
+.text:000000014E28985C 5B                                      pop     rbx
+.text:000000014E28985D C3                                      retn                    ; Return Near from Procedure
+.text:000000014E28985D                         sub_14E289760   endp
+.text:000000014E28985D
+.text:000000014E28985D                         ; ---------------------------------------------------------------------------
+.text:000000014E28985E CC CC                                   align 20h
+.text:000000014E289860
+
+// Follow  call    sub_140B0BE60 
+
+
+text:0000000140B0BE60
+.text:0000000140B0BE60
+.text:0000000140B0BE60                         ; __int64 __fastcall sub_140B0BE60(_QWORD)
+.text:0000000140B0BE60                         sub_140B0BE60   proc near               ; CODE XREF: sub_140AE7640+20F↑p
+.text:0000000140B0BE60                                                                 ; sub_140AE7640+6D0↑p ...
+.text:0000000140B0BE60
+.text:0000000140B0BE60                         arg_0           = dword ptr  8
+.text:0000000140B0BE60
+.text:0000000140B0BE60 C7 44 24 08 00 00 00 00                 mov     dword ptr [rsp+8], 0
+.text:0000000140B0BE68 8B 44 24 08                             mov     eax, [rsp+8]
+.text:0000000140B0BE6C FF C0                                   inc     eax             ; Increment by 1
+.text:0000000140B0BE6E 89 44 24 08                             mov     [rsp+8], eax
+.text:0000000140B0BE72 8B 44 24 08                             mov     eax, [rsp+8]
+.text:0000000140B0BE76 FF C8                                   dec     eax             ; Decrement by 1
+.text:0000000140B0BE78 89 44 24 08                             mov     [rsp+8], eax
+.text:0000000140B0BE7C 48 8D 81 10 02 00 00                    lea     rax, [rcx+210h] ; Load Effective Address
+.text:0000000140B0BE83 C3                                      retn                    ; Return Near from Procedure
+.text:0000000140B0BE83                         sub_140B0BE60   endp
+.text:0000000140B0BE83
+.text:0000000140B0BE83                         ; ---------------------------------------------------------------------------
+.text:0000000140B0BE84 CC CC CC CC CC CC CC CC…                align 10h
+.text:0000000140B0BE90
+
+
+//Go to .text:000000014D9038C6 48 8B 05 73 1A 4C 09                    mov     rax, cs:off_156DC5340
+
+.data:0000000156DC5340 8C 40 4C 55 01 00 00 00 off_156DC5340   dq offset unk_1554C408C ; DATA XREF: sub_1400CF1A0+15↑r
+.data:0000000156DC5340                                                                 ; sub_1400CF2B0+12↑r ...
+
+asm start fun 
+
+.data:0000000156DC5308 01 00 00 00             dword_156DC5308 dd 1                    ; DATA XREF: sub_15025FC08+16↑r
+.data:0000000156DC5308                                                                 ; sub_15025FC08+2B↑w ...
+.data:0000000156DC530C 00 00 00 00                             align 10h
+.data:0000000156DC5310 B4 EE 51 55 01 00 00 00                 dq offset unk_15551EEB4
+.data:0000000156DC5318 BC EE 51 55 01 00 00 00                 dq offset unk_15551EEBC
+.data:0000000156DC5320 C0 EE 51 55 01 00 00 00                 dq offset unk_15551EEC0
+.data:0000000156DC5328 C4 EE 51 55 01 00 00 00                 dq offset unk_15551EEC4
+.data:0000000156DC5330 C8 EE 51 55 01 00 00 00                 dq offset unk_15551EEC8
+.data:0000000156DC5338 08 32 50 55 01 00 00 00                 dq offset unk_155503208
+.data:0000000156DC5340 8C 40 4C 55 01 00 00 00 off_156DC5340   dq offset unk_1554C408C ; DATA XREF: sub_1400CF1A0+15↑r
+.data:0000000156DC5340                                                                 ; sub_1400CF2B0+12↑r ...
+.data:0000000156DC5348 04 40 4C 55 01 00 00 00                 dq offset unk_1554C4004
+.data:0000000156DC5350 30 11 52 55 01 00 00 00                 dq offset unk_155521130
+.data:0000000156DC5358 3C 11 52 55 01 00 00 00                 dq offset unk_15552113C
+.data:0000000156DC5360 48 11 52 55 01 00 00 00                 dq offset unk_155521148
+.data:0000000156DC5368 58 11 52 55 01 00 00 00                 dq offset unk_155521158
+.data:0000000156DC5370 68 11 52 55 01 00 00 00                 dq offset unk_155521168
+.data:0000000156DC5378 74 11 52 55 01 00 00 00                 dq offset unk_155521174
+.data:0000000156DC5380 80 11 52 55 01 00 00 00 off_156DC5380   dq offset unk_155521180 ; DATA XREF: __report_gsfailure+B5↑r
+.data:0000000156DC5380                                                                 ; sub_15026566C+9F↑w
+.data:0000000156DC5388 90 11 52 55 01 00 00 00                 dq offset unk_155521190
+.data:0000000156DC5390 A0 11 52 55 01 00 00 00 off_156DC5390   dq offset unk_1555211A0 ; DATA XREF: sub_1502604C0:loc_1502605F4↑r
+.data:0000000156DC5390                                                                 ; sub_1502604C0+158↑w ...
+.data:0000000156DC5398 AC 11 52 55             dword_156DC5398 dd 555211ACh            ; DATA XREF: sub_1412334C0+1D↑r
+.data:0000000156DC5398                                                                 ; sub_14269CD70+45↑r ...
+.data:0000000156DC539C 01 00 00 00             dword_156DC539C dd 1                    ; DATA XREF: sub_15025F340+31↑r
+.data:0000000156DC539C                                                                 ; sub_15025F5A0↑r ...
+.data:0000000156DC53A0 00 EA 52 55 01 00 00 00 off_156DC53A0   dq offset unk_15552EA00 ; DATA XREF: sub_1502604C0+68↑w
+.data:0000000156DC53A8 00 00 00 00 00 00 00 00 qword_156DC53A8 dq 0                    ; DATA XREF: sub_1502604C0+5B↑w
+.data:0000000156DC53B0 00 00 00 00             dword_156DC53B0 dd 0                    ; DATA XREF: sub_150265734+2↑r
+.data:0000000156DC53B4 00 00 00 00 00 00 00 00…                align 20h
+.data:0000000156DC53C0 00                      byte_156DC53C0  db 0                    ; DATA XREF: sub_150269D54+42↑r
+.data:0000000156DC53C0                                                                 ; sub_150269EFC+93↑r
+.data:0000000156DC53C1 00 00 00 00 00 00 00 00…                align 10h
+.data:0000000156DC53D0 00 00 00 00 00 00 00 00 qword_156DC53D0 dq 0                    ; DATA XREF: sub_150267CFC+9D↑r
+.data:0000000156DC53D0                                                                 ; sub_150268A44:loc_150268BFC↑o
+.data:0000000156DC53D8 00 00 00 00             dword_156DC53D8 dd 0                    ; DATA XREF: sub_150267CFC:loc_150267D92↑r
+.data:0000000156DC53DC E8                                      db 0E8h
+.data:0000000156DC53DD 03                                      db    3
+.data:0000000156DC53DE 00                                      db    0
+.data:0000000156DC53DF 00                                      db    0
+.data:0000000156DC53E0 00 00 00 00 00 00 00 00 qword_156DC53E0 dq 0                    ; DATA XREF: sub_150267CFC+B4↑r
+.data:0000000156DC53E8 00 00 00 00             dword_156DC53E8 dd 0                    ; DATA XREF: sub_150267CFC+AD↑r
+.data:0000000156DC53EC 00 00 00 00                             align 10h
+.data:0000000156DC53F0 00 00 00 00 00 00 00 00 qword_156DC53F0 dq 0                    ; DATA XREF: sub_150267CFC+CB↑r
+.data:0000000156DC53F8 00 00 00 00             dword_156DC53F8 dd 0                    ; DATA XREF: sub_150267CFC+C4↑r
+.data:0000000156DC53FC 00 00 00 00                             align 20h
+.data:0000000156DC5400 00 00 00 00 00 00 00 00 qword_156DC5400 dq 0                    ; DATA XREF: sub_150267CFC+DF↑r
+.data:0000000156DC5408 00 00 00 00             dword_156DC5408 dd 0                    ; DATA XREF: sub_150267CFC:loc_150267DD4↑r
+.data:0000000156DC540C 00 00 00 00                             align 10h
+.data:0000000156DC5410 00 00 00 00 00 00 00 00 qword_156DC5410 dq 0                    ; DATA XREF: sub_150267CFC+F3↑r
+.data:0000000156DC5418 00 00 00 00             dword_156DC5418 dd 0                    ; DATA XREF: sub_150267CFC+EC↑r
+.data:0000000156DC541C 00 00 00 00                             align 20h
+.data:0000000156DC5420 00                      unk_156DC5420   db    0                 ; DATA XREF: sub_150268A44+1DC↑o
+.data:0000000156DC5420                                                                 ; sub_15026A05C+28↑o
+.data:0000000156DC5421 00                                      db    0
+
+```
+---
 camcall
 ---
 Address								Function						  Instruction
