@@ -168,6 +168,78 @@ Address	Function	Instruction
 .text:000000014E2CB68B CC CC CC CC CC                          align 10h
 
 
+// C F5 debug
+
+__int64 __fastcall sub_14E2CB510(__int64 a1, __int64 a2)
+{
+  unsigned int v3; // esi
+  __int64 v5; // xmm0_8
+  __int64 v6; // rcx
+  __m128 v7; // xmm5
+  __m128 v8; // xmm2
+  __m128 v9; // xmm3
+  __m128 v10; // xmm5
+  __m128 v11; // xmm1
+  __m128 v12; // xmm2
+  __m128 v13; // xmm3
+  __int128 v14; // xmm6
+  unsigned __int64 *v15; // rax
+  __m128 v16; // xmm2
+  __m128 v17; // xmm3
+  __int64 result; // rax
+  unsigned __int64 v19; // [rsp+20h] [rbp-48h]
+  __int64 v20; // [rsp+2Ch] [rbp-3Ch] BYREF
+  char v21[16]; // [rsp+40h] [rbp-28h] BYREF
+
+  v3 = *(_DWORD *)(a1 + 0x18C);
+  v19 = *(_QWORD *)(a1 + 0x184);
+  v5 = *(_QWORD *)(a1 + 0x178);
+  v6 = a1 + 0x200;
+  v20 = v5;
+  if ( *(float *)&v5 != *(float *)v6
+    || *((float *)&v20 + 1) != *(float *)(v6 + 4)
+    || *(float *)(a1 + 0x180) != *(float *)(v6 + 8) )
+  {
+    v7 = _mm_movelh_ps(
+           _mm_unpacklo_ps(
+             (__m128)*(unsigned __int64 *)(a1 + 0x178),
+             _mm_shuffle_ps((__m128)*(unsigned __int64 *)(a1 + 0x178), (__m128)*(unsigned __int64 *)(a1 + 0x178), 0x55)),
+           (__m128)*(unsigned int *)(a1 + 0x180));
+    v20 = *(_QWORD *)(a1 + 0x178);
+    v8 = _mm_div_ps(v7, (__m128)xmmword_1575300A0);
+    v9 = _mm_cvtepi32_ps(_mm_cvttps_epi32(v8));
+    v10 = _mm_sub_ps(
+            v7,
+            _mm_mul_ps(
+              _mm_xor_ps(
+                _mm_and_ps(
+                  _mm_cmple_ps((__m128)xmmword_1575300B0, _mm_and_ps(v8, (__m128)xmmword_15752FDE0)),
+                  _mm_xor_ps(v9, v8)),
+                v9),
+              (__m128)xmmword_1575300A0));
+    v11 = _mm_add_ps((__m128)xmmword_1575300A0, v10);
+    v12 = _mm_xor_ps(_mm_and_ps(_mm_xor_ps(v11, v10), _mm_cmple_ps((__m128)0LL, v10)), v11);
+    v13 = _mm_xor_ps(
+            _mm_and_ps(
+              _mm_xor_ps(_mm_sub_ps(v12, (__m128)xmmword_1575300A0), v12),
+              _mm_cmplt_ps((__m128)xmmword_157530090, v12)),
+            v12);
+    *(_QWORD *)v6 = _mm_unpacklo_ps(v13, _mm_shuffle_ps(v13, v13, 0x55)).m128_u64[0];
+    *(_DWORD *)(v6 + 8) = _mm_shuffle_ps(v13, v13, 0xAA).m128_u32[0];
+    *(_OWORD *)(a1 + 0x1F0) = *(_OWORD *)sub_14C8337D0(v6, v21);
+  }
+  v14 = *(_OWORD *)(a1 + 0x1F0);
+  v15 = (unsigned __int64 *)sub_140EC15A0(a1, &v20);
+  v16 = (__m128)*((unsigned int *)v15 + 2);
+  v17 = (__m128)*v15;
+  result = a2;
+  *(__m128 *)(a2 + 0x10) = _mm_movelh_ps(v17, v16);
+  *(_OWORD *)a2 = v14;
+  *(__m128 *)(a2 + 0x20) = _mm_movelh_ps((__m128)v19, (__m128)_mm_cvtsi32_si128(v3));
+  return result;
+}
+
+
 //Follow  call    sub_14E289760
 
 .text:000000014E289760
