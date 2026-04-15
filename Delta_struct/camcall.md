@@ -1,4 +1,123 @@
+---
+c++ mack fun decore
+---
+```cpp
+//FName GetCameraBaseLocation_FPP 
+inline uint64_t FormatString(uint64_t out, uint64_t fmt, float x, float y, float z)
+{
+    sub_14C76CB80(out, fmt, x, y, z);
+    return out;
+}
+struct Vec3
+{
+    float x, y, z;
+};
 
+inline uint64_t ResolveEncryptedPtr(uint64_t enc)
+{
+    if (!enc)
+        return 0;
+
+    uint64_t low = enc & 0xFFFFFFFFFFFF;
+    uint32_t key = (enc >> 48) & 0x3FFF;
+
+    if (enc >= 0)
+        return low;
+
+    // decrypt (simplified)
+    switch (dword_15684A794)
+    {
+        case 1:
+            sub_140A8D910(qword_1573D8080, &low, 4, key);
+            break;
+        case 2:
+            sub_140A8D8E0(qword_1573D8088, &low, 4, key);
+            break;
+        case 3:
+            sub_140A8D8E0(*(&qword_1573D8090 + key), &low, 4, key);
+            break;
+    }
+
+    if (low >> 0x2F)
+        return low | 0xFFFF000000000000;
+
+    return low;
+}
+//🔥 Core Logic (ตัดเหลือแกนจริง)
+Vec3 GetCameraBaseLocation(uint64_t a1, uint64_t a3, bool a5)
+{
+    Vec3 result{};
+
+    uint64_t obj = *(uint64_t*)a3;
+
+    if (!obj || !sub_142D48910((void*)obj))
+        obj = 0;
+
+    if (!obj)
+    {
+        uint64_t alt = *(uint64_t*)(a1 + 0x5DA00);
+        if (alt)
+        {
+            obj = (*(uint64_t(**)(uint64_t))(*(uint64_t*)alt + 0x1220))(alt);
+        }
+    }
+
+    if (!obj)
+        return result;
+
+    uint64_t state = *(uint64_t*)(obj + 0x1FE * 8);
+    if (!state)
+        return result;
+
+    // ===== primary encrypted pointer =====
+    uint64_t enc = sub_1412638A0(obj + 0x30 * 8, 2);
+    uint64_t base = ResolveEncryptedPtr(enc);
+
+    if (!base)
+        return result;
+
+    // ===== read vec3 =====
+    Vec3 basePos = *(Vec3*)(base + 0x10);
+
+    // ===== secondary pointer =====
+    uint64_t enc2 = sub_1412638A0(state + 0x178, 2);
+    uint64_t offsetPtr = ResolveEncryptedPtr(enc2);
+
+    if (offsetPtr)
+    {
+        uint64_t enc3 = sub_1412638A0(state + 0x170, 2);
+        uint64_t finalPtr = ResolveEncryptedPtr(enc3);
+
+        if (finalPtr)
+        {
+            Vec3 offset{};
+
+            if (a5)
+            {
+                // case: run/sprint
+                offset = *(Vec3*)sub_143130B00(finalPtr, nullptr);
+            }
+            else
+            {
+                offset = *(Vec3*)sub_143130B00(finalPtr, nullptr);
+            }
+
+            result.x = basePos.x + offset.x;
+            result.y = basePos.y + offset.y;
+            result.z = basePos.z + offset.z;
+
+            return result;
+        }
+    }
+
+    // fallback
+    result = basePos;
+    return result;
+}
+
+
+
+```
 ---
 Call fun Bone and C2w
 ---
