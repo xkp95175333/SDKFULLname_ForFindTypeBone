@@ -69,9 +69,9 @@ uint64_t AutoDecryptGName(uint64_t enc)
 ```
 ```asm
 Address	Function	Instruction
-.text:000000014C8D5192	sub_14C8D5120	lea     rsi, unk_1573DC1C0; Load Effective Address  ++   0xFFFF    0x10
-.text:000000014C8DD710	sub_14C8DD6A0	lea     rsi, unk_1573DC1C0; Load Effective Address 0x3FFFF  0x12
-.text:000000014C8F1059	sub_14C8F1020	lea     rsi, unk_1573DC1C0; Load Effective Address  -- 0x10020 and 0x10024   0x20  newBase 0x401  
+.text:000000014C8D5192	sub_14C8D5120	lea     rsi, unk_1573DC1C0; Load Effective Address  
+.text:000000014C8DD710	sub_14C8DD6A0	lea     rsi, unk_1573DC1C0; Load Effective Address 
+.text:000000014C8F1059	sub_14C8F1020	lea     rsi, unk_1573DC1C0; Load Effective Address 
 .text:000000014D95FF9C		db  48h ; H
 ```
 
