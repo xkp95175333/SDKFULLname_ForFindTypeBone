@@ -6,6 +6,19 @@ gworld+gname addr
 ///Addrgname unk_1573DC1C0
 
 
+//Gworld
+
+
+//asm gworldEncore Men imm
+
+
+48 8B 0D ?? ?? ?? ??   mov rcx, [rip+rel]   -> qword_xxxxx (pointer)
+0F B6 05 ?? ?? ?? ??   movzx eax, byte ptr [rip+rel+7]
+34 36                  xor al, 36
+80 F1 36               xor cl, 36
+
+
+
 ```
 ```asm
 .std:0000000156A22688 20 1A 7F 50 01 00 00 00                                         dq offset aUnsignedInt  ; "unsigned int"
