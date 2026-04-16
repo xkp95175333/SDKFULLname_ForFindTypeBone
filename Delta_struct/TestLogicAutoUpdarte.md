@@ -1,10 +1,15 @@
+
 ---
+Mack FunAutoUpdate
+---
+
+```c
 word_37 -> 0x12f43eef0 FName[]
 word_37_PtrEnc -> 0x12f4337f0 FName[]
 word_36 -> 0x2b2729280 FName[]
 word_36_PtrEnc -> 0x2b2729236 FName[]
----
-Code C++ me 
+```
+
 
 
 ```cpp
@@ -360,8 +365,8 @@ log Get  word_36_PtrEnc -> 0x2b2729236 FName[]
 ```
 ---
 word_36_PtrEnc GoodFname Getlavel new class Offset->0x142|
-
-
+---
+```c
 
 NewBase  GetLavelwill liip Actor 
 			Offset->0x142|Type_UE|||0x1C VaFname >0x1E0-> ->GFName[PersistentLevel]|APtr: 0x79F5B140 Adr 0x2B2729378 |Count->-970200992|1
@@ -372,9 +377,10 @@ NewBase  GetLavelwill liip Actor
 				 -> [2] 0xab2729378
 				 -> [3] 0x2b272937
 				 -> [4] 0x2b27293780
----
-``` lua
-	 	AddrLevel  : 0x2B2729378 PAddrLevel : 0x4005000079F5B140  **  Encoreptr offset Lavel= 0x1E00> Array=+ 0x9C0
+```
+	AddrLevel  : 0x2B2729378 PAddrLevel : 0x4005000079F5B140  **  Encoreptr offset Lavel= 0x1E00> Array=+ 0x9C0
+```lua
+	  
   
 		 
 				FName{����������������������������������������������%�/Game/DataTables/POI/MapPOIData_SpaceCenter�O�����������������ɯ�����}||offsetActor::0x0] [fieldAddr->0x2b2729388]  ActorOffset =+0x10 PAdrArray->0x2887EAFC0 arr.dePtr->0xc46bbe72 Count = [1||4] id*sizeof(uintptr_t) = sizeMenMove[0x8] NewPaddrBase->0x5f
