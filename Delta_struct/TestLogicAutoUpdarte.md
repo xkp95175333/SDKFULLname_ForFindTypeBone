@@ -1,8 +1,9 @@
+---
 word_37 -> 0x12f43eef0 FName[]
 word_37_PtrEnc -> 0x12f4337f0 FName[]
 word_36 -> 0x2b2729280 FName[]
 word_36_PtrEnc -> 0x2b2729236 FName[]
-
+---
 Code C++ me 
 
 
@@ -76,7 +77,7 @@ Code C++ me
 ---
 log Get  word_37 -> 0x12f43eef0 FName[]
 ---
-```asm
+```lua
   
 	
 	BOffset->0x0|Type_UE|||0xFFFFFFFF VaFname >0x8CFCE000-> ->GFName[GPGameEngine]|APtr: 0x1514B9BD8 Adr 0x12F43EEF0 |TypePoint*->1072125440 |On::0
@@ -126,7 +127,7 @@ log Get  word_37 -> 0x12f43eef0 FName[]
 ---
 log Get  word_37_PtrEnc -> 0x12f4337f0 FName[]
 ---
-```asm
+```lua
    
 		BOffset->0xC0|Type_UE|||0x1C VaFname >0x7070436B-> ->GFName[n]|APtr: 0x6A681000 Adr 0x12F4338B0 |TypePoint*->68 |On::0
 		Offset->0xD4|Type_UE|||0x1C VaFname >0x833C-> ->GFName[/Script/SubstanceCore/SubstanceInstanceDesc]|APtr: 0x2C1306B Adr 0x12F4338C4 |Count->-78521792|1758836011
@@ -202,7 +203,6 @@ log Get  word_37_PtrEnc -> 0x12f4337f0 FName[]
 ```
 ---
 log Get  word_36 -> 0x2b2729280 FName[]  
----
  
 		-------------------fun Get 0x12f4337f0 Asm Def------------------------
 		Thread Count 287
@@ -217,7 +217,8 @@ log Get  word_36 -> 0x2b2729280 FName[]
 				└─ [0x12f4337f7] (+0x37f7) = 0x4 (u32)
 		Asm: 0x12F4337F7add al, 0x79 (groups_count: 0x0)
 				└─ [0x12f4337f9] (+0x37f9) = 0x
-```asm
+---
+```lua
    
  
 		-------------------End debug------------------------
@@ -295,7 +296,7 @@ log Get  word_36 -> 0x2b2729280 FName[]
 ---
 log Get  word_36_PtrEnc -> 0x2b2729236 FName[]
 ---
-```asm 
+```lua 
  
 		BOffset->0x4A|Type_UE|||0xFFFFFFFF VaFname >0xB2246000-> ->GFName[Gibraltar_Breakthrough]|APtr: 0x154C69C48 Adr 0x2B2729280 |TypePoint*->1070752384 |On::0
 		Offset->0x52|float:1.643631|||0x1C VaFname >0xDC9F3-> ->GFName[World]|APtr: 0x3FD26280 Adr 0x2B2729288 |TypePoint*->295318432 |On::0
@@ -359,7 +360,7 @@ log Get  word_36_PtrEnc -> 0x2b2729236 FName[]
 ```
 ---
 word_36_PtrEnc GoodFname Getlavel new class Offset->0x142|
----
+
 
 
 NewBase  GetLavelwill liip Actor 
@@ -371,6 +372,7 @@ NewBase  GetLavelwill liip Actor
 				 -> [2] 0xab2729378
 				 -> [3] 0x2b272937
 				 -> [4] 0x2b27293780
+---
 ``` lua
 	 	AddrLevel  : 0x2B2729378 PAddrLevel : 0x4005000079F5B140  **  Encoreptr offset Lavel= 0x1E00> Array=+ 0x9C0
   
