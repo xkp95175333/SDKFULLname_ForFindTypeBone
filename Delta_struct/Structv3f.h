@@ -282,3 +282,41 @@ public:
 		return Pitch == Other.Pitch && Yaw == Other.Yaw && Roll == Other.Roll;
 	}
 };
+
+
+
+//CoreDEf 
+class Vector3
+{
+public:
+	float x, y, z;
+
+	Vector3() : x(0.f), y(0.f), z(0.f) {}
+	Vector3(float _x, float _y, float _z) : x(_x), y(_y), z(_z) {}
+	~Vector3() {}
+
+	inline float Dot(const Vector3& v) const
+	{
+		return x * v.x + y * v.y + z * v.z;
+	}
+
+	inline float Distance(const Vector3& v) const
+	{
+		return sqrtf(powf(v.x - x, 2.0f) + powf(v.y - y, 2.0f) + powf(v.z - z, 2.0f));
+	}
+
+	inline Vector3 operator+(const Vector3& v) const
+	{
+		return Vector3(x + v.x, y + v.y, z + v.z);
+	}
+
+	inline Vector3 operator-(const Vector3& v) const
+	{
+		return Vector3(x - v.x, y - v.y, z - v.z);
+	}
+
+	inline float Length() const
+	{
+		return sqrtf((x * x) + (y * y) + (z * z));
+	}
+};
