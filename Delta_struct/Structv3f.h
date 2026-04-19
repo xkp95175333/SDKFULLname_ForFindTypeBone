@@ -320,3 +320,110 @@ public:
 		return sqrtf((x * x) + (y * y) + (z * z));
 	}
 };
+
+ //อันเก่า
+XMMATRIX MatrixMultiplicationeeeee(XMMATRIX pM1, XMMATRIX pM2)
+{
+	XMMATRIX pOut;
+	pOut.r[0].m128_f32[0] = pM1.r[0].m128_f32[0] * pM2.r[0].m128_f32[0] + pM1.r[0].m128_f32[1] * pM2.r[1].m128_f32[0] + pM1.r[0].m128_f32[2] * pM2.r[2].m128_f32[0] + pM1.r[0].m128_f32[3] * pM2.r[3].m128_f32[0];
+	pOut.r[0].m128_f32[1] = pM1.r[0].m128_f32[0] * pM2.r[0].m128_f32[1] + pM1.r[0].m128_f32[1] * pM2.r[1].m128_f32[1] + pM1.r[0].m128_f32[2] * pM2.r[2].m128_f32[1] + pM1.r[0].m128_f32[3] * pM2.r[3].m128_f32[1];
+	pOut.r[0].m128_f32[2] = pM1.r[0].m128_f32[0] * pM2.r[0].m128_f32[2] + pM1.r[0].m128_f32[1] * pM2.r[1].m128_f32[2] + pM1.r[0].m128_f32[2] * pM2.r[2].m128_f32[2] + pM1.r[0].m128_f32[3] * pM2.r[3].m128_f32[2];
+	pOut.r[0].m128_f32[3] = pM1.r[0].m128_f32[0] * pM2.r[0].m128_f32[3] + pM1.r[0].m128_f32[1] * pM2.r[1].m128_f32[3] + pM1.r[0].m128_f32[2] * pM2.r[2].m128_f32[3] + pM1.r[0].m128_f32[3] * pM2.r[3].m128_f32[3];
+
+	pOut.r[1].m128_f32[0] = pM1.r[1].m128_f32[0] * pM2.r[0].m128_f32[0] + pM1.r[1].m128_f32[1] * pM2.r[1].m128_f32[0] + pM1.r[1].m128_f32[2] * pM2.r[2].m128_f32[0] + pM1.r[1].m128_f32[3] * pM2.r[3].m128_f32[0];
+	pOut.r[1].m128_f32[1] = pM1.r[1].m128_f32[0] * pM2.r[0].m128_f32[1] + pM1.r[1].m128_f32[1] * pM2.r[1].m128_f32[1] + pM1.r[1].m128_f32[2] * pM2.r[2].m128_f32[1] + pM1.r[1].m128_f32[3] * pM2.r[3].m128_f32[1];
+	pOut.r[1].m128_f32[2] = pM1.r[1].m128_f32[0] * pM2.r[0].m128_f32[2] + pM1.r[1].m128_f32[1] * pM2.r[1].m128_f32[2] + pM1.r[1].m128_f32[2] * pM2.r[2].m128_f32[2] + pM1.r[1].m128_f32[3] * pM2.r[3].m128_f32[2];
+	pOut.r[1].m128_f32[3] = pM1.r[1].m128_f32[0] * pM2.r[0].m128_f32[3] + pM1.r[1].m128_f32[1] * pM2.r[1].m128_f32[3] + pM1.r[1].m128_f32[2] * pM2.r[2].m128_f32[3] + pM1.r[1].m128_f32[3] * pM2.r[3].m128_f32[3];
+
+	pOut.r[2].m128_f32[0] = pM1.r[2].m128_f32[0] * pM2.r[0].m128_f32[0] + pM1.r[2].m128_f32[1] * pM2.r[1].m128_f32[0] + pM1.r[2].m128_f32[2] * pM2.r[2].m128_f32[0] + pM1.r[2].m128_f32[3] * pM2.r[3].m128_f32[0];
+	pOut.r[2].m128_f32[1] = pM1.r[2].m128_f32[0] * pM2.r[0].m128_f32[1] + pM1.r[2].m128_f32[1] * pM2.r[1].m128_f32[1] + pM1.r[2].m128_f32[2] * pM2.r[2].m128_f32[1] + pM1.r[2].m128_f32[3] * pM2.r[3].m128_f32[1];
+	pOut.r[2].m128_f32[2] = pM1.r[2].m128_f32[0] * pM2.r[0].m128_f32[2] + pM1.r[2].m128_f32[1] * pM2.r[1].m128_f32[2] + pM1.r[2].m128_f32[2] * pM2.r[2].m128_f32[2] + pM1.r[2].m128_f32[3] * pM2.r[3].m128_f32[2];
+	pOut.r[2].m128_f32[3] = pM1.r[2].m128_f32[0] * pM2.r[0].m128_f32[3] + pM1.r[2].m128_f32[1] * pM2.r[1].m128_f32[3] + pM1.r[2].m128_f32[2] * pM2.r[2].m128_f32[3] + pM1.r[2].m128_f32[3] * pM2.r[3].m128_f32[3];
+
+	pOut.r[3].m128_f32[0] = pM1.r[3].m128_f32[0] * pM2.r[0].m128_f32[0] + pM1.r[3].m128_f32[1] * pM2.r[1].m128_f32[0] + pM1.r[3].m128_f32[2] * pM2.r[2].m128_f32[0] + pM1.r[3].m128_f32[3] * pM2.r[3].m128_f32[0];
+	pOut.r[3].m128_f32[1] = pM1.r[3].m128_f32[0] * pM2.r[0].m128_f32[1] + pM1.r[3].m128_f32[1] * pM2.r[1].m128_f32[1] + pM1.r[3].m128_f32[2] * pM2.r[2].m128_f32[1] + pM1.r[3].m128_f32[3] * pM2.r[3].m128_f32[1];
+	pOut.r[3].m128_f32[2] = pM1.r[3].m128_f32[0] * pM2.r[0].m128_f32[2] + pM1.r[3].m128_f32[1] * pM2.r[1].m128_f32[2] + pM1.r[3].m128_f32[2] * pM2.r[2].m128_f32[2] + pM1.r[3].m128_f32[3] * pM2.r[3].m128_f32[2];
+	pOut.r[3].m128_f32[3] = pM1.r[3].m128_f32[0] * pM2.r[0].m128_f32[3] + pM1.r[3].m128_f32[1] * pM2.r[1].m128_f32[3] + pM1.r[3].m128_f32[2] * pM2.r[2].m128_f32[3] + pM1.r[3].m128_f32[3] * pM2.r[3].m128_f32[3];
+
+	return pOut;
+}
+
+
+
+#define M_PI	3.14159265358979323846264338327950288419716939937510
+
+#define M_PI	3.14159265358979323846264338327950288419716939937510
+XMMATRIX ToMatrix(Vector3 Rotation, Vector3 origin = Vector3(0, 0, 0));
+XMMATRIX ToMatrix(Vector3 Rotation, Vector3 origin)
+{
+	float Pitch = (Rotation.x * float(M_PI) / 180.f);
+	float Yaw = (Rotation.y * float(M_PI) / 180.f);
+	float Roll = (Rotation.z * float(M_PI) / 180.f);
+
+	float SP = sinf(Pitch);
+	float CP = cosf(Pitch);
+	float SY = sinf(Yaw);
+	float CY = cosf(Yaw);
+	float SR = sinf(Roll);
+	float CR = cosf(Roll);
+
+	XMMATRIX Matrix;
+	Matrix.r[0].m128_f32[0] = CP * CY;
+	Matrix.r[0].m128_f32[1] = CP * SY;
+	Matrix.r[0].m128_f32[2] = SP;
+	Matrix.r[0].m128_f32[3] = 0.f;
+
+	Matrix.r[1].m128_f32[0] = SR * SP * CY - CR * SY;
+	Matrix.r[1].m128_f32[1] = SR * SP * SY + CR * CY;
+	Matrix.r[1].m128_f32[2] = -SR * CP;
+	Matrix.r[1].m128_f32[3] = 0.f;
+
+	Matrix.r[2].m128_f32[0] = -(CR * SP * CY + SR * SY);
+	Matrix.r[2].m128_f32[1] = CY * SR - CR * SP * SY;
+	Matrix.r[2].m128_f32[2] = CR * CP;
+	Matrix.r[2].m128_f32[3] = 0.f;
+
+	Matrix.r[3].m128_f32[0] = origin.x;
+	Matrix.r[3].m128_f32[1] = origin.y;
+	Matrix.r[3].m128_f32[2] = origin.z;
+	Matrix.r[3].m128_f32[3] = 1.f;
+
+	return Matrix;
+}
+
+XMMATRIX Matrix(FRotator rot, Vector3 origin = Vector3(0, 0, 0))
+{
+	float radPitch = (rot.x * float(M_PI) / 180.f);
+	float radYaw = (rot.y * float(M_PI) / 180.f);
+	float radRoll = (rot.z * float(M_PI) / 180.f);
+
+	float SP = sinf(radPitch);
+	float CP = cosf(radPitch);
+	float SY = sinf(radYaw);
+	float CY = cosf(radYaw);
+	float SR = sinf(radRoll);
+	float CR = cosf(radRoll);
+
+	XMMATRIX matrix;
+	matrix.r[0].m128_f32[0] = CP * CY;
+	matrix.r[0].m128_f32[1] = CP * SY;
+	matrix.r[0].m128_f32[2] = SP;
+	matrix.r[0].m128_f32[3] = 0.f;
+
+	matrix.r[1].m128_f32[0] = SR * SP * CY - CR * SY;
+	matrix.r[1].m128_f32[1] = SR * SP * SY + CR * CY;
+	matrix.r[1].m128_f32[2] = -SR * CP;
+	matrix.r[1].m128_f32[3] = 0.f;
+
+	matrix.r[2].m128_f32[0] = -(CR * SP * CY + SR * SY);
+	matrix.r[2].m128_f32[1] = CY * SR - CR * SP * SY;
+	matrix.r[2].m128_f32[2] = CR * CP;
+	matrix.r[2].m128_f32[3] = 0.f;
+
+	matrix.r[3].m128_f32[0] = origin.x;
+	matrix.r[3].m128_f32[1] = origin.y;
+	matrix.r[3].m128_f32[2] = origin.z;
+	matrix.r[3].m128_f32[3] = 1.f;
+
+	return matrix;
+}
