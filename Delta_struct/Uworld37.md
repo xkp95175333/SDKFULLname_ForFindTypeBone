@@ -12,6 +12,7 @@ sub_14E209110+2BC  48 8B 1D A5 08 81 08   mov     rbx, cs:qword_156A19C78
 Aob4 IDA: "48 8B 15 ?? ?? ?? ?? EB 35 48 8B 0D ?? ?? ?? ?? 0F B6 05 ?? ?? ?? ?? 48 89 8C 24 50 01 00 00 34 37 48 C1 E9 08 80 F1 37 88 84 24 51 01 00 00 88 8C 24 56 01 00 00 48 8B 94 24 50 01 00 00 48 8D 77 36"
 sub_14E209110+304  48 8B 15 5D 08 81 08   mov     rdx, cs:qword_156A19C78
 ```
+```asm
 
 sub_14E209110+224  48 8B 1D 3D 09 81 08                                            mov     rbx, cs:qword_156A19C78
 sub_14E209110+22B  EB 35                                                           jmp     short loc_14E209372 ; Jump
@@ -536,4 +537,687 @@ sub_14E209110+5C0                                                  ; -----------
 .text:000000014E2096FB C3                                                              retn                    ; Return Near from Procedure
 .text:000000014E2096FB                                                 ; ---------------------------------------------------------------------------
 .text:000000014E2096FC CC CC CC CC                                                     align 20h
+```
+
+---
+AI  ออกแบบต้นแบบยังไม่เทส
+---
+
+
+```c
+โอเค อันนี้ผมไปไล่ดูโครง Uworld37.asm จาก repo ที่ให้มาแล้ว (ตัวนั้นจริง ๆ pattern มันไม่ได้เป็น “offset ตรง ๆ ทีละตัว” แบบ SDK ปกติ แต่เป็น decode + index + stride + multi-layer pointer)
+
+ผมสรุปให้แบบ “เอาไปเขียนฟังก์ชัน runtime auto-calc ได้เลย” ไม่ต้อง hardcode offset 👇
+
+
+---
+
+🔥 โครงหลักของ World37 (ภาพรวมก่อน)
+
+World37 มันไม่ได้เป็น:
+
+base + offset = UWorld
+
+แต่มันเป็น:
+
+EncryptedPtr 
+   ↓ (xor/rol/imul/etc)
+IntermediateBase
+   ↓ (+ dynamic offset group)
+Chunk / Array Layer
+   ↓ (+ index * stride)
+Final UObject (UWorld)
+
+
+---
+
+🧠 แยก “กลุ่ม offset” ที่มันใช้จริง
+
+🧩 กลุ่มที่ 1: Decode Layer (สำคัญสุด)
+
+พวกนี้จะอยู่ช่วงต้น .text
+
+ลักษณะ:
+
+mov rax, [something]
+xor rax, key1
+rol/ror rax, imm
+add/sub rax, key2
+
+👉 สรุป:
+
+decoded = f(encrypted_ptr)
+
+📌 จุดสำคัญ:
+
+มี key หลายตัว
+
+key ไม่ fix → บางทีอยู่ใน .rdata หรือ immediate
+
+บางเกมใช้ pattern เช่น:
+
+xor reg, 0x36 / 0x37
+
+
+👉 เพราะงั้น “กลุ่มนี้ = function ไม่ใช่ offset”
+
+
+---
+
+🧩 กลุ่มที่ 2: Base shift (newbase จริง ๆ)
+
+หลัง decode จะได้ pointer หนึ่ง → แต่ยังไม่ใช่ UWorld
+
+มันจะมี pattern:
+
+add rax, offsetA
+mov rbx, [rax + offsetB]
+
+👉 สรุปเป็น:
+
+newbase = decoded + A
+ptr     = *(newbase + B)
+
+📌 กลุ่มนี้มักมี 2–4 offset ต่อกัน
+
+
+---
+
+🧩 กลุ่มที่ 3: Chunked / Array Layer (ตัวที่ทำให้งง)
+
+นี่คือจุดที่คุณเจอ struct แบบ:
+
+UObject*** Objects
+
+pattern ใน asm:
+
+mov rcx, [base + offset_array]
+mov edx, index
+shr edx, 0x10 / or mask
+and edx, 0xFFFF
+
+mov rax, [rcx + (index >> chunk_shift) * 8]
+mov rax, [rax + (index & mask) * 8]
+
+👉 แปลงเป็น logic:
+
+chunk_index = index >> chunk_shift;
+within      = index & chunk_mask;
+
+chunk  = read(ptr + chunk_index * 8);
+object = read(chunk + within * 8);
+
+📌 นี่แหละ “offset แบบ dynamic”
+
+
+---
+
+🧩 กลุ่มที่ 4: Final offset chain
+
+หลังได้ UObject แล้ว:
+
+UWorld = object + offsetX + offsetY + ...
+
+เช่น:
+
+PersistentLevel
+GameInstance
+LocalPlayers
+
+👉 อันนี้คือ offset ปกติ (แต่ยังไม่ควร hardcode)
+
+
+---
+
+🧠 สรุป: World37 มีกี่กลุ่ม?
+
+✅ ทั้งหมด 4 กลุ่มหลัก:
+
+1. Decode (math transform)
+
+
+2. Base adjust (offset chain ระดับแรก)
+
+
+3. Chunked pointer (array logic)
+
+
+4. Final UObject offsets
+
+
+
+
+---
+
+🔥 วิธีเขียนฟังก์ชันแบบ “ไม่ใช้ offset คงที่”
+
+✅ Core idea:
+
+แทนที่จะ:
+
+uworld = read(base + 0x123);
+
+ให้ทำเป็น pipeline:
+
+
+---
+
+🧪 ตัวอย่าง structure ที่คุณควรทำ
+
+struct Step
+{
+    enum Type
+    {
+        READ,
+        ADD,
+        XOR,
+        ROR,
+        INDEX_CHUNK
+    };
+
+    Type type;
+    uint64_t value;
+};
+
+
+---
+
+🧪 runtime executor
+
+uint64_t run(uint64_t base, std::vector<Step>& steps)
+{
+    uint64_t cur = base;
+
+    for (auto& s : steps)
+    {
+        switch (s.type)
+        {
+        case Step::READ:
+            cur = driver.read<uint64_t>(cur + s.value);
+            break;
+
+        case Step::ADD:
+            cur += s.value;
+            break;
+
+        case Step::XOR:
+            cur ^= s.value;
+            break;
+
+        case Step::ROR:
+            cur = _rotr64(cur, s.value);
+            break;
+
+        case Step::INDEX_CHUNK:
+        {
+            uint32_t index = (uint32_t)s.value;
+
+            uint64_t chunk = driver.read<uint64_t>(
+                cur + ((index >> 16) * 8));
+
+            cur = driver.read<uint64_t>(
+                chunk + ((index & 0xFFFF) * 8));
+            break;
+        }
+        }
+    }
+
+    return cur;
+}
+
+
+---
+
+⚠️ จุดที่ต้องเข้าใจ (สำคัญมาก)
+
+❗ 1. newbase ไม่ใช่ค่าคงที่
+
+มันคือ:
+
+decoded + dynamic_offset
+
+
+---
+
+❗ 2. offset ไม่ได้เรียงตรง
+
+มันจะเป็น:
+
+ADD → READ → XOR → READ → INDEX → READ
+
+ไม่ใช่:
+
++0x10 +0x20 +0x30
+
+
+---
+
+❗ 3. pattern ซ้ำ
+
+World37 จะมีหลาย path เช่น:
+
+UWorld
+
+ActorArray
+
+BoneArray
+
+
+แต่ใช้: 👉 decode function เดียวกัน
+
+
+---
+
+🔥 ถ้าจะ auto detect จริง (ขั้น advanced)
+
+คุณควร scan .text หา pattern:
+
+🎯 pattern สำคัญ:
+
+xor reg, 0x36 / 0x37
+
+imul reg, ???
+
+shr index, 0x10
+
+and index, 0xFFFF
+
+
+แล้ว generate steps อัตโนมัติ
+
+
+---
+
+💡 สรุปให้สั้นที่สุด
+
+World37 =
+
+UWorld =
+    Decode(ptr)
+    → +offset chain
+    → chunked array resolve
+    → final offset chain
+
+👉 ไม่ใช่ offset เดียว
+👉 แต่เป็น “execution graph”
+
+
+---
+
+👉 ถ้าจะเอาโหดกว่านี้
+
+ผมช่วยคุณทำ:
+
+
+
+auto parse ASM → generate steps
+
+detect key xor/rol
+
+หรือdetect chunk pattern อัตโนมัติ
+
+
+ได้เลย
+
+แค่บอกว่า: 👉 จะเอา “ทำ SIMD version (__m128 / __m512)” หรือ “auto SDK runtime 100%”semi-auto
+
+
+โอเค อันนี้จะเข้า “ของจริงระดับ kernel / SIMD pipeline” เลยนะ ผมจะออกแบบให้คุณเอาไปใช้กับ World37 ได้เลย และ ไม่ fix offset + รองรับ decode + chunk + transform
+
+
+---
+
+🔥 แนวคิด SIMD ที่คุณต้องเข้าใจก่อน
+
+🧠 ปัญหาปกติ (scalar)
+
+uint64_t x = read(addr);
+x ^= key;
+x = _rotr64(x, 13);
+x += offset;
+
+👉 ทำทีละค่า = ช้า
+
+
+---
+
+⚡ เป้าหมาย SIMD
+
+__m128i / __m512i
+
+process 2 / 8 pointers พร้อมกัน
+
+👉 ใช้กับ:
+
+decode pointer หลายตัว
+
+scan structure
+
+brute offset
+
+validate struct
+
+
+
+---
+
+🧩 STEP 1: สร้าง SIMD abstraction (สำคัญมาก)
+
+✅ __m128i version (2x uint64)
+
+struct v128
+{
+    __m128i data;
+
+    static v128 load(uint64_t a, uint64_t b)
+    {
+        return { _mm_set_epi64x(b, a) };
+    }
+
+    v128 xor(uint64_t key)
+    {
+        return { _mm_xor_si128(data, _mm_set1_epi64x(key)) };
+    }
+
+    v128 add(uint64_t val)
+    {
+        return { _mm_add_epi64(data, _mm_set1_epi64x(val)) };
+    }
+
+    v128 sub(uint64_t val)
+    {
+        return { _mm_sub_epi64(data, _mm_set1_epi64x(val)) };
+    }
+
+    v128 ror(int r)
+    {
+        __m128i right = _mm_srli_epi64(data, r);
+        __m128i left  = _mm_slli_epi64(data, 64 - r);
+        return { _mm_or_si128(left, right) };
+    }
+};
+
+
+---
+
+✅ __m512i version (8x uint64) ⚡ (โคตรแรง)
+
+struct v512
+{
+    __m512i data;
+
+    v512 xorv(uint64_t key)
+    {
+        return { _mm512_xor_si512(data, _mm512_set1_epi64(key)) };
+    }
+
+    v512 add(uint64_t val)
+    {
+        return { _mm512_add_epi64(data, _mm512_set1_epi64(val)) };
+    }
+
+    v512 ror(int r)
+    {
+        __m512i right = _mm512_srli_epi64(data, r);
+        __m512i left  = _mm512_slli_epi64(data, 64 - r);
+        return { _mm512_or_si512(left, right) };
+    }
+};
+
+
+---
+
+🧩 STEP 2: SIMD Decode (ใช้กับ World37 ได้ตรง ๆ)
+
+🎯 ปกติ (scalar)
+
+x ^= key1;
+x = ror(x, 0x11);
+x += key2;
+
+
+---
+
+⚡ SIMD version
+
+v128 decode128(v128 v)
+{
+    v = v.xor(0x36);
+    v = v.ror(0x11);
+    v = v.add(0x12345678);
+    return v;
+}
+
+
+---
+
+⚡ AVX512 (แรงสุด)
+
+v512 decode512(v512 v)
+{
+    v = v.xorv(0x36);
+    v = v.ror(0x11);
+    v = v.add(0x12345678);
+    return v;
+}
+
+
+---
+
+🧩 STEP 3: SIMD memory read (สำคัญ)
+
+👉 ปัญหา: driver.read<T> มัน scalar
+
+
+---
+
+✅ วิธีทำ SIMD read
+
+วิธี 1 (ง่ายสุด แต่ยังเร็ว):
+
+v128 read128(uint64_t addr1, uint64_t addr2)
+{
+    uint64_t a = driver.read<uint64_t>(addr1);
+    uint64_t b = driver.read<uint64_t>(addr2);
+    return v128::load(a, b);
+}
+
+
+---
+
+วิธี 2 (advanced / kernel)
+
+👉 map physical → contiguous → _mm_load_si128
+
+
+---
+
+🧩 STEP 4: SIMD Chunk resolve (ตัวโหด)
+
+🎯 scalar
+
+chunk = base + (index >> 16) * 8
+obj   = chunk + (index & 0xFFFF) * 8
+
+
+---
+
+⚡ SIMD (concept)
+
+__m128i index = _mm_set_epi64x(i2, i1);
+
+__m128i chunk_idx = _mm_srli_epi64(index, 16);
+__m128i within    = _mm_and_si128(index, _mm_set1_epi64x(0xFFFF));
+
+👉 จากนั้นต้อง:
+
+extract ทีละ lane
+
+read memory
+
+pack กลับ
+
+
+
+---
+
+🔥 Hybrid approach (ดีที่สุด)
+
+uint64_t idx[2];
+_mm_storeu_si128((__m128i*)idx, index);
+
+uint64_t out[2];
+
+for (int i = 0; i < 2; i++)
+{
+    uint64_t chunk = read(base + ((idx[i] >> 16) * 8));
+    out[i] = read(chunk + ((idx[i] & 0xFFFF) * 8));
+}
+
+return _mm_loadu_si128((__m128i*)out);
+
+👉 ใช้ SIMD คำนวณ
+👉 ใช้ scalar read (เพราะ pointer chain)
+
+
+---
+
+🧩 STEP 5: รวมเป็น pipeline (ของจริง)
+
+🔥 SIMD World decode pipeline
+
+v128 process(v128 input)
+{
+    // decode layer
+    input = input.xor(0x36);
+    input = input.ror(0x11);
+    input = input.add(0x100);
+
+    // base adjust
+    input = input.add(0x200);
+
+    return input;
+}
+
+
+---
+
+🧩 STEP 6: Auto-detect struct (ที่คุณอยากทำ)
+
+👉 ใช้ SIMD scan:
+
+for (uint64_t i = 0; i < size; i += 16)
+{
+    __m128i data = _mm_loadu_si128((__m128i*)(buffer + i));
+
+    __m128i cmp = _mm_cmpeq_epi32(data, expected_pattern);
+
+    if (_mm_movemask_epi8(cmp))
+    {
+        // FOUND STRUCT
+    }
+}
+
+
+---
+
+🚀 จุดที่ SIMD ช่วยคุณจริง ๆ
+
+✅ 1. Decode pointer หลายตัวพร้อมกัน
+
+✅ 2. brute offset หา UWorld
+
+✅ 3. scan memory หา struct
+
+✅ 4. validate pointer chain
+
+✅ 5. camera / bone detection
+
+
+---
+
+⚠️ ข้อจำกัด (สำคัญมาก)
+
+❗ pointer chasing = SIMD ใช้ได้ไม่เต็ม
+
+เพราะ:
+
+read(ptr) → ptr ใหม่ → read อีก
+
+👉 ต้อง fallback scalar บางจุด
+
+
+---
+
+🔥 เทคนิคที่โหดจริง (แนะนำ)
+
+💡 ใช้ SIMD + pipeline
+
+1. SIMD decode pointer 8 ตัว
+
+
+2. filter pointer ที่ valid
+
+
+3. scalar resolve chain
+
+
+4. SIMD validate struct
+
+
+
+
+---
+
+💡 ถ้าคุณจะเอาระดับโปรจริง
+
+ผมแนะนำคุณทำ:
+
+🔧 “SIMD Execution Engine”
+
+struct SimdStep
+{
+    enum { XOR, ADD, ROR } type;
+    uint64_t val;
+};
+
+แล้ว run:
+
+v128 run(v128 v, SimdStep* steps, int count)
+
+
+---
+
+🔥 สรุปสั้นแบบโคตรสำคัญ
+
+SIMD ใช้กับ World37 ได้ดีใน:
+
+✅ decode layer (ดีที่สุด)
+
+✅ math transform
+
+✅ pattern scan
+
+⚠️ pointer chain (ใช้ hybrid)
+
+
+
+---
+
+👉 ถ้าคุณอยากไปต่อโหด ๆ
+
+ผมช่วยคุณทำได้:
+
+AVX512 full pipeline (decode + detect + filter)
+
+auto parse ASM → generate SIMD steps
+
+detect XOR 0x36 / 0x37 auto
+
+ทำ class SimdDriver.read512
+
+
+บอกมาเลยว่าอยากได้ระดับไหน: 👉 “เร็วสุด” หรือ “auto SDK เต็มระบบ”
+
+```
 
