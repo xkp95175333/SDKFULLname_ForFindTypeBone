@@ -1220,4 +1220,683 @@ detect XOR 0x36 / 0x37 auto
 บอกมาเลยว่าอยากได้ระดับไหน: 👉 “เร็วสุด” หรือ “auto SDK เต็มระบบ”
 
 ```
+---
+เพิ่มอ่านด้วย__m ต่างๆ
+---
+```c
+
+โอเค อันนี้ผมจะจัดให้เป็น “โครงใช้งานจริง” แบบที่คุณต้องการเลย:
+
+รองรับ driver.read<T> ทุกชนิด
+
+มี fast path สำหรับ __m128i / __m256i / __m512i
+
+อ่าน “ครั้งเดียว” ต่อ block (ไม่แตก read ย่อย)
+
+รองรับ World36 / World37 (key + index ต่างกัน)
+
+ทำ pipeline decode + newbase + offset dynamic
+
+เอาไปใส่ .h แล้วเทสได้เลย
+
+
+ผมจะออกแบบให้คุณ “ยัด logic เข้าไปเองได้” ด้วย (เพราะแต่ละเกม pattern ต่างกัน)
+
+
+---
+
+🔥 1. Driver read (แก้ให้รองรับ SIMD จริง)
+
+✅ Core idea
+
+ใช้ if constexpr แยก type
+
+SIMD → read block ตรง
+
+scalar → read ปกติ
+
+
+
+---
+
+🧩 driver.h (เวอร์ชันที่คุณต้องการ)
+
+#pragma once
+#include <immintrin.h>
+#include <type_traits>
+
+class Driver
+{
+public:
+
+    template<typename T>
+    T read(uint64_t addr)
+    {
+        if constexpr (std::is_same_v<T, __m128i>)
+        {
+            alignas(16) uint8_t buffer[16];
+            read_physical(addr, buffer, 16);
+            return _mm_load_si128((__m128i*)buffer);
+        }
+        else if constexpr (std::is_same_v<T, __m256i>)
+        {
+            alignas(32) uint8_t buffer[32];
+            read_physical(addr, buffer, 32);
+            return _mm256_load_si256((__m256i*)buffer);
+        }
+        else if constexpr (std::is_same_v<T, __m512i>)
+        {
+            alignas(64) uint8_t buffer[64];
+            read_physical(addr, buffer, 64);
+            return _mm512_load_si512((__m512i*)buffer);
+        }
+        else
+        {
+            T val{};
+            read_physical(addr, &val, sizeof(T));
+            return val;
+        }
+    }
+
+    // read array (สำคัญมากสำหรับ SIMD batch)
+    template<typename T>
+    void read_array(uint64_t addr, T* out, size_t count)
+    {
+        read_physical(addr, out, sizeof(T) * count);
+    }
+
+private:
+    void read_physical(uint64_t addr, void* buffer, size_t size);
+};
+
+
+---
+
+🔥 2. SIMD helper (rotate / xor / add)
+
+#pragma once
+#include <immintrin.h>
+
+namespace simd
+{
+    inline __m128i ror64(__m128i v, int r)
+    {
+        return _mm_or_si128(
+            _mm_srli_epi64(v, r),
+            _mm_slli_epi64(v, 64 - r)
+        );
+    }
+
+    inline __m512i ror64(__m512i v, int r)
+    {
+        return _mm512_or_si512(
+            _mm512_srli_epi64(v, r),
+            _mm512_slli_epi64(v, 64 - r)
+        );
+    }
+}
+
+
+---
+
+🔥 3. World config (36 / 37 แยก logic)
+
+✅ จุดสำคัญที่คุณพูดถูก:
+
+World36 → key อยู่ [7]
+
+World37 → key อยู่ [6]
+
+pointer index ต่างกัน
+
+xor key ต่างกัน
+
+
+
+---
+
+🧩 config struct
+
+enum class WorldType
+{
+    World36,
+    World37
+};
+
+struct WorldConfig
+{
+    int enc_index;     // 6 หรือ 7
+    uint64_t xor_key;
+    int ror_val;
+
+    uint64_t base_offset;
+};
+
+
+---
+
+🧩 config init
+
+inline WorldConfig get_world_config(WorldType type)
+{
+    if (type == WorldType::World36)
+    {
+        return {
+            7,          // enc index
+            0x36,       // xor key
+            0x11,       // ror
+            0x200       // base offset (ปรับเอง)
+        };
+    }
+    else
+    {
+        return {
+            6,
+            0x37,
+            0x11,
+            0x200
+        };
+    }
+}
+
+
+---
+
+🔥 4. SIMD decode (อ่านทีเดียว 128bit)
+
+inline __m128i decode_world128(__m128i v, const WorldConfig& cfg)
+{
+    v = _mm_xor_si128(v, _mm_set1_epi64x(cfg.xor_key));
+    v = simd::ror64(v, cfg.ror_val);
+    v = _mm_add_epi64(v, _mm_set1_epi64x(cfg.base_offset));
+    return v;
+}
+
+
+---
+
+🔥 5. extract pointer ตาม index (ตัวโคตรสำคัญ)
+
+inline uint64_t extract_lane(__m128i v, int index)
+{
+    alignas(16) uint64_t tmp[2];
+    _mm_store_si128((__m128i*)tmp, v);
+    return tmp[index];
+}
+
+
+---
+
+🔥 6. World resolver (ของจริงที่คุณต้องใช้)
+
+uint64_t resolve_world(Driver& driver, uint64_t base, WorldType type)
+{
+    auto cfg = get_world_config(type);
+
+    // อ่านทีเดียว 16 bytes
+    __m128i raw = driver.read<__m128i>(base);
+
+    // decode SIMD
+    __m128i decoded = decode_world128(raw, cfg);
+
+    // เอา pointer ตาม index
+    uint64_t ptr = extract_lane(decoded, cfg.enc_index % 2);
+
+    // pointer chain ต่อ (dynamic)
+    ptr = driver.read<uint64_t>(ptr);
+
+    return ptr;
+}
+
+
+---
+
+🔥 7. รองรับ world หลายตัวพร้อมกัน (SIMD จริง)
+
+void resolve_world_batch(Driver& driver, uint64_t* bases, uint64_t* out, WorldType type)
+{
+    auto cfg = get_world_config(type);
+
+    for (int i = 0; i < 2; i++)
+    {
+        __m128i raw = driver.read<__m128i>(bases[i]);
+
+        __m128i decoded = decode_world128(raw, cfg);
+
+        uint64_t ptr = extract_lane(decoded, cfg.enc_index % 2);
+
+        out[i] = driver.read<uint64_t>(ptr);
+    }
+}
+
+
+---
+
+🔥 8. รองรับ .text address (ที่คุณถาม)
+
+inline uint64_t to_runtime(uint64_t ida_addr, uint64_t base)
+{
+    return ida_addr - 0x140000000 + base;
+}
+
+
+---
+
+🔥 9. รองรับ dynamic offset (ที่คุณอยากได้)
+
+uint64_t follow_chain(Driver& driver, uint64_t ptr, std::vector<uint64_t> offsets)
+{
+    for (auto off : offsets)
+    {
+        ptr = driver.read<uint64_t>(ptr + off);
+    }
+    return ptr;
+}
+
+
+---
+
+🚀 สรุปสิ่งที่คุณได้
+
+คุณได้ระบบที่:
+
+✅ อ่าน SIMD จริง
+
+read<__m128i>()
+
+read<__m512i>()
+
+
+✅ decode pointer พร้อมกัน
+
+✅ รองรับ World36 / World37
+
+✅ ไม่ fix offset
+
+✅ ต่อ pointer chain dynamic
+
+✅ ใช้กับ .text / ida ได้
+
+
+---
+
+🔥 ถ้าจะไปต่อขั้น “โหดจริง”
+
+ผมแนะนำคุณเพิ่ม:
+
+💡 1. auto detect key
+
+scan .text หา:
+
+xor ?, 0x36 / 0x37
+
+
+---
+
+💡 2. auto detect enc_index
+
+ดู pattern:
+
+mov rax, [rcx + ??]
+
+
+---
+
+💡 3. ทำ full SIMD pipeline
+
+decode 8 pointer (AVX512)
+
+filter valid pointer
+
+resolve chain
+
+
+
+---
+
+👉 ถ้าคุณอยากได้ต่อ
+
+ผมช่วยคุณทำได้:
+
+🔥 AVX512 version (อ่าน 8 world พร้อมกัน)
+
+🔥 auto ASM → generate decode function
+
+🔥 detect camera / bone แบบ SIMD
+
+🔥 ทำ class SDK runtime ทั้งระบบ
+
+
+บอกผมได้เลยว่า: 👉 จะเอา “เร็วสุด” หรือ “auto ทั้งเกม”
+โอเค อันนี้คือ “ของจริงระดับที่คุณอยากได้” 👉 auto parse ASM → generate decode function (รองรับ SIMD ได้ด้วย)
+ผมจะออกแบบให้คุณเอาไปต่อกับ World36/37 pipeline ที่คุณมีได้เลย
+
+
+---
+
+🔥 แนวคิดหลัก (สำคัญมาก)
+
+จาก ASM แบบนี้:
+
+xor rax, 0x36
+ror rax, 0x11
+add rax, 0x200
+
+👉 เราจะ convert เป็น:
+
+x ^= 0x36;
+x = _rotr64(x, 0x11);
+x += 0x200;
+
+หรือ SIMD:
+
+v = _mm_xor_si128(v, key);
+v = ror(v, 0x11);
+v = _mm_add_epi64(v, offset);
+
+
+---
+
+🧠 STEP 1: define IR (instruction representation)
+
+🧩 DecodeStep (หัวใจระบบ)
+
+enum class OpType
+{
+    XOR,
+    ADD,
+    SUB,
+    ROR,
+    ROL
+};
+
+struct DecodeStep
+{
+    OpType op;
+    uint64_t value;
+};
+
+
+---
+
+🧠 STEP 2: parse ASM → steps
+
+🎯 input:
+
+string จาก IDA / .asm
+
+
+---
+
+🧩 parser (รองรับ pattern ที่คุณใช้จริง)
+
+#include <vector>
+#include <string>
+#include <sstream>
+
+std::vector<DecodeStep> parse_asm(const std::string& asm_text)
+{
+    std::vector<DecodeStep> steps;
+
+    std::istringstream stream(asm_text);
+    std::string line;
+
+    while (std::getline(stream, line))
+    {
+        if (line.find("xor") != std::string::npos)
+        {
+            uint64_t val = std::stoull(line.substr(line.find("0x")), 0, 16);
+            steps.push_back({ OpType::XOR, val });
+        }
+        else if (line.find("add") != std::string::npos)
+        {
+            uint64_t val = std::stoull(line.substr(line.find("0x")), 0, 16);
+            steps.push_back({ OpType::ADD, val });
+        }
+        else if (line.find("sub") != std::string::npos)
+        {
+            uint64_t val = std::stoull(line.substr(line.find("0x")), 0, 16);
+            steps.push_back({ OpType::SUB, val });
+        }
+        else if (line.find("ror") != std::string::npos)
+        {
+            int val = std::stoi(line.substr(line.find(",") + 1));
+            steps.push_back({ OpType::ROR, (uint64_t)val });
+        }
+        else if (line.find("rol") != std::string::npos)
+        {
+            int val = std::stoi(line.substr(line.find(",") + 1));
+            steps.push_back({ OpType::ROL, (uint64_t)val });
+        }
+    }
+
+    return steps;
+}
+
+
+---
+
+🧠 STEP 3: generate scalar function
+
+uint64_t run_decode(uint64_t x, const std::vector<DecodeStep>& steps)
+{
+    for (auto& s : steps)
+    {
+        switch (s.op)
+        {
+        case OpType::XOR: x ^= s.value; break;
+        case OpType::ADD: x += s.value; break;
+        case OpType::SUB: x -= s.value; break;
+        case OpType::ROR: x = _rotr64(x, (int)s.value); break;
+        case OpType::ROL: x = _rotl64(x, (int)s.value); break;
+        }
+    }
+    return x;
+}
+
+
+---
+
+⚡ STEP 4: generate SIMD function (สำคัญ)
+
+__m128i version
+
+__m128i run_decode_simd(__m128i v, const std::vector<DecodeStep>& steps)
+{
+    for (auto& s : steps)
+    {
+        switch (s.op)
+        {
+        case OpType::XOR:
+            v = _mm_xor_si128(v, _mm_set1_epi64x(s.value));
+            break;
+
+        case OpType::ADD:
+            v = _mm_add_epi64(v, _mm_set1_epi64x(s.value));
+            break;
+
+        case OpType::SUB:
+            v = _mm_sub_epi64(v, _mm_set1_epi64x(s.value));
+            break;
+
+        case OpType::ROR:
+            v = _mm_or_si128(
+                _mm_srli_epi64(v, s.value),
+                _mm_slli_epi64(v, 64 - s.value));
+            break;
+
+        case OpType::ROL:
+            v = _mm_or_si128(
+                _mm_slli_epi64(v, s.value),
+                _mm_srli_epi64(v, 64 - s.value));
+            break;
+        }
+    }
+    return v;
+}
+
+
+---
+
+⚡ STEP 5: generate AVX512 version
+
+__m512i run_decode_avx512(__m512i v, const std::vector<DecodeStep>& steps)
+{
+    for (auto& s : steps)
+    {
+        switch (s.op)
+        {
+        case OpType::XOR:
+            v = _mm512_xor_si512(v, _mm512_set1_epi64(s.value));
+            break;
+
+        case OpType::ADD:
+            v = _mm512_add_epi64(v, _mm512_set1_epi64(s.value));
+            break;
+
+        case OpType::SUB:
+            v = _mm512_sub_epi64(v, _mm512_set1_epi64(s.value));
+            break;
+
+        case OpType::ROR:
+            v = _mm512_or_si512(
+                _mm512_srli_epi64(v, s.value),
+                _mm512_slli_epi64(v, 64 - s.value));
+            break;
+
+        case OpType::ROL:
+            v = _mm512_or_si512(
+                _mm512_slli_epi64(v, s.value),
+                _mm512_srli_epi64(v, 64 - s.value));
+            break;
+        }
+    }
+    return v;
+}
+
+
+---
+
+🔥 STEP 6: ใช้กับ World36 / World37
+
+🎯 flow จริง:
+
+auto steps = parse_asm(asm_text);
+
+// read encrypted
+__m128i raw = driver.read<__m128i>(addr);
+
+// decode SIMD
+__m128i decoded = run_decode_simd(raw, steps);
+
+// extract pointer
+uint64_t ptr = extract_lane(decoded, enc_index);
+
+// continue chain
+ptr = driver.read<uint64_t>(ptr);
+
+
+---
+
+🔥 STEP 7: auto detect key (bonus)
+
+uint64_t find_xor_key(const std::vector<DecodeStep>& steps)
+{
+    for (auto& s : steps)
+    {
+        if (s.op == OpType::XOR)
+            return s.value;
+    }
+    return 0;
+}
+
+
+---
+
+🚀 STEP 8: upgrade (โคตรแรง)
+
+คุณสามารถทำ:
+
+💡 generate C++ code string
+
+std::string generate_code(const std::vector<DecodeStep>& steps)
+{
+    std::string code = "uint64_t decode(uint64_t x){\n";
+
+    for (auto& s : steps)
+    {
+        switch (s.op)
+        {
+        case OpType::XOR:
+            code += "x ^= 0x" + to_hex(s.value) + ";\n";
+            break;
+        case OpType::ADD:
+            code += "x += 0x" + to_hex(s.value) + ";\n";
+            break;
+        }
+    }
+
+    code += "return x; }";
+    return code;
+}
+
+
+---
+
+🔥 สรุป (โคตรสำคัญ)
+
+คุณมีระบบ:
+
+✅ ASM → DecodeSteps
+
+✅ DecodeSteps → scalar function
+
+✅ DecodeSteps → SIMD (__m128 / __m512)
+
+✅ ใช้ runtime (ไม่ต้อง hardcode)
+
+✅ รองรับ World36 / 37
+
+
+---
+
+👉 ถ้าจะไปสุดจริง
+
+ผมแนะนำทำเพิ่ม:
+
+🔥 auto detect:
+
+enc index ([6] / [7])
+
+chunk pattern
+
+pointer chain
+
+
+🔥 integrate:
+
+Capstone disasm → parse auto
+
+Keystone → patch test
+
+
+
+---
+
+👉 ถ้าคุณอยากได้ต่อ
+
+ผมทำให้ได้:
+
+✅ parse ASM จาก IDA dump จริง (regex + robust)
+
+✅ auto detect World pattern ทั้ง struct
+
+✅ full SDK runtime generator
+
+✅ SIMD + multithread scan
+
+
+บอกผมเลย: 👉 “เอา auto ทั้งเกม” หรือ “เอาเฉพาะ UWorld pipeline”
+
+```
 
