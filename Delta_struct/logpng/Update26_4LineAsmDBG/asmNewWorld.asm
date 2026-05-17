@@ -13,13 +13,13 @@
 .std:0000000140E015DF FF 15 DB BE 9D 18                             call    cs:off_1597DD4C0 ; Indirect Call Near Procedure
 .std:0000000140E015E5 84 C0                                         test    al, al          ; Logical Compare
 .std:0000000140E015E7 75 09                                         jnz     short loc_140E015F2 ; Jump if Not Zero (ZF=0)
-.std:0000000140E015E9 48 8B 3D D8 CE 9D 18                          mov     rdi, cs:qword_1597DE4C8
+.std:0000000140E015E9 48 8B 3D D8 CE 9D 18                          mov     rdi, cs:qword_1597DE4C8   ;Uworld37
 .std:0000000140E015F0 EB 29                                         jmp     short loc_140E0161B ; Jump
 .std:0000000140E015F2                               ; ---------------------------------------------------------------------------
 .std:0000000140E015F2
 .std:0000000140E015F2                               loc_140E015F2:                          ; CODE XREF: sub_140E008E0+D07↑j
-.std:0000000140E015F2 48 8B 0D CF EE 9D 18                          mov     rcx, cs:qword_1597E04C8
-.std:0000000140E015F9 0F B6 05 CE EE 9D 18                          movzx   eax, byte ptr cs:qword_1597E04C8+6 ; Move with Zero-Extend
+.std:0000000140E015F2 48 8B 0D CF EE 9D 18                          mov     rcx, cs:qword_1597E04C8    ;Uworld37Array
+.std:0000000140E015F9 0F B6 05 CE EE 9D 18                          movzx   eax, byte ptr cs:qword_1597E04C8+6 ; Move with Zero-Extend    Uworld37Enc
 .std:0000000140E01600 48 89 4C 24 30                                mov     [rsp+30h], rcx
 .std:0000000140E01605 34 37                                         xor     al, 37h         ; Logical Exclusive OR
 .std:0000000140E01607 48 C1 E9 08                                   shr     rcx, 8          ; Shift Logical Right
@@ -66,7 +66,7 @@
 .std:0000000140E0168F FF 15 8B 01 9E 18                             call    cs:off_1597E1820 ; Indirect Call Near Procedure
 .std:0000000140E01695 84 C0                                         test    al, al          ; Logical Compare
 .std:0000000140E01697 75 13                                         jnz     short loc_140E016AC ; Jump if Not Zero (ZF=0)
-.std:0000000140E01699 48 8B 1D 88 11 9E 18                          mov     rbx, cs:qword_1597E2828
+.std:0000000140E01699 48 8B 1D 88 11 9E 18                          mov     rbx, cs:qword_1597E2828    ;Uworld36 
 .std:0000000140E016A0 EB 2F                                         jmp     short loc_140E016D1 ; Jump
 .std:0000000140E016A2                               ; ---------------------------------------------------------------------------
 .std:0000000140E016A2
@@ -77,8 +77,8 @@
 .std:0000000140E016AC                               ; ---------------------------------------------------------------------------
 .std:0000000140E016AC
 .std:0000000140E016AC                               loc_140E016AC:                          ; CODE XREF: sub_140E008E0+DB7↑j
-.std:0000000140E016AC 48 8B 0D 75 31 9E 18                          mov     rcx, cs:qword_1597E4828
-.std:0000000140E016B3 0F B6 05 75 31 9E 18                          movzx   eax, byte ptr cs:qword_1597E4828+7 ; Move with Zero-Extend
+.std:0000000140E016AC 48 8B 0D 75 31 9E 18                          mov     rcx, cs:qword_1597E4828  ;Uworld36Array 
+.std:0000000140E016B3 0F B6 05 75 31 9E 18                          movzx   eax, byte ptr cs:qword_1597E4828+7 ; Move with Zero-Extend Uworld36Enc
 .std:0000000140E016BA 48 89 4C 24 30                                mov     [rsp+30h], rcx
 .std:0000000140E016BF 34 36                                         xor     al, 36h         ; Logical Exclusive OR
 .std:0000000140E016C1 80 F1 36                                      xor     cl, 36h         ; Logical Exclusive OR
