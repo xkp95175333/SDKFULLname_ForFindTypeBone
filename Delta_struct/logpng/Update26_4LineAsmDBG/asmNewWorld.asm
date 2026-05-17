@@ -72,7 +72,7 @@
 .std:0000000140E016A2
 .std:0000000140E016A2                               loc_140E016A2:                          ; CODE XREF: sub_140E008E0+D81↑j
 .std:0000000140E016A2 45 32 E4                                      xor     r12b, r12b      ; Logical Exclusive OR
-.std:0000000140E016A5 44 88 64 24 40                                mov     [rsp+40h], r12b
+.std:0000000140E016A5 44 88 64 24 40                                mov     [rsp+40h], r12b  ;Uworld36* = [GEngine + 0x40]
 .std:0000000140E016AA EB CD                                         jmp     short loc_140E01679 ; Jump
 .std:0000000140E016AC                               ; ---------------------------------------------------------------------------
 .std:0000000140E016AC
